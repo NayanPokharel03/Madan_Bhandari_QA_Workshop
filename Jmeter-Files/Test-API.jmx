@@ -1,0 +1,2601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Testing Flask API">
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Set Environment Details">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">vars.put(&quot;base_url&quot;,&quot;http://127.0.0.1:8000&quot;);</stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="1. Health Check and Stats" enabled="true"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="1.1 Healh Check Validation" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/healthcheck</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Response Code and Body" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">vars.put(&apos;captured_responseCode&apos;, prev.getResponseCode());
+vars.put(&apos;captured_responseBody&apos;, prev.getResponseDataAsString());</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Health Check Message Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">hc-message</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].message</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Health Check Status Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">hc-status</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].status</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">AssertValues(&quot;200&quot;,vars.get(&quot;captured_responseCode&quot;),&quot; The response code is as expected&quot;, &quot; The response code is not as expected &quot;);
+AssertValues(&quot;Health check passed&quot;,vars.get(&quot;hc-message&quot;),&quot; The message is as expected&quot;, &quot; The environment is not as expected &quot;);
+AssertValues(&quot;Healthy&quot;,vars.get(&quot;hc-status&quot;),&quot; The health check status shows healthy&quot;, &quot; The health check status failed&quot;);
+
+logErrorMessage();
+
+public void logErrorMessage(){
+ if(vars.get(&quot;AssertionFailure&quot;).equals(&quot;true&quot;)){
+ log.info(&quot;Entered Failure Check&quot;);
+ log.info(vars.get(&quot;FailureMsg&quot;));
+ AssertionResult.setFailureMessage(vars.get(&quot;FailureMsg&quot;));
+ }
+ vars.put(&quot;FailureMsg&quot;,&quot;&quot;);
+ vars.put(&quot;AssertionFailure&quot;,&quot;&quot;);
+}
+
+public void AssertValues(String Expected, String Actual, String PassMessage, String FailureMessage){
+ if(Expected.equals(Actual)){
+ log.info(&quot;****Assertion Successful****&quot;);
+ log.info(&quot;Actual: &quot;+Actual+&quot; Expected: &quot;+Expected);
+ log.info(PassMessage +&quot;\n&quot;);
+
+ }
+ else{
+ vars.put(&quot;isJmeterExecutionStatus&quot;,&quot;FAILED Status : &quot;);
+
+ vars.put(&quot;AssertionFailure&quot;,&quot;true&quot;); 
+ AssertionResult.setFailure(true);
+ //vars.put(&quot;FailureMsg&quot;,vars.get(&quot;FailureMsg&quot;) + &quot;\n****ASSERTION FAILURE****** \n&quot;+FailureMessage + &quot; || EXPECTED: &quot;+ Expected + &quot; || ACTUAL: &quot;+Actual + &quot;\n&quot;); 
+ //vars.put(&quot;FailureMsg&quot;,&quot; ***** Failed Failed Failed*******&quot;); 
+ vars.put(&quot;FailureMsg&quot;,vars.get(&quot;FailureMsg&quot;) + &quot;\n****ASSERTION FAILURE****** \n&quot;+FailureMessage + &quot; || EXPECTED: &quot;+ Expected + &quot; || ACTUAL: &quot;+Actual + &quot;\n&quot;); 
+
+
+ log.info(&quot;:::: FailureMsg&quot;+vars.get(&quot;FailureMsg&quot;));
+
+ log.info(&quot;****ASSERTION FAILURE******&quot;);
+ // AssertionResult.setFailureMessage(&quot;****Assertion Failure****** &quot;+FailureMessage + &quot; Expected: &quot;+ Expected + &quot; Actual: &quot;+Actual+&quot;\n&quot;);
+ log.info(FailureMessage); 
+ log.info(&quot;Actual: &quot;+Actual+&quot; Expected: &quot;+Expected);
+ }
+ }</stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+            </JSR223Assertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="1.2 Version Validation" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/version</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Response Code and Body" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">vars.put(&apos;captured_responseCode&apos;, prev.getResponseCode());
+vars.put(&apos;captured_responseBody&apos;, prev.getResponseDataAsString());</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Version Name Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">vc-name</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].name</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Version Purpose Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">vc-purpose</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].purpose</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">AssertValues(&quot;200&quot;,vars.get(&quot;captured_responseCode&quot;),&quot; The response code is as expected&quot;, &quot; The response code is not as expected &quot;);
+AssertValues(&quot;QA Automation Workshop teaching API&quot;,vars.get(&quot;vc-purpose&quot;),&quot; The message is as expected&quot;, &quot; The environment is not as expected &quot;);
+AssertValues(&quot;Test-API&quot;,vars.get(&quot;vc-name&quot;),&quot; The health check status shows healthy&quot;, &quot; The health check status failed&quot;);
+
+logErrorMessage();
+
+public void logErrorMessage(){
+ if(vars.get(&quot;AssertionFailure&quot;).equals(&quot;true&quot;)){
+ log.info(&quot;Entered Failure Check&quot;);
+ log.info(vars.get(&quot;FailureMsg&quot;));
+ AssertionResult.setFailureMessage(vars.get(&quot;FailureMsg&quot;));
+ }
+ vars.put(&quot;FailureMsg&quot;,&quot;&quot;);
+ vars.put(&quot;AssertionFailure&quot;,&quot;&quot;);
+}
+
+public void AssertValues(String Expected, String Actual, String PassMessage, String FailureMessage){
+ if(Expected.equals(Actual)){
+ log.info(&quot;****Assertion Successful****&quot;);
+ log.info(&quot;Actual: &quot;+Actual+&quot; Expected: &quot;+Expected);
+ log.info(PassMessage +&quot;\n&quot;);
+
+ }
+ else{
+ vars.put(&quot;isJmeterExecutionStatus&quot;,&quot;FAILED Status : &quot;);
+
+ vars.put(&quot;AssertionFailure&quot;,&quot;true&quot;); 
+ AssertionResult.setFailure(true);
+ //vars.put(&quot;FailureMsg&quot;,vars.get(&quot;FailureMsg&quot;) + &quot;\n****ASSERTION FAILURE****** \n&quot;+FailureMessage + &quot; || EXPECTED: &quot;+ Expected + &quot; || ACTUAL: &quot;+Actual + &quot;\n&quot;); 
+ //vars.put(&quot;FailureMsg&quot;,&quot; ***** Failed Failed Failed*******&quot;); 
+ vars.put(&quot;FailureMsg&quot;,vars.get(&quot;FailureMsg&quot;) + &quot;\n****ASSERTION FAILURE****** \n&quot;+FailureMessage + &quot; || EXPECTED: &quot;+ Expected + &quot; || ACTUAL: &quot;+Actual + &quot;\n&quot;); 
+
+
+ log.info(&quot;:::: FailureMsg&quot;+vars.get(&quot;FailureMsg&quot;));
+
+ log.info(&quot;****ASSERTION FAILURE******&quot;);
+ // AssertionResult.setFailureMessage(&quot;****Assertion Failure****** &quot;+FailureMessage + &quot; Expected: &quot;+ Expected + &quot; Actual: &quot;+Actual+&quot;\n&quot;);
+ log.info(FailureMessage); 
+ log.info(&quot;Actual: &quot;+Actual+&quot; Expected: &quot;+Expected);
+ }
+ }</stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+            </JSR223Assertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="1.3 Stats Validation" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/stats</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Response Code and Body" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">vars.put(&apos;captured_responseCode&apos;, prev.getResponseCode());
+vars.put(&apos;captured_responseBody&apos;, prev.getResponseDataAsString());</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Health Check Message Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">hc-message</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].message</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Health Check Status Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">hc-status</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].status</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">AssertValues(&quot;200&quot;,vars.get(&quot;captured_responseCode&quot;),&quot; The response code is as expected&quot;, &quot; The response code is not as expected &quot;);
+AssertValues(&quot;Health check passed&quot;,vars.get(&quot;hc-message&quot;),&quot; The message is as expected&quot;, &quot; The environment is not as expected &quot;);
+AssertValues(&quot;Healthy&quot;,vars.get(&quot;hc-status&quot;),&quot; The health check status shows healthy&quot;, &quot; The health check status failed&quot;);
+
+logErrorMessage();
+
+public void logErrorMessage(){
+ if(vars.get(&quot;AssertionFailure&quot;).equals(&quot;true&quot;)){
+ log.info(&quot;Entered Failure Check&quot;);
+ log.info(vars.get(&quot;FailureMsg&quot;));
+ AssertionResult.setFailureMessage(vars.get(&quot;FailureMsg&quot;));
+ }
+ vars.put(&quot;FailureMsg&quot;,&quot;&quot;);
+ vars.put(&quot;AssertionFailure&quot;,&quot;&quot;);
+}
+
+public void AssertValues(String Expected, String Actual, String PassMessage, String FailureMessage){
+ if(Expected.equals(Actual)){
+ log.info(&quot;****Assertion Successful****&quot;);
+ log.info(&quot;Actual: &quot;+Actual+&quot; Expected: &quot;+Expected);
+ log.info(PassMessage +&quot;\n&quot;);
+
+ }
+ else{
+ vars.put(&quot;isJmeterExecutionStatus&quot;,&quot;FAILED Status : &quot;);
+
+ vars.put(&quot;AssertionFailure&quot;,&quot;true&quot;); 
+ AssertionResult.setFailure(true);
+ //vars.put(&quot;FailureMsg&quot;,vars.get(&quot;FailureMsg&quot;) + &quot;\n****ASSERTION FAILURE****** \n&quot;+FailureMessage + &quot; || EXPECTED: &quot;+ Expected + &quot; || ACTUAL: &quot;+Actual + &quot;\n&quot;); 
+ //vars.put(&quot;FailureMsg&quot;,&quot; ***** Failed Failed Failed*******&quot;); 
+ vars.put(&quot;FailureMsg&quot;,vars.get(&quot;FailureMsg&quot;) + &quot;\n****ASSERTION FAILURE****** \n&quot;+FailureMessage + &quot; || EXPECTED: &quot;+ Expected + &quot; || ACTUAL: &quot;+Actual + &quot;\n&quot;); 
+
+
+ log.info(&quot;:::: FailureMsg&quot;+vars.get(&quot;FailureMsg&quot;));
+
+ log.info(&quot;****ASSERTION FAILURE******&quot;);
+ // AssertionResult.setFailureMessage(&quot;****Assertion Failure****** &quot;+FailureMessage + &quot; Expected: &quot;+ Expected + &quot; Actual: &quot;+Actual+&quot;\n&quot;);
+ log.info(FailureMessage); 
+ log.info(&quot;Actual: &quot;+Actual+&quot; Expected: &quot;+Expected);
+ }
+ }</stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+            </JSR223Assertion>
+            <hashTree/>
+          </hashTree>
+          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <url>true</url>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="2. Setup - Reset stores" enabled="true"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="2.1 POST /admin/reset (wipe all)" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/admin/reset</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="3. Keys (Positive CRUD)" enabled="true"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="3.1 POST /keys (create)" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/keys</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">[ { &quot;Id&quot;: 9001, &quot;Data&quot;: &quot;BRUCE WAYNE&quot;, &quot;DataType&quot;: &quot;N&quot; } ]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49587">201</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Response Code and Body" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">vars.put(&apos;captured_responseCode&apos;, prev.getResponseCode());
+vars.put(&apos;captured_responseBody&apos;, prev.getResponseDataAsString());</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Data Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">k-data</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].Data</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="DataType Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">k-datatype</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].DataType</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">AssertValues(&quot;201&quot;,vars.get(&quot;captured_responseCode&quot;),&quot; The response code is as expected&quot;,&quot; The response code is not as expected&quot;);
+AssertValues(&quot;BRUCE WAYNE&quot;,vars.get(&quot;k-data&quot;),&quot; The Data echoed back is correct&quot;,&quot; The Data echoed back is wrong&quot;);
+AssertValues(&quot;N&quot;,vars.get(&quot;k-datatype&quot;),&quot; The DataType echoed back is correct&quot;,&quot; The DataType echoed back is wrong&quot;);
+
+logErrorMessage();
+
+public void logErrorMessage(){
+ if(vars.get(&quot;AssertionFailure&quot;) != null &amp;&amp; vars.get(&quot;AssertionFailure&quot;).equals(&quot;true&quot;)){
+ AssertionResult.setFailureMessage(vars.get(&quot;FailureMsg&quot;));
+ }
+ vars.put(&quot;FailureMsg&quot;,&quot;&quot;);
+ vars.put(&quot;AssertionFailure&quot;,&quot;&quot;);
+}
+
+public void AssertValues(String Expected, String Actual, String PassMessage, String FailureMessage){
+ if(Expected != null &amp;&amp; Expected.equals(Actual)){
+ log.info(PassMessage);
+ }
+ else{
+ vars.put(&quot;AssertionFailure&quot;,&quot;true&quot;);
+ AssertionResult.setFailure(true);
+ String prevMsg = vars.get(&quot;FailureMsg&quot;) == null ? &quot;&quot; : vars.get(&quot;FailureMsg&quot;);
+ vars.put(&quot;FailureMsg&quot;, prevMsg + &quot;\n****ASSERTION FAILURE****** \n&quot; + FailureMessage + &quot; || EXPECTED: &quot; + Expected + &quot; || ACTUAL: &quot; + Actual + &quot;\n&quot;);
+ log.info(FailureMessage);
+ }
+}</stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+            </JSR223Assertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="3.2 POST /keys (idempotent re-run)" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/keys</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">[ { &quot;Id&quot;: 9001, &quot;Data&quot;: &quot;BRUCE WAYNE&quot;, &quot;DataType&quot;: &quot;N&quot; } ]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49587">201</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="3.3 GET /keys (list)" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/keys</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="3.4 GET /keys/{id}" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/keys/9001</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Response Code and Body" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">vars.put(&apos;captured_responseCode&apos;, prev.getResponseCode());
+vars.put(&apos;captured_responseBody&apos;, prev.getResponseDataAsString());</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Id Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">k-id</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].Id</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="DataType Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">k-datatype</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].DataType</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">AssertValues(&quot;9001&quot;,vars.get(&quot;k-id&quot;),&quot; The stored Id round-trips&quot;,&quot; The stored Id is wrong&quot;);
+AssertValues(&quot;N&quot;,vars.get(&quot;k-datatype&quot;),&quot; The stored DataType is correct&quot;,&quot; The stored DataType is wrong&quot;);
+
+logErrorMessage();
+
+public void logErrorMessage(){
+ if(vars.get(&quot;AssertionFailure&quot;) != null &amp;&amp; vars.get(&quot;AssertionFailure&quot;).equals(&quot;true&quot;)){
+ AssertionResult.setFailureMessage(vars.get(&quot;FailureMsg&quot;));
+ }
+ vars.put(&quot;FailureMsg&quot;,&quot;&quot;);
+ vars.put(&quot;AssertionFailure&quot;,&quot;&quot;);
+}
+
+public void AssertValues(String Expected, String Actual, String PassMessage, String FailureMessage){
+ if(Expected != null &amp;&amp; Expected.equals(Actual)){
+ log.info(PassMessage);
+ }
+ else{
+ vars.put(&quot;AssertionFailure&quot;,&quot;true&quot;);
+ AssertionResult.setFailure(true);
+ String prevMsg = vars.get(&quot;FailureMsg&quot;) == null ? &quot;&quot; : vars.get(&quot;FailureMsg&quot;);
+ vars.put(&quot;FailureMsg&quot;, prevMsg + &quot;\n****ASSERTION FAILURE****** \n&quot; + FailureMessage + &quot; || EXPECTED: &quot; + Expected + &quot; || ACTUAL: &quot; + Actual + &quot;\n&quot;);
+ log.info(FailureMessage);
+ }
+}</stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+            </JSR223Assertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="3.5 PUT /keys/{id} (full replace)" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/keys/9001</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{ &quot;Id&quot;: 9001, &quot;Data&quot;: &quot;CLARK KENT&quot;, &quot;DataType&quot;: &quot;N&quot; }</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Response Code and Body" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">vars.put(&apos;captured_responseCode&apos;, prev.getResponseCode());
+vars.put(&apos;captured_responseBody&apos;, prev.getResponseDataAsString());</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Data Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">k-data</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].Data</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">AssertValues(&quot;200&quot;,vars.get(&quot;captured_responseCode&quot;),&quot; The response code is as expected&quot;,&quot; The response code is not as expected&quot;);
+AssertValues(&quot;CLARK KENT&quot;,vars.get(&quot;k-data&quot;),&quot; The Data was fully replaced&quot;,&quot; The Data was not replaced&quot;);
+
+logErrorMessage();
+
+public void logErrorMessage(){
+ if(vars.get(&quot;AssertionFailure&quot;) != null &amp;&amp; vars.get(&quot;AssertionFailure&quot;).equals(&quot;true&quot;)){
+ AssertionResult.setFailureMessage(vars.get(&quot;FailureMsg&quot;));
+ }
+ vars.put(&quot;FailureMsg&quot;,&quot;&quot;);
+ vars.put(&quot;AssertionFailure&quot;,&quot;&quot;);
+}
+
+public void AssertValues(String Expected, String Actual, String PassMessage, String FailureMessage){
+ if(Expected != null &amp;&amp; Expected.equals(Actual)){
+ log.info(PassMessage);
+ }
+ else{
+ vars.put(&quot;AssertionFailure&quot;,&quot;true&quot;);
+ AssertionResult.setFailure(true);
+ String prevMsg = vars.get(&quot;FailureMsg&quot;) == null ? &quot;&quot; : vars.get(&quot;FailureMsg&quot;);
+ vars.put(&quot;FailureMsg&quot;, prevMsg + &quot;\n****ASSERTION FAILURE****** \n&quot; + FailureMessage + &quot; || EXPECTED: &quot; + Expected + &quot; || ACTUAL: &quot; + Actual + &quot;\n&quot;);
+ log.info(FailureMessage);
+ }
+}</stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+            </JSR223Assertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="3.6 PATCH /keys/{id} (partial update)" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/keys/9001</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">PATCH</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{ &quot;Data&quot;: &quot;CLARK J. KENT&quot; }</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Response Code and Body" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">vars.put(&apos;captured_responseCode&apos;, prev.getResponseCode());
+vars.put(&apos;captured_responseBody&apos;, prev.getResponseDataAsString());</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Data Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">k-data</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].Data</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">AssertValues(&quot;200&quot;,vars.get(&quot;captured_responseCode&quot;),&quot; The response code is as expected&quot;,&quot; The response code is not as expected&quot;);
+AssertValues(&quot;CLARK J. KENT&quot;,vars.get(&quot;k-data&quot;),&quot; The Data was partially updated&quot;,&quot; The Data was not updated&quot;);
+
+logErrorMessage();
+
+public void logErrorMessage(){
+ if(vars.get(&quot;AssertionFailure&quot;) != null &amp;&amp; vars.get(&quot;AssertionFailure&quot;).equals(&quot;true&quot;)){
+ AssertionResult.setFailureMessage(vars.get(&quot;FailureMsg&quot;));
+ }
+ vars.put(&quot;FailureMsg&quot;,&quot;&quot;);
+ vars.put(&quot;AssertionFailure&quot;,&quot;&quot;);
+}
+
+public void AssertValues(String Expected, String Actual, String PassMessage, String FailureMessage){
+ if(Expected != null &amp;&amp; Expected.equals(Actual)){
+ log.info(PassMessage);
+ }
+ else{
+ vars.put(&quot;AssertionFailure&quot;,&quot;true&quot;);
+ AssertionResult.setFailure(true);
+ String prevMsg = vars.get(&quot;FailureMsg&quot;) == null ? &quot;&quot; : vars.get(&quot;FailureMsg&quot;);
+ vars.put(&quot;FailureMsg&quot;, prevMsg + &quot;\n****ASSERTION FAILURE****** \n&quot; + FailureMessage + &quot; || EXPECTED: &quot; + Expected + &quot; || ACTUAL: &quot; + Actual + &quot;\n&quot;);
+ log.info(FailureMessage);
+ }
+}</stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+            </JSR223Assertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="3.7 DELETE /keys/{id}" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/keys/9001</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">DELETE</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Response Code and Body" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">vars.put(&apos;captured_responseCode&apos;, prev.getResponseCode());
+vars.put(&apos;captured_responseBody&apos;, prev.getResponseDataAsString());</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Deleted Flag Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">del-flag</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].deleted</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Store Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">del-store</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].store</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">AssertValues(&quot;200&quot;,vars.get(&quot;captured_responseCode&quot;),&quot; The response code is as expected&quot;,&quot; The response code is not as expected&quot;);
+AssertValues(&quot;true&quot;,vars.get(&quot;del-flag&quot;),&quot; The record reports deleted=true&quot;,&quot; The record was not deleted&quot;);
+AssertValues(&quot;keys&quot;,vars.get(&quot;del-store&quot;),&quot; The store name is correct&quot;,&quot; The store name is wrong&quot;);
+
+logErrorMessage();
+
+public void logErrorMessage(){
+ if(vars.get(&quot;AssertionFailure&quot;) != null &amp;&amp; vars.get(&quot;AssertionFailure&quot;).equals(&quot;true&quot;)){
+ AssertionResult.setFailureMessage(vars.get(&quot;FailureMsg&quot;));
+ }
+ vars.put(&quot;FailureMsg&quot;,&quot;&quot;);
+ vars.put(&quot;AssertionFailure&quot;,&quot;&quot;);
+}
+
+public void AssertValues(String Expected, String Actual, String PassMessage, String FailureMessage){
+ if(Expected != null &amp;&amp; Expected.equals(Actual)){
+ log.info(PassMessage);
+ }
+ else{
+ vars.put(&quot;AssertionFailure&quot;,&quot;true&quot;);
+ AssertionResult.setFailure(true);
+ String prevMsg = vars.get(&quot;FailureMsg&quot;) == null ? &quot;&quot; : vars.get(&quot;FailureMsg&quot;);
+ vars.put(&quot;FailureMsg&quot;, prevMsg + &quot;\n****ASSERTION FAILURE****** \n&quot; + FailureMessage + &quot; || EXPECTED: &quot; + Expected + &quot; || ACTUAL: &quot; + Actual + &quot;\n&quot;);
+ log.info(FailureMessage);
+ }
+}</stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+            </JSR223Assertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="4. Keys (Negative &amp; Validation)" enabled="true"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="4.1 POST /keys [] -&gt; 400 empty array" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/keys</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">[]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="51508">400</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="4.2 POST /keys duplicate Ids -&gt; 400" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/keys</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">[ { &quot;Id&quot;: 8001, &quot;Data&quot;: &quot;A&quot;, &quot;DataType&quot;: &quot;N&quot; }, { &quot;Id&quot;: 8001, &quot;Data&quot;: &quot;B&quot;, &quot;DataType&quot;: &quot;N&quot; } ]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="51508">400</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="4.3 POST /keys invalid DataType -&gt; 422" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/keys</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">[ { &quot;Id&quot;: 8002, &quot;Data&quot;: &quot;X&quot;, &quot;DataType&quot;: &quot;Z&quot; } ]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="51572">422</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="4.4 POST /keys extra field -&gt; 422" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/keys</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">[ { &quot;Id&quot;: 8003, &quot;Data&quot;: &quot;X&quot;, &quot;DataType&quot;: &quot;N&quot;, &quot;Extra&quot;: &quot;nope&quot; } ]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="51572">422</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="4.5 POST /keys Data &gt; 200 chars -&gt; 422" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/keys</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">[ { &quot;Id&quot;: 8004, &quot;Data&quot;: &quot;${longData}&quot;, &quot;DataType&quot;: &quot;N&quot; } ]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Build 201-char Data" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">vars.put(&quot;longData&quot;, &quot;A&quot; * 201);</stringProp>
+            </JSR223PreProcessor>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="51572">422</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="4.6 POST /keys conflict (create first) -&gt; 201" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/keys</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">[ { &quot;Id&quot;: 9099, &quot;Data&quot;: &quot;ORIGINAL VALUE&quot;, &quot;DataType&quot;: &quot;N&quot; } ]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49587">201</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="4.7 POST /keys same Id different content -&gt; 409" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/keys</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">[ { &quot;Id&quot;: 9099, &quot;Data&quot;: &quot;DIFFERENT VALUE&quot;, &quot;DataType&quot;: &quot;N&quot; } ]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="51517">409</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="4.8 GET /keys/{unknown} -&gt; 404" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/keys/999999</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="51512">404</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="4.9 PUT /keys/{id} path/body Id mismatch -&gt; 400" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/keys/9099</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{ &quot;Id&quot;: 12345, &quot;Data&quot;: &quot;X&quot;, &quot;DataType&quot;: &quot;N&quot; }</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="51508">400</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="4.10 DELETE /keys/{unknown} -&gt; 404" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/keys/888888</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">DELETE</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="51512">404</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="5. Ranges (CRUD)" enabled="true"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="5.1 POST /ranges (create)" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/ranges</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">[ { &quot;Id&quot;: 9002, &quot;Data&quot;: &quot;BRUCE WAYNE&quot;, &quot;DataType&quot;: &quot;N&quot; } ]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49587">201</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="5.2 GET /ranges/{id}" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/ranges/9002</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Response Code and Body" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">vars.put(&apos;captured_responseCode&apos;, prev.getResponseCode());
+vars.put(&apos;captured_responseBody&apos;, prev.getResponseDataAsString());</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Data Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">r-data</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].Data</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="DataType Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">r-datatype</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].DataType</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">AssertValues(&quot;200&quot;,vars.get(&quot;captured_responseCode&quot;),&quot; The response code is as expected&quot;,&quot; The response code is not as expected&quot;);
+AssertValues(&quot;BRUCE WAYNE&quot;,vars.get(&quot;r-data&quot;),&quot; The range Data round-trips&quot;,&quot; The range Data is wrong&quot;);
+AssertValues(&quot;N&quot;,vars.get(&quot;r-datatype&quot;),&quot; The range DataType round-trips&quot;,&quot; The range DataType is wrong&quot;);
+
+logErrorMessage();
+
+public void logErrorMessage(){
+ if(vars.get(&quot;AssertionFailure&quot;) != null &amp;&amp; vars.get(&quot;AssertionFailure&quot;).equals(&quot;true&quot;)){
+ AssertionResult.setFailureMessage(vars.get(&quot;FailureMsg&quot;));
+ }
+ vars.put(&quot;FailureMsg&quot;,&quot;&quot;);
+ vars.put(&quot;AssertionFailure&quot;,&quot;&quot;);
+}
+
+public void AssertValues(String Expected, String Actual, String PassMessage, String FailureMessage){
+ if(Expected != null &amp;&amp; Expected.equals(Actual)){
+ log.info(PassMessage);
+ }
+ else{
+ vars.put(&quot;AssertionFailure&quot;,&quot;true&quot;);
+ AssertionResult.setFailure(true);
+ String prevMsg = vars.get(&quot;FailureMsg&quot;) == null ? &quot;&quot; : vars.get(&quot;FailureMsg&quot;);
+ vars.put(&quot;FailureMsg&quot;, prevMsg + &quot;\n****ASSERTION FAILURE****** \n&quot; + FailureMessage + &quot; || EXPECTED: &quot; + Expected + &quot; || ACTUAL: &quot; + Actual + &quot;\n&quot;);
+ log.info(FailureMessage);
+ }
+}</stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+            </JSR223Assertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="5.3 PATCH /ranges/{id}" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/ranges/9002</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">PATCH</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{ &quot;DataType&quot;: &quot;A&quot; }</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Response Code and Body" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">vars.put(&apos;captured_responseCode&apos;, prev.getResponseCode());
+vars.put(&apos;captured_responseBody&apos;, prev.getResponseDataAsString());</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="DataType Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">r-datatype</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].DataType</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">AssertValues(&quot;200&quot;,vars.get(&quot;captured_responseCode&quot;),&quot; The response code is as expected&quot;,&quot; The response code is not as expected&quot;);
+AssertValues(&quot;A&quot;,vars.get(&quot;r-datatype&quot;),&quot; The DataType changed to A&quot;,&quot; The DataType did not change&quot;);
+
+logErrorMessage();
+
+public void logErrorMessage(){
+ if(vars.get(&quot;AssertionFailure&quot;) != null &amp;&amp; vars.get(&quot;AssertionFailure&quot;).equals(&quot;true&quot;)){
+ AssertionResult.setFailureMessage(vars.get(&quot;FailureMsg&quot;));
+ }
+ vars.put(&quot;FailureMsg&quot;,&quot;&quot;);
+ vars.put(&quot;AssertionFailure&quot;,&quot;&quot;);
+}
+
+public void AssertValues(String Expected, String Actual, String PassMessage, String FailureMessage){
+ if(Expected != null &amp;&amp; Expected.equals(Actual)){
+ log.info(PassMessage);
+ }
+ else{
+ vars.put(&quot;AssertionFailure&quot;,&quot;true&quot;);
+ AssertionResult.setFailure(true);
+ String prevMsg = vars.get(&quot;FailureMsg&quot;) == null ? &quot;&quot; : vars.get(&quot;FailureMsg&quot;);
+ vars.put(&quot;FailureMsg&quot;, prevMsg + &quot;\n****ASSERTION FAILURE****** \n&quot; + FailureMessage + &quot; || EXPECTED: &quot; + Expected + &quot; || ACTUAL: &quot; + Actual + &quot;\n&quot;);
+ log.info(FailureMessage);
+ }
+}</stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+            </JSR223Assertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="5.4 DELETE /ranges/{id}" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/ranges/9002</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">DELETE</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Response Code and Body" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">vars.put(&apos;captured_responseCode&apos;, prev.getResponseCode());
+vars.put(&apos;captured_responseBody&apos;, prev.getResponseDataAsString());</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Deleted Flag Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">del-flag</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].deleted</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Store Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">del-store</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].store</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">AssertValues(&quot;200&quot;,vars.get(&quot;captured_responseCode&quot;),&quot; The response code is as expected&quot;,&quot; The response code is not as expected&quot;);
+AssertValues(&quot;true&quot;,vars.get(&quot;del-flag&quot;),&quot; The range reports deleted=true&quot;,&quot; The range was not deleted&quot;);
+AssertValues(&quot;ranges&quot;,vars.get(&quot;del-store&quot;),&quot; The store name is correct&quot;,&quot; The store name is wrong&quot;);
+
+logErrorMessage();
+
+public void logErrorMessage(){
+ if(vars.get(&quot;AssertionFailure&quot;) != null &amp;&amp; vars.get(&quot;AssertionFailure&quot;).equals(&quot;true&quot;)){
+ AssertionResult.setFailureMessage(vars.get(&quot;FailureMsg&quot;));
+ }
+ vars.put(&quot;FailureMsg&quot;,&quot;&quot;);
+ vars.put(&quot;AssertionFailure&quot;,&quot;&quot;);
+}
+
+public void AssertValues(String Expected, String Actual, String PassMessage, String FailureMessage){
+ if(Expected != null &amp;&amp; Expected.equals(Actual)){
+ log.info(PassMessage);
+ }
+ else{
+ vars.put(&quot;AssertionFailure&quot;,&quot;true&quot;);
+ AssertionResult.setFailure(true);
+ String prevMsg = vars.get(&quot;FailureMsg&quot;) == null ? &quot;&quot; : vars.get(&quot;FailureMsg&quot;);
+ vars.put(&quot;FailureMsg&quot;, prevMsg + &quot;\n****ASSERTION FAILURE****** \n&quot; + FailureMessage + &quot; || EXPECTED: &quot; + Expected + &quot; || ACTUAL: &quot; + Actual + &quot;\n&quot;);
+ log.info(FailureMessage);
+ }
+}</stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+            </JSR223Assertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="6. MatchScore (CRUD &amp; rules)"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="6.1 POST /matchscore identical -&gt; Score 100 / Decision A" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/matchscore</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">[ { &quot;Id&quot;: 9003, &quot;Data1&quot;: &quot;Bruce Wayne&quot;, &quot;Data2&quot;: &quot;Bruce Wayne&quot;, &quot;DataType&quot;: &quot;Name&quot; } ]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49587">201</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Response Code and Body" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">vars.put(&apos;captured_responseCode&apos;, prev.getResponseCode());
+vars.put(&apos;captured_responseBody&apos;, prev.getResponseDataAsString());</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Score Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">ms-score</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].Score</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Decision Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">ms-decision</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].Decision</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">AssertValues(&quot;201&quot;,vars.get(&quot;captured_responseCode&quot;),&quot; The response code is as expected&quot;,&quot; The response code is not as expected&quot;);
+AssertValues(&quot;100&quot;,vars.get(&quot;ms-score&quot;),&quot; A perfect match scores 100&quot;,&quot; The perfect match score is wrong&quot;);
+AssertValues(&quot;A&quot;,vars.get(&quot;ms-decision&quot;),&quot; A perfect match is accepted&quot;,&quot; The decision should be A&quot;);
+
+logErrorMessage();
+
+public void logErrorMessage(){
+ if(vars.get(&quot;AssertionFailure&quot;) != null &amp;&amp; vars.get(&quot;AssertionFailure&quot;).equals(&quot;true&quot;)){
+ AssertionResult.setFailureMessage(vars.get(&quot;FailureMsg&quot;));
+ }
+ vars.put(&quot;FailureMsg&quot;,&quot;&quot;);
+ vars.put(&quot;AssertionFailure&quot;,&quot;&quot;);
+}
+
+public void AssertValues(String Expected, String Actual, String PassMessage, String FailureMessage){
+ if(Expected != null &amp;&amp; Expected.equals(Actual)){
+ log.info(PassMessage);
+ }
+ else{
+ vars.put(&quot;AssertionFailure&quot;,&quot;true&quot;);
+ AssertionResult.setFailure(true);
+ String prevMsg = vars.get(&quot;FailureMsg&quot;) == null ? &quot;&quot; : vars.get(&quot;FailureMsg&quot;);
+ vars.put(&quot;FailureMsg&quot;, prevMsg + &quot;\n****ASSERTION FAILURE****** \n&quot; + FailureMessage + &quot; || EXPECTED: &quot; + Expected + &quot; || ACTUAL: &quot; + Actual + &quot;\n&quot;);
+ log.info(FailureMessage);
+ }
+}</stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+            </JSR223Assertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="6.2 POST /matchscore mismatch -&gt; Decision R" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/matchscore</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">[ { &quot;Id&quot;: 9004, &quot;Data1&quot;: &quot;Diana Prince&quot;, &quot;Data2&quot;: &quot;Wonder Woman&quot;, &quot;DataType&quot;: &quot;Name&quot; } ]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49587">201</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Response Code and Body" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">vars.put(&apos;captured_responseCode&apos;, prev.getResponseCode());
+vars.put(&apos;captured_responseBody&apos;, prev.getResponseDataAsString());</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Decision Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">ms-decision</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].Decision</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">AssertValues(&quot;201&quot;,vars.get(&quot;captured_responseCode&quot;),&quot; The response code is as expected&quot;,&quot; The response code is not as expected&quot;);
+AssertValues(&quot;R&quot;,vars.get(&quot;ms-decision&quot;),&quot; Very different values are rejected&quot;,&quot; The decision should be R&quot;);
+
+logErrorMessage();
+
+public void logErrorMessage(){
+ if(vars.get(&quot;AssertionFailure&quot;) != null &amp;&amp; vars.get(&quot;AssertionFailure&quot;).equals(&quot;true&quot;)){
+ AssertionResult.setFailureMessage(vars.get(&quot;FailureMsg&quot;));
+ }
+ vars.put(&quot;FailureMsg&quot;,&quot;&quot;);
+ vars.put(&quot;AssertionFailure&quot;,&quot;&quot;);
+}
+
+public void AssertValues(String Expected, String Actual, String PassMessage, String FailureMessage){
+ if(Expected != null &amp;&amp; Expected.equals(Actual)){
+ log.info(PassMessage);
+ }
+ else{
+ vars.put(&quot;AssertionFailure&quot;,&quot;true&quot;);
+ AssertionResult.setFailure(true);
+ String prevMsg = vars.get(&quot;FailureMsg&quot;) == null ? &quot;&quot; : vars.get(&quot;FailureMsg&quot;);
+ vars.put(&quot;FailureMsg&quot;, prevMsg + &quot;\n****ASSERTION FAILURE****** \n&quot; + FailureMessage + &quot; || EXPECTED: &quot; + Expected + &quot; || ACTUAL: &quot; + Actual + &quot;\n&quot;);
+ log.info(FailureMessage);
+ }
+}</stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+            </JSR223Assertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="6.3 GET /matchscore/{id}" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/matchscore/9003</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Response Code and Body" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">vars.put(&apos;captured_responseCode&apos;, prev.getResponseCode());
+vars.put(&apos;captured_responseBody&apos;, prev.getResponseDataAsString());</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="DataType Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">ms-datatype</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].DataType</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">AssertValues(&quot;200&quot;,vars.get(&quot;captured_responseCode&quot;),&quot; The response code is as expected&quot;,&quot; The response code is not as expected&quot;);
+AssertValues(&quot;Name&quot;,vars.get(&quot;ms-datatype&quot;),&quot; The stored DataType round-trips&quot;,&quot; The stored DataType is wrong&quot;);
+
+logErrorMessage();
+
+public void logErrorMessage(){
+ if(vars.get(&quot;AssertionFailure&quot;) != null &amp;&amp; vars.get(&quot;AssertionFailure&quot;).equals(&quot;true&quot;)){
+ AssertionResult.setFailureMessage(vars.get(&quot;FailureMsg&quot;));
+ }
+ vars.put(&quot;FailureMsg&quot;,&quot;&quot;);
+ vars.put(&quot;AssertionFailure&quot;,&quot;&quot;);
+}
+
+public void AssertValues(String Expected, String Actual, String PassMessage, String FailureMessage){
+ if(Expected != null &amp;&amp; Expected.equals(Actual)){
+ log.info(PassMessage);
+ }
+ else{
+ vars.put(&quot;AssertionFailure&quot;,&quot;true&quot;);
+ AssertionResult.setFailure(true);
+ String prevMsg = vars.get(&quot;FailureMsg&quot;) == null ? &quot;&quot; : vars.get(&quot;FailureMsg&quot;);
+ vars.put(&quot;FailureMsg&quot;, prevMsg + &quot;\n****ASSERTION FAILURE****** \n&quot; + FailureMessage + &quot; || EXPECTED: &quot; + Expected + &quot; || ACTUAL: &quot; + Actual + &quot;\n&quot;);
+ log.info(FailureMessage);
+ }
+}</stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+            </JSR223Assertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="6.4 POST /matchscore invalid DataType -&gt; 422" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/matchscore</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">[ { &quot;Id&quot;: 9010, &quot;Data1&quot;: &quot;A&quot;, &quot;Data2&quot;: &quot;B&quot;, &quot;DataType&quot;: &quot;N&quot; } ]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="51572">422</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="7. Buggy endpoints (documenting defects)" enabled="true"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="7.1 BUG POST /buggy/keys empty -&gt; should be 400" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/buggy/keys</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">[]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion (expects 400 - documents defect)" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="51508">400</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message">DEFECT: /buggy/keys accepts an empty array instead of returning 400.</stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="7.2 BUG POST /buggy/matchscore -&gt; Data1/Data2 must not be swapped" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/buggy/matchscore</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">[ { &quot;Id&quot;: 7001, &quot;Data1&quot;: &quot;ALPHA&quot;, &quot;Data2&quot;: &quot;BETA&quot;, &quot;DataType&quot;: &quot;Name&quot; } ]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Response Code and Body" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">vars.put(&apos;captured_responseCode&apos;, prev.getResponseCode());
+vars.put(&apos;captured_responseBody&apos;, prev.getResponseDataAsString());</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Data1 Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">bug-d1</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].Data1</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Data2 Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">bug-d2</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].Data2</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion (documents defect)" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">AssertValues(&quot;ALPHA&quot;,vars.get(&quot;bug-d1&quot;),&quot; Data1 is echoed correctly&quot;,&quot; DEFECT: Data1 and Data2 are swapped in the response&quot;);
+AssertValues(&quot;BETA&quot;,vars.get(&quot;bug-d2&quot;),&quot; Data2 is echoed correctly&quot;,&quot; DEFECT: Data1 and Data2 are swapped in the response&quot;);
+
+logErrorMessage();
+
+public void logErrorMessage(){
+ if(vars.get(&quot;AssertionFailure&quot;) != null &amp;&amp; vars.get(&quot;AssertionFailure&quot;).equals(&quot;true&quot;)){
+ AssertionResult.setFailureMessage(vars.get(&quot;FailureMsg&quot;));
+ }
+ vars.put(&quot;FailureMsg&quot;,&quot;&quot;);
+ vars.put(&quot;AssertionFailure&quot;,&quot;&quot;);
+}
+
+public void AssertValues(String Expected, String Actual, String PassMessage, String FailureMessage){
+ if(Expected != null &amp;&amp; Expected.equals(Actual)){
+ log.info(PassMessage);
+ }
+ else{
+ vars.put(&quot;AssertionFailure&quot;,&quot;true&quot;);
+ AssertionResult.setFailure(true);
+ String prevMsg = vars.get(&quot;FailureMsg&quot;) == null ? &quot;&quot; : vars.get(&quot;FailureMsg&quot;);
+ vars.put(&quot;FailureMsg&quot;, prevMsg + &quot;\n****ASSERTION FAILURE****** \n&quot; + FailureMessage + &quot; || EXPECTED: &quot; + Expected + &quot; || ACTUAL: &quot; + Actual + &quot;\n&quot;);
+ log.info(FailureMessage);
+ }
+}</stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+            </JSR223Assertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="7.3 BUG GET /buggy/matchscore/{missing} -&gt; should be 404" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/buggy/matchscore/999999</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion (expects 404 - documents defect)" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="51512">404</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message">DEFECT: /buggy/matchscore/{id} returns 200 with [] for a missing Id instead of 404.</stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="7.4 BUG DELETE /buggy/ranges/{missing} -&gt; should be 404" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/buggy/ranges/999999</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">DELETE</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion (expects 404 - documents defect)" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="51512">404</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message">DEFECT: /buggy/ranges/{id} reports success even when nothing was deleted.</stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="7.5 BUG GET /buggy/echo -&gt; must not leak internals" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/buggy/echo</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Response Code and Body" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">vars.put(&apos;captured_responseCode&apos;, prev.getResponseCode());
+vars.put(&apos;captured_responseBody&apos;, prev.getResponseDataAsString());</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion (documents defect)" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">import groovy.json.JsonSlurper;
+def body = new JsonSlurper().parseText(vars.get(&quot;captured_responseBody&quot;));
+boolean leaks = false;
+if(body instanceof List &amp;&amp; body.size() &gt; 0){
+ def first = body.get(0);
+ leaks = first.containsKey(&quot;storage_path&quot;) || first.containsKey(&quot;debug_token&quot;);
+}
+if(leaks){
+ AssertionResult.setFailure(true);
+ AssertionResult.setFailureMessage(&quot;DEFECT: /buggy/echo leaks storage_path or debug_token (information disclosure)&quot;);
+} else {
+ log.info(&quot;No internal fields leaked&quot;);
+}</stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+            </JSR223Assertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="8. Data-Driven MatchScore (CSV)" enabled="true"/>
+        <hashTree>
+          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="MatchScore CSV Loop" enabled="true">
+            <stringProp name="LoopController.loops">6</stringProp>
+            <boolProp name="LoopController.continue_forever">false</boolProp>
+          </LoopController>
+          <hashTree>
+            <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="MatchScore CSV Data" enabled="true">
+              <stringProp name="delimiter">,</stringProp>
+              <stringProp name="fileEncoding">UTF-8</stringProp>
+              <stringProp name="filename">../Test-API/postman/data-driven-matchscore.csv</stringProp>
+              <boolProp name="ignoreFirstLine">true</boolProp>
+              <boolProp name="quotedData">false</boolProp>
+              <boolProp name="recycle">false</boolProp>
+              <stringProp name="shareMode">shareMode.all</stringProp>
+              <boolProp name="stopThread">false</boolProp>
+              <stringProp name="variableNames">iterationId,data1,data2,dataType,expectedDecision,expectedMinScore</stringProp>
+            </CSVDataSet>
+            <hashTree/>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST /matchscore (iteration)" enabled="true">
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.path">${base_url}/matchscore</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">[ { &quot;Id&quot;: ${iterationId}, &quot;Data1&quot;: &quot;${data1}&quot;, &quot;Data2&quot;: &quot;${data2}&quot;, &quot;DataType&quot;: &quot;${dataType}&quot; } ]</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">workshop</stringProp>
+                    <stringProp name="Header.value">MadanBhandari</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="49587">201</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">16</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Response Code and Body" enabled="true">
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="script">vars.put(&apos;captured_responseCode&apos;, prev.getResponseCode());
+vars.put(&apos;captured_responseBody&apos;, prev.getResponseDataAsString());</stringProp>
+              </JSR223PostProcessor>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Score Extractor" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">ms-score</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].Score</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Decision Extractor" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">ms-decision</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].Decision</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+              <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion" enabled="true">
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="script">AssertValues(&quot;201&quot;,vars.get(&quot;captured_responseCode&quot;),&quot; The response code is as expected&quot;,&quot; The response code is not as expected&quot;);
+AssertValues(vars.get(&quot;expectedDecision&quot;),vars.get(&quot;ms-decision&quot;),&quot; The Decision matches the CSV expectation&quot;,&quot; The Decision does not match the CSV expectation&quot;);
+int actualScore = 0; int minScore = 0;
+try { actualScore = Integer.parseInt(vars.get(&quot;ms-score&quot;)); } catch(Exception e) {}
+try { minScore = Integer.parseInt(vars.get(&quot;expectedMinScore&quot;)); } catch(Exception e) {}
+if(actualScore &lt; minScore){
+ vars.put(&quot;AssertionFailure&quot;,&quot;true&quot;);
+ AssertionResult.setFailure(true);
+ String prevMsg = vars.get(&quot;FailureMsg&quot;) == null ? &quot;&quot; : vars.get(&quot;FailureMsg&quot;);
+ vars.put(&quot;FailureMsg&quot;, prevMsg + &quot;\nScore &quot; + actualScore + &quot; is below the CSV minimum &quot; + minScore + &quot;\n&quot;);
+}
+
+logErrorMessage();
+
+public void logErrorMessage(){
+ if(vars.get(&quot;AssertionFailure&quot;) != null &amp;&amp; vars.get(&quot;AssertionFailure&quot;).equals(&quot;true&quot;)){
+ AssertionResult.setFailureMessage(vars.get(&quot;FailureMsg&quot;));
+ }
+ vars.put(&quot;FailureMsg&quot;,&quot;&quot;);
+ vars.put(&quot;AssertionFailure&quot;,&quot;&quot;);
+}
+
+public void AssertValues(String Expected, String Actual, String PassMessage, String FailureMessage){
+ if(Expected != null &amp;&amp; Expected.equals(Actual)){
+ log.info(PassMessage);
+ }
+ else{
+ vars.put(&quot;AssertionFailure&quot;,&quot;true&quot;);
+ AssertionResult.setFailure(true);
+ String prevMsg = vars.get(&quot;FailureMsg&quot;) == null ? &quot;&quot; : vars.get(&quot;FailureMsg&quot;);
+ vars.put(&quot;FailureMsg&quot;, prevMsg + &quot;\n****ASSERTION FAILURE****** \n&quot; + FailureMessage + &quot; || EXPECTED: &quot; + Expected + &quot; || ACTUAL: &quot; + Actual + &quot;\n&quot;);
+ log.info(FailureMessage);
+ }
+}</stringProp>
+                <stringProp name="scriptLanguage">groovy</stringProp>
+              </JSR223Assertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="9. Data-Driven Error status codes (CSV)" enabled="true"/>
+        <hashTree>
+          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Error Codes CSV Loop" enabled="true">
+            <stringProp name="LoopController.loops">9</stringProp>
+            <boolProp name="LoopController.continue_forever">false</boolProp>
+          </LoopController>
+          <hashTree>
+            <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Error Codes CSV Data" enabled="true">
+              <stringProp name="delimiter">,</stringProp>
+              <stringProp name="fileEncoding">UTF-8</stringProp>
+              <stringProp name="filename">../Test-API/postman/data-driven-status-codes.csv</stringProp>
+              <boolProp name="ignoreFirstLine">true</boolProp>
+              <boolProp name="quotedData">false</boolProp>
+              <boolProp name="recycle">false</boolProp>
+              <stringProp name="shareMode">shareMode.all</stringProp>
+              <boolProp name="stopThread">false</boolProp>
+              <stringProp name="variableNames">errorCode</stringProp>
+            </CSVDataSet>
+            <hashTree/>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET /error/{errorCode}" enabled="true">
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.path">${base_url}/error/${errorCode}</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">workshop</stringProp>
+                    <stringProp name="Header.value">MadanBhandari</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Response Code and Body" enabled="true">
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="script">vars.put(&apos;captured_responseCode&apos;, prev.getResponseCode());
+vars.put(&apos;captured_responseBody&apos;, prev.getResponseDataAsString());</stringProp>
+              </JSR223PostProcessor>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Envelope Status Extractor" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">err-status</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.status</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+              <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion" enabled="true">
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="script">AssertValues(vars.get(&quot;errorCode&quot;),vars.get(&quot;captured_responseCode&quot;),&quot; The HTTP status echoes the CSV code&quot;,&quot; The HTTP status does not match the CSV code&quot;);
+AssertValues(vars.get(&quot;errorCode&quot;),vars.get(&quot;err-status&quot;),&quot; The envelope status matches the URL code&quot;,&quot; The envelope status does not match the URL code&quot;);
+
+logErrorMessage();
+
+public void logErrorMessage(){
+ if(vars.get(&quot;AssertionFailure&quot;) != null &amp;&amp; vars.get(&quot;AssertionFailure&quot;).equals(&quot;true&quot;)){
+ AssertionResult.setFailureMessage(vars.get(&quot;FailureMsg&quot;));
+ }
+ vars.put(&quot;FailureMsg&quot;,&quot;&quot;);
+ vars.put(&quot;AssertionFailure&quot;,&quot;&quot;);
+}
+
+public void AssertValues(String Expected, String Actual, String PassMessage, String FailureMessage){
+ if(Expected != null &amp;&amp; Expected.equals(Actual)){
+ log.info(PassMessage);
+ }
+ else{
+ vars.put(&quot;AssertionFailure&quot;,&quot;true&quot;);
+ AssertionResult.setFailure(true);
+ String prevMsg = vars.get(&quot;FailureMsg&quot;) == null ? &quot;&quot; : vars.get(&quot;FailureMsg&quot;);
+ vars.put(&quot;FailureMsg&quot;, prevMsg + &quot;\n****ASSERTION FAILURE****** \n&quot; + FailureMessage + &quot; || EXPECTED: &quot; + Expected + &quot; || ACTUAL: &quot; + Actual + &quot;\n&quot;);
+ log.info(FailureMessage);
+ }
+}</stringProp>
+                <stringProp name="scriptLanguage">groovy</stringProp>
+              </JSR223Assertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="10. Teardown" enabled="true"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="10.1 POST /admin/reset (final cleanup)" enabled="true">
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">${base_url}/admin/reset</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">workshop</stringProp>
+                  <stringProp name="Header.value">MadanBhandari</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="StatGraphVisualizer" testclass="ResultCollector" testname="Aggregate Graph" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
