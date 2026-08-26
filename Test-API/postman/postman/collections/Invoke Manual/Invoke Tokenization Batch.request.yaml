@@ -1,0 +1,44 @@
+$kind: http-request
+url: https://ratingapiuat-internal-batch-trigger-euir.iso.com/invokebatch
+method: POST
+body:
+  type: text
+  content: "{\r
+
+    \    \"jobName\": \"DataHubAnalysis-DIFV2-Tokenization\",\r
+
+    \    \"jobQueue\": \"TEST-priority\",\r
+
+    \    \"jobDefinition\": \"tokenization-file-processor-TEST\",\r
+
+    \    \"timeoutOverride\": \"3600\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"input_file\": \"tokenization_test_file_pass.csv_scrubberout_ssaout\",\r
+
+    \        \"dynamo_key\": \"DataHubAnalysis-DIFV2-Tokenization\",\r
+
+    \        \"INPUT_BUCKET\": \"s3://commerciallines-datastore-test-use/DataHubAnalysis/tokenization\",\r
+
+    \        \"output_file\": \"tokenization_test_file_pass.csv_tokenized\",\r
+
+    \        \"OUTPUT_BUCKET\": \"s3://commerciallines-datastore-test-use/DataHubAnalysis/tokenization/\",\r
+
+    \        \"DELETE_INPUT_FILE\": \"FALSE\",\r
+
+    \        \"BATCH_MODE\": \"Y\",\r
+
+    \        \"BATCH_SIZE\": \"20\",\r
+
+    \        \"logBatchStatusTracker\":\"false\",\r
+
+    \        \"logETLStatusTracker\":\"true\",\r
+
+    \        \"updateBatchTrackerApiUrl\": \"https://ratingapit-internal-data-ingestion.iso.com/updateetlstatus\"\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 15000

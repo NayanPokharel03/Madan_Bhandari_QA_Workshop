@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://ratingapi-internal-data-ingestion-use.iso.com/getpartitionframeworkconfig?app=MarketLandscape
+method: GET
+queryParams:
+  app: MarketLandscape
+settings: {}
+order: 1000

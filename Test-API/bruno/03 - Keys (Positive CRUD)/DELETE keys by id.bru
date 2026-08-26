@@ -1,0 +1,21 @@
+meta {
+  name: DELETE /keys/{id}
+  type: http
+  seq: 7
+}
+
+delete {
+  url: {{baseUrl}}/keys/{{keyId}}
+  body: none
+  auth: none
+}
+
+tests {
+  test('Status is 200', function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+  test('Reports deleted=true', function () {
+    const body = res.getBody();
+    expect(body[0]).to.include({ deleted: true, Id: Number(bru.getEnvVar('keyId')), store: 'keys' });
+  });
+}

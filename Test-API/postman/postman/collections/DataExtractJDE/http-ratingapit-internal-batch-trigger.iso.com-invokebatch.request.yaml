@@ -1,0 +1,29 @@
+$kind: http-request
+name: http://ratingapit-internal-batch-trigger.iso.com/invokebatch
+url: http://ratingapit-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: text
+  content: "{\r
+
+    \    \"jobName\": \"APLUS-JDE_EXTRACTOR_2023_12_04\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"pentaho-apcdppde-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \                \"log_file\": \"/data/logs/APlus.Property.Claims.Batch/TEST/BCP/TEST\",\r
+
+    \                \"JOB_STEP\": \"jdeextractor\",\r
+
+    \                \"DATE\":\"2023-11-29\"\r
+
+    \                \r
+
+    \        }\r
+
+    }"
+settings: {}
+order: 1000

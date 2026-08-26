@@ -1,0 +1,8 @@
+$kind: http-request
+url: https://ratingapia-internal-data-ingestion.iso.com/deleteconfig?partitionKey=ingestion-config&sortKey=f352396a-1da4-44ff-bf94-c1d2d6a4a6ce
+method: DELETE
+queryParams:
+  partitionKey: ingestion-config
+  sortKey: f352396a-1da4-44ff-bf94-c1d2d6a4a6ce
+settings: {}
+order: 8000

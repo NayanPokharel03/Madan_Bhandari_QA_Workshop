@@ -1,0 +1,18 @@
+$kind: http-request
+url: https://ratingapi-internal-acceldata-pipeline-use.iso.com/endspan
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"status\": \"Success\",\r
+
+    \    \"service\": \"File_Splitter\",\r
+
+    \    \"batchId\": \"304\",\r
+
+    \    \"pipelineId\": 1\r
+
+    }"
+settings: {}
+order: 4000

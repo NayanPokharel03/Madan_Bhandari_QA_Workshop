@@ -1,0 +1,130 @@
+$kind: http-request
+url: https://ratingapiuat-internal-data-ingestion.iso.com/addsftpschedule
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \        \"recordType\": \"sftp-schedule\",\r
+
+    \        \"sortKey\": \"db-dynamodb-datahubanalysis-test\",\r
+
+    \        \"application\": \"DataHubAnalysis\",\r
+
+    \        \"destinationBucket\": \"ratings-ingestion-uat-use/landing/DataHubAnalysis/test\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"UAT-general\",\r
+
+    \        \"awsBatchJobDefinition\": \"datahub-dynamodb-exporter-batch-UAT\",\r
+
+    \        \"awsBatchJobName\": \"DataHubAnalyis-DynamodbImproter\",\r
+
+    \        \"delimiter\": \",\",\r
+
+    \        \"timestamp\": \"Mon Dec 11 16:30:43 UTC 2023\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"criticalApp\": false,\r
+
+    \        \"cronExpression\": \"0 0 6 ? * MON *\",\r
+
+    \        \"cronTimeZone\": \"America/New_York\",\r
+
+    \        \"lastRunMilliseconds\": 1702311921767,\r
+
+    \        \"disabled\": false,\r
+
+    \        \"strategy\": \"DB_DYNAMODB_FULL_REFRESH_STRATEGY\",\r
+
+    \        \"remoteFolders\": \"exchange-preference-uat\",\r
+
+    \        \"bypassCreds\": true,\r
+
+    \        \"generateFileId\": true,\r
+
+    \        \"awsRegion\": \"us-east-1\",\r
+
+    \        \"referenceTimeMilliseconds\": 1702312242758,\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"batchSize\": 0,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"disableCSV\": false,\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": false,\r
+
+    \        \"logETLStatusTracker\": false,\r
+
+    \        \"isPrefixZipFileName\": false,\r
+
+    \        \"auroraOffsetModeValue\": 0,\r
+
+    \        \"awsBatchTimeoutOverride\": 0,\r
+
+    \        \"useAcceldata\": false,\r
+
+    \        \"isEndOfPipeline\": false,\r
+
+    \        \"automateDistribution\": false,\r
+
+    \        \"deleteAfterExtract\": false\r
+
+    \    }"
+settings: {}
+order: 2000

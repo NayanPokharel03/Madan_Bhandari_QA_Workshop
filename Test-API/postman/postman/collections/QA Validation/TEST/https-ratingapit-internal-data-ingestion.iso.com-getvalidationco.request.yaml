@@ -1,0 +1,6 @@
+$kind: http-request
+name: https://ratingapit-internal-data-ingestion.iso.com/getvalidationconfig
+url: https://ratingapit-internal-data-ingestion.iso.com/getvalidationconfig
+method: GET
+settings: {}
+order: 1000

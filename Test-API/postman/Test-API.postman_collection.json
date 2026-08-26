@@ -1,0 +1,1207 @@
+{
+  "info": {
+    "_postman_id": "9d1c8f7e-6a3b-4b0e-b6a2-2c9f7a2b5501",
+    "name": "Test-API - QA Workshop",
+    "description": "Automated Postman collection covering health, CRUD, validation, idempotency, buggy endpoints, and two data-driven flows (matchscore + error status codes) for the FastAPI Test-API. Requires environment 'Test-API - Local'.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "01 - Health & Metadata",
+      "item": [
+        {
+          "name": "GET /healthcheck",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is a JSON array with one item', function () {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body).to.be.an('array').with.lengthOf(1);",
+                  "});",
+                  "pm.test('Reports Healthy', function () {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body[0]).to.have.property('status', 'Healthy');",
+                  "    pm.expect(body[0]).to.have.property('message', 'Health check passed');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/healthcheck",
+              "host": ["{{baseUrl}}"],
+              "path": ["healthcheck"]
+            }
+          }
+        },
+        {
+          "name": "GET /version",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Version metadata present', function () {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body).to.be.an('array').with.lengthOf(1);",
+                  "    pm.expect(body[0]).to.have.property('name', 'Test-API');",
+                  "    pm.expect(body[0]).to.have.property('version').that.is.a('string');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/version",
+              "host": ["{{baseUrl}}"],
+              "path": ["version"]
+            }
+          }
+        },
+        {
+          "name": "GET /stats",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Exposes counts for all three stores', function () {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body).to.be.an('array').with.lengthOf(1);",
+                  "    ['keys', 'ranges', 'matchscore'].forEach(function (store) {",
+                  "        pm.expect(body[0]).to.have.property(store).that.is.a('number');",
+                  "    });",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/stats",
+              "host": ["{{baseUrl}}"],
+              "path": ["stats"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "02 - Setup: Reset stores",
+      "item": [
+        {
+          "name": "POST /admin/reset (wipe all)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Every store reported', function () {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body).to.be.an('array').with.lengthOf(1);",
+                  "    ['keys', 'ranges', 'matchscore'].forEach(function (s) {",
+                  "        pm.expect(body[0]).to.have.property(s);",
+                  "    });",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/admin/reset",
+              "host": ["{{baseUrl}}"],
+              "path": ["admin", "reset"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "03 - Keys (Positive CRUD)",
+      "item": [
+        {
+          "name": "POST /keys (create)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 201', function () { pm.response.to.have.status(201); });",
+                  "const body = pm.response.json();",
+                  "pm.test('Returns array with generated Keys', function () {",
+                  "    pm.expect(body).to.be.an('array').with.lengthOf(1);",
+                  "    pm.expect(body[0]).to.have.property('Keys').that.is.an('array').with.length.above(0);",
+                  "    pm.expect(body[0]).to.include({ Id: Number(pm.environment.get('keyId')), Data: 'BRUCE WAYNE', DataType: 'N' });",
+                  "});",
+                  "pm.collectionVariables.set('lastKeys', JSON.stringify(body[0].Keys));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  { \"Id\": {{keyId}}, \"Data\": \"BRUCE WAYNE\", \"DataType\": \"N\" }\n]",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/keys",
+              "host": ["{{baseUrl}}"],
+              "path": ["keys"]
+            }
+          }
+        },
+        {
+          "name": "POST /keys (idempotent re-run, same payload)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 201 on repeat with identical payload', function () { pm.response.to.have.status(201); });",
+                  "pm.test('Generated Keys are stable across identical re-posts', function () {",
+                  "    const body = pm.response.json();",
+                  "    const previous = JSON.parse(pm.collectionVariables.get('lastKeys') || '[]');",
+                  "    pm.expect(body[0].Keys).to.eql(previous);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  { \"Id\": {{keyId}}, \"Data\": \"BRUCE WAYNE\", \"DataType\": \"N\" }\n]",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/keys",
+              "host": ["{{baseUrl}}"],
+              "path": ["keys"]
+            }
+          }
+        },
+        {
+          "name": "GET /keys (list)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('List contains the created Id', function () {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body).to.be.an('array');",
+                  "    const target = Number(pm.environment.get('keyId'));",
+                  "    pm.expect(body.map(function (r) { return r.Id; })).to.include(target);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/keys",
+              "host": ["{{baseUrl}}"],
+              "path": ["keys"]
+            }
+          }
+        },
+        {
+          "name": "GET /keys/{id}",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Returns the stored record', function () {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body).to.be.an('array').with.lengthOf(1);",
+                  "    pm.expect(body[0]).to.include({ Id: Number(pm.environment.get('keyId')), DataType: 'N' });",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/keys/{{keyId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["keys", "{{keyId}}"]
+            }
+          }
+        },
+        {
+          "name": "PUT /keys/{id} (full replace)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Body reflects the replacement values', function () {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body[0]).to.include({ Id: Number(pm.environment.get('keyId')), Data: 'CLARK KENT', DataType: 'N' });",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"Id\": {{keyId}}, \"Data\": \"CLARK KENT\", \"DataType\": \"N\" }",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/keys/{{keyId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["keys", "{{keyId}}"]
+            }
+          }
+        },
+        {
+          "name": "PATCH /keys/{id} (partial update)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Only Data changed', function () {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body[0]).to.include({ Data: 'CLARK J. KENT', DataType: 'N' });",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"Data\": \"CLARK J. KENT\" }",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/keys/{{keyId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["keys", "{{keyId}}"]
+            }
+          }
+        },
+        {
+          "name": "DELETE /keys/{id}",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Reports deleted=true', function () {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body[0]).to.include({ deleted: true, Id: Number(pm.environment.get('keyId')), store: 'keys' });",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/keys/{{keyId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["keys", "{{keyId}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "04 - Keys (Negative & Validation)",
+      "item": [
+        {
+          "name": "POST /keys [] -> 400 empty array",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 400', function () { pm.response.to.have.status(400); });",
+                  "pm.test('Standard error envelope', function () {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body).to.include({ error: true, status: 400 });",
+                  "    pm.expect(body).to.have.property('timestamp');",
+                  "    pm.expect(body).to.have.property('path', '/keys');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "[]",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/keys",
+              "host": ["{{baseUrl}}"],
+              "path": ["keys"]
+            }
+          }
+        },
+        {
+          "name": "POST /keys duplicate Ids in body -> 400",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 400', function () { pm.response.to.have.status(400); });",
+                  "pm.test('Message mentions duplicate Ids', function () {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body.message.toLowerCase()).to.include('duplicate');",
+                  "    pm.expect(body.details).to.have.property('duplicate_ids');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  { \"Id\": 8001, \"Data\": \"A\", \"DataType\": \"N\" },\n  { \"Id\": 8001, \"Data\": \"B\", \"DataType\": \"N\" }\n]",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/keys",
+              "host": ["{{baseUrl}}"],
+              "path": ["keys"]
+            }
+          }
+        },
+        {
+          "name": "POST /keys invalid DataType -> 422",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 422', function () { pm.response.to.have.status(422); });",
+                  "pm.test('Envelope reports validation failure', function () {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body).to.include({ error: true, status: 422 });",
+                  "    pm.expect(body.details).to.be.an('array');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  { \"Id\": 8002, \"Data\": \"X\", \"DataType\": \"Z\" }\n]",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/keys",
+              "host": ["{{baseUrl}}"],
+              "path": ["keys"]
+            }
+          }
+        },
+        {
+          "name": "POST /keys extra field -> 422",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 422', function () { pm.response.to.have.status(422); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  { \"Id\": 8003, \"Data\": \"X\", \"DataType\": \"N\", \"Extra\": \"nope\" }\n]",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/keys",
+              "host": ["{{baseUrl}}"],
+              "path": ["keys"]
+            }
+          }
+        },
+        {
+          "name": "POST /keys Data > 200 chars -> 422",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.variables.set('longData', 'A'.repeat(201));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 422', function () { pm.response.to.have.status(422); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  { \"Id\": 8004, \"Data\": \"{{longData}}\", \"DataType\": \"N\" }\n]",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/keys",
+              "host": ["{{baseUrl}}"],
+              "path": ["keys"]
+            }
+          }
+        },
+        {
+          "name": "POST /keys same Id, DIFFERENT content -> 409 (create first)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 201 on first insert', function () { pm.response.to.have.status(201); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  { \"Id\": {{conflictId}}, \"Data\": \"ORIGINAL VALUE\", \"DataType\": \"N\" }\n]",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/keys",
+              "host": ["{{baseUrl}}"],
+              "path": ["keys"]
+            }
+          }
+        },
+        {
+          "name": "POST /keys same Id, DIFFERENT content -> 409 (conflict)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 409', function () { pm.response.to.have.status(409); });",
+                  "pm.test('Envelope reports content conflict', function () {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body).to.include({ error: true, status: 409 });",
+                  "    pm.expect(body.details).to.have.property('conflicts');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  { \"Id\": {{conflictId}}, \"Data\": \"DIFFERENT VALUE\", \"DataType\": \"N\" }\n]",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/keys",
+              "host": ["{{baseUrl}}"],
+              "path": ["keys"]
+            }
+          }
+        },
+        {
+          "name": "GET /keys/{unknown} -> 404",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 404', function () { pm.response.to.have.status(404); });",
+                  "pm.test('Envelope carries path and status', function () {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body).to.include({ error: true, status: 404 });",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/keys/999999",
+              "host": ["{{baseUrl}}"],
+              "path": ["keys", "999999"]
+            }
+          }
+        },
+        {
+          "name": "PUT /keys/{id} path/body Id mismatch -> 400",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 400', function () { pm.response.to.have.status(400); });",
+                  "pm.test('Details include both ids', function () {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body.details).to.have.property('path_id');",
+                  "    pm.expect(body.details).to.have.property('body_id');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"Id\": 12345, \"Data\": \"X\", \"DataType\": \"N\" }",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/keys/{{conflictId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["keys", "{{conflictId}}"]
+            }
+          }
+        },
+        {
+          "name": "DELETE /keys/{unknown} -> 404",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 404', function () { pm.response.to.have.status(404); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/keys/888888",
+              "host": ["{{baseUrl}}"],
+              "path": ["keys", "888888"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "05 - Ranges (CRUD)",
+      "item": [
+        {
+          "name": "POST /ranges (create)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 201', function () { pm.response.to.have.status(201); });",
+                  "pm.test('Every entry has Key and Value bounds', function () {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body[0].Ranges).to.be.an('array').with.length.above(0);",
+                  "    body[0].Ranges.forEach(function (r) {",
+                  "        pm.expect(r).to.have.all.keys('Key', 'Value');",
+                  "        pm.expect(r.Key <= r.Value).to.be.true;",
+                  "    });",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  { \"Id\": {{rangeId}}, \"Data\": \"BRUCE WAYNE\", \"DataType\": \"N\" }\n]",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ranges",
+              "host": ["{{baseUrl}}"],
+              "path": ["ranges"]
+            }
+          }
+        },
+        {
+          "name": "GET /ranges/{id}",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Record round-trips', function () {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body[0]).to.include({ Id: Number(pm.environment.get('rangeId')), Data: 'BRUCE WAYNE', DataType: 'N' });",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/ranges/{{rangeId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["ranges", "{{rangeId}}"]
+            }
+          }
+        },
+        {
+          "name": "PATCH /ranges/{id}",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('DataType changed to A', function () {",
+                  "    pm.expect(pm.response.json()[0].DataType).to.eql('A');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"DataType\": \"A\" }",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ranges/{{rangeId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["ranges", "{{rangeId}}"]
+            }
+          }
+        },
+        {
+          "name": "DELETE /ranges/{id}",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('deleted flag true', function () {",
+                  "    pm.expect(pm.response.json()[0]).to.include({ deleted: true, store: 'ranges' });",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/ranges/{{rangeId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["ranges", "{{rangeId}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "06 - MatchScore (CRUD & rules)",
+      "item": [
+        {
+          "name": "POST /matchscore identical -> Decision A, Score 100",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 201', function () { pm.response.to.have.status(201); });",
+                  "pm.test('Perfect match -> Score 100 / Decision A', function () {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body[0]).to.include({ Score: 100, Decision: 'A' });",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  { \"Id\": {{matchId}}, \"Data1\": \"Bruce Wayne\", \"Data2\": \"Bruce Wayne\", \"DataType\": \"Name\" }\n]",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/matchscore",
+              "host": ["{{baseUrl}}"],
+              "path": ["matchscore"]
+            }
+          }
+        },
+        {
+          "name": "POST /matchscore mismatch -> Decision R",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 201', function () { pm.response.to.have.status(201); });",
+                  "pm.test('Very different values -> Decision R and Score < 85', function () {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body[0].Decision).to.eql('R');",
+                  "    pm.expect(body[0].Score).to.be.below(85);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  { \"Id\": 9004, \"Data1\": \"Diana Prince\", \"Data2\": \"Wonder Woman\", \"DataType\": \"Name\" }\n]",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/matchscore",
+              "host": ["{{baseUrl}}"],
+              "path": ["matchscore"]
+            }
+          }
+        },
+        {
+          "name": "GET /matchscore/{id}",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Stored record matches original', function () {",
+                  "    pm.expect(pm.response.json()[0]).to.include({ Id: Number(pm.environment.get('matchId')), DataType: 'Name' });",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/matchscore/{{matchId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["matchscore", "{{matchId}}"]
+            }
+          }
+        },
+        {
+          "name": "POST /matchscore invalid DataType -> 422",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 422', function () { pm.response.to.have.status(422); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  { \"Id\": 9010, \"Data1\": \"A\", \"Data2\": \"B\", \"DataType\": \"N\" }\n]",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/matchscore",
+              "host": ["{{baseUrl}}"],
+              "path": ["matchscore"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "07 - Buggy endpoints (documenting defects)",
+      "description": "These tests assert the CORRECT expected behavior. They intentionally FAIL against the current buggy implementations so the defects are visible in the run report.",
+      "item": [
+        {
+          "name": "BUG POST /buggy/keys empty -> should be 400",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Expected: empty array rejected with 400', function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "[]",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/buggy/keys",
+              "host": ["{{baseUrl}}"],
+              "path": ["buggy", "keys"]
+            }
+          }
+        },
+        {
+          "name": "BUG POST /buggy/matchscore -> Data1/Data2 should not be swapped",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Response Data1 must equal request Data1', function () {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body[0].Data1).to.eql('ALPHA');",
+                  "    pm.expect(body[0].Data2).to.eql('BETA');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  { \"Id\": 7001, \"Data1\": \"ALPHA\", \"Data2\": \"BETA\", \"DataType\": \"Name\" }\n]",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/buggy/matchscore",
+              "host": ["{{baseUrl}}"],
+              "path": ["buggy", "matchscore"]
+            }
+          }
+        },
+        {
+          "name": "BUG GET /buggy/matchscore/{missing} -> should be 404",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Missing Id must return 404', function () {",
+                  "    pm.response.to.have.status(404);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/buggy/matchscore/999999",
+              "host": ["{{baseUrl}}"],
+              "path": ["buggy", "matchscore", "999999"]
+            }
+          }
+        },
+        {
+          "name": "BUG DELETE /buggy/ranges/{missing} -> should be 404",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Deleting a non-existent Id must return 404', function () {",
+                  "    pm.response.to.have.status(404);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/buggy/ranges/999999",
+              "host": ["{{baseUrl}}"],
+              "path": ["buggy", "ranges", "999999"]
+            }
+          }
+        },
+        {
+          "name": "BUG GET /buggy/echo -> should not leak internals",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Response must not leak storage_path or debug_token', function () {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body[0]).to.not.have.property('storage_path');",
+                  "    pm.expect(body[0]).to.not.have.property('debug_token');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/buggy/echo",
+              "host": ["{{baseUrl}}"],
+              "path": ["buggy", "echo"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "08 - Data-Driven: MatchScore (CSV)",
+      "description": "Attach postman/data-driven-matchscore.csv in Collection Runner. The Id per iteration is taken from the CSV column 'iterationId' so re-runs are safe (and idempotent when identical).",
+      "item": [
+        {
+          "name": "POST /matchscore (iteration)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 201', function () { pm.response.to.have.status(201); });",
+                  "const body = pm.response.json();",
+                  "const expectedDecision = pm.iterationData.get('expectedDecision');",
+                  "const expectedMinScore = Number(pm.iterationData.get('expectedMinScore'));",
+                  "pm.test('Decision matches CSV expectation: ' + expectedDecision, function () {",
+                  "    pm.expect(body[0].Decision).to.eql(expectedDecision);",
+                  "});",
+                  "pm.test('Score respects the CSV minimum: >= ' + expectedMinScore, function () {",
+                  "    pm.expect(body[0].Score).to.be.at.least(expectedMinScore);",
+                  "});",
+                  "pm.test('Echoed body preserves DataType', function () {",
+                  "    pm.expect(body[0].DataType).to.eql(pm.iterationData.get('dataType'));",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"Id\": {{iterationId}},\n    \"Data1\": \"{{data1}}\",\n    \"Data2\": \"{{data2}}\",\n    \"DataType\": \"{{dataType}}\"\n  }\n]",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/matchscore",
+              "host": ["{{baseUrl}}"],
+              "path": ["matchscore"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "09 - Data-Driven: Error status codes (CSV)",
+      "description": "Attach postman/data-driven-status-codes.csv in Collection Runner. Iterates 4xx/5xx codes and asserts /error/{code} echoes them.",
+      "item": [
+        {
+          "name": "GET /error/{errorCode}",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const expected = Number(pm.iterationData.get('errorCode'));",
+                  "pm.test('Returns expected status code: ' + expected, function () {",
+                  "    pm.expect(pm.response.code).to.eql(expected);",
+                  "});",
+                  "pm.test('Envelope status field matches URL code', function () {",
+                  "    pm.expect(pm.response.json()).to.include({ error: true, status: expected });",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/error/{{errorCode}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["error", "{{errorCode}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "10 - Teardown",
+      "item": [
+        {
+          "name": "POST /admin/reset (final cleanup)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status is 200', function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/admin/reset",
+              "host": ["{{baseUrl}}"],
+              "path": ["admin", "reset"]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "if (!pm.environment.get('baseUrl')) {",
+          "    console.warn('baseUrl not set; falling back to http://127.0.0.1:8000');",
+          "    pm.environment.set('baseUrl', 'http://127.0.0.1:8000');",
+          "}"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "pm.test('Response is valid JSON', function () {",
+          "    pm.expect(function () { pm.response.json(); }).to.not.throw();",
+          "});"
+        ]
+      }
+    }
+  ],
+  "variable": [
+    { "key": "lastKeys", "value": "" }
+  ]
+}

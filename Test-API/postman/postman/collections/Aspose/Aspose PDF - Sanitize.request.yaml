@@ -1,0 +1,8 @@
+$kind: http-request
+url: https://ratingapit-internal-apose-pdf.iso.com/api/sanitize
+method: POST
+body:
+  type: file
+  content: {}
+settings: {}
+order: 2000

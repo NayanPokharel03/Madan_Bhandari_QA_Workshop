@@ -1,0 +1,26 @@
+$kind: http-request
+url: https://ratingapia-internal-data-ingestion.iso.com/addconversionconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \  {\r
+
+    \    \"recordType\": \"conversion-config\",\r
+
+    \    \"sortKey\": \"Parquet-Dev-Test\",\r
+
+    \    \"application\": \"BuildFax\",\r
+
+    \    \"datahubDatabase\": \"buildfax_datahub_test\",\r
+
+    \    \"datahubTablename\": \"tier1_property_data\",\r
+
+    \    \"tier1Bucket\": \"commerciallines-datahub-test-use\"\r
+
+    \  }\r
+
+    ]\r\n"
+settings: {}
+order: 2000

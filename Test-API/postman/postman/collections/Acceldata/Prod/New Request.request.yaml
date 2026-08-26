@@ -1,0 +1,5 @@
+$kind: http-request
+url: https://ratingapi-internal-acceldata-pipeline-usw.iso.com/healthcheck
+method: GET
+settings: {}
+order: 1000

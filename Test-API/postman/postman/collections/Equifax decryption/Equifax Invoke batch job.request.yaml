@@ -1,0 +1,26 @@
+$kind: http-request
+url: https://ratingapit-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"Equifax-FileProcess-test\",\r
+
+    \    \"jobQueue\": \"TEST-priority\",\r
+
+    \    \"jobDefinition\": \"python-equifax-decryption-batch-test\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"INPUT_FILE\": \"s3://personallines-datastore-test-use/Equifax/test/ec4cfa63-b9f5-480e-b046-473a49caf08c_222410a5-6453-4800-b165-8331b98a49fe_CreditHeader_20220411_001_001.csv.zip.pgp\",\r
+
+    \        \"OUTPUT_LOCATION\": \"s3://personallines-datastore-test-use/Equifax/output/\",\r
+
+    \        \"INPUT_FILENAME\": \"ec4cfa63-b9f5-480e-b046-473a49caf08c_222410a5-6453-4800-b165-8331b98a49fe_CreditHeader_20220411_001_001.csv.zip.pgp\"\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 2000

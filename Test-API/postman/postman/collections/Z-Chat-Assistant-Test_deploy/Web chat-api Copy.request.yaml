@@ -1,0 +1,23 @@
+$kind: http-request
+url: localhost:8000/chat
+method: POST
+queryParams:
+  - key: user_session_id
+    value: i43445-bnQKb4yXvJgpOxld
+    disabled: true
+  - key: query
+    value: null
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \    \"query\": \"How can you help me with?\",\r
+
+    \    \"user_id\": \"i43445\",\r
+
+    \    \"user_session_id\": \"i43445-XOSR1pMSlnYWFBkp\"\r
+
+    }"
+settings: {}
+order: 3000

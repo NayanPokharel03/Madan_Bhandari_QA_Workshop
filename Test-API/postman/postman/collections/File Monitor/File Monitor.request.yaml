@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://ratingapi-internal-data-ingestion-use.iso.com/getfilemonitoringconfig?sortKey=
+method: GET
+queryParams:
+  sortKey: ""
+settings: {}
+order: 1000

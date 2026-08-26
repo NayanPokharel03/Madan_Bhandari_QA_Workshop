@@ -1,0 +1,4083 @@
+$kind: http-example
+request:
+  url: https://ratingapi-internal-data-distribution-use.iso.com/getschedulerconfig
+  method: GET
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Server: awselb/2.0
+    Date: Tue, 02 Apr 2024 10:17:24 GMT
+    Content-Type: application/json
+    Content-Length: "111097"
+    Connection: keep-alive
+  body:
+    type: json
+    content: |-
+      [
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-ISO69_D52_PG14TBLE-Snowflake-Distribution-File-Level",
+              "timestamp": "Thu Nov 17 08:32:12 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-P14_RAWPG14_CW_Company-Snowflake-Distribution-File-Level",
+              "timestamp": "Thu Nov 17 08:32:12 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-P14_RAWPG14_CW_Group-Snowflake-Distribution-File-Level",
+              "timestamp": "Thu Nov 17 08:32:12 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-P14_RAWPG14_Company-Snowflake-Distribution-File-Level",
+              "timestamp": "Thu Nov 17 08:32:12 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-P14_RAWPG14_Group-Snowflake-Distribution-File-Level",
+              "timestamp": "Thu Nov 17 08:32:12 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-PCSF02-Snowflake-Distribution-File-Level",
+              "timestamp": "Tue Aug 30 06:11:59 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-PCSF03-Snowflake-Distribution-File-Level",
+              "timestamp": "Tue Aug 30 06:11:59 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-PCSF03A-Snowflake-Distribution-File-Level",
+              "timestamp": "Tue Aug 30 06:11:59 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-PCSF03B-Snowflake-Distribution-File-Level",
+              "timestamp": "Tue Aug 30 06:11:59 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-PCSF03C-Snowflake-Distribution-File-Level",
+              "timestamp": "Tue Aug 30 06:11:59 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-PCSF16-Snowflake-Distribution-File-Level",
+              "timestamp": "Tue Aug 30 06:11:59 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-PCSF17-Snowflake-Distribution-File-Level",
+              "timestamp": "Tue Aug 30 06:11:59 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-PCSUMINV-Snowflake-Distribution-File-Level",
+              "timestamp": "Tue Aug 30 06:11:59 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-Snowflake-Distribution-PCBF01-File-Level",
+              "timestamp": "Mon Aug 29 08:36:00 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-Snowflake-Distribution-PCBF02-File-Level",
+              "timestamp": "Mon Aug 29 08:36:03 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-Snowflake-Distribution-PCBF03-File-Level",
+              "timestamp": "Mon Aug 29 08:36:06 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-Snowflake-Distribution-PCBF04-File-Level",
+              "timestamp": "Mon Aug 29 08:36:09 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-Snowflake-Distribution-PCBF05-File-Level",
+              "timestamp": "Mon Aug 29 08:36:12 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-Snowflake-Distribution-PCBF06-File-Level",
+              "timestamp": "Mon Aug 29 08:36:16 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-Snowflake-Distribution-PCBF07-File-Level",
+              "timestamp": "Mon Aug 29 08:36:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-Snowflake-Distribution-PCBF08-File-Level",
+              "timestamp": "Mon Aug 29 08:36:20 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-Snowflake-Distribution-PCBF09-File-Level",
+              "timestamp": "Mon Aug 29 08:36:23 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-Snowflake-Distribution-PCBF10-File-Level",
+              "timestamp": "Tue Aug 30 06:15:33 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-Snowflake-Distribution-PCBF11-File-Level",
+              "timestamp": "Tue Aug 30 06:15:33 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-Snowflake-Distribution-PCBF12-File-Level",
+              "timestamp": "Tue Aug 30 06:15:33 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-Snowflake-Distribution-PCBF13-File-Level",
+              "timestamp": "Tue Aug 30 06:15:33 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-Snowflake-Distribution-PCBF14C-File-Level",
+              "timestamp": "Tue Aug 30 06:15:33 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-Snowflake-Distribution-PCBF14F-File-Level",
+              "timestamp": "Tue Aug 30 06:15:33 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-Snowflake-Distribution-PCBF15-File-Level",
+              "timestamp": "Tue Aug 30 06:15:33 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-Snowflake-Distribution-PCBF23-File-Level",
+              "timestamp": "Tue Aug 30 06:15:33 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "AMBest-Snowflake-Distribution-PCPF02-File-Level",
+              "timestamp": "Tue Aug 30 06:15:33 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "BuildFax-contractor-FileConversion",
+              "timestamp": "Tue Sep 20 06:28:58 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": true,
+              "awsBatchJobQueue": "PROD-Datahub-largedisk",
+              "awsBatchJobDefinition": "datahub-file-conversion-processor-prod",
+              "awsBatchJobName": "BuildFax-contractor-FileConversion",
+              "awsBatchEnvOverrides": {
+                  "DELETE_INPUT_FILE": "false",
+                  "CONVERSION_TYPE": "PARQUET_TO_CSV",
+                  "CONVERSION_KEY": "BuildFax-contractor-FileConversion",
+                  "OUTPUT_FILE": "BuildFax/contractor/load_timestamp_input/buildfax_contractor_output.csv",
+                  "OUTPUT_BUCKET": "s3://commerciallines-datastore-prod-use",
+                  "INPUT_FILE": "NULL",
+                  "INPUT_BUCKET": "NULL"
+              }
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "BuildFax-insights-FileConversion",
+              "timestamp": "Tue Sep 20 06:28:58 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": true,
+              "awsBatchJobQueue": "PROD-Datahub-largedisk",
+              "awsBatchJobDefinition": "datahub-file-conversion-processor-prod",
+              "awsBatchJobName": "BuildFax-insights-FileConversion",
+              "awsBatchEnvOverrides": {
+                  "DELETE_INPUT_FILE": "false",
+                  "CONVERSION_TYPE": "PARQUET_TO_CSV",
+                  "CONVERSION_KEY": "BuildFax-insights-FileConversion",
+                  "OUTPUT_FILE": "BuildFax/insights/load_timestamp_input/buildfax_insights_output.csv",
+                  "OUTPUT_BUCKET": "s3://commerciallines-datastore-prod-use",
+                  "INPUT_FILE": "NULL",
+                  "INPUT_BUCKET": "NULL"
+              }
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "BuildFax-inspection-FileConversion",
+              "timestamp": "Tue Sep 20 06:28:58 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": true,
+              "awsBatchJobQueue": "PROD-Datahub-largedisk",
+              "awsBatchJobDefinition": "datahub-file-conversion-processor-prod",
+              "awsBatchJobName": "BuildFax-inspection-FileConversion",
+              "awsBatchEnvOverrides": {
+                  "DELETE_INPUT_FILE": "false",
+                  "CONVERSION_TYPE": "PARQUET_TO_CSV",
+                  "CONVERSION_KEY": "BuildFax-inspection-FileConversion",
+                  "OUTPUT_FILE": "BuildFax/inspection/load_timestamp_input/buildfax_inspection_output.csv",
+                  "OUTPUT_BUCKET": "s3://commerciallines-datastore-prod-use",
+                  "INPUT_FILE": "NULL",
+                  "INPUT_BUCKET": "NULL"
+              }
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "BuildFax-jd-metadata-FileConversion",
+              "timestamp": "Tue Sep 20 06:28:58 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": true,
+              "awsBatchJobQueue": "PROD-Datahub-largedisk",
+              "awsBatchJobDefinition": "datahub-file-conversion-processor-prod",
+              "awsBatchJobName": "BuildFax-jd-metadata-FileConversion",
+              "awsBatchEnvOverrides": {
+                  "DELETE_INPUT_FILE": "false",
+                  "CONVERSION_TYPE": "PARQUET_TO_CSV",
+                  "CONVERSION_KEY": "BuildFax-jd-metadata-FileConversion",
+                  "OUTPUT_FILE": "BuildFax/jd-metadata/load_timestamp_input/buildfax_jd_metadata_output.csv",
+                  "OUTPUT_BUCKET": "s3://commerciallines-datastore-prod-use",
+                  "INPUT_FILE": "NULL",
+                  "INPUT_BUCKET": "NULL"
+              }
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "BuildFax-permit-FileConversion",
+              "timestamp": "Tue Sep 20 06:28:58 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": true,
+              "awsBatchJobQueue": "PROD-Datahub-largedisk",
+              "awsBatchJobDefinition": "datahub-file-conversion-processor-prod",
+              "awsBatchJobName": "BuildFax-permit-FileConversion",
+              "awsBatchEnvOverrides": {
+                  "DELETE_INPUT_FILE": "false",
+                  "CONVERSION_TYPE": "PARQUET_TO_CSV",
+                  "CONVERSION_KEY": "BuildFax-permit-FileConversion",
+                  "OUTPUT_FILE": "BuildFax/permit/load_timestamp_input/buildfax_permit_output.csv",
+                  "OUTPUT_BUCKET": "s3://commerciallines-datastore-prod-use",
+                  "INPUT_FILE": "NULL",
+                  "INPUT_BUCKET": "NULL"
+              }
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "BuildFax-permit-and-contractor-FileConversion",
+              "timestamp": "Tue Sep 20 06:28:58 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": true,
+              "awsBatchJobQueue": "PROD-Datahub-largedisk",
+              "awsBatchJobDefinition": "datahub-file-conversion-processor-prod",
+              "awsBatchJobName": "BuildFax-permit-and-contractor-FileConversion",
+              "awsBatchEnvOverrides": {
+                  "DELETE_INPUT_FILE": "false",
+                  "CONVERSION_TYPE": "PARQUET_TO_CSV",
+                  "CONVERSION_KEY": "BuildFax-permit-and-contractor-FileConversion",
+                  "OUTPUT_FILE": "BuildFax/permit-and-contractor/load_timestamp_input/buildfax_permit-and-contractor_output.csv",
+                  "OUTPUT_BUCKET": "s3://commerciallines-datastore-prod-use",
+                  "INPUT_FILE": "NULL",
+                  "INPUT_BUCKET": "NULL"
+              }
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "BuildFax-permit-property-join-FileConversion",
+              "timestamp": "Tue Sep 20 06:28:58 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": true,
+              "awsBatchJobQueue": "PROD-Datahub-largedisk",
+              "awsBatchJobDefinition": "datahub-file-conversion-processor-prod",
+              "awsBatchJobName": "BuildFax-permit-property-join-FileConversion",
+              "awsBatchEnvOverrides": {
+                  "DELETE_INPUT_FILE": "false",
+                  "CONVERSION_TYPE": "PARQUET_TO_CSV",
+                  "CONVERSION_KEY": "BuildFax-permit-property-join-FileConversion",
+                  "OUTPUT_FILE": "BuildFax/permit-property-join/load_timestamp_input/buildfax_permit-property-join_output.csv",
+                  "OUTPUT_BUCKET": "s3://commerciallines-datastore-prod-use",
+                  "INPUT_FILE": "NULL",
+                  "INPUT_BUCKET": "NULL"
+              }
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "BuildFax-property-FileConversion",
+              "timestamp": "Tue Sep 20 06:28:58 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": true,
+              "awsBatchJobQueue": "PROD-Datahub-largedisk",
+              "awsBatchJobDefinition": "datahub-file-conversion-processor-prod",
+              "awsBatchJobName": "BuildFax-property-FileConversion",
+              "awsBatchEnvOverrides": {
+                  "DELETE_INPUT_FILE": "false",
+                  "CONVERSION_TYPE": "PARQUET_TO_CSV",
+                  "CONVERSION_KEY": "BuildFax-property-FileConversion",
+                  "OUTPUT_FILE": "BuildFax/property/load_timestamp_input/buildfax_property_output.csv",
+                  "OUTPUT_BUCKET": "s3://commerciallines-datastore-prod-use",
+                  "INPUT_FILE": "NULL",
+                  "INPUT_BUCKET": "NULL"
+              }
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Circulars-circ_filg-Distribution",
+              "timestamp": "Mon Oct 24 16:03:20 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Circulars-circ_prod-Distribution",
+              "timestamp": "Mon Oct 24 16:03:20 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Circulars-circ_serv-Distribution",
+              "timestamp": "Mon Oct 24 16:03:20 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Circulars-circ_st-Distribution",
+              "timestamp": "Mon Oct 24 16:03:20 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Circulars-v_actn_typ-Distribution",
+              "timestamp": "Mon Oct 24 16:03:20 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "DatahubAnalysis-Distribution-DIFV2-Tier1-Athena-Level",
+              "timestamp": "Tue Jan 18 14:13:59 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "DatahubAnalysis-Distribution-DIFV2-Tier1-File-Level",
+              "timestamp": "Tue Jan 18 14:13:59 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "DatahubAnalysis-Distribution-DIFV2-Tier2-Athena-Level",
+              "timestamp": "Tue Jan 18 14:13:59 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "DatahubAnalysis-Distribution-DIFV2-Tier2-File-Level",
+              "timestamp": "Tue Jan 18 14:13:59 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "DatahubAnalysis-Test-Parquet-Scheduler",
+              "timestamp": "Tue Mar 22 11:54:21 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": true,
+              "awsBatchJobQueue": "PROD-general",
+              "awsBatchJobDefinition": "datahub-file-conversion-processor-prod",
+              "awsBatchJobName": "FileConversion-DatahubAnalysis",
+              "awsBatchEnvOverrides": {
+                  "DELETE_INPUT_FILE": "false",
+                  "CONVERSION_TYPE": "PARQUET_TO_CSV",
+                  "CONVERSION_KEY": "DataHubAnalysis-Parquet-FileConversion",
+                  "OUTPUT_FILE": "DataHubAnalysis/parquet_test/splitter-input/test_parquet_output.csv",
+                  "OUTPUT_BUCKET": "s3://commerciallines-datastore-prod-usw",
+                  "INPUT_FILE": "NULL",
+                  "INPUT_BUCKET": "NULL"
+              }
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Equifax-API-Distribution-CreditHeader-Addresses",
+              "timestamp": "Wed Sep 08 06:11:55 UTC 2021",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Equifax-API-Distribution-CreditHeader-Master",
+              "timestamp": "Wed Sep 08 06:11:55 UTC 2021",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Equifax-API-Distribution-CreditHeader-Names",
+              "timestamp": "Wed Sep 08 06:11:55 UTC 2021",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Equifax-API-Distribution-Email",
+              "timestamp": "Wed Sep 08 06:11:55 UTC 2021",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Equifax-API-Distribution-Meta-CreditHeader",
+              "timestamp": "Wed Sep 08 06:11:55 UTC 2021",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Equifax-API-Distribution-Meta-Email",
+              "timestamp": "Wed Sep 08 06:11:55 UTC 2021",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Equifax-API-Distribution-Meta-Phone",
+              "timestamp": "Wed Sep 08 06:11:55 UTC 2021",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Equifax-API-Distribution-Phone",
+              "timestamp": "Wed Sep 08 06:11:55 UTC 2021",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Equifax-Auto2-Distribution-DriverLicense",
+              "timestamp": "Thu Jan 19 11:40:16 UTC 2023",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Equifax-Auto2-Distribution-Meta-DriverLicense",
+              "timestamp": "Wed Mar 08 21:38:02 UTC 2023",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Equifax-CDO-Distribution-CreditHeader-Addresses",
+              "timestamp": "Wed Sep 15 14:39:31 UTC 2021",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Equifax-CDO-Distribution-CreditHeader-Master",
+              "timestamp": "Wed Sep 15 14:39:31 UTC 2021",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Equifax-CDO-Distribution-CreditHeader-Names",
+              "timestamp": "Wed Sep 15 14:39:31 UTC 2021",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Equifax-CDO-Distribution-Email",
+              "timestamp": "Wed Sep 15 14:39:31 UTC 2021",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Equifax-CDO-Distribution-Phone",
+              "timestamp": "Wed Sep 15 14:39:31 UTC 2021",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Equifax-Jornaya-Distribution-Phone",
+              "timestamp": "Wed Nov 09 16:41:26 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Equifax-Nautilus-Distribution-CreditHeader-Addresses",
+              "timestamp": "Wed Sep 08 06:12:04 UTC 2021",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Equifax-Nautilus-Distribution-CreditHeader-Master",
+              "timestamp": "Wed Sep 08 06:12:04 UTC 2021",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Equifax-Nautilus-Distribution-CreditHeader-Names",
+              "timestamp": "Wed Sep 08 06:12:04 UTC 2021",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Equifax-Nautilus-Distribution-DriverLicense",
+              "timestamp": "Tue Oct 10 13:35:08 UTC 2023",
+              "timeIntervalHours": 0,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Equifax-Nautilus-Distribution-Email",
+              "timestamp": "Wed Sep 08 06:12:04 UTC 2021",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Equifax-Nautilus-Distribution-Phone",
+              "timestamp": "Wed Sep 08 06:12:04 UTC 2021",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Equifax-Snowflake-Distribution-CreditHeader-Addresses",
+              "timestamp": "Tue Feb 06 10:33:55 UTC 2024",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Equifax-Snowflake-Distribution-CreditHeader-Master",
+              "timestamp": "Tue Feb 06 10:33:55 UTC 2024",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Equifax-Snowflake-Distribution-CreditHeader-Names",
+              "timestamp": "Tue Feb 06 10:33:55 UTC 2024",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Equifax-Snowflake-Distribution-Email",
+              "timestamp": "Tue Feb 06 10:33:55 UTC 2024",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Equifax-Snowflake-Distribution-Phone",
+              "timestamp": "Tue Feb 06 10:33:55 UTC 2024",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "FlightDeck-Nautilus-Distribution-dbo-AssignmentGenerals",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "FlightDeck-Nautilus-Distribution-dbo-Billings",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "FlightDeck-Nautilus-Distribution-dbo-Capabilities",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "FlightDeck-Nautilus-Distribution-dbo-Companies",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "FlightDeck-Nautilus-Distribution-dbo-DeliveryFormats",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "FlightDeck-Nautilus-Distribution-dbo-DeliveryMethods",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "FlightDeck-Nautilus-Distribution-dbo-InsuranceLines",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "FlightDeck-Nautilus-Distribution-dbo-InsuredInterests",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "FlightDeck-Nautilus-Distribution-dbo-IsoCityPopulationZones",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "FlightDeck-Nautilus-Distribution-dbo-IsoCounties",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "FlightDeck-Nautilus-Distribution-dbo-Orders",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "FlightDeck-Nautilus-Distribution-dbo-OrdersExtension",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "FlightDeck-Nautilus-Distribution-dbo-ProductQualifiers",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "FlightDeck-Nautilus-Distribution-dbo-QuoteDeliveries",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "FlightDeck-Nautilus-Distribution-dbo-ReportTypes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "FlightDeck-Nautilus-Distribution-dbo-RiskIds",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "FlightDeck-Nautilus-Distribution-dbo-ServiceBillingInfos",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "FlightDeck-Nautilus-Distribution-dbo-ServiceTypes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "FlightDeck-Nautilus-Distribution-dbo-Services",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "FlightDeck-Nautilus-Distribution-dbo-States",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "FlightDeck-Nautilus-Distribution-dbo-Users",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "FlightDeck-Nautilus-Distribution-dbo-Workers",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-AdditionalRawDataValues",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-AlarmAndSupervisoryTests",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-BuildingConditionExcessSingleStories",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-BuildingConditions",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-CalculationSummaries",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-Comments",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-DryPipeValveTripTests",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-FirePumpTestResults",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-FirePumpTests",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-GeneralInformation",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-HydraulicDesignData",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-IntermediateValues",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-InternalSprinklerPipeConditions",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-NonSprinkleredObstructedAreas",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-OverAgeSprinklerTests",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-RackStorageObstructions",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-ReportAttachments",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-Reports",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-SprinklerSystemComponents",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-SprinklerSystemTests",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-SprinklerValveStatuses",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-Sprinklers",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-TwoInchDrainTests",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-TypesOfSystems",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-UsedNonSprinkleredObstructedAreas",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-WaterSupplies",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-WaterSupplyComments",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-WaterSupplyFrictionLossFittingsAndValves",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-WaterSupplyFrictionLosses",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-WaterSupplyHydraulics",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-WaterSupplyPipeSchedules",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Asgr-WaterSupplyTests",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Risks-AdditionDates",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Risks-CombustibleMezzanines",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Risks-CommentSegments",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Risks-Comments",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Risks-Exposures",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Risks-FireDivisionRisks",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Risks-FloorsAndRoofs",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Risks-InternalProtections",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Risks-OccupantHazardPhotos",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Risks-OccupantHazards",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Risks-OccupantLevels",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Risks-Occupants",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Risks-ReportAddresses",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Risks-ReportAttachments",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Risks-ReportHazards",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Risks-ReportPhotos",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Risks-ReportRelatedDates",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Risks-Reports",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Risks-SecondaryConstructions",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Risks-Walls",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Wind-Comments",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Wind-EnhancedWindRatingEligibilities",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Wind-EnvironmentsAndExposures",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Wind-Frameworks",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Wind-Reports",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Wind-RoofEnvelopes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Wind-SharedWindCharacteristicsRisks",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Wind-WallEnvelopes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Nautilus-Distribution-Wind-WindLossHistories",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_application_code",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_audit_log",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_auto_save_data",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_basement_exist_code",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_bbs_version",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_building",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_building_basic_survey",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_cladding_types_code",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_completed_survey_code",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_condition",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_construction_class_code",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_construction_validation",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_constructionkey",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_csp_code",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_csp_code_v2",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_customer",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_evidence_of_fire_sprinkler_code",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_foundation_material_code",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_foundation_shape_code",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_geomnicoverage",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_hyd_within_dist_code",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_occupant",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_occupant_v2",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_options",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_order",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_orderdetails",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_percentage_answers",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_photos",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_pmtx_export",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_pmtx_export_failures",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_questiongroup",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_questions",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_region",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_regionfrmap",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_riskaddress",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_risktracker",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_roof_geometry_code",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_roof_material_code",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_roof_structure_code",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_secondary_occup_code",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_secondary_occup_code_v2",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_section_lookup",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_status_code",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_supporting_wall_code",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_target_data",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Flightkit-Snowflake-Distribution-BBS_ODDS-fks_viewpoint_code",
+              "timestamp": "Tue Aug 01 13:09:05 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "HyundaiVin-Auto2-Hyundai-Distribution-File-Level",
+              "timestamp": "Fri Mar 22 12:11:51 UTC 2024",
+              "timeIntervalHours": 24,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "HyundaiVin-Auto2-Hyundai-Meta-Distribution-Athena-Level",
+              "timestamp": "Fri Feb 02 15:10:08 UTC 2024",
+              "timeIntervalHours": 24,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "HyundaiVin-CV-Non-FCRA-Customer-Distribution-Athena-Level",
+              "timestamp": "Mon Jan 22 09:13:05 UTC 2024",
+              "timeIntervalHours": 24,
+              "distributeByState": false,
+              "batchMode": false,
+              "subJobsDetails": [
+                  {
+                      "customPartitions": {
+                          "partition_client": "VIN_101"
+                      },
+                      "outputSubfolder": "VIN_101",
+                      "automationDistribution": false
+                  },
+                  {
+                      "customPartitions": {
+                          "partition_client": "VIN_102"
+                      },
+                      "outputSubfolder": "VIN_102",
+                      "automationDistribution": false
+                  },
+                  {
+                      "customPartitions": {
+                          "partition_client": "VIN_103"
+                      },
+                      "outputSubfolder": "VIN_103",
+                      "automationDistribution": false
+                  }
+              ]
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "ISOnet-Snowflake-UserInvite-Distribution",
+              "timestamp": "Tue Dec 20 20:23:22 UTC 2022",
+              "timeIntervalHours": 48,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "ISOnet-Userids-Distribution",
+              "timestamp": "Fri Mar 24 10:02:10 UTC 2023",
+              "timeIntervalHours": 24,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "ISOnet-customer_profile-Distribution",
+              "timestamp": "Thu Nov 17 16:33:01 UTC 2022",
+              "timeIntervalHours": 24,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "ISOnet-user_profile-Distribution",
+              "timestamp": "Thu Nov 17 16:33:01 UTC 2022",
+              "timeIntervalHours": 24,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "LCM-Tier2-File-Level",
+              "timestamp": "Thu Nov 10 08:48:08 UTC 2022",
+              "timeIntervalHours": 24,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "LMS-SF-DOC_DATA-Distribution",
+              "timestamp": "Tue Aug 02 15:59:57 UTC 2022",
+              "timeIntervalHours": 24,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "LMS-SF-TEXT_DATA-Distribution",
+              "timestamp": "Tue Aug 02 15:59:57 UTC 2022",
+              "timeIntervalHours": 24,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "LMS-SF-TRACK_DATA-Distribution",
+              "timestamp": "Tue Aug 02 15:59:57 UTC 2022",
+              "timeIntervalHours": 24,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Location-TerritoryDownload-Distribution-AC-Address",
+              "timestamp": "Wed Nov 23 14:03:25 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Location-TerritoryDownload-Distribution-AC-Zip",
+              "timestamp": "Wed Nov 23 14:03:25 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Location-TerritoryDownload-Distribution-AP-Address",
+              "timestamp": "Wed Nov 23 14:03:25 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Location-TerritoryDownload-Distribution-AP-Zip",
+              "timestamp": "Wed Nov 23 14:03:25 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Location-TerritoryDownload-Distribution-AS-Fips",
+              "timestamp": "Wed Nov 23 14:03:25 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Location-TerritoryDownload-Distribution-BP-Address",
+              "timestamp": "Wed Nov 23 14:03:25 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Location-TerritoryDownload-Distribution-BP-Zip",
+              "timestamp": "Wed Nov 23 14:03:25 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Location-TerritoryDownload-Distribution-CE-Address",
+              "timestamp": "Wed Nov 23 14:03:25 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Location-TerritoryDownload-Distribution-CE-Zip",
+              "timestamp": "Wed Nov 23 14:03:25 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Location-TerritoryDownload-Distribution-G2-Address",
+              "timestamp": "Wed Nov 23 14:03:25 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Location-TerritoryDownload-Distribution-G2-TerritoryName",
+              "timestamp": "Wed Nov 23 14:03:25 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Location-TerritoryDownload-Distribution-G2-Zip",
+              "timestamp": "Wed Nov 23 14:03:25 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Location-TerritoryDownload-Distribution-GL-Address",
+              "timestamp": "Wed Nov 23 14:03:25 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Location-TerritoryDownload-Distribution-GL-Zip",
+              "timestamp": "Wed Nov 23 14:03:25 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Location-TerritoryDownload-Distribution-TC-Address",
+              "timestamp": "Wed Nov 23 14:03:25 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Location-TerritoryDownload-Distribution-TC-Zip",
+              "timestamp": "Wed Nov 23 14:03:25 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Location-TerritoryDownload-Distribution-TP-Address",
+              "timestamp": "Wed Nov 23 14:03:25 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Location-TerritoryDownload-Distribution-TP-Zip",
+              "timestamp": "Wed Nov 23 14:03:25 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "MassPersonalAuto-Snowflake-Distribution",
+              "timestamp": "Wed Aug 17 14:45:20 UTC 2022",
+              "timeIntervalHours": 24,
+              "distributeByState": false,
+              "batchMode": false,
+              "subJobsDetails": [
+                  {
+                      "customPartitions": {
+                          "partition_customer": "SBU1G1220"
+                      },
+                      "outputSubfolder": "SBU1G1220",
+                      "automationDistribution": false
+                  },
+                  {
+                      "customPartitions": {
+                          "partition_customer": "SBU1G2700"
+                      },
+                      "outputSubfolder": "SBU1G2700",
+                      "automationDistribution": false
+                  },
+                  {
+                      "customPartitions": {
+                          "partition_customer": "SBU1G3514"
+                      },
+                      "outputSubfolder": "SBU1G3514",
+                      "automationDistribution": false
+                  },
+                  {
+                      "customPartitions": {
+                          "partition_customer": "SBU1G509201"
+                      },
+                      "outputSubfolder": "SBU1G509201",
+                      "automationDistribution": false
+                  },
+                  {
+                      "customPartitions": {
+                          "partition_customer": "SBU1G6821"
+                      },
+                      "outputSubfolder": "SBU1G6821",
+                      "automationDistribution": false
+                  }
+              ]
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Orchestrator-Nautilus-prometrix-auditlog-Distribution-File-Level",
+              "timestamp": "Thu Jun 08 15:47:25 UTC 2023",
+              "timeIntervalHours": 8,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Orchestrator-Nautilus-prometrix-orchestratortargets-Distribution-File-Level",
+              "timestamp": "Thu Jun 08 15:47:25 UTC 2023",
+              "timeIntervalHours": 8,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Orchestrator-Nautilus-prometrix-orchestratortargetsurveytype-Distribution-File-Level",
+              "timestamp": "Thu Jun 08 15:47:25 UTC 2023",
+              "timeIntervalHours": 8,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Orchestrator-Nautilus-prometrix-status-Distribution-File-Level",
+              "timestamp": "Thu Jun 08 15:47:25 UTC 2023",
+              "timeIntervalHours": 8,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Orchestrator-Nautilus-prometrix-surveytypes-Distribution-File-Level",
+              "timestamp": "Thu Jun 08 15:47:25 UTC 2023",
+              "timeIntervalHours": 8,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Orchestrator-Nautilus-prometrix-targetmetadata-Distribution-File-Level",
+              "timestamp": "Thu Jun 08 15:47:25 UTC 2023",
+              "timeIntervalHours": 8,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Orchestrator-Snowflake-prometrix-auditlog-Distribution-File-Level",
+              "timestamp": "Fri Jun 23 16:16:00 UTC 2023",
+              "timeIntervalHours": 12,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Orchestrator-Snowflake-prometrix-orchestratortargets-Distribution-File-Level",
+              "timestamp": "Fri Jun 23 16:16:00 UTC 2023",
+              "timeIntervalHours": 12,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Orchestrator-Snowflake-prometrix-orchestratortargetsurveytype-Distribution-File-Level",
+              "timestamp": "Fri Jun 23 16:16:00 UTC 2023",
+              "timeIntervalHours": 12,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Orchestrator-Snowflake-prometrix-status-Distribution-File-Level",
+              "timestamp": "Fri Jun 23 16:16:00 UTC 2023",
+              "timeIntervalHours": 12,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Orchestrator-Snowflake-prometrix-surveytypes-Distribution-File-Level",
+              "timestamp": "Fri Jun 23 16:16:00 UTC 2023",
+              "timeIntervalHours": 12,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Orchestrator-Snowflake-prometrix-targetmetadata-Distribution-File-Level",
+              "timestamp": "Fri Jun 23 16:16:00 UTC 2023",
+              "timeIntervalHours": 12,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Peoplesoft-UserInfo-Distribution",
+              "timestamp": "Tue Oct 04 18:23:53 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BIDB-VendorAnalytics-Distribution",
+              "timestamp": "Wed Jun 01 07:39:10 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BIDB-VendorAnalytics-SnowPipe-Distribution",
+              "timestamp": "Wed Sep 28 08:46:51 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-Addresses",
+              "timestamp": "Tue Aug 15 17:50:28 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-BuildingFireConstructionCodes",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-BuildingFireRatedCodes",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-BuildingOverviewConstructionCodes",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-BuildingOverviewScoreValues",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-CommercialStatisticalPlans",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-Customers",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-Customers-Addresses",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-Customers-CustomerUnits",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-Customers-Users",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-ElaFactors",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-ElcCspGroupCodes",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-Exposures",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-FloorsAndRoofs",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-Hazards",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-InternalProtections",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-LegacyBilling-Prometrix_Usage",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-OccupantHazards",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-OccupantLevelTypeCodes",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-OccupantLevels",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-Occupants",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-Orders-Addresses",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-Orders-OrderAttributes",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-Orders-OrderDetails",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-Orders-OrderRisks",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-Orders-Orders",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-ProMetrixAuthorizations-Customers",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-ProMetrixAuthorizations-Users",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-Products",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-Prometrix-Orders",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-ReportCodes",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-Reports",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-RiskAddresses",
+              "timestamp": "Tue Aug 15 17:50:28 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-RiskBuildingCalculations",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-RiskDateTypeCodes",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-RiskDates",
+              "timestamp": "Tue Aug 15 17:50:28 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-RiskHazards",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-RiskTypeCodes",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-Risks",
+              "timestamp": "Tue Aug 15 15:46:34 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-Risks-Exposures",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-Risks-InternalProtections",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-Risks-SecondaryConstructions",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-SecondaryConstructions",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-SprinklerTypeCodes",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-SurveyStatusCodes",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-VmmFactors",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-BINS-Distribution-Walls",
+              "timestamp": "Fri Mar 11 07:59:32 UTC 2022",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Bins-Resolution-Entity-Distribution-File-Level",
+              "timestamp": "Wed May 17 10:45:48 UTC 2023",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Distribution-RevenueForecasting",
+              "timestamp": "Wed Jan 25 14:14:11 UTC 2023",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-InfoUSA-VendorAnalytics-Distribution",
+              "timestamp": "Wed Jun 01 07:39:10 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-InfoUSA-VendorAnalytics-SnowPipe-Distribution",
+              "timestamp": "Wed Sep 28 08:46:51 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Addresses",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-BuildingFireConstructionCodes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-BuildingFireRatedCodes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-BuildingOverviewConstructionCodes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-BuildingOverviewScoreValues",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-CommercialStatisticalPlans",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Customers",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Customers-Addresses",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Customers-Contacts",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Customers-ContractProductCategories",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Customers-ContractProductCategoriesProductBillingCodes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Customers-ContractProductCategoryCaps",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Customers-ContractProductCategoryTemplateProductBillingCodes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Customers-ContractProductCategoryTemplates",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Customers-ContractSharingCustomers",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Customers-Contracts",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Customers-CustomerProductCategoryBillingPreferences",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Customers-CustomerProductGroupBillingPreferences",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Customers-CustomerProductPrices",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Customers-CustomerTypeCodes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Customers-CustomerUnitAdditionalInvoiceRecipients",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Customers-CustomerUnitContacts",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Customers-CustomerUnitProductCategoryBillingPreferenceAdditionalInvoiceRecipients",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Customers-CustomerUnitProductCategoryBillingPreferences",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Customers-CustomerUnitProductGroupBillingPreferenceAdditionalInvoiceRecipients",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Customers-CustomerUnitProductGroupBillingPreferences",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Customers-CustomerUnits",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Customers-Users",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-ElaFactors",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-ElcCspGroupCodes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Exposures",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-FloorsAndRoofs",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Hazards",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-InternalProtections",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-LegacyBilling-Prometrix_Usage",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Location-Products",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-OccupantHazards",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-OccupantLevelTypeCodes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-OccupantLevels",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Occupants",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Orders-Addresses",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Orders-OrderAttributes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Orders-OrderDetailAttributes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Orders-OrderDetails",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Orders-OrderRisks",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Orders-Orders",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-ProMetrixAuthorizations-Customers",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-ProMetrixAuthorizations-Users",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Products",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Products-ProductBillingCodeStateExceptions",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Products-ProductBillingCodes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Products-ProductCategoryCodes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Products-ProductGroups",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Products-ProductNonContractPrices",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Products-ProductPrices",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Products-ProductsProductBillingCodes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Products-TaxClassCodes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Prometrix-Orders",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Prometrix-ReportAttributes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-ReportCodes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Reports",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-RiskAddresses",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-RiskBuildingCalculations",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-RiskBuildingInformation",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-RiskCurrencyDates",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-RiskDateTypeCodes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-RiskDates",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-RiskHazards",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-RiskSections",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-RiskTypeCodes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-RiskVerificationTypes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Risks",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Risks-Exposures",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Risks-InternalProtections",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Risks-SecondaryConstructions",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-SecondaryConstructions",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-SprinklerTypeCodes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-SurveyStatusCodes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-VmmFactors",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Nautilus-Distribution-Walls",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-Snowflake-prometrixvendorcalls-Distribution-File-Level",
+              "timestamp": "Tue Sep 12 07:04:04 UTC 2023",
+              "timeIntervalHours": 1,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-StrategicSourcing-Coverage-Distribution",
+              "timestamp": "Thu Nov 17 15:13:56 UTC 2022",
+              "timeIntervalHours": 72,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Prometrix-StrategicSourcing-CurrencyUpdate-Distribution",
+              "timestamp": "Thu Nov 17 15:13:56 UTC 2022",
+              "timeIntervalHours": 72,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "QualityFirst-Nautilus-Distribution-FrQuality-AppealStatusCodes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "QualityFirst-Nautilus-Distribution-FrQuality-CommentTypeCodes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "QualityFirst-Nautilus-Distribution-FrQuality-ReviewAppeals",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "QualityFirst-Nautilus-Distribution-FrQuality-ReviewAutoSelectionInfo",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "QualityFirst-Nautilus-Distribution-FrQuality-ReviewAutoSelectionInfoCapabilities",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "QualityFirst-Nautilus-Distribution-FrQuality-ReviewCapabilityQuestionAnswers",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "QualityFirst-Nautilus-Distribution-FrQuality-ReviewCapabilityQuestions",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "QualityFirst-Nautilus-Distribution-FrQuality-ReviewComments",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "QualityFirst-Nautilus-Distribution-FrQuality-ReviewOccupancyAnswers",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "QualityFirst-Nautilus-Distribution-FrQuality-ReviewOccupancyCodes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "QualityFirst-Nautilus-Distribution-FrQuality-ReviewQuestions",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "QualityFirst-Nautilus-Distribution-FrQuality-ReviewStatusCodes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "QualityFirst-Nautilus-Distribution-FrQuality-ReviewSupplementalAnswers",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "QualityFirst-Nautilus-Distribution-FrQuality-ReviewSupplementalInfo",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "QualityFirst-Nautilus-Distribution-FrQuality-ReviewTypeCodes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "QualityFirst-Nautilus-Distribution-FrQuality-Reviews",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "QualityFirst-Nautilus-Distribution-FrQuality-ScorePoints",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "QualityFirst-Nautilus-Distribution-FrQuality-SurveyTypeCodes",
+              "timestamp": "Thu Oct 13 10:22:56 UTC 2022",
+              "timeIntervalHours": 120,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "RMS-SF-DOC_DATA-Distribution",
+              "timestamp": "Tue Aug 02 15:59:57 UTC 2022",
+              "timeIntervalHours": 24,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "RMS-SF-TEXT_DATA-Distribution",
+              "timestamp": "Tue Aug 02 15:59:57 UTC 2022",
+              "timeIntervalHours": 24,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "RMS-SF-TRACK_DATA-Distribution",
+              "timestamp": "Tue Aug 02 15:59:57 UTC 2022",
+              "timeIntervalHours": 24,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "RTMR-RAHO-CBG-Nautilus-Distribution",
+              "timestamp": "Wed Jun 28 12:58:41 UTC 2023",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "RTMR-RAHO-CBG2-Nautilus-Distribution",
+              "timestamp": "Wed Jun 28 12:58:41 UTC 2023",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "RTMR-RAHO-ZIP-Nautilus-Distribution",
+              "timestamp": "Wed Jun 28 12:58:41 UTC 2023",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "RTMR-RAHO-ZIP2-Nautilus-Distribution",
+              "timestamp": "Wed Jun 28 12:58:41 UTC 2023",
+              "timeIntervalHours": 720,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "SEER-TransactionLog-Distribution-Auto",
+              "timestamp": "Thu Nov 18 16:46:53 UTC 2021",
+              "timeIntervalHours": 24,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "SEER-TransactionLog-Distribution-CV",
+              "timestamp": "Thu Nov 18 16:46:53 UTC 2021",
+              "timeIntervalHours": 24,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "SEER-TransactionLog-Distribution-Property",
+              "timestamp": "Thu Nov 18 16:46:53 UTC 2021",
+              "timeIntervalHours": 24,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Unira-DQID-Distribution-File-Level",
+              "timestamp": "Thu Jun 29 09:01:21 UTC 2023",
+              "timeIntervalHours": 24,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Unira-cntl_rpt-cl-loss-Distribution-File-Level",
+              "timestamp": "Tue Sep 19 16:10:45 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Unira-cntl_rpt-cl-prem-Distribution-File-Level",
+              "timestamp": "Tue Sep 19 16:10:45 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Unira-cntl_rpt-pa-loss-Distribution-File-Level",
+              "timestamp": "Tue Sep 19 16:10:45 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Unira-cntl_rpt-pa-prem-Distribution-File-Level",
+              "timestamp": "Tue Sep 19 16:10:45 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Unira-cntl_rpt-pl-loss-Distribution-File-Level",
+              "timestamp": "Tue Sep 19 16:10:45 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Unira-cntl_rpt-pl-prem-Distribution-File-Level",
+              "timestamp": "Tue Sep 19 16:10:45 UTC 2023",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Unira_shf_correction_tracking-Distribution-File-Level",
+              "timestamp": "Fri Feb 17 15:56:12 UTC 2023",
+              "timeIntervalHours": 24,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Unira_shf_media_job_status-Distribution-File-Level",
+              "timestamp": "Thu Jul 27 15:03:30 UTC 2023",
+              "timeIntervalHours": 24,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Unira_shf_media_tracking-Distribution-File-Level",
+              "timestamp": "Thu Jul 27 15:03:30 UTC 2023",
+              "timeIntervalHours": 24,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "Unira_shf_state_totals-Distribution-File-Level",
+              "timestamp": "Fri Feb 17 15:58:52 UTC 2023",
+              "timeIntervalHours": 24,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-commercial_lines-stat-bop_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-commercial_lines-stat-bop_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-commercial_lines-stat-cautoliab_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-commercial_lines-stat-cautoliab_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-commercial_lines-stat-cautophyd_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-commercial_lines-stat-cautophyd_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-commercial_lines-stat-cim_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-commercial_lines-stat-cim_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-commercial_lines-stat-comfal_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-commercial_lines-stat-comfal_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-commercial_lines-stat-cpe_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-commercial_lines-stat-cpe_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-commercial_lines-stat-crime_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-commercial_lines-stat-crime_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-commercial_lines-stat-earthquake_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-commercial_lines-stat-earthquake_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-commercial_lines-stat-equipbreak_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-commercial_lines-stat-equipbreak_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-commercial_lines-stat-farmowners_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-commercial_lines-stat-farmowners_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-commercial_lines-stat-fidelforg_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-commercial_lines-stat-fidelforg_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-commercial_lines-stat-genliab_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-commercial_lines-stat-genliab_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-commercial_lines-stat-glass_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-commercial_lines-stat-glass_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-commercial_lines-stat-medprof_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-commercial_lines-stat-medprof_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-pauto-stat-liab_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-pauto-stat-liab_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-pauto-stat-no_flt_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-pauto-stat-no_flt_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-pauto-stat-phy_dam_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-pauto-stat-phy_dam_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-dwelling_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-dwelling_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-eqk_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-eqk_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-homeowners_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-homeowners_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-inland_marine_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-inland_marine_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-liab_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-liab_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-load_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-load_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-marine_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-marine_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-mobilehomes_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-mobilehomes_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-non_load_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-non_load_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-personal_liab_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-personal_liab_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-phy_dam_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-phy_dam_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-theft_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-theft_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-watercraft_liab_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-watercraft_liab_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-watercraft_phy_dam_loss-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          },
+          {
+              "configType": "distribution-schedule",
+              "jobId": "unira-C2-analytics-rmm-personal_lines-plspota-stat-watercraft_phy_dam_prem-Distribution-File-Level",
+              "timestamp": "Mon Dec 19 07:25:18 UTC 2022",
+              "timeIntervalHours": 168,
+              "distributeByState": false,
+              "batchMode": false
+          }
+      ]
+order: 1000

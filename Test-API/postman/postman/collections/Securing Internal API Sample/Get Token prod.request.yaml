@@ -1,0 +1,24 @@
+$kind: http-request
+url: https://ratingapi-internal-use.verisk.com/token/v1
+method: POST
+headers:
+  Content-Type: application/x-www-form-urlencoded
+body:
+  type: urlencoded
+  content:
+    client_id: 0oa10bfkxf7SMdnQA2p8
+    client_secret: -uR8gVypsRSbPtwa5i2taTYmtB62I_gg1qYW4wtmV9brkgr4Mcfcl6BhjD5W9ZIH
+    grant_type: client_credentials
+scripts:
+  - type: afterResponse
+    code: "var jsonData = JSON.parse(responseBody);\r
+
+      pm.globals.set(\"securing_internal_api_test_token\", jsonData.access_token);"
+    language: text/javascript
+  - type: beforeRequest
+    code: "pm.environment.set(\"client_id\", \"0oa1swle12vntiLZM0h8\");\r
+
+      pm.environment.set(\"client_secret\", \"fmB9MfofLR-Jr7UBoBePh8IR4iZnb94dD2InO0SUc_n-VWCRIrMCrRqWDDagx5M5\");"
+    language: text/javascript
+settings: {}
+order: 5000

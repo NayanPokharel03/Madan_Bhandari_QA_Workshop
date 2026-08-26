@@ -1,0 +1,34 @@
+$kind: http-request
+url: https://internal-SailPointAPI-Accp-543707207.us-east-1.elb.amazonaws.com/sailpoint/insert
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"Header\": {\r
+
+    \    \"Quoteback\": \"TestUser123\"\r
+
+    \  },\r
+
+    \"body\":\r
+
+    \    {\r
+
+    \      \"employeeId\": \"testuser123\",\r
+
+    \      \"approverId\": \"testuser\",\r
+
+    \      \"entitlementId\": \"test\",\r
+
+    \      \"entitlementDescription\": \"test\",\r
+
+    \      \"applicationId\": \"test\",\r
+
+    \      \"status\": \"pending\"\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 1000

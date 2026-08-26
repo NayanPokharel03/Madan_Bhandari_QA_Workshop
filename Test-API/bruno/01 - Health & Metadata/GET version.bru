@@ -1,0 +1,23 @@
+meta {
+  name: GET /version
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/version
+  body: none
+  auth: none
+}
+
+tests {
+  test('Status is 200', function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+  test('Version metadata present', function () {
+    const body = res.getBody();
+    expect(body).to.be.an('array').with.lengthOf(1);
+    expect(body[0]).to.have.property('name', 'Test-API');
+    expect(body[0]).to.have.property('version').that.is.a('string');
+  });
+}

@@ -1,0 +1,12 @@
+$kind: http-request
+url: https://ratingapi-internal-data-ingestion-use.iso.com/deleteconfig?partitionKey=splitter-config&sortKey=DLEvaluation-Locatesmarter-Master-Splitter&sortKey=DLEvaluation-MVR_AZ_DE-Name-Splitter
+method: DELETE
+queryParams:
+  - key: partitionKey
+    value: splitter-config
+  - key: sortKey
+    value: DLEvaluation-Locatesmarter-Master-Splitter
+  - key: sortKey
+    value: DLEvaluation-MVR_AZ_DE-Name-Splitter
+settings: {}
+order: 3000

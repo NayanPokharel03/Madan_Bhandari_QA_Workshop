@@ -1,0 +1,22 @@
+$kind: http-request
+url: https://ratingapia-internal-encryption.iso.com/encryption
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"applicationId\":\"GenericLambda\",\r
+
+    \    \"inputBucket\": \"datahub-distribution-api-accp\",\r
+
+    \    \"inputKey\": \"temp/0069adb4-63fd-40ca-82c1-463bbe5ca9ad.csv\",\r
+
+    \    \"outputBucket\": \"datahub-distribution-api-accp\",\r
+
+    \    \"outputKey\": \"temp/0069adb4-63fd-40ca-82c1-463bbe5ca9ad.csv.enc\"\r
+
+    }"
+auth:
+  type: noauth
+settings: {}
+order: 5000

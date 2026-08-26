@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://ratingapit-internal-data-distribution.iso.com/getstatus?id=f72e7171-1349-4aeb-96eb-caf7665c7224
+method: GET
+queryParams:
+  id: f72e7171-1349-4aeb-96eb-caf7665c7224
+settings: {}
+order: 6000

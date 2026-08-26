@@ -1,0 +1,9 @@
+$kind: http-request
+name: New Request
+url: https://ratingapi-internal-data-ingestion-use.iso.com/deleteconfig?partitionKey=automate-distribution-config&sortKey=55396253-6ff2-4c71-b4b7-bdda5b63e3da
+method: DELETE
+queryParams:
+  partitionKey: automate-distribution-config
+  sortKey: 55396253-6ff2-4c71-b4b7-bdda5b63e3da
+settings: {}
+order: 3000

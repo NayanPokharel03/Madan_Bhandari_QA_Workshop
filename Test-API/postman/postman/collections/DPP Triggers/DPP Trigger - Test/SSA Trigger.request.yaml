@@ -1,0 +1,74 @@
+$kind: http-request
+url: https://ratingapit-internal-data-ingestion.iso.com/adddpptriggerconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"recordType\": \"dpp-trigger-config\",\r
+
+    \        \"sortKey\": \"DLEvaluation-Locatesmarter-Address-SSA\",\r
+
+    \        \"bucketname\": \"personallines-datastore-test-use\",\r
+
+    \        \"application\": \"DLEvaluation\",\r
+
+    \        \"destinationBucket\": \"personallines-datastore-test-use\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"TEST-general\",\r
+
+    \        \"awsBatchJobDefinition\": \"ssa-file-processor-TEST\",\r
+
+    \        \"awsBatchJobName\": \"DLEvaluation-Locatesmarter-Address-SSA\",\r
+
+    \        \"datasetRegex\": \"DLEvaluation/ssa-input/Locatesmarter_Address/.*\",\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"outputPath\": \"DLEvaluation/tokenization-input/Locatesmarter_Address/\",\r
+
+    \        \"dppProcessType\": \"SSA\",\r
+
+    \        \"dppOutputFileSuffix\": \"_ssaout\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"dpp-trigger-config\",\r
+
+    \        \"sortKey\": \"DLEvaluation-Locatesmarter-Name-SSA\",\r
+
+    \        \"bucketname\": \"personallines-datastore-test-use\",\r
+
+    \        \"application\": \"DLEvaluation\",\r
+
+    \        \"destinationBucket\": \"personallines-datastore-test-use\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"TEST-general\",\r
+
+    \        \"awsBatchJobDefinition\": \"ssa-file-processor-TEST\",\r
+
+    \        \"awsBatchJobName\": \"DLEvaluation-Locatesmarter-Name-SSA\",\r
+
+    \        \"datasetRegex\": \"DLEvaluation/ssa-input/Locatesmarter_Name/.*\",\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"outputPath\": \"DLEvaluation/tokenization-input/Locatesmarter_Name/\",\r
+
+    \        \"dppProcessType\": \"SSA\",\r
+
+    \        \"dppOutputFileSuffix\": \"_ssaout\"\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 6000

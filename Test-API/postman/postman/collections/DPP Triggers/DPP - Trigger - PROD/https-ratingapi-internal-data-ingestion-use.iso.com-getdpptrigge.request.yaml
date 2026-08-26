@@ -1,0 +1,8 @@
+$kind: http-request
+name: https://ratingapi-internal-data-ingestion-use.iso.com/getdpptriggerconfig?bucketname=commerciallines-datastore-test-use
+url: https://ratingapi-internal-data-ingestion-use.iso.com/getdpptriggerconfig?bucketname=personallines-datastore-prod-use
+method: GET
+queryParams:
+  bucketname: personallines-datastore-prod-use
+settings: {}
+order: 1000

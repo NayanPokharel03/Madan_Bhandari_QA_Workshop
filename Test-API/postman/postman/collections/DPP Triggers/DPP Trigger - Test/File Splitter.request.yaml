@@ -1,0 +1,146 @@
+$kind: http-request
+url: https://ratingapia-internal-data-ingestion.iso.com/adddpptriggerconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"recordType\": \"dpp-trigger-config\",\r
+
+    \        \"sortKey\": \"DataHubAnalysis-Splitter-Test\",\r
+
+    \        \"bucketname\": \"ratings-datastore-accp-use\",\r
+
+    \        \"application\": \"DataHubAnalysis\",\r
+
+    \        \"destinationBucket\": \"ratings-datastore-accp-use\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"ACCP-priority\",\r
+
+    \        \"awsBatchJobDefinition\": \"datahub-file-splitter-processor-accp\",\r
+
+    \        \"awsBatchJobName\": \"DataHubAnalysis-Splitter-Test\",\r
+
+    \        \"timestamp\": \"Tue Apr 02 09:39:44 UTC 2024\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": true,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"datasetRegex\": \"DataHubAnalysis/RegressionScripts/Splitter/input/7bba93af-e4cd-4508-84b6-53e5c40465cc_QA_MVR2_RAW_100K_SPLIT_TRANSFORM_INPUT_FILE.txt\",\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"criticalApp\": false,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"disabled\": false,\r
+
+    \        \"bypassCreds\": false,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"batchSize\": 0,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"disableCSV\": false,\r
+
+    \        \"dppProcessType\": \"GENERIC\",\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"awsBatchEnvOverrides\": {\r
+
+    \            \"OUTPUT_PATH\": \"DataHubAnalysis/RegressionScripts/Splitter/input/Conversion/\",\r
+
+    \            \"DELETE_INPUT_FILE\": \"TRUE\",\r
+
+    \            \"SPLITTER_KEY\": \"DataHubAnalysis-Splitter-Test\",\r
+
+    \            \"OUTPUT_BUCKET\": \"s3://%%S3_BUCKET%%\",\r
+
+    \            \"INPUT_FILE\": \"%%S3_KEY%%\",\r
+
+    \            \"INPUT_BUCKET\": \"s3://%%S3_BUCKET%%\"\r
+
+    \        },\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": true,\r
+
+    \        \"logETLStatusTracker\": true,\r
+
+    \        \"isPrefixZipFileName\": false,\r
+
+    \        \"auroraOffsetModeValue\": 0,\r
+
+    \        \"awsBatchTimeoutOverride\": 0,\r
+
+    \        \"useAcceldata\": false,\r
+
+    \        \"isEndOfPipeline\": false,\r
+
+    \        \"automateDistribution\": false,\r
+
+    \        \"deleteAfterExtract\": false,\r
+
+    \        \"ignoreFailures\": false\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 11000

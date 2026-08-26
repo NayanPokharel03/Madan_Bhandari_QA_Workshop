@@ -1,0 +1,317 @@
+$kind: http-request
+name: New Request
+url: https://ratingapit-internal-data-ingestion.iso.com/addeerconfig
+method: POST
+body:
+  type: json
+  content: "[{\r
+
+    \        \"recordType\": \"eer-config\",\r
+
+    \        \"sortKey\": \"eer-config-testQA\",\r
+
+    \        \"application\": \"testAppp\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"delimiter\": \",\",\r
+
+    \        \"timestamp\": \"Thu Jun 01 08:58:35 UTC 2023\",\r
+
+    \        \"skipHeader\": true,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"quoteChar\": \"\\\"\",\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"criticalApp\": false,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"awsRegion\": \"us-east-1\",\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"eerEntityPayload\": {\r
+
+    \            \"sourceType\": \"CV\",\r
+
+    \r
+
+    \            \"cIdIndex\": 1,\r
+
+    \            \"dateOfBirthIndex\": 2,\r
+
+    \            \"genderCodeIndex\": 2,\r
+
+    \            \"ssnNumberIndex\": 1,\r
+
+    \            \"driversLicenseNumberIndex\": [\r
+
+    \                -1,\r
+
+    \                2\r
+
+    \            ],\r
+
+    \            \"driversLicenseStateIndex\": [\r
+
+    \                1,\r
+
+    \                2\r
+
+    \            ],\r
+
+    \            \"namesFirstNameIndex\": [\r
+
+    \                1,\r
+
+    \                2,\r
+
+    \                3\r
+
+    \            ],\r
+
+    \            \"namesMiddleNameIndex\": [\r
+
+    \                1,\r
+
+    \                2,\r
+
+    \                3\r
+
+    \            ],\r
+
+    \            \"namesLastNameIndex\": [\r
+
+    \                1,\r
+
+    \                2,\r
+
+    \                -1\r
+
+    \            ],\r
+
+    \            \"namesSuffixIndex\": [\r
+
+    \                1,\r
+
+    \                2,\r
+
+    \                3\r
+
+    \            ],\r
+
+    \            \"addressesRawAddress1Index\": [\r
+
+    \                1,\r
+
+    \                2\r
+
+    \            ],\r
+
+    \            \"addressesRawAddress2Index\": [\r
+
+    \                2,\r
+
+    \                1\r
+
+    \            ],\r
+
+    \            \"addressesRawCityIndex\": [\r
+
+    \                2,\r
+
+    \                1\r
+
+    \            ],\r
+
+    \            \"addressesRawStateIndex\": [\r
+
+    \                2,\r
+
+    \                1\r
+
+    \            ],\r
+
+    \            \"addressesRawZipcodeIndex\": [\r
+
+    \                2,\r
+
+    \                1\r
+
+    \            ],\r
+
+    \            \"addressesScrubbedAddressRangeIndex\": [\r
+
+    \                1,\r
+
+    \                2\r
+
+    \            ],\r
+
+    \            \"addressesScrubbedPreDirectionIndex\": [\r
+
+    \                1,\r
+
+    \                2\r
+
+    \            ],\r
+
+    \            \"addressesScrubbedStreetNameIndex\": [\r
+
+    \                1,\r
+
+    \                2\r
+
+    \            ],\r
+
+    \            \"addressesScrubbedSuiteIndex\": [\r
+
+    \                1,\r
+
+    \                2\r
+
+    \            ],\r
+
+    \            \"addressesScrubbedPostDirectionIndex\": [\r
+
+    \                1,\r
+
+    \                2\r
+
+    \            ],\r
+
+    \            \"addressesScrubbedCityIndex\": [\r
+
+    \                1,\r
+
+    \                2\r
+
+    \            ],\r
+
+    \            \"addressesScrubbedStateIndex\": [\r
+
+    \                1,\r
+
+    \                2\r
+
+    \            ],\r
+
+    \            \"addressesScrubbedZipIndex\": [\r
+
+    \                1,\r
+
+    \                2\r
+
+    \            ],\r
+
+    \            \"addressesScrubbedStreetTypeIndex\": [\r
+
+    \                1,\r
+
+    \                2\r
+
+    \            ],\r
+
+    \            \"phonesIndex\": [\r
+
+    \                4,\r
+
+    \                3,\r
+
+    \                2\r
+
+    \            ],\r
+
+    \            \"emailsIndex\": [\r
+
+    \                1,\r
+
+    \                2,\r
+
+    \                3,\r
+
+    \                4\r
+
+    \            ],\r
+
+    \            \"eerOutputColumns\": [\r
+
+    \                \"verisk_id\"\r
+
+    \            ],\r
+
+    \            \"apiKey\": \"eer-test-data-hub-key\"\r
+
+    \        },\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": true,\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": false,\r
+
+    \        \"logETLStatusTracker\": false,\r
+
+    \        \"auroraOffsetModeValue\": 0,\r
+
+    \        \"awsBatchTimeoutOverride\": 0,\r
+
+    \        \"useAcceldata\": false,\r
+
+    \        \"isEndOfPipeline\": false\r
+
+    \    }]"
+settings: {}
+order: 2000

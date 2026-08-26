@@ -1,0 +1,11 @@
+$kind: http-request
+url: https://ratingapi-internal-data-distribution-use.iso.com/deleteconfig?partitionKey=distribution-config&sortKey=Prometrix-prometrixvendorcalls-Dist-Snowflake
+method: DELETE
+queryParams:
+  partitionKey: distribution-config
+  sortKey: Prometrix-prometrixvendorcalls-Dist-Snowflake
+body:
+  type: json
+  content: ""
+settings: {}
+order: 6000

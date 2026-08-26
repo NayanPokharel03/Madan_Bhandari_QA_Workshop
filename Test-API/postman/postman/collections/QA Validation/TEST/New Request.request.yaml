@@ -1,0 +1,38 @@
+$kind: http-request
+url: https://ratingapit-internal-data-ingestion.iso.com/addvalidationconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \  {\r
+
+    \    \"recordType\": \"validation-config\",\r
+
+    \    \"sortKey\": \"pipeline-validation-Test-Config\",\r
+
+    \    \"bucketname\": \"ratings-datastore-test-use\",\r
+
+    \    \"application\": \"PipelineValidation\",\r
+
+    \    \"destinationBucket\": \"commerciallines-distribution-test-use\",\r
+
+    \    \"datasetRegex\": \"DataHubAnalysis/RegressionScripts/DataHubPipelineValidation/gold_copy/DataHubAnalysisGold.csv\",\r
+
+    \    \"sourceSchema\": \"DataHubAnalysis/Test/DataHubAnalysis.csv\",\r
+
+    \    \"inputS3Key\": \"DataHubAnalysis/RegressionScripts/DataHubPipelineValidation/source/DataHubAnalysis.csv\",\r
+
+    \    \"outputS3Key\": \"DatahubAnalysis/DIFV2/Tier2/AthenaLevel\",\r
+
+    \    \"vaultPath\": \"application/Importer/DatahubIngestionImporterBatch/DataHubAnalysis/Test/importer\",\r
+
+    \    \"sourceHost\": \"secureftpa.iso.com\",\r
+
+    \    \"sourcePort\": \"22\"\r
+
+    \  }\r
+
+    ]\r\n"
+settings: {}
+order: 2000

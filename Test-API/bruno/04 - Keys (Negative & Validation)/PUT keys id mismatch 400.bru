@@ -1,0 +1,30 @@
+meta {
+  name: PUT /keys/{id} path/body Id mismatch -> 400
+  type: http
+  seq: 9
+}
+
+put {
+  url: {{baseUrl}}/keys/{{conflictId}}
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  { "Id": 12345, "Data": "X", "DataType": "N" }
+}
+
+tests {
+  test('Status is 400', function () {
+    expect(res.getStatus()).to.equal(400);
+  });
+  test('Details include both ids', function () {
+    const body = res.getBody();
+    expect(body.details).to.have.property('path_id');
+    expect(body.details).to.have.property('body_id');
+  });
+}

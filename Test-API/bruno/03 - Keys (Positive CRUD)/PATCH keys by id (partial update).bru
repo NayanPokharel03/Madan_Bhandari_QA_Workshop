@@ -1,0 +1,29 @@
+meta {
+  name: PATCH /keys/{id} (partial update)
+  type: http
+  seq: 6
+}
+
+patch {
+  url: {{baseUrl}}/keys/{{keyId}}
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  { "Data": "CLARK J. KENT" }
+}
+
+tests {
+  test('Status is 200', function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+  test('Only Data changed', function () {
+    const body = res.getBody();
+    expect(body[0]).to.include({ Data: 'CLARK J. KENT', DataType: 'N' });
+  });
+}

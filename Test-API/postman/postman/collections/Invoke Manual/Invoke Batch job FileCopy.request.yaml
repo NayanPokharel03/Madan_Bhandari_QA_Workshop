@@ -1,0 +1,66 @@
+$kind: http-request
+url: https://ratingapiuat-internal-batch-trigger-euir.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "\r
+
+    {\r
+
+    \    \"jobName\": \"DataHubAnalysis-DIFV2-FileCopy\",\r
+
+    \    \"jobQueue\": \"UAT-general\",\r
+
+    \    \"jobDefinition\": \"copy-file-processor-UAT\",\r
+
+    \    \"timeoutOverride\": \"3600\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"inputFolder\": \"DataHubAnalysis/DIFV2/temp\",\r
+
+    \        \"SCRUBBER_KEY\": \"DataHubAnalysis-DIFV2-SSA\",\r
+
+    \        \"inputBucket\": \"s3://commerciallines-datastore-uat-euir\",\r
+
+    \        \"outputFolder\": \"tier2/DataHubAnalysis/DIFV2/test/\",\r
+
+    \        \"inputFilename\": \"file_copy_test_file_pass.csv_scrubberout_ssaout_tokenized\",\r
+
+    \        \"dataAuditorLogRequired\": \"true\",\r
+
+    \        \"outputBucket\": \"s3://commerciallines-datastore-uat-euir\",\r
+
+    \        \"partitionRequired\": \"true\",\r
+
+    \        \"recursiveCopy\": \"false\",\r
+
+    \        \"deleteInput\": \"FALSE\",\r
+
+    \        \"sourceId\": \"testsourceid\",\r
+
+    \        \"delimiter\": \"\\\\t\",\r
+
+    \        \"appName\": \"DataHubAnalysis\",\r
+
+    \        \"gzip\": \"false\",\r
+
+    \        \"quoteChar\": \"\",\r
+
+    \        \"customPartition\": \"false\",\r
+
+    \        \"customPartitionIndex\": \"0\",\r
+
+    \        \"customPartitionName\": \"\",\r
+
+    \        \"dppOutputFileSuffix\": \"FILE_COPY\",\r
+
+    \        \"logBatchStatusTracker\":\"false\",\r
+
+    \        \"updateBatchTrackerApiUrl\": \"https://ratingapiuat-internal-data-ingestion-euir.iso.com/updatebatchstatus\"\r
+
+    \    }\r
+
+    }\r\n"
+settings: {}
+order: 8000

@@ -1,0 +1,10 @@
+$kind: http-request
+url: localhost:8000/sessions?user_id=i43445
+method: GET
+queryParams:
+  user_id: i43445
+body:
+  type: json
+  content: ""
+settings: {}
+order: 4000

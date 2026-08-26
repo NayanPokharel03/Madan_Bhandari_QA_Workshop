@@ -1,0 +1,424 @@
+$kind: http-request
+url: https://ratingapit-internal-data-ingestion.iso.com/addscrubberconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"recordType\": \"scrubber-config\",\r
+
+    \        \"sortKey\": \"DLEvaluation-MVR_OH-Address-Scrubber\",\r
+
+    \        \"application\": \"DLEvaluation\",\r
+
+    \        \"delimiter\": \"\\t\",\r
+
+    \        \"skipHeader\": true,\r
+
+    \        \"columnSize\": \"7\",\r
+
+    \        \"blockSize\": \"25\",\r
+
+    \        \"scrubColumns\": {\r
+
+    \            \"mappings\": {\r
+
+    \                \"address1\": {\r
+
+    \                    \"columns\": [\r
+
+    \                        \"Street_Address\"\r
+
+    \                    ]\r
+
+    \                },\r
+
+    \                \"city\": {\r
+
+    \                    \"columns\": [\r
+
+    \                        \"City\"\r
+
+    \                    ]\r
+
+    \                },\r
+
+    \                \"state\": {\r
+
+    \                    \"columns\": [\r
+
+    \                        \"State\"\r
+
+    \                    ]\r
+
+    \                },\r
+
+    \                \"zip\": {\r
+
+    \                    \"columns\": [\r
+
+    \                        \"Zip_Code\"\r
+
+    \                    ]\r
+
+    \                },\r
+
+    \                \"defaultCountry\": \"USA\",\r
+
+    \                \"isAddressRange\": true\r
+
+    \            },\r
+
+    \            \"scrubbed\": [\r
+
+    \                \"AddressKey\",\r
+
+    \                \"County\",\r
+
+    \                \"AddressRange\",\r
+
+    \                \"PreDirection\",\r
+
+    \                \"StreetName\",\r
+
+    \                \"Suite\",\r
+
+    \                \"StreetType\",\r
+
+    \                \"PostDirection\",\r
+
+    \                \"City\",\r
+
+    \                \"DependentLocality\",\r
+
+    \                \"CountyFips\",\r
+
+    \                \"State\",\r
+
+    \                \"StateId\",\r
+
+    \                \"Zip\",\r
+
+    \                \"Zip4\",\r
+
+    \                \"Country\",\r
+
+    \                \"CountryCode3Char\",\r
+
+    \                \"AddressTypeCode\",\r
+
+    \                \"DpvFootnotes\",\r
+
+    \                \"AddressResultCodes\",\r
+
+    \                \"Rbdi\",\r
+
+    \                \"MelissaAddressKey\",\r
+
+    \                \"MelissaAddressKeyBase\"\r
+
+    \            ],\r
+
+    \            \"geocode\": [\r
+
+    \                \"Latitude\",\r
+
+    \                \"Longitude\",\r
+
+    \                \"CountyFips\",\r
+
+    \                \"CountyName\",\r
+
+    \                \"CensusBlock\",\r
+
+    \                \"CensusTract\",\r
+
+    \                \"PlaceName\",\r
+
+    \                \"PlaceCode\",\r
+
+    \                \"TimeZone\",\r
+
+    \                \"TimeZoneCode\",\r
+
+    \                \"CbsaCode\",\r
+
+    \                \"CbsaLevel\",\r
+
+    \                \"CbsaTitle\",\r
+
+    \                \"CbsaDivisionCode\",\r
+
+    \                \"CbsaDivisionTitle\",\r
+
+    \                \"CbsaDivisionLevel\",\r
+
+    \                \"CountySubdivisionName\",\r
+
+    \                \"CountySubdivisionCode\",\r
+
+    \                \"GeocodeResultCodes\"\r
+
+    \            ]\r
+
+    \        },\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": false,\r
+
+    \        \"logETLStatusTracker\": false\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"scrubber-config\",\r
+
+    \        \"sortKey\": \"DLEvaluation-Locatesmarter-Address-Scrubber\",\r
+
+    \        \"application\": \"DLEvaluation\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"delimiter\": \",\",\r
+
+    \        \"timestamp\": \"Thu May 12 07:32:40 UTC 2022\",\r
+
+    \        \"skipHeader\": true,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"columnSize\": \"8\",\r
+
+    \        \"blockSize\": \"25\",\r
+
+    \        \"scrubColumns\": {\r
+
+    \            \"mappings\": {\r
+
+    \                \"address1\": {\r
+
+    \                    \"columns\": [\r
+
+    \                        \"Address_Line_Text\"\r
+
+    \                    ]\r
+
+    \                },\r
+
+    \                \"city\": {\r
+
+    \                    \"columns\": [\r
+
+    \                        \"City_Name\"\r
+
+    \                    ]\r
+
+    \                },\r
+
+    \                \"state\": {\r
+
+    \                    \"columns\": [\r
+
+    \                        \"State_Code\"\r
+
+    \                    ]\r
+
+    \                },\r
+
+    \                \"zip\": {\r
+
+    \                    \"columns\": [\r
+
+    \                        \"Postal_Code\"\r
+
+    \                    ]\r
+
+    \                },\r
+
+    \                \"defaultCountry\": \"USA\",\r
+
+    \                \"isAddressRange\": true\r
+
+    \            },\r
+
+    \            \"scrubbed\": [\r
+
+    \                \"AddressKey\",\r
+
+    \                \"County\",\r
+
+    \                \"AddressRange\",\r
+
+    \                \"PreDirection\",\r
+
+    \                \"StreetName\",\r
+
+    \                \"Suite\",\r
+
+    \                \"StreetType\",\r
+
+    \                \"PostDirection\",\r
+
+    \                \"City\",\r
+
+    \                \"DependentLocality\",\r
+
+    \                \"CountyFips\",\r
+
+    \                \"State\",\r
+
+    \                \"StateId\",\r
+
+    \                \"Zip\",\r
+
+    \                \"Zip4\",\r
+
+    \                \"Country\",\r
+
+    \                \"CountryCode3Char\",\r
+
+    \                \"AddressTypeCode\",\r
+
+    \                \"DpvFootnotes\",\r
+
+    \                \"AddressResultCodes\",\r
+
+    \                \"Rbdi\",\r
+
+    \                \"MelissaAddressKey\",\r
+
+    \                \"MelissaAddressKeyBase\"\r
+
+    \            ],\r
+
+    \            \"geocode\": [\r
+
+    \                \"Latitude\",\r
+
+    \                \"Longitude\",\r
+
+    \                \"CountyFips\",\r
+
+    \                \"CountyName\",\r
+
+    \                \"CensusBlock\",\r
+
+    \                \"CensusTract\",\r
+
+    \                \"PlaceName\",\r
+
+    \                \"PlaceCode\",\r
+
+    \                \"TimeZone\",\r
+
+    \                \"TimeZoneCode\",\r
+
+    \                \"CbsaCode\",\r
+
+    \                \"CbsaLevel\",\r
+
+    \                \"CbsaTitle\",\r
+
+    \                \"CbsaDivisionCode\",\r
+
+    \                \"CbsaDivisionTitle\",\r
+
+    \                \"CbsaDivisionLevel\",\r
+
+    \                \"CountySubdivisionName\",\r
+
+    \                \"CountySubdivisionCode\",\r
+
+    \                \"GeocodeResultCodes\"\r
+
+    \            ]\r
+
+    \        },\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": false,\r
+
+    \        \"logETLStatusTracker\": false\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 3000

@@ -1,0 +1,6 @@
+$kind: http-request
+url: https://ratingapi-internal-data-ingestion-use.iso.com/getvalidationschedule
+method: GET
+settings: {}
+examples: ./.resources/Prod.resources/examples
+order: 3000

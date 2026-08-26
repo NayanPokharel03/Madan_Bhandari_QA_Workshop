@@ -1,0 +1,39 @@
+$kind: http-request
+name: https://internal-cm2-scheduleappdeploymentsapi-2086541636.us-east-1.elb.amazonaws.com/AutomatedDeployments-ScheduleAppDeployments
+url: https://internal-cm2-scheduleappdeploymentsapi-2086541636.us-east-1.elb.amazonaws.com/AutomatedDeployments-ScheduleAppDeployments
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"deploys\": [       \r
+
+    \        {\r
+
+    \            \"aws.applicationId\": \"DatahubAdminWeb-Prod\",\r
+
+    \            \"aws.deployment.region.primary\": \"us-east-1\",\r
+
+    \            \"aws.deployment.region.secondary\": \"us-west-2\",\r
+
+    \            \"deployment.time.primaryRegion\": \"2025-01-29T09:30:00\",\r
+
+    \            \"deployment.time.secondaryRegion\": \"2025-01-29T09:31:00\",\r
+
+    \            \"email.to.notify\": \"#DataHub_Support@verisk.com\",\r
+
+    \            \"jira.cr.id\": \"UWDH-10318\",\r
+
+    \            \"requested.by\": \"I41071\"\r
+
+    \        }\r
+
+    \        \r
+
+    \    ]\r
+
+    }"
+auth:
+  type: noauth
+settings: {}
+order: 1000

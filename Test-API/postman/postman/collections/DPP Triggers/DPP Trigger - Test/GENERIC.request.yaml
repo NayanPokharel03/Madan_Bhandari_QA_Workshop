@@ -1,0 +1,436 @@
+$kind: http-request
+url: https://ratingapit-internal-data-ingestion.iso.com/adddpptriggerconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"recordType\": \"dpp-trigger-config\",\r
+
+    \        \"sortKey\": \"BINS-Addresses-Tier2-Copy\",\r
+
+    \        \"bucketname\": \"commerciallines-datastore-test-use\",\r
+
+    \        \"application\": \"BINS\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"TEST-general\",\r
+
+    \        \"awsBatchJobDefinition\": \"copy-file-processor-TEST\",\r
+
+    \        \"awsBatchJobName\": \"BINS-Addresses-Tier2-Copy\",\r
+
+    \        \"timestamp\": \"Fri Dec 02 07:24:35 UTC 2022\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"datasetRegex\": \"BINS/Addresses/tokenization-output/.*\",\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"criticalApp\": false,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"dppProcessType\": \"GENERIC\",\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": true,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"awsBatchEnvOverrides\": {\r
+
+    \            \"sourceId\": \"%%SOURCE_ID%%\",\r
+
+    \            \"quoteChar\": \"\\\"\",\r
+
+    \            \"inputFileName\": \"%%FILE_NAME%%\",\r
+
+    \            \"appName\": \"BINS\",\r
+
+    \            \"KMS_KEY\": \"09cc607e-aec6-46fc-b35f-b637d35e9c4f\",\r
+
+    \            \"partitionRequired\": \"true\",\r
+
+    \            \"gzip\": \"true\",\r
+
+    \            \"recursiveCopy\": \"false\",\r
+
+    \            \"outputFolder\": \"tier2/BINS/Addresses\",\r
+
+    \            \"inputFolder\": \"S3_PATH\",\r
+
+    \            \"customPartition\": \"false\",\r
+
+    \            \"outputBucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"deleteInput\": \"true\",\r
+
+    \            \"delimiter\": \"\\\\t\",\r
+
+    \            \"dataAuditorLogRequired\": \"true\",\r
+
+    \            \"inputBucket\": \"%%S3_BUCKET%%\",\r
+
+    \            \"useAcceldata\": true,\r
+
+    \            \"isEndOfPipeline\": true\r
+
+    \        },\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": true,\r
+
+    \        \"logETLStatusTracker\": false,\r
+
+    \        \"auroraOffsetModeValue\": 0,\r
+
+    \        \"awsBatchTimeoutOverride\": 0,\r
+
+    \        \"useAcceldata\": true,\r
+
+    \        \"isEndOfPipeline\": true\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"dpp-trigger-config\",\r
+
+    \        \"sortKey\": \"BINS-GeoPin-Tier2-Copy\",\r
+
+    \        \"bucketname\": \"commerciallines-datastore-test-use\",\r
+
+    \        \"application\": \"BINS\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"TEST-general\",\r
+
+    \        \"awsBatchJobDefinition\": \"copy-file-processor-TEST\",\r
+
+    \        \"awsBatchJobName\": \"BINS-GeoPin-Tier2-Copy\",\r
+
+    \        \"timestamp\": \"Fri Dec 02 07:24:35 UTC 2022\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"datasetRegex\": \"BINS/GeoPin/tokenization-output/.*\",\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"criticalApp\": false,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"dppProcessType\": \"GENERIC\",\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": true,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"awsBatchEnvOverrides\": {\r
+
+    \            \"sourceId\": \"%%SOURCE_ID%%\",\r
+
+    \            \"quoteChar\": \"\\\"\",\r
+
+    \            \"inputFileName\": \"%%FILE_NAME%%\",\r
+
+    \            \"appName\": \"BINS\",\r
+
+    \            \"KMS_KEY\": \"09cc607e-aec6-46fc-b35f-b637d35e9c4f\",\r
+
+    \            \"partitionRequired\": \"true\",\r
+
+    \            \"gzip\": \"true\",\r
+
+    \            \"recursiveCopy\": \"false\",\r
+
+    \            \"outputFolder\": \"tier2/BINS/GeoPin\",\r
+
+    \            \"inputFolder\": \"S3_PATH\",\r
+
+    \            \"customPartition\": \"false\",\r
+
+    \            \"outputBucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"deleteInput\": \"true\",\r
+
+    \            \"delimiter\": \"\\\\t\",\r
+
+    \            \"dataAuditorLogRequired\": \"true\",\r
+
+    \            \"inputBucket\": \"%%S3_BUCKET%%\",\r
+
+    \            \"useAcceldata\": true,\r
+
+    \            \"isEndOfPipeline\": true\r
+
+    \        },\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": true,\r
+
+    \        \"logETLStatusTracker\": false,\r
+
+    \        \"auroraOffsetModeValue\": 0,\r
+
+    \        \"awsBatchTimeoutOverride\": 0,\r
+
+    \        \"useAcceldata\": true,\r
+
+    \        \"isEndOfPipeline\": true\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"dpp-trigger-config\",\r
+
+    \        \"sortKey\": \"BINS-Parcels-Tier2-Copy\",\r
+
+    \        \"bucketname\": \"commerciallines-datastore-test-use\",\r
+
+    \        \"application\": \"BINS\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"TEST-general\",\r
+
+    \        \"awsBatchJobDefinition\": \"copy-file-processor-TEST\",\r
+
+    \        \"awsBatchJobName\": \"BINS-Parcels-Tier2-Copy\",\r
+
+    \        \"timestamp\": \"Fri Dec 02 07:24:35 UTC 2022\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"datasetRegex\": \"BINS/Parcels/tokenization-output/.*\",\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"criticalApp\": false,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"dppProcessType\": \"GENERIC\",\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": true,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"awsBatchEnvOverrides\": {\r
+
+    \            \"sourceId\": \"%%SOURCE_ID%%\",\r
+
+    \            \"quoteChar\": \"\\\"\",\r
+
+    \            \"inputFileName\": \"%%FILE_NAME%%\",\r
+
+    \            \"appName\": \"BINS\",\r
+
+    \            \"KMS_KEY\": \"09cc607e-aec6-46fc-b35f-b637d35e9c4f\",\r
+
+    \            \"partitionRequired\": \"true\",\r
+
+    \            \"gzip\": \"true\",\r
+
+    \            \"recursiveCopy\": \"false\",\r
+
+    \            \"outputFolder\": \"tier2/BINS/Parcels\",\r
+
+    \            \"inputFolder\": \"S3_PATH\",\r
+
+    \            \"customPartition\": \"false\",\r
+
+    \            \"outputBucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"deleteInput\": \"true\",\r
+
+    \            \"delimiter\": \"\\\\t\",\r
+
+    \            \"dataAuditorLogRequired\": \"true\",\r
+
+    \            \"inputBucket\": \"%%S3_BUCKET%%\",\r
+
+    \            \"useAcceldata\": true,\r
+
+    \            \"isEndOfPipeline\": true\r
+
+    \        },\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": true,\r
+
+    \        \"logETLStatusTracker\": false,\r
+
+    \        \"auroraOffsetModeValue\": 0,\r
+
+    \        \"awsBatchTimeoutOverride\": 0,\r
+
+    \        \"useAcceldata\": true,\r
+
+    \        \"isEndOfPipeline\": true\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 4000

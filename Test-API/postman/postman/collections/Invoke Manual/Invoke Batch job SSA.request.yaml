@@ -1,0 +1,40 @@
+$kind: http-request
+url: https://ratingapiuat-internal-batch-trigger-euir.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "\r
+
+    {\r
+
+    \    \"jobName\": \"TEST-Addresses-SSA\",\r
+
+    \    \"jobQueue\": \"TEST-general\",\r
+
+    \    \"jobDefinition\": \"ssa-file-processor-TEST\",\r
+
+    \    \"timeoutOverride\": \"3600\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"INPUT_FILE\": \"DataHubAnalysis/2b057d55-b36b-4d82-b7f0-8021ffd8bb0c_CPBilling_20210417_ProMetrix_Addresses_11_07_01_2021_9.txt\",\r
+
+    \        \"SSA_KEY\": \"Prometrix-Addresses-SSA\",\r
+
+    \        \"INPUT_BUCKET\": \"s3://commerciallines-datastore-test-use\",\r
+
+    \        \"OUTPUT_FILE\": \"DataHubAnalysis/2b057d55-b36b-4d82-b7f0-8021ffd8bb0c_CPBilling_20210417_ProMetrix_Addresses_11_07_01_2021_9_result.txt_ssaout\",\r
+
+    \        \"OUTPUT_BUCKET\": \"s3://commerciallines-datastore-test-use\",\r
+
+    \        \"DELETE_INPUT_FILE\": \"FALSE\",\r
+
+    \        \"logBatchStatusTracker\":\"true\",\r
+
+    \        \"updateBatchTrackerApiUrl\": \"https://ratingapit-internal-data-ingestion.iso.com/updatebatchstatus\"\r
+
+    \    }\r
+
+    }\r\n"
+settings: {}
+order: 7000

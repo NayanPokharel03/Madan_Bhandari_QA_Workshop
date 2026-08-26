@@ -1,0 +1,34 @@
+meta {
+  name: POST /keys (create)
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/keys
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  [
+    { "Id": {{keyId}}, "Data": "BRUCE WAYNE", "DataType": "N" }
+  ]
+}
+
+tests {
+  test('Status is 201', function () {
+    expect(res.getStatus()).to.equal(201);
+  });
+  const body = res.getBody();
+  test('Returns array with generated Keys', function () {
+    expect(body).to.be.an('array').with.lengthOf(1);
+    expect(body[0]).to.have.property('Keys').that.is.an('array').with.length.above(0);
+    expect(body[0]).to.include({ Id: Number(bru.getEnvVar('keyId')), Data: 'BRUCE WAYNE', DataType: 'N' });
+  });
+  bru.setVar('lastKeys', JSON.stringify(body[0].Keys));
+}

@@ -1,0 +1,25 @@
+$kind: http-request
+name: New Request
+url: https://ratingapia-internal-data-ingestion.iso.com/addmetadataconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"recordType\": \"ingestion-metadata-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-accp-use\",\r
+
+    \        \"application\": \"DataHubAnalysis\",\r
+
+    \        \"datasetName\": \"MVR\",\r
+
+    \        \"datasetRegex\": \"tier1/DataHubAnalysis/MVR/.*\"\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 4000

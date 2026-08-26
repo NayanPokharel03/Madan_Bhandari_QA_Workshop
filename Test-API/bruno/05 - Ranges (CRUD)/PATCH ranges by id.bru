@@ -1,0 +1,28 @@
+meta {
+  name: PATCH /ranges/{id}
+  type: http
+  seq: 3
+}
+
+patch {
+  url: {{baseUrl}}/ranges/{{rangeId}}
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  { "DataType": "A" }
+}
+
+tests {
+  test('Status is 200', function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+  test('DataType changed to A', function () {
+    expect(res.getBody()[0].DataType).to.eql('A');
+  });
+}

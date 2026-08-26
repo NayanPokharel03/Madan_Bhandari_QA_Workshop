@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://ratingapi-internal-data-ingestion-use.iso.com/getbatchstatus?recordType=ETL-status
+method: GET
+queryParams:
+  recordType: ETL-status
+settings: {}
+order: 2000

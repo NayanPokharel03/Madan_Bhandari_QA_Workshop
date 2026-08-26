@@ -1,0 +1,110 @@
+$kind: http-request
+url: https://ratingapit-internal-data-ingestion.iso.com/adddpptriggerconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"recordType\": \"dpp-trigger-config\",\r
+
+    \        \"sortKey\": \"DLEvaluation-MVR_OH-Name-Timestamp-Load\",\r
+
+    \        \"bucketname\": \"personallines-datastore-test-use\",\r
+
+    \        \"application\": \"DLEvaluation\",\r
+
+    \        \"destinationBucket\": \"personallines-datastore-test-use\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"TEST-general\",\r
+
+    \        \"awsBatchJobDefinition\": \"datahub-ingestion-tier1-load-TEST\",\r
+
+    \        \"awsBatchJobName\": \"DLEvaluation-MVR_OH-Name-Timestamp-Load\",\r
+
+    \        \"delimiter\": \"\\t\",\r
+
+    \        \"timestamp\": \"Thu May 12 10:31:07 UTC 2022\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"datasetRegex\": \"DLEvaluation/loadtimestamp-input/MVR_OH/.*name.*\",\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"outputPath\": \"DLEvaluation/ssa-input/MVR_OH_Name\",\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"dppProcessType\": \"LOAD_TIMESTAMP\",\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": false,\r
+
+    \        \"logETLStatusTracker\": false,\r
+
+    \        \"kmsKeyId\": \"150fc390-7fa9-4e53-8d2a-e1e449ddcbef\"\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 12000

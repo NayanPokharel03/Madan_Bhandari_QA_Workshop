@@ -1,0 +1,83 @@
+$kind: http-request
+url: https://internal-VaultAPI-Test-1598238976.us-east-1.elb.amazonaws.com/database/creds/pgsql-app-rw-DatahubDashboardWeb-datahub_audit_data-plt-db-datahubauditdata-01
+method: GET
+headers:
+  X-VA-ApplicationId: DataIngestionBatch
+  X-Vault-Auth: QVNJQTRYSUNXMzVUVU8yRkJYN1o6d1MrZFNoL0tJamtiVWJDdDFaejBlQW0ySVVNQ0pYTG90ajdENjRmLzpGd29HWlhJdllYZHpFR2NhREpWekd4QlRGNEUyTWllTUtTTG1BV3NCdWdBNXU3aXg3WUxCN0s0RlcxdWFiOXd3K0pDczQ5anBkYjNqSGc0OXh0QmFDRzc0UzZhWG5lcHJTOGhyVVpoTE0wc2pTUTlKZE83Y2dZcVdlSWc2M2E2ZmVQMDA5L1M2MDMyWjBuc2JXZG1CSERMZzVWWll3MkQrV2NqeG1tV21MV0Z4L2c4eUNzOGJlV1N5N3FBeC9yUnZqaHFvMVNLS29NNDlLTkdrTlpGZnFGVlNSSG5NSjltYWgzVzZEdmZzUGVUbFVEckZEaDlxY2tUUjR2NHhDRU5EL0w3d1llU3lxOEZ0TmhBUWJ5ZVZNMkJ6bnppaGp2dXBlSnp5WGM0MFhmcUVjOCtDOFdPMCt1QTBqZmdYbCtKTXFVTmhDRmtsOEQ4S1g0ZXBXejVWMWs3d0tQS1k5YXdHTWl1L1kyS2hRMnZvcnNKdlRuUnljRHFtVUtWM2dkVjlXeCtCd2c5Q3dDajlQd1E4dE5NKytROU5ON3cx
+body:
+  type: json
+  content: "{'Rules': [\r
+
+    \        {'ID': 'MultipartuploadAbortPolicy', 'Filter': {}, 'Status': 'Enabled', 'AbortIncompleteMultipartUpload': {'DaysAfterInitiation': 3\r
+
+    \            }\r
+
+    \        },\r
+
+    \        {'ID': 'ISO_UW_Default_Lifecycle', 'Filter': {}, 'Status': 'Enabled', 'Transitions': [\r
+
+    \                {'Days': 1, 'StorageClass': 'INTELLIGENT_TIERING'\r
+
+    \                }\r
+
+    \            ], 'NoncurrentVersionExpiration': {'NoncurrentDays': 60\r
+
+    \            }\r
+
+    \        },\r
+
+    \        {'Expiration': {'Days': 65\r
+
+    \            }, 'ID': 'ProMetrix_Archive_Policy', 'Filter': {'Prefix': 'archive/Prometrix/'\r
+
+    \            }, 'Status': 'Enabled', 'NoncurrentVersionExpiration': {'NoncurrentDays': 2\r
+
+    \            }\r
+
+    \        },\r
+
+    \        {'Expiration': {'Days': 60\r
+
+    \            }, 'ID': 'DataQuality_Archive_Policy', 'Filter': {'Prefix': 'archive/DataQuality/'\r
+
+    \            }, 'Status': 'Enabled', 'NoncurrentVersionExpiration': {'NoncurrentDays': 5\r
+
+    \            }\r
+
+    \        },\r
+
+    \        {'Expiration': {'Days': 60\r
+
+    \            }, 'ID': 'FlightDeck_Archive_Policy', 'Filter': {'Prefix': 'archive/FlightDeck/'\r
+
+    \            }, 'Status': 'Enabled', 'NoncurrentVersionExpiration': {'NoncurrentDays': 5\r
+
+    \            }\r
+
+    \        },\r
+
+    \        {'Expiration': {'Days': 60\r
+
+    \            }, 'ID': 'Flightkit_Archive_Policy', 'Filter': {'Prefix': 'archive/Flightkit/'\r
+
+    \            }, 'Status': 'Enabled', 'NoncurrentVersionExpiration': {'NoncurrentDays': 5\r
+
+    \            }\r
+
+    \        },\r
+
+    \        {'Expiration': {'Days': 61\r
+
+    \            }, 'ID': 'Archive_DataQuality_UWDH-6596', 'Filter': {'Prefix': 'archive/DataQuality/'\r
+
+    \            }, 'Status': 'Enabled', 'NoncurrentVersionExpiration': {'NoncurrentDays': 61\r
+
+    \            }\r
+
+    \        }\r
+
+    \    ]\r
+
+    }"
+settings: {}
+order: 19000

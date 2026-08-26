@@ -1,0 +1,8 @@
+$kind: http-request
+url: https://ratingapit-internal-data-ingestion.iso.com/getautomatedistributionconfig?bucketname=ratings-datahub-test-use&app=SAVIR
+method: GET
+queryParams:
+  bucketname: ratings-datahub-test-use
+  app: SAVIR
+settings: {}
+order: 27000

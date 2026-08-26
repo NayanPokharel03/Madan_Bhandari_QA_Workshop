@@ -1,0 +1,44 @@
+$kind: http-request
+url: https://ratingapia-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: text
+  content: "{\r
+
+    \    \"jobName\": \"DataHubAnalysis-EER-Batch-ACCP_FALSE\",\r
+
+    \    \"jobQueue\": \"ACCP-priority\",\r
+
+    \    \"jobDefinition\": \"datahub-entity-resolution-batch-accp\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"INPUT_BUCKET\": \"commerciallines-datastore-accp-use\",\r
+
+    \        \"OUTPUT_BUCKET\": \"commerciallines-datastore-accp-use\",\r
+
+    \        \"INPUT_FILE\": \"DataHubAnalysis/EER_TEST/input/datahubanalysis_eer.csv\",\r
+
+    \        \"INPUT_FILENAME\": \"datahubanalysis_eer.csv\",\r
+
+    \        \"OUTPUT_FILE\": \"DataHubAnalysis/EER_TEST/output/datahubanalysis_eer_false.csv\",\r
+
+    \        \"SORT_KEY\": \"DataHubAnalysis-EER-Batch-Accp\",\r
+
+    \        \"BATCH_SIZE\": 99,\r
+
+    \        \"DELETE_INPUT_FILE\": false,\r
+
+    \        \"SECURE_API_MODE_OVERRIDE\": \"FALSE\",\r
+
+    \        \"WRITER_MODE\": \"MEMORY\",\r
+
+    \        \"MULTIPROCESS_MODE\": \"POOL\",\r
+
+    \      \"logBatchStatusTracker\": true\r
+
+    \    }\r
+
+    } "
+settings: {}
+order: 19000

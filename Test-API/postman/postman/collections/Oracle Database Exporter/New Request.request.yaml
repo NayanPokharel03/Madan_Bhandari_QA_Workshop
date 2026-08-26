@@ -1,0 +1,28 @@
+$kind: http-request
+url: https://ratingapit-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"TESTOracle\",\r
+
+    \    \"jobQueue\": \"TEST-general\",\r
+
+    \    \"jobDefinition\": \"datahub-oracle-exporter-test\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"SortKey\": \"db-oracle-exporter-incremental-sql\",\r
+
+    \        \"logBatchStatusTracker\": true,\r
+
+    \        \"updateBatchTrackerApiUrl\": \"https://ratingapi-internal-data-ingestion-use.iso.com/updatebatchstatus?recordType=batch-status\",\r
+
+    \        \"guid\": \"abcd\"\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 1000

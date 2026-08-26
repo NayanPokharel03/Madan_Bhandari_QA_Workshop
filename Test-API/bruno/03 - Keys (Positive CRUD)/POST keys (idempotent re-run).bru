@@ -1,0 +1,32 @@
+meta {
+  name: POST /keys (idempotent re-run, same payload)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/keys
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  [
+    { "Id": {{keyId}}, "Data": "BRUCE WAYNE", "DataType": "N" }
+  ]
+}
+
+tests {
+  test('Status is 201 on repeat with identical payload', function () {
+    expect(res.getStatus()).to.equal(201);
+  });
+  test('Generated Keys are stable across identical re-posts', function () {
+    const body = res.getBody();
+    const previous = JSON.parse(bru.getVar('lastKeys') || '[]');
+    expect(body[0].Keys).to.eql(previous);
+  });
+}

@@ -1,0 +1,26 @@
+$kind: http-request
+url: https://ratingapiuat-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"dynamoDB-exporter-test\",\r
+
+    \    \"jobQueue\": \"UAT-general\",\r
+
+    \    \"jobDefinition\": \"datahub-dynamodb-exporter-batch-UAT\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"SORT_KEY\": \"db-dynamodb-datahubanalysis-test\",\r
+
+    \        \"debugMode\": false\r
+
+    \    },\r
+
+    \    \"dhApplication\": \"DataHubAnalysis\"\r
+
+    }"
+settings: {}
+order: 1000

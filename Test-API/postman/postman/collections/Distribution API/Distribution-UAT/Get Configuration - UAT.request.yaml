@@ -1,0 +1,8 @@
+$kind: http-request
+url: https://ratingapiuat-internal-data-distribution.iso.com/getconfig?recordKey=distribution-config&bucketname=commerciallines-distribution-uat-use
+method: GET
+queryParams:
+  recordKey: distribution-config
+  bucketname: commerciallines-distribution-uat-use
+settings: {}
+order: 1000

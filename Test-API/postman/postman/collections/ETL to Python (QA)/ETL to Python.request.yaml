@@ -1,0 +1,8 @@
+$kind: http-request
+url: https://ratingapit-internal-data-ingestion.iso.com/deleteconfig?partitionKey=validation-config&sortKey=DataHubAnalysis-QA-S3-Snowflake-Validation
+method: DELETE
+queryParams:
+  partitionKey: validation-config
+  sortKey: DataHubAnalysis-QA-S3-Snowflake-Validation
+settings: {}
+order: 5000

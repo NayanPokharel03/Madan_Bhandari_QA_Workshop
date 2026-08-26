@@ -1,0 +1,40 @@
+$kind: http-request
+url: https://ratingapit-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"FraudShare-Email-Address-Service\",\r
+
+    \    \"jobQueue\": \"TEST-priority\",\r
+
+    \    \"jobDefinition\": \"ssa-file-processor-TEST\",\r
+
+    \    \"timeoutOverride\": \"3600\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"INPUT_FILE\": \"FraudShare/EmailAddressTest/account_holder_1.txt\",\r
+
+    \        \"SSA_KEY\": \"FraudShare-Email-Address-Service\",\r
+
+    \        \"INPUT_BUCKET\": \"s3://personallines-datastore-test-use\",\r
+
+    \        \"OUTPUT_FILE\": \"FraudShare/ssa-output/EmailAddressTest/account_holder_1.txt\",\r
+
+    \        \"OUTPUT_BUCKET\": \"s3://personallines-datastore-test-use\",\r
+
+    \        \"DELETE_INPUT_FILE\": \"FALSE\",\r
+
+    \        \"logBatchStatusTracker\":\"false\",\r
+
+    \        \"logETLStatusTracker\":\"false\",\r
+
+    \        \"updateBatchTrackerApiUrl\": \"https://ratingapit-internal-data-ingestion.iso.com/updateetlstatus\"\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 1000

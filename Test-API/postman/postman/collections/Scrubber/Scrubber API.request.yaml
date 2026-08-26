@@ -1,0 +1,30 @@
+$kind: http-request
+url: http://internal-scrubber-api-test-1511899280.us-east-1.elb.amazonaws.com/scrubber/address/scrub/batch
+method: POST
+headers:
+  Authorization: ""
+body:
+  type: json
+  content: "{\r
+
+    \    \"IncludeGeocode\": \"true\",\r
+
+    \    \"QueryType\": \"parse\",\r
+
+    \    \"ApplicationId\": \"Address_Scrubber_Regression_APP\",\r
+
+    \    \"Addresses\": [\r
+
+    \        {\r
+
+    \            \"Id\": \"0\",\r
+
+    \            \"Address1\": \"1453 LAKESHORE DR N\", \"Address2\": \"\", \"City\": \"BANDERA\", \"State\": \"TX\", \"Zip\": \"78003\", \"Country\": \"USA\", \"IsAddressRange\": \"true\"\r
+
+    \        }\r
+
+    \    ]\r
+
+    }"
+settings: {}
+order: 3000

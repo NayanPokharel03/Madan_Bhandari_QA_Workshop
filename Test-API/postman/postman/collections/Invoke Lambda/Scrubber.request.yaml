@@ -1,0 +1,42 @@
+$kind: http-request
+url: https://ratingapit-internal-batch-trigger.iso.com/invokebatch
+method: GET
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"DataHubAnalysis-BlackKnight-Assessment-Scrubber\",\r
+
+    \    \"jobQueue\": \"TEST-general\",\r
+
+    \    \"jobDefinition\": \"melissa-file-processor-TEST\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"DELETE_INPUT_FILE\": \"FALSE\",\r
+
+    \        \"OUTPUT_FILE\": \"DataHubAnalysis/ScrubberBugUWDH-5920/output/test_with_header.csv\",\r
+
+    \        \"KMS_KEY\": \"09cc607e-aec6-46fc-b35f-b637d35e9c4f\",\r
+
+    \        \"logBatchStatusTracker\": \"true\",\r
+
+    \        \"debugMode\": \"true\",\r
+
+    \        \"updateBatchTrackerApiUrl\": \"https://ratingapia-internal-data-ingestion.iso.com/updatebatchstatus\",\r
+
+    \        \"SCRUBBER_KEY\": \"DataHubAnalysis-BlackKnight-Assessment-Scrubber-Header\",\r
+
+    \        \"OUTPUT_BUCKET\": \"s3://commerciallines-datastore-test-use\",\r
+
+    \        \"INPUT_FILE\": \"DataHubAnalysis/ScrubberBugUWDH-5920/test_with_header.txt\",\r
+
+    \        \"INPUT_BUCKET\": \"s3://commerciallines-datastore-test-use\",\r
+
+    \        \"logETLStatusTracker\": \"false\"\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 16000

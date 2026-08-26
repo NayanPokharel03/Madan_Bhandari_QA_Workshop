@@ -1,0 +1,6 @@
+$kind: http-request
+name: https://ratingapit-internal-data-ingestion.iso.com/adddpptriggerconfig
+url: https://ratingapiuat-internal-data-ingestion.iso.com/adddpptriggerconfig
+method: POST
+settings: {}
+order: 1000

@@ -1,0 +1,29 @@
+meta {
+  name: PUT /keys/{id} (full replace)
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/keys/{{keyId}}
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  { "Id": {{keyId}}, "Data": "CLARK KENT", "DataType": "N" }
+}
+
+tests {
+  test('Status is 200', function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+  test('Body reflects the replacement values', function () {
+    const body = res.getBody();
+    expect(body[0]).to.include({ Id: Number(bru.getEnvVar('keyId')), Data: 'CLARK KENT', DataType: 'N' });
+  });
+}

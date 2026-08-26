@@ -1,0 +1,27 @@
+meta {
+  name: POST /keys extra field -> 422
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/keys
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  [
+    { "Id": 8003, "Data": "X", "DataType": "N", "Extra": "nope" }
+  ]
+}
+
+tests {
+  test('Status is 422', function () {
+    expect(res.getStatus()).to.equal(422);
+  });
+}

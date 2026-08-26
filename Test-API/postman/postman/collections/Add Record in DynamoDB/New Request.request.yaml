@@ -1,0 +1,22 @@
+$kind: http-request
+url: https://ratingapit-internal-data-distribution.iso.com/addstatus
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"fileKey\": \"tier1/DataHubAnalysis/tests/partition_year=2023/partition_month=07/partition_day=13/sample13.txt\",\r
+
+    \    \"inputBucket\": \"personallines-datahub-test-use\",\r
+
+    \    \"jobIds\": [\r
+
+    \        \"DatahubAnalysis-Distribution-DIFV2-Tier1-Aurora-Level-Test\"\r
+
+    \    ],\r
+
+    \    \"automationDistribution\": true\r
+
+    }"
+settings: {}
+order: 1000

@@ -1,0 +1,5 @@
+$kind: http-request
+url: https://ratingapit-internal-data-ingestion.iso.com/getbinsconfig
+method: GET
+settings: {}
+order: 1000

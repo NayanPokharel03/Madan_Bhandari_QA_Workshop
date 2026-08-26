@@ -1,0 +1,58 @@
+$kind: http-request
+url: https://ratingapiuat-internal-data-ingestion.iso.com/addpartitionframeworkconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"RiskAnalyzer\",\r
+
+    \        \"datahubDatabase\": \"riskanalyzer_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier1_rapa_vehpd_for_api_data\",\r
+
+    \        \"datasetRegex\": \"tier1/RiskAnalyzer/RAPA/RAPAVehPDforAPI/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"RiskAnalyzer\",\r
+
+    \        \"datahubDatabase\": \"riskanalyzer_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier1_rapa_veh_liab_for_api_data\",\r
+
+    \        \"datasetRegex\": \"tier1/RiskAnalyzer/RAPA/RAPAVehLiabforAPI/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"RiskAnalyzer\",\r
+
+    \        \"datahubDatabase\": \"riskanalyzer_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier1_rapa_sym2_for_api_data\",\r
+
+    \        \"datasetRegex\": \"tier1/RiskAnalyzer/RAPA/RAPASym2forAPI/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 2000

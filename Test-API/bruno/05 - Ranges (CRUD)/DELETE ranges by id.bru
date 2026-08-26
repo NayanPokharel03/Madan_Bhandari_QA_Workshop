@@ -1,0 +1,20 @@
+meta {
+  name: DELETE /ranges/{id}
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{baseUrl}}/ranges/{{rangeId}}
+  body: none
+  auth: none
+}
+
+tests {
+  test('Status is 200', function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+  test('deleted flag true', function () {
+    expect(res.getBody()[0]).to.include({ deleted: true, store: 'ranges' });
+  });
+}

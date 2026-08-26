@@ -1,0 +1,31 @@
+meta {
+  name: POST /keys [] -> 400 empty array
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/keys
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  []
+}
+
+tests {
+  test('Status is 400', function () {
+    expect(res.getStatus()).to.equal(400);
+  });
+  test('Standard error envelope', function () {
+    const body = res.getBody();
+    expect(body).to.include({ error: true, status: 400 });
+    expect(body).to.have.property('timestamp');
+    expect(body).to.have.property('path', '/keys');
+  });
+}

@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://6db1xds2jh.execute-api.us-east-1.amazonaws.com/Accep/membershipmanagement/Company/GetCompanyBySubscriberId?SubscriberId=Z995
+method: GET
+queryParams:
+  SubscriberId: Z995
+settings: {}
+order: 1000

@@ -1,0 +1,202 @@
+$kind: http-request
+url: https://ratingapiuat-internal-data-distribution.iso.com/addconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"RiskAnalyzer-RAPA-RAPAVehPD-Distribution\",\r
+
+    \        \"database\": \"dh\",\r
+
+    \        \"tableName\": \"ingestion_metadata\",\r
+
+    \        \"resultsLocation\": \"s3://ratings-distribution-uat-use/datawarehouse/RiskAnalyzer/RAPA/V1/PD/RAPAVehPD\",\r
+
+    \        \"application\": \"RiskAnalyzer\",\r
+
+    \        \"requestorProduct\": \"Data-Prep Hub\",\r
+
+    \        \"purpose\": \"To distribute to Data-Prep Hub team\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://ratings-datahub-uat-use/tier2/RiskAnalyzer/RAPA/V1/RAPAVehPD/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"useAurora\": true,\r
+
+    \        \"auroraDatasetname\": \"RAPA.V1.RAPAVehPD\",\r
+
+    \        \"auroraTier\": \"tier2\",\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"singleDistributionMode\": false,\r
+
+    \        \"useAcceldata\": false,\r
+
+    \        \"isEndOfPipeline\": false,\r
+
+    \        \"kmsKeyId\": \"6a432554-5413-4c98-a411-3b4561375d91\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"RiskAnalyzer-RAPA-RAPAVehLiab-Distribution\",\r
+
+    \        \"database\": \"dh\",\r
+
+    \        \"tableName\": \"ingestion_metadata\",\r
+
+    \        \"resultsLocation\": \"s3://ratings-distribution-uat-use/datawarehouse/RiskAnalyzer/RAPA/V1/LIAB/RAPAVehLiab\",\r
+
+    \        \"application\": \"RiskAnalyzer\",\r
+
+    \        \"requestorProduct\": \"Data-Prep Hub\",\r
+
+    \        \"purpose\": \"To distribute to Data-Prep Hub team\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://ratings-datahub-uat-use/tier2/RiskAnalyzer/RAPA/V1/RAPAVehLiab/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"useAurora\": true,\r
+
+    \        \"auroraDatasetname\": \"RAPA.V1.RAPAVehLiab\",\r
+
+    \        \"auroraTier\": \"tier2\",\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"singleDistributionMode\": false,\r
+
+    \        \"useAcceldata\": false,\r
+
+    \        \"isEndOfPipeline\": false,\r
+
+    \        \"kmsKeyId\": \"6a432554-5413-4c98-a411-3b4561375d91\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"RiskAnalyzer-RAPA-RAPASymbols-Distribution\",\r
+
+    \        \"database\": \"dh\",\r
+
+    \        \"tableName\": \"ingestion_metadata\",\r
+
+    \        \"resultsLocation\": \"s3://ratings-distribution-uat-use/datawarehouse/RiskAnalyzer/RAPA/V2/RAPASymbols\",\r
+
+    \        \"application\": \"RiskAnalyzer\",\r
+
+    \        \"requestorProduct\": \"Data-Prep Hub\",\r
+
+    \        \"purpose\": \"To distribute to Data-Prep Hub team\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://ratings-datahub-uat-use/tier2/RiskAnalyzer/RAPA/V2/RAPASymbols/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"useAurora\": true,\r
+
+    \        \"auroraDatasetname\": \"RAPA.V2.RAPASymbols\",\r
+
+    \        \"auroraTier\": \"tier2\",\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"singleDistributionMode\": false,\r
+
+    \        \"useAcceldata\": false,\r
+
+    \        \"isEndOfPipeline\": false,\r
+
+    \        \"kmsKeyId\": \"6a432554-5413-4c98-a411-3b4561375d91\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"RiskAnalyzer-RACA-RACASymbols-Distribution\",\r
+
+    \        \"database\": \"dh\",\r
+
+    \        \"tableName\": \"ingestion_metadata\",\r
+
+    \        \"resultsLocation\": \"s3://ratings-distribution-uat-use/datawarehouse/RiskAnalyzer/RACA/RACASymbols\",\r
+
+    \        \"application\": \"RiskAnalyzer\",\r
+
+    \        \"requestorProduct\": \"Data-Prep Hub\",\r
+
+    \        \"purpose\": \"To distribute to Data-Prep Hub team\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://ratings-datahub-uat-use/tier2/RiskAnalyzer/RACA/RACASymbols/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"useAurora\": true,\r
+
+    \        \"auroraDatasetname\": \"RACA.RACASymbols\",\r
+
+    \        \"auroraTier\": \"tier2\",\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"singleDistributionMode\": false,\r
+
+    \        \"useAcceldata\": false,\r
+
+    \        \"isEndOfPipeline\": false,\r
+
+    \        \"kmsKeyId\": \"6a432554-5413-4c98-a411-3b4561375d91\"\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 2000

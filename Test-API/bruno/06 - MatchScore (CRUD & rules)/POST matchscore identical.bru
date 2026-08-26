@@ -1,0 +1,31 @@
+meta {
+  name: POST /matchscore identical -> Decision A, Score 100
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/matchscore
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  [
+    { "Id": {{matchId}}, "Data1": "Bruce Wayne", "Data2": "Bruce Wayne", "DataType": "Name" }
+  ]
+}
+
+tests {
+  test('Status is 201', function () {
+    expect(res.getStatus()).to.equal(201);
+  });
+  test('Perfect match -> Score 100 / Decision A', function () {
+    const body = res.getBody();
+    expect(body[0]).to.include({ Score: 100, Decision: 'A' });
+  });
+}

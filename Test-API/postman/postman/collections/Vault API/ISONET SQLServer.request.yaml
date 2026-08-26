@@ -1,0 +1,12 @@
+$kind: http-request
+url: https://internal-VaultAPI-Accep-2021111385.us-east-1.elb.amazonaws.com/database/creds/mssql-app-rw-SQLServerDatabaseExporterBatch-DIN0001P-IRAALSQLSRV01
+method: GET
+headers:
+  X-Vault-Auth: QVNJQTRYSUNXMzVUVE9aTlo1U1g6R3FSQlRWS2dkMUZNd2JOd1dmaks1REcvdHltMkdYRDZkMi9VZng4SzpGd29HWlhJdllYZHpFQkVhRE9rbHBtYlVXaFJBZVJIUFBTTG1BZGQ1dUlvdTNZYTVrOFZ1K0pkWHEyeW04eTd6Szl0NDhGTERFbWcxMnhBWWVDdjBuWnhDdUxKWUQvWS9QTEdxSVNSajc3Y1VFelJsdVN0UDRpUzIwTnFyZ3d5ZStSc0c3WEtYOERDdjhEb280OFBHS2FMWjNGY0hxVytyZkpNdnF3VlRjTTZLaloxUXFrbFFUZjhVdlQ0NDlzdHNhY2dnSmR5Uzlrdm1EbDA2QUltU3dMWDYwV3BhM29ESGtma0g1ekVZWTV2QmxaMjc4elFFL05ZU1VTOGxqNVFrOTF2VnptYUFzOHhQRGtBVkZFSXc0T2VIVWRra2ZRamVtYk5oTE1uMXNRUFM5QjlBdFhhdDdMSStxS01nMk1TUW9YMWlEMUhTdSthejIwS2RPeDJwT3pQUEtKV1p1NkFHTWl2Tk9pRnFJZWQxcVhwcW1sb1p1emNSaWJVYTAxOUsvOEN4dnVzRFpVbTJ5WEZoeU14S1drYlZBTS9K
+  X-VA-ApplicationId: SQLServerDatabaseExporterBatch
+queryParams:
+  - key: ""
+    value: ""
+    disabled: true
+settings: {}
+order: 11000

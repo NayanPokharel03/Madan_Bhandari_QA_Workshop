@@ -1,0 +1,8 @@
+$kind: http-request
+url: https://ratingapit-internal-data-ingestion.iso.com/deleteconfig?partitionKey=conversion-config&sortKey=Parquet-Conversion-Test
+method: DELETE
+queryParams:
+  partitionKey: conversion-config
+  sortKey: Parquet-Conversion-Test
+settings: {}
+order: 3000

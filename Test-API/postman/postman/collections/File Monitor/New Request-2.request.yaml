@@ -1,0 +1,9 @@
+$kind: http-request
+name: New Request
+url: https://ratingapit-internal-data-ingestion.iso.com/deleteconfig?partitionKey=file-monitoring-config&sortKey=Datahubanalysis
+method: DELETE
+queryParams:
+  partitionKey: file-monitoring-config
+  sortKey: Datahubanalysis
+settings: {}
+order: 5000

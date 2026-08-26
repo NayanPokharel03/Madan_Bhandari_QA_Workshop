@@ -1,0 +1,68 @@
+$kind: http-request
+url: https://ratingapistg-internal-batch-trigger-use.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \    \"jobName\": \"DIF-datahub\",\r
+
+    \    \"jobQueue\": \"Staging-general\",\r
+
+    \    \"jobDefinition\": \"datahub-ingestion-stg\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"getPipelineIdEndpoint\": \"#{getPipelineIdEndpoint}\",\r
+
+    \        \"SOURCE_ID\": \"d7270d5e-6e44-4de1-aaa5-0d20254e6ee7\",\r
+
+    \        \"INPUT_FILE_ENCODED\": \"DataHubAnalysis.csv\",\r
+
+    \        \"logBatchStatusTracker\": \"false\",\r
+
+    \        \"updateBatchTrackerApiUrl\": \"https://internal-DatahubIngestionAPILambda-stg-1648983586.us-east-1.elb.amazonaws.com/updatebatchstatus?recordType=batch-status\"\r
+
+    ,\r
+
+    \        \"zipFile\": \"false\",\r
+
+    \        \"endPipelineEndpoint\": \"#{endPipelineEndpoint}\",\r
+
+    \        \"INPUT_FILE_PATH\": \"landing/datahubAnalysis/DIFV2\",\r
+
+    \        \"skipUnzipping\": \"false\",\r
+
+    \        \"addEventEndpoint\": \"#{addEventEndpoint}\",\r
+
+    \        \"useAcceldata\": \"false\",\r
+
+    \        \"endSpanEndpoint\": \"#{endSpanEndpoint}\",\r
+
+    \        \"acceldataUrl\": \"#{acceldataUrl}\",\r
+
+    \        \"INPUT_FILE\": \"DataHubAnalysis.csv\",\r
+
+    \        \"isEndOfPipeline\": \"false\",\r
+
+    \        \"INPUT_BUCKET\": \"personallines-ingestion-stg-use\",\r
+
+    \        \"Application\": \"datahubAnalysis\",\r
+
+    \        \"isFolderLevelIngestion\": \"false\",\r
+
+    \        \"getSpanIdEndpoint\": \"#{getSpanIdEndpoint}\",\r
+
+    \        \"gzipFile\": \"false\"\r
+
+    \    },\r
+
+    \    \"dhApplication\": \"datahubAnalysis\"\r
+
+    }\r
+
+    ]"
+settings: {}
+order: 1000

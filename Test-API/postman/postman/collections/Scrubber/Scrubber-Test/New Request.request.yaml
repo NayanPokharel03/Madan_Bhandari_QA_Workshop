@@ -1,0 +1,104 @@
+$kind: http-request
+url: https://ratingapia-internal-data-ingestion.iso.com/addscrubberconfig
+method: POST
+body:
+  type: json
+  content: "\"scrubColumns\": {\r
+
+    \            \"mappings\": {\r
+
+    \                \"address1\": {\r
+
+    \                    \"columns\": [\r
+
+    \                        \"T_ADR_LN1\"\r
+
+    \                    ]\r
+
+    \                },\r
+
+    \                \"address2\": {\r
+
+    \                    \"columns\": [\r
+
+    \                        \"T_ADR_LN2\"\r
+
+    \                    ]\r
+
+    \                },\r
+
+    \                \"city\": {\r
+
+    \                    \"columns\": [\r
+
+    \                        \"M_CITY\"\r
+
+    \                    ]\r
+
+    \                },\r
+
+    \                \"state\": {\r
+
+    \                    \"columns\": [\r
+
+    \                        \" C_ST_ALPH\"\r
+
+    \                    ]\r
+
+    \                },\r
+
+    \                \"zip\": {\r
+
+    \                    \"columns\": [\r
+
+    \                        \"C_ZIP\"\r
+
+    \                    ]\r
+
+    \                },\r
+
+    \                \"country\": {\r
+
+    \                    \"columns\": [\r
+
+    \                        \"C_CNTRY \"\r
+
+    \                    ]\r
+
+    \                },\r
+
+    \                \"defaultCountry\": \"USA\",\r
+
+    \                \"isAddressRange\": true\r
+
+    \            },\r
+
+    \            \"scrubbed\": [\r
+
+    \                \"AddressRange\",\r
+
+    \                \"PreDirection\",\r
+
+    \                \"StreetName\",\r
+
+    \                \"StreetType\",\r
+
+    \                \"PostDirection\",\r
+
+    \                \"City\",\r
+
+    \                \"Country\",\r
+
+    \                \"State\",\r
+
+    \                \"Zip\",\r
+
+    \                \"Zip4\",\r
+
+    \                \"Suite\"\r
+
+    \            ]\r
+
+    \        }"
+settings: {}
+order: 2000

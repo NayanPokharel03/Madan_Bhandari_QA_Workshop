@@ -1,0 +1,49 @@
+$kind: http-request
+name: https://ratingapit-internal-batch-trigger.iso.com/invokebatch
+url: https://ratingapit-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \r
+
+    \    \"jobName\": \"APLUS_PROPERTY_MELISSA_JOB\",\r
+
+    \r
+
+    \    \"jobQueue\": \"TEST-priority\",\r
+
+    \r
+
+    \    \"jobDefinition\": \"pentaho-apcdpp-TESTNEW\",\r
+
+    \    \r
+
+    \r
+
+    \    \"envOverrides\": {\r
+
+    \r
+
+    \        \"kitchen_command\": \"-file=/data/public/pentaho-scripts/jobs/Scrubber/j_melissa_scrub.kjb -level=Basic -param:FILENAME=APPROP.09262023.TXT.APPANDVR.FTP.D230926-T130000.conversion\",\r
+
+    \r
+
+    \        \"log_file\": \"/data/logs/APlus.Property.Claims.Batch/Test/APPROP.09262023.TXT.APPANDVR.FTP.D230926-T130000.conversion\",\r
+
+    \r
+
+    \        \"REQUEST_FILE\": \"APPROP.09262023.TXT.APPANDVR.FTP.D230926-T130000.conversion\",\r
+
+    \r
+
+    \        \"JOB_STEP\": \"melissa\"\r
+
+    \r
+
+    \    } \r
+
+    }   \r\n"
+settings: {}
+order: 1000

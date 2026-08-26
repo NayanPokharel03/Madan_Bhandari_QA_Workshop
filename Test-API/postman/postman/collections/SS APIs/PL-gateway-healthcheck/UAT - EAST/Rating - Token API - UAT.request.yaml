@@ -1,0 +1,14 @@
+$kind: http-request
+url: https://ratingapiuat-internal-use.verisk.com/underwriting/gatewaytokenapi/v1/token
+method: POST
+headers:
+  accept: application/json
+  authorization: ""
+  connection: close
+  content-type: application/x-www-form-urlencoded
+body:
+  type: urlencoded
+  content:
+    grant_type: client_credentials
+settings: {}
+order: 1000

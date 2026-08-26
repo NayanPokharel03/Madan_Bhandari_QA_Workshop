@@ -1,0 +1,24 @@
+docs {
+  # Test-API - QA Workshop (Bruno)
+
+  Bruno equivalent of the Postman collection covering health, CRUD, validation,
+  idempotency, buggy endpoints, and two data-driven flows (matchscore + error
+  status codes) for the FastAPI Test-API.
+
+  Select the environment "Test-API - Local" before running.
+  For the two data-driven folders, use the Bruno runner and attach the matching
+  CSV in `data/`.
+}
+
+script:pre-request {
+  if (!bru.getEnvVar('baseUrl')) {
+    console.warn('baseUrl not set; falling back to http://127.0.0.1:8000');
+    bru.setEnvVar('baseUrl', 'http://127.0.0.1:8000');
+  }
+}
+
+tests {
+  test('Response is valid JSON', function () {
+    expect(function () { res.getBody(); }).to.not.throw();
+  });
+}

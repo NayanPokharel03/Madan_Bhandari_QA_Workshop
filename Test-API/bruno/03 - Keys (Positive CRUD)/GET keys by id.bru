@@ -1,0 +1,22 @@
+meta {
+  name: GET /keys/{id}
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/keys/{{keyId}}
+  body: none
+  auth: none
+}
+
+tests {
+  test('Status is 200', function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+  test('Returns the stored record', function () {
+    const body = res.getBody();
+    expect(body).to.be.an('array').with.lengthOf(1);
+    expect(body[0]).to.include({ Id: Number(bru.getEnvVar('keyId')), DataType: 'N' });
+  });
+}

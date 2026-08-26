@@ -1,0 +1,98 @@
+$kind: http-request
+url: https://ratingapi-internal-batch-trigger-use.iso.com/invokelambda
+method: POST
+body:
+  type: text
+  content: "{\r
+
+    \    \"lambdaName\": \"datahub-pipeline-config-validation-prod\",\r
+
+    \    \"payload\":\"[{\r
+
+    \t\t\\\"validationConfigType\\\": \\\"DIF\\\",\r
+
+    \t\t\\\"bucketname\\\": \\\"commerciallines-ingestion-prod-use\\\",\r
+
+    \t\t\\\"application\\\": \\\"DataHubAnalysis\\\",\r
+
+    \t\t\\\"keepOriginalFile\\\": false,\r
+
+    \t\t\\\"awsBatchJobQueue\\\": \\\"PROD-general\\\",\r
+
+    \t\t\\\"awsBatchJobDefinition\\\": \\\"datahub-ingestion-prod\\\",\r
+
+    \t\t\\\"awsBatchJobName\\\": \\\"DIF-DataHubAnalysis\\\",\r
+
+    \t\t\\\"delimiter\\\": \\\"\\\\t\\\",\r
+
+    \t\t\\\"skipHeader\\\": false,\r
+
+    \t\t\\\"includeFileHeader\\\": false,\r
+
+    \t\t\\\"keepPartition\\\": false,\r
+
+    \t\t\\\"includeTimestamp\\\": true,\r
+
+    \t\t\\\"encryptFile\\\": false,\r
+
+    \t\t\\\"datasetRegex\\\": \\\"landing/DataHubAnalysis/DIFV2/.*.csv$\\\",\r
+
+    \t\t\\\"skipUnzipping\\\": false,\r
+
+    \t\t\\\"jsonFormat\\\": false,\r
+
+    \t\t\\\"addDateToFilename\\\": false,\r
+
+    \t\t\\\"csvMode\\\": false,\r
+
+    \t\t\\\"archiveBucket\\\": \\\"commerciallines-ingestion-prod-use\\\",\r
+
+    \t\t\\\"archivePathPrefix\\\": \\\"archive/DataHubAnalysis/DIFV2/\\\",\r
+
+    \t\t\\\"tier1Bucket\\\": \\\"commerciallines-datahub-prod-use\\\",\r
+
+    \t\t\\\"tier1PathPrefix\\\": \\\"tier1/DataHubAnalysis/DIFV2/\\\",\r
+
+    \t\t\\\"skipIdCreation\\\": false,\r
+
+    \t\t\\\"copyFileToDatastore\\\": true,\r
+
+    \t\t\\\"datastoreBucket\\\": \\\"commerciallines-datastore-prod-use\\\",\r
+
+    \t\t\\\"datastorePathPrefix\\\": \\\"DataHubAnalysis/DIFV2/splitter-input/\\\",\r
+
+    \t\t\\\"batchMode\\\": true,\r
+
+    \t\t\\\"skipVirusScan\\\": false,\r
+
+    \t\t\\\"maxRetryAttempts\\\": 0,\r
+
+    \t\t\\\"lastRunMilliseconds\\\": 0,\r
+
+    \t\t\\\"generateFileId\\\": false,\r
+
+    \t\t\\\"referenceTimeMilliseconds\\\": 0,\r
+
+    \t\t\\\"inPlaceProcess\\\": false,\r
+
+    \t\t\\\"logDataAuditor\\\": false,\r
+
+    \t\t\\\"recursiveCopy\\\": false,\r
+
+    \t\t\\\"compressOutputAsGzip\\\": false,\r
+
+    \t\t\\\"customPartition\\\": false,\r
+
+    \t\t\\\"uploadFileToS3\\\": true,\r
+
+    \t\t\\\"tempFileFolder\\\": \\\"DataHubAnalysis\\\",\r
+
+    \t\t\\\"uploadFile\\\": \\\"DataHubAnalysis.pdf\\\",\r
+
+    \t\t\\\"uploadFolderLocation\\\": \\\"landing/DataHubAnalysis/DIFV2/\\\"\r
+
+    \t\t}]\"\r
+
+    }"
+settings: {}
+order: 3000

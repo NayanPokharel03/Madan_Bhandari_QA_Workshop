@@ -1,0 +1,9 @@
+$kind: http-request
+url: https://ratingapit-internal-data-ingestion.iso.com/getsftpschedule
+method: GET
+queryParams:
+  - key: sortKey
+    value: ""
+    disabled: true
+settings: {}
+order: 2000

@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://ratingapit-internal-batch-trigger.iso.com/getjobstatus?jobId=b80e31a5-fa31-495e-9a6b-a59794bc7e5
+method: GET
+queryParams:
+  jobId: b80e31a5-fa31-495e-9a6b-a59794bc7e5
+settings: {}
+order: 1000

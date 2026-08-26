@@ -1,0 +1,17 @@
+meta {
+  name: DELETE /keys/{unknown} -> 404
+  type: http
+  seq: 10
+}
+
+delete {
+  url: {{baseUrl}}/keys/888888
+  body: none
+  auth: none
+}
+
+tests {
+  test('Status is 404', function () {
+    expect(res.getStatus()).to.equal(404);
+  });
+}

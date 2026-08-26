@@ -1,0 +1,23 @@
+$kind: http-request
+name: Encryption/batch post accp
+url: https://ratingapia-internal-encryption.iso.com/encryption/batch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"applicationId\":\"GenericLambda\",\r
+
+    \    \"inputBucket\": \"datahub-distribution-api-accp\",\r
+
+    \    \"inputKey\": \"temp/012c8bee-6216-4bfa-bf9f-46d67de59eb8.csv\",\r
+
+    \    \"outputBucket\": \"datahub-distribution-api-accp\",\r
+
+    \    \"outputKey\": \"temp/012c8bee-6216-4bfa-bf9f-46d67de59eb8.csv.enc\"\r
+
+    }"
+auth:
+  type: noauth
+settings: {}
+order: 6000

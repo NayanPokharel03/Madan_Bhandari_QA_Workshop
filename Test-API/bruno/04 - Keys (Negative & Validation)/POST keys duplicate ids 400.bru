@@ -1,0 +1,33 @@
+meta {
+  name: POST /keys duplicate Ids in body -> 400
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/keys
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  [
+    { "Id": 8001, "Data": "A", "DataType": "N" },
+    { "Id": 8001, "Data": "B", "DataType": "N" }
+  ]
+}
+
+tests {
+  test('Status is 400', function () {
+    expect(res.getStatus()).to.equal(400);
+  });
+  test('Message mentions duplicate Ids', function () {
+    const body = res.getBody();
+    expect(body.message.toLowerCase()).to.include('duplicate');
+    expect(body.details).to.have.property('duplicate_ids');
+  });
+}

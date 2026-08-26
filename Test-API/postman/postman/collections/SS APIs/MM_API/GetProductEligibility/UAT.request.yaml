@@ -1,0 +1,10 @@
+$kind: http-request
+url: https://vaylic9h54.execute-api.us-east-1.amazonaws.com/UAT/membershipmanagement/producteligibility/getproducteligibility?APIUserId=verisk&OrganizationId=101196&ShippingId=101196&PassportProductCode=CVAN0I00
+method: GET
+queryParams:
+  APIUserId: verisk
+  OrganizationId: "101196"
+  ShippingId: "101196"
+  PassportProductCode: CVAN0I00
+settings: {}
+order: 2000

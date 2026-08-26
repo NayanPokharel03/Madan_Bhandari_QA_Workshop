@@ -1,0 +1,42 @@
+$kind: http-request
+url: https://ratingapit-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"DataHubAnalysis-DIFV2-Splitter\",\r
+
+    \    \"jobQueue\": \"TEST-priority\",\r
+
+    \    \"jobDefinition\": \"datahub-file-splitter-processor-test\",\r
+
+    \    \"timeoutOverride\": \"3600\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"INPUT_FILE\": \"DataHubAnalysis/temp/splitter_test_file_pass.csv\",\r
+
+    \        \"SPLITTER_KEY\": \"DataHubAnalysis-DIFV2-Splitter\",\r
+
+    \        \"INPUT_BUCKET\": \"s3://commerciallines-datastore-test-use\",\r
+
+    \        \"OUTPUT_PATH\": \"DataHubAnalysis/ssa-input/\",\r
+
+    \        \"OUTPUT_FILE\": \"DataHubAnalysis/temp/splitter_test_data_pass.csv_splitter_out\",\r
+
+    \        \"OUTPUT_BUCKET\": \"s3://commerciallines-datastore-test-use\",\r
+
+    \        \"DELETE_INPUT_FILE\": \"FALSE\",\r
+
+    \        \"logBatchStatusTracker\":\"false\",\r
+
+    \        \"logETLStatusTracker\":\"true\",\r
+
+    \        \"updateBatchTrackerApiUrl\": \"https://ratingapit-internal-data-ingestion.iso.com/updateetlstatus\"\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 9000

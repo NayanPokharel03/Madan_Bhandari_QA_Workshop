@@ -1,0 +1,44 @@
+meta {
+  name: POST /matchscore (iteration)
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/matchscore
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  [
+    {
+      "Id": {{iterationId}},
+      "Data1": "{{data1}}",
+      "Data2": "{{data2}}",
+      "DataType": "{{dataType}}"
+    }
+  ]
+}
+
+tests {
+  test('Status is 201', function () {
+    expect(res.getStatus()).to.equal(201);
+  });
+  const body = res.getBody();
+  const expectedDecision = bru.getVar('expectedDecision');
+  const expectedMinScore = Number(bru.getVar('expectedMinScore'));
+  test('Decision matches CSV expectation: ' + expectedDecision, function () {
+    expect(body[0].Decision).to.eql(expectedDecision);
+  });
+  test('Score respects the CSV minimum: >= ' + expectedMinScore, function () {
+    expect(body[0].Score).to.be.at.least(expectedMinScore);
+  });
+  test('Echoed body preserves DataType', function () {
+    expect(body[0].DataType).to.eql(bru.getVar('dataType'));
+  });
+}

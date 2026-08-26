@@ -1,0 +1,8 @@
+$kind: http-request
+url: https://ratingapi-internal-data-distribution-use.iso.com/addconfig
+method: POST
+body:
+  type: json
+  content: ""
+settings: {}
+order: 2000

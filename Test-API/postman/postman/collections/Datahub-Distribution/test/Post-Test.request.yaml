@@ -1,0 +1,162 @@
+$kind: http-request
+url: https://ratingapia-internal-data-distribution.iso.com/addconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    {\r
+
+    \"configType\": \"distribution-config\",\r
+
+    \"jobId\": \"DatahubAnalysis-Distribution-DIFV2-Tier1-Athena-Level\",\r
+
+    \"database\": \"datahubanalysis_datahub_accp\",\r
+
+    \"tableName\": \"tier1_datahubanalysis_difv2_data\",\r
+
+    \"resultsLocation\": \"s3://commerciallines-distribution-accp-use/DatahubAnalysis/DIFV2/Tier1/AthenaLevel\",\r
+
+    \"timestamp\": \"Fri Nov 12 10:07:37 UTC 2021\",\r
+
+    \"application\": \"DatahubAnalysis\",\r
+
+    \"requestorProduct\": \"DatahubAnalysis\",\r
+
+    \"purpose\": \"Datahub analysis -File level End to End pipeline testing distribution for Tier1\",\r
+
+    \"requestorUserType\": \"Adhoc\",\r
+
+    \"sourceLocation\": \"s3://commerciallines-datahub-accp-use/tier1/DataHubAnalysis/DIFV2/\",\r
+
+    \"executeCustomQuery\": true,\r
+
+    \"customQueryFilename\": \"DatahubAnalysis-DIFV2-Tier1-Distribution-Query.txt\",\r
+
+    \"excludeDatahubTimestamp\": true,\r
+
+    \"excludeDistributionDateFolder\": false,\r
+
+    \"timeIntervalDays\": 0,\r
+
+    \"kmsKeyId\": \"4b861cb5-9344-472f-ac9a-17326920a911\"\r
+
+    },\r
+
+    {\r
+
+    \"configType\": \"distribution-config\",\r
+
+    \"jobId\": \"DatahubAnalysis-Distribution-DIFV2-Tier1-File-Level\",\r
+
+    \"database\": \"datahubanalysis_datahub_accp\",\r
+
+    \"tableName\": \"tier1_datahubanalysis_difv2_data\",\r
+
+    \"resultsLocation\": \"s3://commerciallines-distribution-accp-use/DatahubAnalysis/DIFV2/Tier1/FileLevel\",\r
+
+    \"timestamp\": \"Wed Nov 03 12:51:19 UTC 2021\",\r
+
+    \"application\": \"DatahubAnalysis\",\r
+
+    \"requestorProduct\": \"DatahubAnalysis\",\r
+
+    \"purpose\": \"Datahub analysis -File level End to End pipeline testing distribution for Tier1\",\r
+
+    \"requestorUserType\": \"Adhoc\",\r
+
+    \"sourceLocation\": \"s3://commerciallines-datahub-accp-use/tier1/DataHubAnalysis/DIFV2/\",\r
+
+    \"executeCustomQuery\": false,\r
+
+    \"excludeDatahubTimestamp\": true,\r
+
+    \"distributionType\": \"file-level\",\r
+
+    \"excludeDistributionDateFolder\": false,\r
+
+    \"timeIntervalDays\": 0,\r
+
+    \"kmsKeyId\": \"4b861cb5-9344-472f-ac9a-17326920a911\"\r
+
+    },\r
+
+    {\r
+
+    \"configType\": \"distribution-config\",\r
+
+    \"jobId\": \"DatahubAnalysis-Distribution-DIFV2-Tier2-Athena-Level\",\r
+
+    \"database\": \"datahubanalysis_datahub_accp\",\r
+
+    \"tableName\": \"tier2_datahubanalysis_difv2_data\",\r
+
+    \"resultsLocation\": \"s3://commerciallines-distribution-accp-use/DatahubAnalysis/DIFV2/Tier2/AthenaLevel\",\r
+
+    \"timestamp\": \"Mon Nov 15 13:15:16 UTC 2021\",\r
+
+    \"application\": \"DatahubAnalysis\",\r
+
+    \"requestorProduct\": \"DatahubAnalysis\",\r
+
+    \"purpose\": \"Datahub analysis- File level End to End pipeline testing distribution for Tier2\",\r
+
+    \"requestorUserType\": \"Adhoc\",\r
+
+    \"sourceLocation\": \"s3://commerciallines-datahub-accp-use/tier2/DataHubAnalysis/DIFV2/\",\r
+
+    \"executeCustomQuery\": true,\r
+
+    \"customQueryFilename\": \"DatahubAnalysis-DIFV2-Tier2-Distribution-Query.txt\",\r
+
+    \"excludeDatahubTimestamp\": true,\r
+
+    \"excludeDistributionDateFolder\": false,\r
+
+    \"timeIntervalDays\": 0,\r
+
+    \"kmsKeyId\": \"4b861cb5-9344-472f-ac9a-17326920a911\"\r
+
+    },\r
+
+    {\r
+
+    \"configType\": \"distribution-config\",\r
+
+    \"jobId\": \"DatahubAnalysis-Distribution-DIFV2-Tier2-File-Level\",\r
+
+    \"database\": \"datahubanalysis_datahub_accp\",\r
+
+    \"tableName\": \"tier2_datahubanalysis_difv2_data\",\r
+
+    \"resultsLocation\": \"s3://commerciallines-distribution-accp-use/DatahubAnalysis/DIFV2/Tier2/FileLevel\",\r
+
+    \"timestamp\": \"Wed Nov 03 12:51:19 UTC 2021\",\r
+
+    \"application\": \"DatahubAnalysis\",\r
+
+    \"requestorProduct\": \"DatahubAnalysis\",\r
+
+    \"purpose\": \"Datahub analysis- File level End to End pipeline testing distribution for Tier2\",\r
+
+    \"requestorUserType\": \"Adhoc\",\r
+
+    \"sourceLocation\": \"s3://commerciallines-datahub-accp-use/tier2/DataHubAnalysis/DIFV2/\",\r
+
+    \"executeCustomQuery\": false,\r
+
+    \"excludeDatahubTimestamp\": true,\r
+
+    \"distributionType\": \"file-level\",\r
+
+    \"excludeDistributionDateFolder\": false,\r
+
+    \"timeIntervalDays\": 0,\r
+
+    \"kmsKeyId\": \"4b861cb5-9344-472f-ac9a-17326920a911\"\r
+
+    }\r
+
+    ]"
+settings: {}
+order: 1000

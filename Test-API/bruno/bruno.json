@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Test-API - QA Workshop",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

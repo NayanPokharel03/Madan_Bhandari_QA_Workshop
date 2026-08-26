@@ -1,0 +1,248 @@
+$kind: http-request
+url: ""
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"Flightkit-Nautilus-Distribution-BBS_ODDS-fks_audit_log\",\r
+
+    \        \"database\": \"flightkit_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_fks_audit_log_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/Flightkit/BBS_ODDS/fks.audit_log\",\r
+
+    \        \"application\": \"Flightkit\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute Flightkit fks audit_log data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/Flightkit/BBS_ODDS/fks.audit_log/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"Flightkit-Nautilus-Distribution-BBS_ODDS-fks_condition\",\r
+
+    \        \"database\": \"flightkit_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_fks_condition_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/Flightkit/BBS_ODDS/fks.condition\",\r
+
+    \        \"application\": \"Flightkit\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute Flightkit fks condition data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/Flightkit/BBS_ODDS/fks.condition/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"Flightkit-Nautilus-Distribution-BBS_ODDS-fks_construction_validation\",\r
+
+    \        \"database\": \"flightkit_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_fks_construction_validation_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/Flightkit/BBS_ODDS/fks.construction_validation\",\r
+
+    \        \"application\": \"Flightkit\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute Flightkit fks construction_validation data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/Flightkit/BBS_ODDS/fks.construction_validation/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"Flightkit-Nautilus-Distribution-BBS_ODDS-fks_csp_code_v2\",\r
+
+    \        \"database\": \"flightkit_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_fks_csp_code_v2_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/Flightkit/BBS_ODDS/fks.csp_code_v2\",\r
+
+    \        \"application\": \"Flightkit\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute Flightkit fks csp_code_v2 data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/Flightkit/BBS_ODDS/fks.csp_code_v2/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"Flightkit-Nautilus-Distribution-BBS_ODDS-fks_auto_save_data\",\r
+
+    \        \"database\": \"flightkit_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_fks_auto_save_data_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/Flightkit/BBS_ODDS/fks.auto_save_data\",\r
+
+    \        \"application\": \"Flightkit\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute Flightkit fks auto_save_data data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/Flightkit/BBS_ODDS/fks.auto_save_data/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"Flightkit-Nautilus-Distribution-BBS_ODDS-fks_occupant_v2\",\r
+
+    \        \"database\": \"flightkit_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_fks_occupant_v2_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/Flightkit/BBS_ODDS/fks.occupant_v2\",\r
+
+    \        \"application\": \"Flightkit\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute Flightkit fks occupant_v2 data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/Flightkit/BBS_ODDS/fks.occupant_v2/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"Flightkit-Nautilus-Distribution-BBS_ODDS-fks_secondary_occup_code_v2\",\r
+
+    \        \"database\": \"flightkit_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_fks_secondary_occup_code_v2_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/Flightkit/BBS_ODDS/fks.secondary_occup_code_v2\",\r
+
+    \        \"application\": \"Flightkit\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute Flightkit fks secondary_occup_code_v2 data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/Flightkit/BBS_ODDS/fks.secondary_occup_code_v2/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 1000

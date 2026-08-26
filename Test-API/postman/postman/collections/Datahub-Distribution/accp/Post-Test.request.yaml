@@ -1,0 +1,802 @@
+$kind: http-request
+url: https://ratingapit-internal-data-distribution.iso.com/addconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"FlightDeck-Nautilus-Distribution-dbo-AssignmentGenerals\",\r
+
+    \        \"database\": \"flightdeck_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_dbo_assignment_generals_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/FlightDeck/dbo/AssignmentGenerals\",\r
+
+    \        \"application\": \"FlightDeck\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute FlightDeck dbo Assignment Generals data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/FlightDeck/dbo/AssignmentGenerals/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"e2a18931-a851-42fa-b219-acdd1dd0f7a0\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"FlightDeck-Nautilus-Distribution-dbo-Billings\",\r
+
+    \        \"database\": \"flightdeck_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_dbo_billings_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/FlightDeck/dbo/Billings\",\r
+
+    \        \"application\": \"FlightDeck\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute FlightDeck dbo Billings data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/FlightDeck/dbo/Billings/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"e2a18931-a851-42fa-b219-acdd1dd0f7a0\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"FlightDeck-Nautilus-Distribution-dbo-Capabilities\",\r
+
+    \        \"database\": \"flightdeck_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_dbo_capabilities_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/FlightDeck/dbo/Capabilities\",\r
+
+    \        \"application\": \"FlightDeck\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute FlightDeck dbo Capabilities data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/FlightDeck/dbo/Capabilities/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"e2a18931-a851-42fa-b219-acdd1dd0f7a0\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"FlightDeck-Nautilus-Distribution-dbo-Companies\",\r
+
+    \        \"database\": \"flightdeck_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_dbo_companies_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/FlightDeck/dbo/Companies\",\r
+
+    \        \"application\": \"FlightDeck\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute FlightDeck dbo Companies data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/FlightDeck/dbo/Companies/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"e2a18931-a851-42fa-b219-acdd1dd0f7a0\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"FlightDeck-Nautilus-Distribution-dbo-DeliveryFormats\",\r
+
+    \        \"database\": \"flightdeck_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_dbo_delivery_formats_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/FlightDeck/dbo/DeliveryFormats\",\r
+
+    \        \"application\": \"FlightDeck\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute FlightDeck dbo Delivery Formats data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/FlightDeck/dbo/DeliveryFormats/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"e2a18931-a851-42fa-b219-acdd1dd0f7a0\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"FlightDeck-Nautilus-Distribution-dbo-DeliveryMethods\",\r
+
+    \        \"database\": \"flightdeck_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_dbo_delivery_methods_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/FlightDeck/dbo/DeliveryMethods\",\r
+
+    \        \"application\": \"FlightDeck\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute FlightDeck dbo Delivery Methods data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/FlightDeck/dbo/DeliveryMethods/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"e2a18931-a851-42fa-b219-acdd1dd0f7a0\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"FlightDeck-Nautilus-Distribution-dbo-InsuranceLines\",\r
+
+    \        \"database\": \"flightdeck_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_dbo_insurance_lines_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/FlightDeck/dbo/InsuranceLines\",\r
+
+    \        \"application\": \"FlightDeck\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute FlightDeck dbo Insurance Lines data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/FlightDeck/dbo/InsuranceLines/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"e2a18931-a851-42fa-b219-acdd1dd0f7a0\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"FlightDeck-Nautilus-Distribution-dbo-InsuredInterests\",\r
+
+    \        \"database\": \"flightdeck_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_dbo_insured_interests_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/FlightDeck/dbo/InsuredInterests\",\r
+
+    \        \"application\": \"FlightDeck\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute FlightDeck dbo Insured Interests data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/FlightDeck/dbo/InsuredInterests/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"e2a18931-a851-42fa-b219-acdd1dd0f7a0\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"FlightDeck-Nautilus-Distribution-dbo-IsoCityPopulationZones\",\r
+
+    \        \"database\": \"flightdeck_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_dbo_iso_city_population_zones_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/FlightDeck/dbo/IsoCityPopulationZones\",\r
+
+    \        \"application\": \"FlightDeck\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute FlightDeck dbo Iso City Population Zones data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/FlightDeck/dbo/IsoCityPopulationZones/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"e2a18931-a851-42fa-b219-acdd1dd0f7a0\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"FlightDeck-Nautilus-Distribution-dbo-IsoCounties\",\r
+
+    \        \"database\": \"flightdeck_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_dbo_iso_counties_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/FlightDeck/dbo/IsoCounties\",\r
+
+    \        \"application\": \"FlightDeck\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute FlightDeck dbo Iso Counties data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/FlightDeck/dbo/IsoCounties/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"e2a18931-a851-42fa-b219-acdd1dd0f7a0\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"FlightDeck-Nautilus-Distribution-dbo-Orders\",\r
+
+    \        \"database\": \"flightdeck_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_dbo_orders_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/FlightDeck/dbo/Orders\",\r
+
+    \        \"application\": \"FlightDeck\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute FlightDeck dbo Orders data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/FlightDeck/dbo/Orders/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"e2a18931-a851-42fa-b219-acdd1dd0f7a0\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"FlightDeck-Nautilus-Distribution-dbo-OrdersExtension\",\r
+
+    \        \"database\": \"flightdeck_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_dbo_orders_extension_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/FlightDeck/dbo/OrdersExtension\",\r
+
+    \        \"application\": \"FlightDeck\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute FlightDeck dbo Orders Extension data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/FlightDeck/dbo/OrdersExtension/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"e2a18931-a851-42fa-b219-acdd1dd0f7a0\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"FlightDeck-Nautilus-Distribution-dbo-ProductQualifiers\",\r
+
+    \        \"database\": \"flightdeck_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_dbo_product_qualifiers_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/FlightDeck/dbo/ProductQualifiers\",\r
+
+    \        \"application\": \"FlightDeck\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute FlightDeck dbo Product Qualifiers data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/FlightDeck/dbo/ProductQualifiers/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"e2a18931-a851-42fa-b219-acdd1dd0f7a0\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"FlightDeck-Nautilus-Distribution-dbo-QuoteDeliveries\",\r
+
+    \        \"database\": \"flightdeck_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_dbo_quote_deliveries_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/FlightDeck/dbo/QuoteDeliveries\",\r
+
+    \        \"application\": \"FlightDeck\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute FlightDeck dbo Quote Deliveries data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/FlightDeck/dbo/QuoteDeliveries/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"e2a18931-a851-42fa-b219-acdd1dd0f7a0\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"FlightDeck-Nautilus-Distribution-dbo-ReportTypes\",\r
+
+    \        \"database\": \"flightdeck_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_dbo_report_types_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/FlightDeck/dbo/ReportTypes\",\r
+
+    \        \"application\": \"FlightDeck\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute FlightDeck dbo Report Types data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/FlightDeck/dbo/ReportTypes/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"e2a18931-a851-42fa-b219-acdd1dd0f7a0\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"FlightDeck-Nautilus-Distribution-dbo-RiskIds\",\r
+
+    \        \"database\": \"flightdeck_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_dbo_risk_ids_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/FlightDeck/dbo/RiskIds\",\r
+
+    \        \"application\": \"FlightDeck\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute FlightDeck dbo Risk Ids data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/FlightDeck/dbo/RiskIds/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"e2a18931-a851-42fa-b219-acdd1dd0f7a0\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"FlightDeck-Nautilus-Distribution-dbo-ServiceBillingInfos\",\r
+
+    \        \"database\": \"flightdeck_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_dbo_service_billing_infos_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/FlightDeck/dbo/ServiceBillingInfos\",\r
+
+    \        \"application\": \"FlightDeck\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute FlightDeck dbo Service Billing Infos data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/FlightDeck/dbo/ServiceBillingInfos/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"e2a18931-a851-42fa-b219-acdd1dd0f7a0\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"FlightDeck-Nautilus-Distribution-dbo-Services\",\r
+
+    \        \"database\": \"flightdeck_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_dbo_services_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/FlightDeck/dbo/Services\",\r
+
+    \        \"application\": \"FlightDeck\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute FlightDeck dbo Services data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/FlightDeck/dbo/Services/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"e2a18931-a851-42fa-b219-acdd1dd0f7a0\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"FlightDeck-Nautilus-Distribution-dbo-ServiceTypes\",\r
+
+    \        \"database\": \"flightdeck_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_dbo_service_types_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/FlightDeck/dbo/ServiceTypes\",\r
+
+    \        \"application\": \"FlightDeck\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute FlightDeck dbo Service Types data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/FlightDeck/dbo/ServiceTypes/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"e2a18931-a851-42fa-b219-acdd1dd0f7a0\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"FlightDeck-Nautilus-Distribution-dbo-States\",\r
+
+    \        \"database\": \"flightdeck_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_dbo_states_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/FlightDeck/dbo/States\",\r
+
+    \        \"application\": \"FlightDeck\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute FlightDeck dbo States data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/FlightDeck/dbo/States/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"e2a18931-a851-42fa-b219-acdd1dd0f7a0\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"FlightDeck-Nautilus-Distribution-dbo-Users\",\r
+
+    \        \"database\": \"flightdeck_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_dbo_users_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/FlightDeck/dbo/Users\",\r
+
+    \        \"application\": \"FlightDeck\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute FlightDeck dbo Users data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/FlightDeck/dbo/Users/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"e2a18931-a851-42fa-b219-acdd1dd0f7a0\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"FlightDeck-Nautilus-Distribution-dbo-Workers\",\r
+
+    \        \"database\": \"flightdeck_datahub_test\",\r
+
+    \        \"tableName\": \"tier1_dbo_workers_data\",\r
+
+    \        \"resultsLocation\": \"s3://commerciallines-distribution-test-use/analytics/Nautilus/FlightDeck/dbo/Workers\",\r
+
+    \        \"application\": \"FlightDeck\",\r
+
+    \        \"requestorProduct\": \"Nautilus\",\r
+
+    \        \"purpose\": \"Distribute FlightDeck dbo Workers data for Nautilus.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://commerciallines-datahub-test-use/tier1/FlightDeck/dbo/Workers/\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"e2a18931-a851-42fa-b219-acdd1dd0f7a0\"\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 1000

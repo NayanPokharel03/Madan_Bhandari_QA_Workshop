@@ -1,0 +1,18 @@
+$kind: http-request
+url: https://ratingapi-internal-acceldata-pipeline-use.iso.com/addevent
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"batchId\": \"304\",\r
+
+    \    \"spanId\": 1,\r
+
+    \    \"pipelineId\": 1,\r
+
+    \    \"eventData\": {\"startTime\": \"2023-04-30\"}\r
+
+    }"
+settings: {}
+order: 5000

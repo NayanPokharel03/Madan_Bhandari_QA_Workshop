@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://ratingapi-internal-data-ingestion-apsy.iso.com/getingestionpollingconfig?bucketname=personallines-ingestion-test-use
+method: GET
+queryParams:
+  bucketname: personallines-ingestion-test-use
+settings: {}
+order: 1000

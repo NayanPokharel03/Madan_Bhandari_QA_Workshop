@@ -1,0 +1,32 @@
+$kind: http-request
+url: https://ratingapit-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"Datahub-DLEvaluation-uat\",\r
+
+    \    \"jobQueue\": \"UAT-general\",\r
+
+    \    \"jobDefinition\": \"datahub-dlevaluation-enrichment-uat\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"input_file\": \"DLEvaluation/custom-splitter-input/Locatesmarter/e26c1353-7150-4c72-89a2-53d4bfc025f8_FIS_OH_Sample.txt.csv\",\r
+
+    \        \"input_filename\": \"e26c1353-7150-4c72-89a2-53d4bfc025f8_FIS_OH_Sample.txt.csv\",\r
+
+    \        \"input_bucket\": \"personallines-datastore-test-use\",\r
+
+    \        \"output_bucket\": \"personallines-datastore-test-use\",\r
+
+    \        \"output_file\": \"DLEvaluation/splitter-input/\",\r
+
+    \        \"dataset\": \"Locatesmarter\"\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 1000

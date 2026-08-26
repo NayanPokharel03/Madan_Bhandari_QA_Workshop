@@ -1,0 +1,42 @@
+$kind: http-request
+url: https://ratingapia-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"SSA-Non-Securing-FALSE\",\r
+
+    \    \"jobQueue\": \"ACCP-general\",\r
+
+    \    \"jobDefinition\": \"ssa-file-processor-ACCP\",\r
+
+    \    \"timeoutOverride\": \"3600\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"INPUT_FILE\": \"DataHubAnalysis/SSA-TEST/securing-test/input/SSAREGRESSION_TESTDATA_INPUT.txt\",\r
+
+    \        \"SSA_KEY\": \"Address_SSA_Regression\",\r
+
+    \        \"INPUT_BUCKET\": \"s3://ratings-datastore-accp-use\",\r
+
+    \        \"OUTPUT_FILE\": \"DataHubAnalysis/SSA-TEST/securing-test/SSAREGRESSION_TESTDATA_OUTPUT_SECURE_MODE_FALSE_TWO.txt\",\r
+
+    \        \"OUTPUT_BUCKET\": \"s3://ratings-datastore-accp-use\",\r
+
+    \        \"DELETE_INPUT_FILE\": \"FALSE\",\r
+
+    \        \"logBatchStatusTracker\": false,\r
+
+    \        \"logETLStatusTracker\": false,\r
+
+    \        \"SECURE_API_MODE_OVERRIDE\": \"false\",\r
+
+    \        \"updateBatchTrackerApiUrl\": \"https://ratingapia-internal-data-ingestion.iso.com/updatebatchstatus?recordType=batch-status\"\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 9000

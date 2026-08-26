@@ -1,0 +1,1002 @@
+$kind: http-request
+url: https://ratingapiuat-internal-data-ingestion.iso.com/addpartitionframeworkconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_bop_class_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/bop/class/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_bop_tlgrp_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/bop/clientid/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_bop_county_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/bop/county/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_bop_dash_class_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/bop/dash_class/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_bop_dash_geo_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/bop/dash_geo/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_bop_major_class_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/bop/major_class/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_bop_market_dev_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/bop/market/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_bop_mstr_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/bop/master/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_bop_state_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/bop/state/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_bop_sum_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/bop/summary/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_bop_zip_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/bop/zip/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_ca_class_other_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/ca/class_other/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_ca_class_zrttt_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/ca/class_zrttt/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_ca_clnt_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/ca/clientid/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_ca_major_class_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/ca/major_class/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_ca_mstr_class_terr_full_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/ca/master_class_territory_full/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_ca_mstr_class_terr_denorm_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/ca/master_class_territory_denorm/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_ca_mstr_class_terr_zip_denorm_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/ca/master_class_territory_zip_denorm/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_ca_mstr_non_zip_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/ca/master_non_zip/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_ca_state_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/ca/state/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_ca_summary_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/ca/summary/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_ca_territory_full_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/ca/territory_full/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_ca_territory_ref_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/ca/territory_ref/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_ca_territory_stg_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/ca/territory_stg/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_cf_clas_agg_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/cf/class/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_cf_unique_clnt_id_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/cf/clientid/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_cf_mjr_clas_agg_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/cf/major_class/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_cf_master_agg_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/cf/master/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_cf_master_comb_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/cf/master_comb/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_cf_master_denorm_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/cf/master_denorm/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_cf_st_agg_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/cf/state/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_cf_summ_agg_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/cf/summary/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_cf_terr_agg_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/cf/territory/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_cf_terr_ref_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/cf/territory_ref/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_gl_clas_ot_agg_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/gl/class_ot/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_gl_clas_po_agg_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/gl/class_po/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_gl_clas_srch_ot_agg_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/gl/class_srch_ot/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_gl_clas_srch_po_agg_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/gl/class_srch_po/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_gl_unique_clnt_id_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/gl/clientid/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_gl_cnty_po_agg_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/gl/county_po/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_gl_cnty_ref_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/gl/county_ref/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_gl_mjr_clas_agg_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/gl/major_class/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_gl_master_ot_denorm_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/gl/master_ot_denorm/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_gl_master_po_denorm_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/gl/master_po_denorm/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_gl_ot_master_agg_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/gl/ot_master/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_gl_po_master_agg_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/gl/po_master/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_gl_st_agg_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/gl/state/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_gl_summ_agg_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/gl/summary/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_ho_unique_clnt_id_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/ho/clientid/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_ho_cnty_agg_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/ho/county/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_ho_mjr_clas_agg_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/ho/major_class/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_ho_master_agg_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/ho/master/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_ho_master_denorm_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/ho/master_denorm/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_ho_st_agg_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/ho/state/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_ho_summ_agg_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/ho/summary/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_ho_zip_agg_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/ho/zip/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_pa_unique_clnt_id_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/pa/clientid/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_pa_cnty_agg_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/pa/county/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_pa_master_agg_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/pa/master/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_pa_master_denorm_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/pa/master_denorm/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_pa_summ_agg_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/pa/summary/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-uat-use\",\r
+
+    \        \"application\": \"MarketLandscape\",\r
+
+    \        \"datahubDatabase\": \"marketlandscape_datahub_uat\",\r
+
+    \        \"datahubTablename\": \"tier2_ml_pa_zip_agg_data\",\r
+
+    \        \"datasetRegex\": \"tier2/MarketLandscape/pa/zip/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 2000

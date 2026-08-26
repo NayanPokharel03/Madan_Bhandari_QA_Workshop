@@ -1,0 +1,8 @@
+$kind: http-request
+name: https://ratingapia-internal-data-ingestion.iso.com/getencryptionconfig
+url: https://ratingapia-internal-data-ingestion.iso.com/getencryptionconfig
+method: GET
+auth:
+  type: noauth
+settings: {}
+order: 9000

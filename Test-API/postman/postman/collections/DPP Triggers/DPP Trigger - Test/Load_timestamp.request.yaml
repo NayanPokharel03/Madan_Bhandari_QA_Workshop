@@ -1,0 +1,38 @@
+$kind: http-request
+url: https://ratingapia-internal-data-ingestion.iso.com/adddpptriggerconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"recordType\": \"dpp-trigger-config\",\r
+
+    \        \"sortKey\": \"DataHubAnalysis-Drivers-Timestamp-Load\",\r
+
+    \        \"bucketname\": \"ratings-datastore-accp-use\",\r
+
+    \        \"application\": \"DLEvaluation\",\r
+
+    \        \"destinationBucket\": \"ratings-datastore-accp-use\",\r
+
+    \        \"awsBatchJobQueue\": \"ACCP-priority\",\r
+
+    \        \"awsBatchJobDefinition\": \"datahub-ingestion-tier1-load-ACCP\",\r
+
+    \        \"awsBatchJobName\": \"DataHubAnalysis-Drivers-Timestamp-Load\",\r
+
+    \        \"delimiter\": \",\",\r
+
+    \        \"datasetRegex\": \"DataHubAnalysis/RegressionScripts/Splitter/input/LoadTimestamp/input/.*\",\r
+
+    \        \"outputPath\": \"DataHubAnalysis/RegressionScripts/Splitter/input/LoadTimestamp/output/\",\r
+
+    \        \"dppProcessType\": \"LOAD_TIMESTAMP\"\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 8000

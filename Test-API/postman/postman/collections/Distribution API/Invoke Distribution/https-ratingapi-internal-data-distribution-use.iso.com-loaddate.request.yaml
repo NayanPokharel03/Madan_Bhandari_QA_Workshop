@@ -1,0 +1,17 @@
+$kind: http-request
+name: https://ratingapi-internal-data-distribution-use.iso.com/loaddate
+url: https://ratingapit-internal-data-distribution.iso.com/loaddate
+method: POST
+body:
+  type: json
+  content: "    {\r
+
+    \    \"jobId\": \"DatahubAnalysis-Distribution-DIFV2-Tier1-Aurora-Level-EndtoEndPipeline\",\r
+
+    \    \"startDate\": \"2024-03-24 00:00:00.000\",\r
+
+    \    \"endDate\": \"2024-03-28 23:59:59.000\"\r
+
+    }"
+settings: {}
+order: 1000

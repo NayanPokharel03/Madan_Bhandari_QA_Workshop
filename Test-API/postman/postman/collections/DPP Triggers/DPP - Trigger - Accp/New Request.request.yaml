@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://ratingapia-internal-data-ingestion.iso.com/getdpptriggerconfig?bucketname=ratings-datastore-accp-use
+method: GET
+queryParams:
+  bucketname: ratings-datastore-accp-use
+settings: {}
+order: 1000

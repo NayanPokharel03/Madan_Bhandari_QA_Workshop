@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://ratingapi-internal-data-distribution-use.iso.com/getconfig?recordKey=distribution-config
+method: GET
+queryParams:
+  recordKey: distribution-config
+settings: {}
+order: 5000

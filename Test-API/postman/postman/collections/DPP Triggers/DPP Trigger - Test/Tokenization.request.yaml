@@ -1,0 +1,118 @@
+$kind: http-request
+url: https://ratingapit-internal-data-ingestion.iso.com/adddpptriggerconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"recordType\": \"dpp-trigger-config\",\r
+
+    \        \"sortKey\": \"DLEvaluation-Locatesmarter-Address-Tokenization\",\r
+
+    \        \"bucketname\": \"personallines-datastore-test-use\",\r
+
+    \        \"application\": \"DLEvaluation\",\r
+
+    \        \"destinationBucket\": \"personallines-datastore-test-use\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"TEST-general\",\r
+
+    \        \"awsBatchJobDefinition\": \"tokenization-file-processor-TEST\",\r
+
+    \        \"awsBatchJobName\": \"DLEvaluation-Locatesmarter-Address-Tokenization\",\r
+
+    \        \"datasetRegex\": \"DLEvaluation/tokenization-input/Locatesmarter_Address/.*\",\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"outputPath\": \"DLEvaluation/tier2-copy-input/Locatesmarter_Address\",\r
+
+    \        \"batchMode\": true,\r
+
+    \        \"blockSize\": \"20\",\r
+
+    \        \"dppProcessType\": \"TOKENIZATION\",\r
+
+    \        \"dppOutputFileSuffix\": \"_tokenized\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"dpp-trigger-config\",\r
+
+    \        \"sortKey\": \"DLEvaluation-Locatesmarter-Name-Tokenization\",\r
+
+    \        \"bucketname\": \"personallines-datastore-test-use\",\r
+
+    \        \"application\": \"DLEvaluation\",\r
+
+    \        \"destinationBucket\": \"personallines-datastore-test-use\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"TEST-general\",\r
+
+    \        \"awsBatchJobDefinition\": \"tokenization-file-processor-TEST\",\r
+
+    \        \"awsBatchJobName\": \"DLEvaluation-Locatesmarter-Name-Tokenization\",\r
+
+    \        \"datasetRegex\": \"DLEvaluation/tokenization-input/Locatesmarter_Name/.*\",\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"outputPath\": \"DLEvaluation/tier2-copy-input/Locatesmarter_Name\",\r
+
+    \        \"batchMode\": true,\r
+
+    \        \"blockSize\": \"20\",\r
+
+    \        \"dppProcessType\": \"TOKENIZATION\",\r
+
+    \        \"dppOutputFileSuffix\": \"_tokenized\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"dpp-trigger-config\",\r
+
+    \        \"sortKey\": \"DLEvaluation-Locatesmarter-Master-Tokenization\",\r
+
+    \        \"bucketname\": \"personallines-datastore-test-use\",\r
+
+    \        \"application\": \"DLEvaluation\",\r
+
+    \        \"destinationBucket\": \"personallines-datastore-test-use\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"TEST-general\",\r
+
+    \        \"awsBatchJobDefinition\": \"tokenization-file-processor-TEST\",\r
+
+    \        \"awsBatchJobName\": \"DLEvaluation-Locatesmarter-Master-Tokenization\",\r
+
+    \        \"datasetRegex\": \"DLEvaluation/tokenization-input/Locatesmarter_Master/.*\",\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"outputPath\": \"DLEvaluation/tier2-copy-input/Locatesmarter_Master\",\r
+
+    \        \"batchMode\": true,\r
+
+    \        \"blockSize\": \"20\",\r
+
+    \        \"dppProcessType\": \"TOKENIZATION\",\r
+
+    \        \"dppOutputFileSuffix\": \"_tokenized\"\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 7000

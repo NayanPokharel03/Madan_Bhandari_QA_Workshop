@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://6db1xds2jh.execute-api.us-east-1.amazonaws.com/Accep/membershipmanagement/User?
+method: GET
+queryParams:
+  "": null
+settings: {}
+order: 1000

@@ -1,0 +1,8 @@
+$kind: http-request
+url: https://nkonm3af4f.execute-api.us-east-1.amazonaws.com/Test/membershipmanagement/Company/GetCompanies?OrganizationId=165124&ShippingId=165124
+method: GET
+queryParams:
+  OrganizationId: "165124"
+  ShippingId: "165124"
+settings: {}
+order: 3000

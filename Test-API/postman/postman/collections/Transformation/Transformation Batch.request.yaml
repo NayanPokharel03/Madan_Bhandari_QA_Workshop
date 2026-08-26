@@ -1,0 +1,40 @@
+$kind: http-request
+url: https://ratingapi-internal-batch-trigger-usw.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"Transformation-Batch\",\r
+
+    \    \"jobQueue\": \"PROD-general\",\r
+
+    \    \"jobDefinition\": \"datahub-transformation-processor-batch-PROD\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"SORT_KEY\": \"DataHubAnalysis-DATASET-Transformation\",\r
+
+    \        \"INPUT_BUCKET\": \"commerciallines-datastore-prod-usw\",\r
+
+    \        \"INPUT_FILE\": \"DataHubAnalysis/transformation/subject-master-tes.txt\",\r
+
+    \        \"INPUT_FILENAME\": \"subject-master-tes.txt\",\r
+
+    \        \"OUTPUT_BUCKET\": \"commerciallines-datastore-prod-usw\",\r
+
+    \        \"OUTPUT_FILE\": \"DataHubAnalysis/transformation/output/\",\r
+
+    \        \"DELETE_INPUT_FILE\": false,\r
+
+    \      \"debugMode\": 1,\r
+
+    \        \"logBatchStatusTracker\": \"false\",\r
+
+    \        \"application\": \"DataHubAnalysis\"\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 1000

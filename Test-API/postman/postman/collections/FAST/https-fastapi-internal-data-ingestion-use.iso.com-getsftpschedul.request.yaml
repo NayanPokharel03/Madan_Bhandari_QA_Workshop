@@ -1,0 +1,8 @@
+$kind: http-request
+name: https://fastapi-internal-data-ingestion-use.iso.com/getsftpschedule
+url: https://fastapi-internal-data-ingestion-use.iso.com/getsftpschedule
+method: GET
+auth:
+  type: noauth
+settings: {}
+order: 1000

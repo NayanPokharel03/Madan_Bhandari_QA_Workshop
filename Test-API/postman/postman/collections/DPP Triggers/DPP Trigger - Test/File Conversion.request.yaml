@@ -1,0 +1,136 @@
+$kind: http-request
+url: https://ratingapia-internal-data-ingestion.iso.com/adddpptriggerconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"recordType\": \"dpp-trigger-config\",\r
+
+    \        \"sortKey\": \"DataHubAnalysis-Pipe-Drivers-CSV-Conversion\",\r
+
+    \        \"bucketname\": \"ratings-datastore-accp-use\",\r
+
+    \        \"application\": \"DataHubAnalysis\",\r
+
+    \        \"destinationBucket\": \"ratings-datastore-accp-use\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"ACCP-priority\",\r
+
+    \        \"awsBatchJobDefinition\": \"datahub-file-conversion-processor-accp\",\r
+
+    \        \"awsBatchJobName\": \"DataHubAnalysis-Pipe-Drivers-CSV-Conversion\",\r
+
+    \        \"delimiter\": \"|\",\r
+
+    \        \"timestamp\": \"Mon Nov 22 18:14:04 UTC 2021\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"datasetRegex\": \"DataHubAnalysis/RegressionScripts/Splitter/input/Conversion/.*.Drivers.csv\",\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"outputPath\": \"DataHubAnalysis/RegressionScripts/Splitter/input/LoadTimestamp/input/\",\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"criticalApp\": false,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"disabled\": false,\r
+
+    \        \"bypassCreds\": false,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"batchSize\": 0,\r
+
+    \        \"processType\": \"CSV_DELIMITER\",\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"disableCSV\": false,\r
+
+    \        \"dppProcessType\": \"FILE_CONVERSION\",\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": false,\r
+
+    \        \"logETLStatusTracker\": false,\r
+
+    \        \"isPrefixZipFileName\": false,\r
+
+    \        \"auroraOffsetModeValue\": 0,\r
+
+    \        \"awsBatchTimeoutOverride\": 0,\r
+
+    \        \"useAcceldata\": false,\r
+
+    \        \"isEndOfPipeline\": false,\r
+
+    \        \"automateDistribution\": false,\r
+
+    \        \"deleteAfterExtract\": false,\r
+
+    \        \"ignoreFailures\": false\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 10000

@@ -1,0 +1,8 @@
+$kind: http-request
+name: New Request
+url: https://internal-DatahubIngestionAPILambda-Test-330128650.us-east-1.elb.amazonaws.com/getbatchstatus?recordType=batch-status
+method: GET
+queryParams:
+  recordType: batch-status
+settings: {}
+order: 16000

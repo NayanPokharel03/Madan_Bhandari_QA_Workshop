@@ -1,0 +1,14 @@
+$kind: http-request
+url: https://ratingapit-internal-batch-trigger.iso.com/invokelambda
+method: POST
+body:
+  type: text
+  content: "{\r
+
+    \    \"lambdaName\": \"datahub-ingestion-sqs-polling-trigger-test\",\r
+
+    \    \"payload\": \"{\\\"BUCKET\\\":\\\"commerciallines-ingestion-test-use\\\",\\\"FILE_KEY\\\":\\\"landing/unira/TechOps/GitHub-CoPilot/copilot_metrics_2025-07-14T10-00-12Z.csv\\\"}\"\r
+
+    }"
+settings: {}
+order: 26000

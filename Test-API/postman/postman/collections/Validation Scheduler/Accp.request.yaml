@@ -1,0 +1,6 @@
+$kind: http-request
+url: https://ratingapia-internal-data-ingestion.iso.com/getvalidationschedule
+method: GET
+settings: {}
+examples: ./.resources/Accp.resources/examples
+order: 4000

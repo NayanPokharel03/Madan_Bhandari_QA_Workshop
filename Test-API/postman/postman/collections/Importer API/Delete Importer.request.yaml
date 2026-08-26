@@ -1,0 +1,8 @@
+$kind: http-request
+url: https://ratingapit-internal-data-ingestion.iso.com/deleteconfig?partitionKey=sftp-schedule&sortKey=sftp-datahubanalysis-non-recursive-EndtoEndPipeline
+method: DELETE
+queryParams:
+  partitionKey: sftp-schedule
+  sortKey: sftp-datahubanalysis-non-recursive-EndtoEndPipeline
+settings: {}
+order: 6000

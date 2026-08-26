@@ -1,0 +1,62 @@
+$kind: http-request
+url: http://internal-AWSBatchTriggerAPI-Test-382189991.us-east-1.elb.amazonaws.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"DIF-RiskAnalyzer\",\r
+
+    \    \"jobQueue\": \"TEST-general\",\r
+
+    \    \"jobDefinition\": \"datahub-ingestion-test\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"getPipelineIdEndpoint\": \"getpipelineid\",\r
+
+    \        \"SOURCE_ID\": \"c08281fd-42db-4c62-9d38-e185a6d59859\",\r
+
+    \        \"INPUT_FILE_ENCODED\": \"Test-DataHubAnalysis1.csv\",\r
+
+    \        \"logBatchStatusTracker\": \"true\",\r
+
+    \        \"updateBatchTrackerApiUrl\": \"https://ratingapit-internal-data-ingestion.iso.com/updatebatchstatus?recordType=batch-status\",\r
+
+    \        \"zipFile\": \"false\",\r
+
+    \        \"endPipelineEndpoint\": \"endpipeline\",\r
+
+    \        \"INPUT_FILE_PATH\": \"landing/DataHubAnalysis/EndtoEndPipeline\",\r
+
+    \        \"skipUnzipping\": \"false\",\r
+
+    \        \"addEventEndpoint\": \"addevent\",\r
+
+    \        \"useAcceldata\": \"false\",\r
+
+    \        \"endSpanEndpoint\": \"endspan\",\r
+
+    \        \"acceldataUrl\": \"https://ratingapit-internal-acceldata-pipeline.iso.com\",\r
+
+    \        \"INPUT_FILE\": \"Test-DataHubAnalysis1.csv\",\r
+
+    \        \"isEndOfPipeline\": \"false\",\r
+
+    \        \"INPUT_BUCKET\": \"commerciallines-ingestion-test-use\",\r
+
+    \        \"Application\": \"DataHubAnalysis\",\r
+
+    \        \"isFolderLevelIngestion\": \"false\",\r
+
+    \        \"getSpanIdEndpoint\": \"getspanid\",\r
+
+    \        \"gzipFile\": \"false\"\r
+
+    \    },\r
+
+    \    \"dhApplication\": \"DataHubAnalysis\"\r
+
+    }"
+settings: {}
+order: 10000

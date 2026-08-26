@@ -1,0 +1,2482 @@
+$kind: http-request
+url: https://ratingapit-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-BIDBVendorAnalytics\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.BIDBVendorAnalytics\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/BIDBVendorAnalytics/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-Orders\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.Orders\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/Orders/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-ReportAttributes\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.ReportAttributes\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/ReportAttributes/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-StrategicSourcing-Coverage\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"StrategicSourcing.Coverage\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/StrategicSourcing/Coverage/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-BuildingOverviewConstructionCodes\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.BuildingOverviewConstructionCodes\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/BuildingOverviewConstructionCodes/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Location-Products\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Location.Products\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Location/Products/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-CommercialLinesTransactionLogging-searchtrackings\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.CommercialLinesTransactionLogging.searchtrackings\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/CommercialLinesTransactionLogging/searchtrackings/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Customers-Customers\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Customers.Customers\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Customers/Customers/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-Addresses\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier2\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.Addresses\",\r
+
+    \            \"pathPrefix\": \"tier2/Prometrix/ProMetrix/Addresses/\",\r
+
+    \            \"refDate\": \"2023-05-13\",\r
+
+    \            \"customFields\": \"partition_state\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-Exposures\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.Exposures\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/Exposures/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Risks-Exposures\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Risks.Exposures\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Risks/Exposures/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-CommercialLinesTransactionLogging-underwritingnohitstracking\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.CommercialLinesTransactionLogging.underwritingnohitstracking\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/CommercialLinesTransactionLogging/underwritingnohitstracking/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-BuildingOverviewScoreValues\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.BuildingOverviewScoreValues\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/BuildingOverviewScoreValues/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Products-ProductBillingCodeStateExceptions\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Products.ProductBillingCodeStateExceptions\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Products/ProductBillingCodeStateExceptions/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-Occupants\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.Occupants\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/Occupants/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Historicalreplacementcost-risk-riskhistoricalreplacementcost\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Historicalreplacementcost.risk.riskhistoricalreplacementcost\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Historicalreplacementcost/risk.riskhistoricalreplacementcost/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-Hazards\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.Hazards\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/Hazards/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Products-ProductGroups\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Products.ProductGroups\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Products/ProductGroups/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Customers-CustomerProductGroupBillingPreferences\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Customers.CustomerProductGroupBillingPreferences\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Customers/CustomerProductGroupBillingPreferences/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Customers-CustomerUnits\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Customers.CustomerUnits\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Customers/CustomerUnits/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-InternalProtections\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.InternalProtections\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/InternalProtections/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Customers-ContractProductCategories\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Customers.ContractProductCategories\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Customers/ContractProductCategories/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Customers-ContractProductCategoryTemplateProductBillingCodes\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Customers.ContractProductCategoryTemplateProductBillingCodes\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Customers/ContractProductCategoryTemplateProductBillingCodes/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-RiskDateTypeCodes\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.RiskDateTypeCodes\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/RiskDateTypeCodes/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Orders-OrderDetailAttributes\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Orders.OrderDetailAttributes\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Orders/OrderDetailAttributes/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-RiskDates\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.RiskDates\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/RiskDates/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-StrategicSourcing-CurrencyUpdate\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"StrategicSourcing.CurrencyUpdate\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/StrategicSourcing/CurrencyUpdate/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Products-Products\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Products.Products\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Products/Products/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-Risks\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.Risks\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/Risks/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-CustomerFacingRisks\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.CustomerFacingRisks\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/CustomerFacingRisks/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Products-ProductCategoryCodes\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Products.ProductCategoryCodes\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Products/ProductCategoryCodes/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Customers-CustomerUnitContacts\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Customers.CustomerUnitContacts\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Customers/CustomerUnitContacts/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-RiskSections\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.RiskSections\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/RiskSections/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-InfoUSAVendorAnalytics\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.InfoUSAVendorAnalytics\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/InfoUSAVendorAnalytics/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Products-ProductsProductBillingCodes\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Products.ProductsProductBillingCodes\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Products/ProductsProductBillingCodes/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-RiskVerificationTypes\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.RiskVerificationTypes\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/RiskVerificationTypes/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Products-ProductBillingCodes\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Products.ProductBillingCodes\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Products/ProductBillingCodes/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-SecondaryConstructions\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.SecondaryConstructions\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/SecondaryConstructions/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Orders-OrderDetails\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Orders.OrderDetails\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Orders/OrderDetails/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-OccupantLevels\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.OccupantLevels\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/OccupantLevels/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-CommercialStatisticalPlans\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.CommercialStatisticalPlans\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/CommercialStatisticalPlans/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Customers-CustomerProductPrices\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Customers.CustomerProductPrices\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Customers/CustomerProductPrices/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-RiskHazards\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.RiskHazards\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/RiskHazards/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-SprinklerTypeCodes\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.SprinklerTypeCodes\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/SprinklerTypeCodes/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Products-TaxClassCodes\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Products.TaxClassCodes\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Products/TaxClassCodes/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-OccupantLevelTypeCodes\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.OccupantLevelTypeCodes\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/OccupantLevelTypeCodes/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-OccupantHazards\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.OccupantHazards\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/OccupantHazards/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-Walls\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.Walls\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/Walls/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Orders-Orders\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Orders.Orders\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Orders/Orders/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Customers-ContractSharingCustomers\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Customers.ContractSharingCustomers\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Customers/ContractSharingCustomers/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Orders-Addresses\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Orders.Addresses\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Orders/Addresses/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Customers-ContractProductCategoryCaps\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Customers.ContractProductCategoryCaps\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Customers/ContractProductCategoryCaps/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Customers-CustomerUnitAdditionalInvoiceRecipients\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Customers.CustomerUnitAdditionalInvoiceRecipients\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Customers/CustomerUnitAdditionalInvoiceRecipients/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-CommercialLinesTransactionLogging-underwritingnohitstrackingattributes\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.CommercialLinesTransactionLogging.underwritingnohitstrackingattributes\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/CommercialLinesTransactionLogging/underwritingnohitstrackingattributes/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Customers-CustomerUnitProductGroupBillingPreferenceAdditionalInvoiceRecipients\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Customers.CustomerUnitProductGroupBillingPreferenceAdditionalInvoiceRecipients\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Customers/CustomerUnitProductGroupBillingPreferenceAdditionalInvoiceRecipients/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Customers-Addresses\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Customers.Addresses\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Customers/Addresses/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-VmmFactors\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.VmmFactors\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/VmmFactors/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-ElcCspGroupCodes\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.ElcCspGroupCodes\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/ElcCspGroupCodes/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Customers-Contracts\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Customers.Contracts\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Customers/Contracts/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-RiskBuildingInformation\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.RiskBuildingInformation\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/RiskBuildingInformation/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Orders-OrderAttributes\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Orders.OrderAttributes\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Orders/OrderAttributes/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-BuildingFundamental\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"BuildingFundamental\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/BuildingFundamental/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-BuildingFireConstructionCodes\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.BuildingFireConstructionCodes\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/BuildingFireConstructionCodes/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-SearchTrackings\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.SearchTrackings\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/SearchTrackings/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Customers-Users\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Customers.Users\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Customers/Users/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-LegacyBilling-Prometrix_Usage\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"LegacyBilling.Prometrix_Usage\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/LegacyBilling/Prometrix_Usage/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Customers-CustomerTypeCodes\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Customers.CustomerTypeCodes\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Customers/CustomerTypeCodes/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-OddsRequestTrackingAttributes\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.OddsRequestTrackingAttributes\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/OddsRequestTrackingAttributes/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-Addresses\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.Addresses\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/Addresses/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Risks-InternalProtections\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Risks.InternalProtections\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Risks/InternalProtections/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-FloorsAndRoofs\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.FloorsAndRoofs\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/FloorsAndRoofs/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-RevenueForcasting\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"RevenueForcasting\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/RevenueForcasting/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-BuildingFireRatedCodes\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.BuildingFireRatedCodes\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/BuildingFireRatedCodes/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Customers-CustomerUnitProductCategoryBillingPreferences\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Customers.CustomerUnitProductCategoryBillingPreferences\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Customers/CustomerUnitProductCategoryBillingPreferences/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Customers-CustomerUnitProductCategoryBillingPreferenceAdditionalInvoiceRecipients\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Customers.CustomerUnitProductCategoryBillingPreferenceAdditionalInvoiceRecipients\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Customers/CustomerUnitProductCategoryBillingPreferenceAdditionalInvoiceRecipients/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-Reports\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.Reports\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/Reports/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-RiskCurrencyDates\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.RiskCurrencyDates\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/RiskCurrencyDates/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Orders-OrderRisks\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Orders.OrderRisks\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Orders/OrderRisks/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Products-ProductNonContractPrices\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Products.ProductNonContractPrices\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Products/ProductNonContractPrices/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrixAuthorizations-Users\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrixAuthorizations.Users\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrixAuthorizations/Users/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-OddsRequestTracking\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.OddsRequestTracking\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/OddsRequestTracking/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrixAuthorizations-Customers\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrixAuthorizations.Customers\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrixAuthorizations/Customers/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Customers-ContractProductCategoriesProductBillingCodes\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Customers.ContractProductCategoriesProductBillingCodes\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Customers/ContractProductCategoriesProductBillingCodes/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Customers-CustomerUnitProductGroupBillingPreferences\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Customers.CustomerUnitProductGroupBillingPreferences\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Customers/CustomerUnitProductGroupBillingPreferences/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-SurveyStatusCodes\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.SurveyStatusCodes\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/SurveyStatusCodes/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Risks-SecondaryConstructions\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Risks.SecondaryConstructions\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Risks/SecondaryConstructions/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-RiskBuildingCalculations\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.RiskBuildingCalculations\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/RiskBuildingCalculations/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-RiskAddresses\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.RiskAddresses\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/RiskAddresses/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-RiskTypeCodes\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.RiskTypeCodes\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/RiskTypeCodes/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-ElaFactors\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.ElaFactors\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/ElaFactors/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Customers-ContractProductCategoryTemplates\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Customers.ContractProductCategoryTemplates\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Customers/ContractProductCategoryTemplates/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Products-ProductPrices\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Products.ProductPrices\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Products/ProductPrices/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-ProMetrix-ReportCodes\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"ProMetrix.ReportCodes\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/ProMetrix/ReportCodes/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Customers-Contacts\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Customers.Contacts\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Customers/Contacts/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"jobName\": \"Historical-Metadata-Ingestion-Prometrix-Customers-CustomerProductCategoryBillingPreferences\",\r
+
+    \        \"jobQueue\": \"TEST-priority\",\r
+
+    \        \"jobDefinition\": \"datahub-historical-metadata-ingestion-TEST\",\r
+
+    \        \"envOverrides\": {\r
+
+    \            \"bucket\": \"commerciallines-datahub-test-use\",\r
+
+    \            \"tier\": \"tier1\",\r
+
+    \            \"application\": \"Prometrix\",\r
+
+    \            \"dataset\": \"Customers.CustomerProductCategoryBillingPreferences\",\r
+
+    \            \"pathPrefix\": \"tier1/Prometrix/Customers/CustomerProductCategoryBillingPreferences/\",\r
+
+    \            \"refDate\": \"2023-05-13\"\r
+
+    \        }\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 1000

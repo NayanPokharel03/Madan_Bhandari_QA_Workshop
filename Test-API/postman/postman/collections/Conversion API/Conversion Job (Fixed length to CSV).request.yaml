@@ -1,0 +1,40 @@
+$kind: http-request
+url: https://ratingapit-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"ConversionJob\",\r
+
+    \    \"jobQueue\": \"TEST-priority\",\r
+
+    \    \"jobDefinition\": \"datahub-file-conversion-processor-test\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"CONVERSION_KEY\": \"DLEvaluation-Locatesmarter-Conversion\",\r
+
+    \        \"INPUT_FILE\": \"DLEvaluation/test/FIS_DE_Sample.txt\",\r
+
+    \        \"INPUT_BUCKET\": \"s3://commerciallines-datastore-test-use\",\r
+
+    \        \"OUTPUT_FILE\": \"DLEvaluation/test/output/FIS_DE_Sample_Output.csv\",\r
+
+    \        \"OUTPUT_BUCKET\": \"s3://commerciallines-datastore-test-use\",\r
+
+    \        \"DELETE_INPUT_FILE\": \"FALSE\",\r
+
+    \        \"CONVERSION_TYPE\": \"FIXED_LENGTH_TO_CSV\",\r
+
+    \        \"KMS_KEY\": \"FALSE\",\r
+
+    \        \"logBatchStatusTracker\": \"FALSE\",\r
+
+    \        \"logETLStatusTracker\": \"FALSE\"\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 2000

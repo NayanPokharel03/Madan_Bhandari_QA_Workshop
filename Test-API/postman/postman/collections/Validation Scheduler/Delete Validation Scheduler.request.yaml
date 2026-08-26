@@ -1,0 +1,8 @@
+$kind: http-request
+url: https://ratingapi-internal-data-ingestion-use.iso.com/deleteconfig?partitionKey=validation-schedule&sortKey=DataHubAnalysis-Distribution-File-Monitor-Level
+method: DELETE
+queryParams:
+  partitionKey: validation-schedule
+  sortKey: DataHubAnalysis-Distribution-File-Monitor-Level
+settings: {}
+order: 7000

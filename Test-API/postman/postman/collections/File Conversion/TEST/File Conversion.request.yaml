@@ -1,0 +1,11 @@
+$kind: http-request
+url: https://ratingapit-internal-data-ingestion.iso.com/getconversionconfig?sortKey=DLEvaluation-Locatesmarter-FileConversion
+method: GET
+queryParams:
+  - key: sortKey
+    value: LOCAL_TEST
+    disabled: true
+  - key: sortKey
+    value: DLEvaluation-Locatesmarter-FileConversion
+settings: {}
+order: 1000

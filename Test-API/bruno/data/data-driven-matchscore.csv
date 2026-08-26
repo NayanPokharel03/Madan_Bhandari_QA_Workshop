@@ -1,0 +1,7 @@
+iterationId,data1,data2,dataType,expectedDecision,expectedMinScore
+600001,Bruce Wayne,Bruce Wayne,Name,A,85
+600002,Bruce Wayne,BRUCE WAYNE,Name,A,85
+600003,Bruce Wayne,Wayne Bruce,Name,R,0
+600004,100 Park Avenue,100 Park Ave,A,A,85
+600005,42 Elm Street,7 Oak Street,A,R,0
+600006,Diana Prince,Wonder Woman,Name,R,0

@@ -1,0 +1,10 @@
+$kind: http-request
+name: https://ratingapit-internal-data-ingestion.iso.com/getconversionconfig?sortKey=LOCAL_TEST
+url: https://ratingapi-internal-data-ingestion-use.iso.com/getconversionconfig
+method: GET
+queryParams:
+  - key: sortKey
+    value: LOCAL_TEST
+    disabled: true
+settings: {}
+order: 1000

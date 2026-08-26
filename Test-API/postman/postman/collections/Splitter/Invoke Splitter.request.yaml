@@ -1,0 +1,38 @@
+$kind: http-request
+url: https://ratingapit-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"DatahubAnalysis-Splitter\",\r
+
+    \    \"jobQueue\": \"ACCP-priority\",\r
+
+    \    \"jobDefinition\": \"datahub-file-splitter-processor-accp\",\r
+
+    \    \"dhApplication\": \"DataHubAnalysis\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"INPUT_FILE\": \"DataHubAnalysis/Splitter/input/raw/7bba93af-e4cd-4508-84b6-53e5c40465cc_QA_MVR2_RAW_100K_SPLIT_TRANSFORM_INPUT_FILE.txt\",\r
+
+    \        \"SPLITTER_KEY\": \"DataHubAnalysis-Splitter-Test\",\r
+
+    \        \"INPUT_BUCKET\": \"s3://ratings-datastore-accp-use\",\r
+
+    \        \"OUTPUT_PATH\": \"DataHubAnalysis/Splitter/output/MVR/\",\r
+
+    \        \"OUTPUT_BUCKET\": \"s3://ratings-datastore-accp-use\",\r
+
+    \        \"DELETE_INPUT_FILE\": \"FALSE\",\r
+
+    \        \"logBatchStatusTracker\":\"false\",\r
+
+    \        \"updateBatchTrackerApiUrl\": \"https://ratingapia-internal-data-ingestion.iso.com/updatebatchstatus\"\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 4000

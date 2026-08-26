@@ -1,0 +1,14 @@
+$kind: http-request
+url: https://apieer.verisk.com/v-1.0.0/vid-audit?apikey=eer-qa-pii-key&vid=507402269
+method: GET
+headers:
+  env: sdk-accpt
+  x-verisk-caller-id: accpt
+queryParams:
+  apikey: eer-qa-pii-key
+  vid: "507402269"
+auth:
+  type: bearer
+  credentials:
+    token: ""
+order: 1000

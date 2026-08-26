@@ -1,0 +1,13 @@
+$kind: http-request
+url: https://ratingapit-internal.verisk.com/underwriting/BatchTriggerAPI/v1/healthcheck
+method: GET
+headers:
+  - key: Content-Type
+    value: application/x-www-form-urlencoded
+    disabled: true
+auth:
+  type: bearer
+  credentials:
+    token: ""
+settings: {}
+order: 42000

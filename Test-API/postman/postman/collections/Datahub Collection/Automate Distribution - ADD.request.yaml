@@ -1,0 +1,5 @@
+$kind: http-request
+url: https://ratingapit-internal-data-ingestion.iso.com/addautomatedistributionconfig
+method: POST
+settings: {}
+order: 28000

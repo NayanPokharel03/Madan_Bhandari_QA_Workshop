@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://ratingapit-internal-data-ingestion.iso.com/getdecryptionconfig?app=Equifax
+method: GET
+queryParams:
+  app: Equifax
+settings: {}
+order: 1000

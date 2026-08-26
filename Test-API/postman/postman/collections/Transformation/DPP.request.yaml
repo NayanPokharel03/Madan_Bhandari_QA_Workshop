@@ -1,0 +1,150 @@
+$kind: http-request
+url: https://ratingapit-internal-data-ingestion.iso.com/adddpptriggerconfig?
+method: POST
+queryParams:
+  "": null
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"recordType\": \"dpp-trigger-config\",\r
+
+    \        \"sortKey\": \"DataHubAnalysis-Generic-Transformation-Test\",\r
+
+    \        \"bucketname\": \"commerciallines-datastore-test-use\",\r
+
+    \        \"application\": \"DataHubAnalysis\",\r
+
+    \        \"destinationBucket\": \"commerciallines-datastore-test-use\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"TEST-general\",\r
+
+    \        \"awsBatchJobDefinition\": \"datahub-transformation-processor-batch-test\",\r
+
+    \        \"awsBatchJobName\": \"DataHubAnalysis-Generic-Transformation-Test\",\r
+
+    \        \"timestamp\": \"Fri Aug 18 10:56:42 UTC 2023\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"datasetRegex\": \"DataHubAnalysis/transformation/input/.*\",\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"criticalApp\": false,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"disabled\": false,\r
+
+    \        \"bypassCreds\": false,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"batchSize\": 0,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"disableCSV\": false,\r
+
+    \        \"dppProcessType\": \"GENERIC\",\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"awsBatchEnvOverrides\": {\r
+
+    \            \"SORT_KEY\": \"DataHubAnalysis-DATASET-Transformation\",\r
+
+    \            \"INPUT_BUCKET\": \"commerciallines-datastore-test-use\",\r
+
+    \            \"INPUT_FILE\": \"DataHubAnalysis/transformation/input/sample.csv\",\r
+
+    \            \"INPUT_FILENAME\": \"sample.csv\",\r
+
+    \            \"OUTPUT_BUCKET\": \"commerciallines-datastore-test-use\",\r
+
+    \            \"OUTPUT_FILE\": \"DataHubAnalysis/transformation/output/\",\r
+
+    \            \"DELETE_INPUT_FILE\": false\r
+
+    \        },\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": false,\r
+
+    \        \"logETLStatusTracker\": false,\r
+
+    \        \"isPrefixZipFileName\": false,\r
+
+    \        \"auroraOffsetModeValue\": 0,\r
+
+    \        \"awsBatchTimeoutOverride\": 0,\r
+
+    \        \"useAcceldata\": false,\r
+
+    \        \"isEndOfPipeline\": false,\r
+
+    \        \"automateDistribution\": false,\r
+
+    \        \"deleteAfterExtract\": false,\r
+
+    \        \"ignoreFailures\": false\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 5000

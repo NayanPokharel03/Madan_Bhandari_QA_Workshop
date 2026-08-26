@@ -1,0 +1,22 @@
+$kind: http-request
+url: https://ratingapia-internal-data-distribution.iso.com/snowflake/createformat
+method: POST
+body:
+  type: json
+  content: "\r
+
+    \    {\r
+
+    \        \"dbName\": \"EFX_ACCP_DB\",\r
+
+    \        \"schemaName\": \"CREDIT_HEADER\",\r
+
+    \        \"queryLocation\": \"Equifax/Equifax_tab_delim_file_format.txt\",\r
+
+    \        \"fileFormat\": \"DH_EQUIFAX_TAB_DELIMITER_FILE_FORMAT_ACCP\",\r
+
+    \        \"debugMode\": true\r
+
+    \    }\r\n"
+settings: {}
+order: 3000

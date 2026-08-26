@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://ratingapiuat-internal-data-ingestion.iso.com/getdpptriggerconfig?bucketname=commerciallines-datastore-uat-use
+method: GET
+queryParams:
+  bucketname: commerciallines-datastore-uat-use
+settings: {}
+order: 2000

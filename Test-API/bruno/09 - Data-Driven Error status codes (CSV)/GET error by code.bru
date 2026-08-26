@@ -1,0 +1,21 @@
+meta {
+  name: GET /error/{errorCode}
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/error/{{errorCode}}
+  body: none
+  auth: none
+}
+
+tests {
+  const expected = Number(bru.getVar('errorCode'));
+  test('Returns expected status code: ' + expected, function () {
+    expect(res.getStatus()).to.eql(expected);
+  });
+  test('Envelope status field matches URL code', function () {
+    expect(res.getBody()).to.include({ error: true, status: expected });
+  });
+}

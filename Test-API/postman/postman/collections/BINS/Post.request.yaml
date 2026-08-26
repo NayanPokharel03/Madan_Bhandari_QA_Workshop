@@ -1,0 +1,86 @@
+$kind: http-request
+url: https://ratingapit-internal-data-ingestion.iso.com/addbinsconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"recordType\": \"bins-config\",\r
+
+    \        \"sortKey\": \"BuildFax-property-BINS\",\r
+
+    \        \"application\": \"BuildFax\",\r
+
+    \        \"delimiter\": \",\",\r
+
+    \        \"skipHeader\": true,\r
+
+    \        \"binsFields\": {\r
+
+    \            \"street1Index\": \"3\",\r
+
+    \            \"street2Index\": \"4\",\r
+
+    \            \"cityIndex\": \"5\",\r
+
+    \            \"stateCodeIndex\": \"6\",\r
+
+    \            \"zipIndex\": \"7\",\r
+
+    \            \"BINSColumns\": [\r
+
+    \                \"addressChanged\",\r
+
+    \                \"streetNumber\",\r
+
+    \                \"preDirection\",\r
+
+    \                \"streetName\",\r
+
+    \                \"streetType\",\r
+
+    \                \"postDirection\",\r
+
+    \                \"secondaryAddress\",\r
+
+    \                \"city\",\r
+
+    \                \"stateCode\",\r
+
+    \                \"zip\",\r
+
+    \                \"zip4\",\r
+
+    \                \"country\",\r
+
+    \                \"latitude\",\r
+
+    \                \"longitude\",\r
+
+    \                \"geocodeType\",\r
+
+    \                \"referenceId\",\r
+
+    \                \"id\",\r
+
+    \                \"fips\",\r
+
+    \                \"apn\",\r
+
+    \                \"type\",\r
+
+    \                \"geocodePrecision\"\r
+
+    \            ]\r
+
+    \        },\r
+
+    \        \"datasetName\": \"BuildFax-property\"\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 2000

@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://ratingapit-internal-data-distribution.iso.com/snowflake/getresult?queryId=01a65eb5-0604-fd5c-0000-0ef517e0070e
+method: GET
+queryParams:
+  queryId: 01a65eb5-0604-fd5c-0000-0ef517e0070e
+settings: {}
+order: 7000

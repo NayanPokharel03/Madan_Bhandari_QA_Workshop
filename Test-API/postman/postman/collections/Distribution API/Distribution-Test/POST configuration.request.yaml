@@ -1,0 +1,60 @@
+$kind: http-request
+url: https://ratingapit-internal-data-distribution.iso.com/addconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"Equifax-Snowflake-Distribution-Email\",\r
+
+    \        \"database\": \"dh\",\r
+
+    \        \"tableName\": \"ingestion_metadata\",\r
+
+    \        \"resultsLocation\": \"s3://personallines-distribution-test-use/analytics/datahubautoload/snowflake/Equifax/CreditHeader/email\",\r
+
+    \        \"timestamp\": \"Tue Jan 23 09:18:10 UTC 2024\",\r
+
+    \        \"application\": \"Equifax\",\r
+
+    \        \"requestorProduct\": \"Infutor Snowflake account\",\r
+
+    \        \"purpose\": \"The loaded data will be shared to Infutor Snowflake account\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://personallines-datahub-test-use/tier2/Equifax/Email\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"413b7689-37be-4c02-820f-6d07b487af85\",\r
+
+    \        \"useAurora\": true,\r
+
+    \        \"auroraDatasetname\": \"Email\",\r
+
+    \        \"auroraTier\": \"tier2\",\r
+
+    \        \"singleDistributionMode\": false,\r
+
+    \        \"useAcceldata\": false,\r
+
+    \        \"isEndOfPipeline\": false\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 2000

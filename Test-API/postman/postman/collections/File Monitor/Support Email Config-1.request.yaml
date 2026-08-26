@@ -1,0 +1,139 @@
+$kind: http-request
+name: Support Email Config
+url: https://ratingapiuat-internal-data-ingestion.iso.com/addsupportemailconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"recordType\": \"support-email-config\",\r
+
+    \        \"sortKey\": \"DataHubAnalysis\",\r
+
+    \        \"application\": \"DataHubAnalysis\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"timestamp\": \"Thu Nov 09 17:03:08 UTC 2023\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"criticalApp\": false,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"disabled\": false,\r
+
+    \        \"bypassCreds\": false,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"batchSize\": 0,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"disableCSV\": false,\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"supportEmail\": [\r
+
+    \            \"i33259@verisk.com\",\r
+
+    \            \"i31518@verisk.com\",\r
+
+    \            \"i33108@verisk.com\"\r
+
+    \        ],\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"pagerDutyServiceId\": [\r
+
+    \            \"PCXLU6S\"\r
+
+    \        ],\r
+
+    \        \"sendToSNSTopic\": true,\r
+
+    \        \"batchRetryCount\": 2,\r
+
+    \        \"submitSNSFilterList\": [\r
+
+    \            \"FAILED\"\r
+
+    \        ],\r
+
+    \        \"logBatchStatusTracker\": true,\r
+
+    \        \"logETLStatusTracker\": false,\r
+
+    \        \"isPrefixZipFileName\": false,\r
+
+    \        \"auroraOffsetModeValue\": 0,\r
+
+    \        \"awsBatchTimeoutOverride\": 0,\r
+
+    \        \"useAcceldata\": false,\r
+
+    \        \"isEndOfPipeline\": false,\r
+
+    \        \"automateDistribution\": false,\r
+
+    \        \"deleteAfterExtract\": false,\r
+
+    \        \"ignoreFailures\": false\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 7000

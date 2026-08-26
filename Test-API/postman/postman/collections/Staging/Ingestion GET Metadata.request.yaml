@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://ratingapistg-internal-batch-trigger-use.iso.com/getconfig?bucketname=personallines-ingestion-stg-use
+method: GET
+queryParams:
+  bucketname: personallines-ingestion-stg-use
+settings: {}
+order: 3000

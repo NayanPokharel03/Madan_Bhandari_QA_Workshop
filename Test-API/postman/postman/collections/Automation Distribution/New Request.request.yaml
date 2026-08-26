@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://ratingapi-internal-data-ingestion-use.iso.com/getautomatedistributionconfig?bucketname=personallines-datahub-prod-use
+method: GET
+queryParams:
+  bucketname: personallines-datahub-prod-use
+settings: {}
+order: 1000

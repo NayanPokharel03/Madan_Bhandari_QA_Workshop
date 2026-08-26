@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://ratingapia-internal-data-ingestion.iso.com/getsftpschedule?sortKey=
+method: GET
+queryParams:
+  sortKey: ""
+settings: {}
+order: 2000

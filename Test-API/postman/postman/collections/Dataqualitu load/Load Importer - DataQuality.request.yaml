@@ -1,0 +1,150 @@
+$kind: http-request
+url: https://ratingapi-internal-data-ingestion-use.iso.com/addsftpschedule
+method: POST
+body:
+  type: json
+  content: "\r
+
+    \    {\r
+
+    \        \"recordType\": \"sftp-schedule\",\r
+
+    \        \"sortKey\": \"db-schedule-dataquality-batchjobdetails-temp\",\r
+
+    \        \"application\": \"DataQuality\",\r
+
+    \        \"destinationBucket\": \"commerciallines-ingestion-prod-use/landing/DataHubAnalysis/incremental/DataQuality\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"PROD-general\",\r
+
+    \        \"awsBatchJobDefinition\": \"datahub-postgresql-database-exporter-batch-prod\",\r
+
+    \        \"awsBatchJobName\": \"db-schedule-dataquality-batchjobdetails\",\r
+
+    \        \"timestamp\": \"Tue Jun 04 23:54:05 UTC 2024\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"criticalApp\": false,\r
+
+    \        \"cronExpression\": \"0 0 2 ? * * *\",\r
+
+    \        \"cronTimeZone\": \"America/New_York\",\r
+
+    \        \"lastRunMilliseconds\": 1717222500000,\r
+
+    \        \"disabled\": true,\r
+
+    \        \"strategy\": \"DB_CUSTOM_AURORA_PYTHON_STRATEGY\",\r
+
+    \        \"remoteFolders\": \"batch.batchjobdetails\",\r
+
+    \        \"hostName\": \"clp-db-publicprotectionclassreconciliation-01.cluster-cnnessqna7iy.us-east-1.rds.amazonaws.com/dataqualitytracking\",\r
+
+    \        \"vaultPath\": \"database/creds/pgsql-app-rw-DatahubFTPImporterBatch-dataqualitytracking-clp-db-publicprotectionclassreconciliation-01\",\r
+
+    \        \"bypassCreds\": false,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"awsRegion\": \"us-east-1\",\r
+
+    \        \"referenceTimeMilliseconds\": 1717222500000,\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 1,\r
+
+    \        \"sqlQueries\": [\r
+
+    \            \"select batchjobdetailsTable.* from batch.batchjobs batchJobsTable inner join batch.batchjobdetails batchjobdetailsTable on batchJobsTable.batchjobid = batchjobdetailsTable.batchjobid where datetime >= '2024-06-15' and datetime < '2024-06-20' order by batchjobdetailsTable.batchjobdetailsid %%OFFSET_MODE%%\"\r
+
+    \        ],\r
+
+    \       \r
+
+    \        \"queryDateOffset\": \"1\",\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"batchSize\": 0,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"disableCSV\": false,\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": true,\r
+
+    \        \"logETLStatusTracker\": false,\r
+
+    \        \"isPrefixZipFileName\": false,\r
+
+    \        \"auroraOffsetModeValue\": 5000000,\r
+
+    \        \"awsBatchTimeoutOverride\": 0,\r
+
+    \        \"filenameTemplate\": \"from_2024_06_15_incremental_offset_2024_06_20\",\r
+
+    \        \"useAcceldata\": false,\r
+
+    \        \"isEndOfPipeline\": false,\r
+
+    \        \"automateDistribution\": false,\r
+
+    \        \"deleteAfterExtract\": false,\r
+
+    \        \"ignoreFailures\": false,\r
+
+    \        \"validateFileCount\": false\r
+
+    \    }\r\n"
+settings: {}
+order: 1000

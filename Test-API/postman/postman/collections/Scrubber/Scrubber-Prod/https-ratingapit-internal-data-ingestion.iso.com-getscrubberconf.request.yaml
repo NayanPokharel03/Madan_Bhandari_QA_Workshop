@@ -1,0 +1,8 @@
+$kind: http-request
+name: https://ratingapit-internal-data-ingestion.iso.com/getscrubberconfig?sortKey=Veriprop-Smartsource-final-Scrubber
+url: https://ratingapi-internal-data-ingestion-use.iso.com/getscrubberconfig?sortKey=DLEvaluation-Locatesmarter-Address-Scrubber
+method: GET
+queryParams:
+  sortKey: DLEvaluation-Locatesmarter-Address-Scrubber
+settings: {}
+order: 1000

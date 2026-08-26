@@ -1,0 +1,34 @@
+$kind: http-request
+url: https://ratingapia-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"TestConversionJob_parq\",\r
+
+    \    \"jobQueue\": \"ACCP-priority\",\r
+
+    \    \"jobDefinition\": \"datahub-file-conversion-processor-accp\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"INPUT_BUCKET\": \"s3://commerciallines-datastore-accp-use\",\r
+
+    \        \"INPUT_FILE\": \"BuildFax/property/partition_year=2021/partition_month=12/partition_day=06/buildfax_property_d448990c-25b2-4c90-8e9a-3c796d64ddd7_d4fbeb2f-388d-4192-a4ac-c34fe0fd099b_part-00012-tid-6206195661892648729-9fe5a35b-3cf3-400c-940d-c54a775191ac-201787-156.c000.snappy.parquet\",\r
+
+    \        \"OUTPUT_BUCKET\": \"s3://commerciallines-datastore-accp-use\",\r
+
+    \        \"OUTPUT_FILE\": \"BuildFax/conversion-output/property/buildfax_property.csv\",\r
+
+    \        \"DELETE_INPUT_FILE\": \"false\",\r
+
+    \        \"CONVERSION_TYPE\": \"PARQUET_TO_CSV\",\r
+
+    \        \"CONVERSION_KEY\": \"BuildFax-property-FileConversion\"\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 1000

@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://ratingapiuat-internal-data-ingestion.iso.com/getpartitionframeworkconfig?=
+method: GET
+queryParams:
+  "": ""
+settings: {}
+order: 1000

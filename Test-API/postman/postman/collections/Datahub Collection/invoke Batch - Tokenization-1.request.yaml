@@ -1,0 +1,6 @@
+$kind: http-request
+name: invoke Batch - Tokenization
+url: ""
+method: GET
+settings: {}
+order: 30000

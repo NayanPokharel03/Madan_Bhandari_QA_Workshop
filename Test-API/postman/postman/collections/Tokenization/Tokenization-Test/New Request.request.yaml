@@ -1,0 +1,522 @@
+$kind: http-request
+url: https://ratingapia-internal-data-ingestion.iso.com/addtokenizationconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"recordType\": \"tokenization-config\",\r
+
+    \        \"sortKey\": \"CV-ETL-Loads-Policy-Agency-Info\",\r
+
+    \        \"application\": \"Coverage Verifier\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"delimiter\": \"\\t\",\r
+
+    \        \"timestamp\": \"Thu Oct 19 08:01:00 UTC 2023\",\r
+
+    \        \"skipHeader\": true,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"quoteChar\": \"\\\"\",\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"tokenizationUrl\": \"http://internal-TknService-ACCP1-1790516479.us-east-1.elb.amazonaws.com/api/\",\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"criticalApp\": false,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"disabled\": false,\r
+
+    \        \"userId\": \"PIDTKNSICDPPA\",\r
+
+    \        \"password\": \"b*po7Og=\",\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"tokenizationColumns\": [\r
+
+    \            {\r
+
+    \                \"columnPosition\": \"8\",\r
+
+    \                \"tokenGroup\": \"Coverage_Verifier_Token_Group\",\r
+
+    \                \"tokenTemplate\": \"Coverage_Verifier_ASCII\",\r
+
+    \                \"columnLength\": \"2\",\r
+
+    \                \"columnPaddingCharacter\": \" \",\r
+
+    \                \"paddingStyle\": \"right\",\r
+
+    \                \"performPadding\": true,\r
+
+    \                \"tokenizeNull\": false,\r
+
+    \                \"padNull\": false,\r
+
+    \                \"skipQuote\": false,\r
+
+    \                \"trimWhitespace\": false,\r
+
+    \                \"skipSingleCharTokenization\": false\r
+
+    \            },\r
+
+    \            {\r
+
+    \                \"columnPosition\": \"9\",\r
+
+    \                \"tokenGroup\": \"Coverage_Verifier_Token_Group\",\r
+
+    \                \"tokenTemplate\": \"Coverage_Verifier_ASCII\",\r
+
+    \                \"columnLength\": \"2\",\r
+
+    \                \"columnPaddingCharacter\": \" \",\r
+
+    \                \"paddingStyle\": \"right\",\r
+
+    \                \"performPadding\": true,\r
+
+    \                \"tokenizeNull\": false,\r
+
+    \                \"padNull\": false,\r
+
+    \                \"skipQuote\": false,\r
+
+    \                \"trimWhitespace\": false,\r
+
+    \                \"skipSingleCharTokenization\": false\r
+
+    \            },\r
+
+    \            {\r
+
+    \                \"columnPosition\": \"11\",\r
+
+    \                \"tokenGroup\": \"Coverage_Verifier_Token_Group\",\r
+
+    \                \"tokenTemplate\": \"Coverage_Verifier_ASCII\",\r
+
+    \                \"columnLength\": \"2\",\r
+
+    \                \"columnPaddingCharacter\": \" \",\r
+
+    \                \"paddingStyle\": \"right\",\r
+
+    \                \"performPadding\": true,\r
+
+    \                \"tokenizeNull\": false,\r
+
+    \                \"padNull\": false,\r
+
+    \                \"skipQuote\": false,\r
+
+    \                \"trimWhitespace\": false,\r
+
+    \                \"skipSingleCharTokenization\": false\r
+
+    \            },\r
+
+    \            {\r
+
+    \                \"columnPosition\": \"12\",\r
+
+    \                \"tokenGroup\": \"Coverage_Verifier_Token_Group\",\r
+
+    \                \"tokenTemplate\": \"Coverage_Verifier_ASCII\",\r
+
+    \                \"columnLength\": \"2\",\r
+
+    \                \"columnPaddingCharacter\": \" \",\r
+
+    \                \"paddingStyle\": \"right\",\r
+
+    \                \"performPadding\": true,\r
+
+    \                \"tokenizeNull\": false,\r
+
+    \                \"padNull\": false,\r
+
+    \                \"skipQuote\": false,\r
+
+    \                \"trimWhitespace\": false,\r
+
+    \                \"skipSingleCharTokenization\": false\r
+
+    \            },\r
+
+    \            {\r
+
+    \                \"columnPosition\": \"13\",\r
+
+    \                \"tokenGroup\": \"Coverage_Verifier_Token_Group\",\r
+
+    \                \"tokenTemplate\": \"Coverage_Verifier_ASCII\",\r
+
+    \                \"columnLength\": \"2\",\r
+
+    \                \"columnPaddingCharacter\": \" \",\r
+
+    \                \"paddingStyle\": \"right\",\r
+
+    \                \"performPadding\": true,\r
+
+    \                \"tokenizeNull\": false,\r
+
+    \                \"padNull\": false,\r
+
+    \                \"skipQuote\": false,\r
+
+    \                \"trimWhitespace\": false,\r
+
+    \                \"skipSingleCharTokenization\": false\r
+
+    \            },\r
+
+    \            {\r
+
+    \                \"columnPosition\": \"14\",\r
+
+    \                \"tokenGroup\": \"Coverage_Verifier_Token_Group\",\r
+
+    \                \"tokenTemplate\": \"Coverage_Verifier_ASCII\",\r
+
+    \                \"columnLength\": \"2\",\r
+
+    \                \"columnPaddingCharacter\": \" \",\r
+
+    \                \"paddingStyle\": \"right\",\r
+
+    \                \"performPadding\": true,\r
+
+    \                \"tokenizeNull\": false,\r
+
+    \                \"padNull\": false,\r
+
+    \                \"skipQuote\": false,\r
+
+    \                \"trimWhitespace\": false,\r
+
+    \                \"skipSingleCharTokenization\": false\r
+
+    \            },\r
+
+    \            {\r
+
+    \                \"columnPosition\": \"15\",\r
+
+    \                \"tokenGroup\": \"Coverage_Verifier_Token_Group\",\r
+
+    \                \"tokenTemplate\": \"Coverage_Verifier_ASCII\",\r
+
+    \                \"columnLength\": \"2\",\r
+
+    \                \"columnPaddingCharacter\": \" \",\r
+
+    \                \"paddingStyle\": \"right\",\r
+
+    \                \"performPadding\": true,\r
+
+    \                \"tokenizeNull\": false,\r
+
+    \                \"padNull\": false,\r
+
+    \                \"skipQuote\": false,\r
+
+    \                \"trimWhitespace\": false,\r
+
+    \                \"skipSingleCharTokenization\": false\r
+
+    \            },\r
+
+    \            {\r
+
+    \                \"columnPosition\": \"16\",\r
+
+    \                \"tokenGroup\": \"Coverage_Verifier_Token_Group\",\r
+
+    \                \"tokenTemplate\": \"Coverage_Verifier_ASCII\",\r
+
+    \                \"columnLength\": \"2\",\r
+
+    \                \"columnPaddingCharacter\": \" \",\r
+
+    \                \"paddingStyle\": \"right\",\r
+
+    \                \"performPadding\": true,\r
+
+    \                \"tokenizeNull\": false,\r
+
+    \                \"padNull\": false,\r
+
+    \                \"skipQuote\": false,\r
+
+    \                \"trimWhitespace\": false,\r
+
+    \                \"skipSingleCharTokenization\": false\r
+
+    \            },\r
+
+    \            {\r
+
+    \                \"columnPosition\": \"17\",\r
+
+    \                \"tokenGroup\": \"Coverage_Verifier_Token_Group\",\r
+
+    \                \"tokenTemplate\": \"Coverage_Verifier_ASCII\",\r
+
+    \                \"columnLength\": \"2\",\r
+
+    \                \"columnPaddingCharacter\": \" \",\r
+
+    \                \"paddingStyle\": \"right\",\r
+
+    \                \"performPadding\": true,\r
+
+    \                \"tokenizeNull\": false,\r
+
+    \                \"padNull\": false,\r
+
+    \                \"skipQuote\": false,\r
+
+    \                \"trimWhitespace\": false,\r
+
+    \                \"skipSingleCharTokenization\": false\r
+
+    \            },\r
+
+    \            {\r
+
+    \                \"columnPosition\": \"18\",\r
+
+    \                \"tokenGroup\": \"Coverage_Verifier_Token_Group\",\r
+
+    \                \"tokenTemplate\": \"Coverage_Verifier_ASCII\",\r
+
+    \                \"columnLength\": \"2\",\r
+
+    \                \"columnPaddingCharacter\": \" \",\r
+
+    \                \"paddingStyle\": \"right\",\r
+
+    \                \"performPadding\": true,\r
+
+    \                \"tokenizeNull\": false,\r
+
+    \                \"padNull\": false,\r
+
+    \                \"skipQuote\": false,\r
+
+    \                \"trimWhitespace\": false,\r
+
+    \                \"skipSingleCharTokenization\": false\r
+
+    \            },\r
+
+    \            {\r
+
+    \                \"columnPosition\": \"19\",\r
+
+    \                \"tokenGroup\": \"Coverage_Verifier_Token_Group\",\r
+
+    \                \"tokenTemplate\": \"Coverage_Verifier_ASCII\",\r
+
+    \                \"columnLength\": \"2\",\r
+
+    \                \"columnPaddingCharacter\": \" \",\r
+
+    \                \"paddingStyle\": \"right\",\r
+
+    \                \"performPadding\": true,\r
+
+    \                \"tokenizeNull\": false,\r
+
+    \                \"padNull\": false,\r
+
+    \                \"skipQuote\": false,\r
+
+    \                \"trimWhitespace\": false,\r
+
+    \                \"skipSingleCharTokenization\": false\r
+
+    \            },\r
+
+    \            {\r
+
+    \                \"columnPosition\": \"20\",\r
+
+    \                \"tokenGroup\": \"Coverage_Verifier_Token_Group\",\r
+
+    \                \"tokenTemplate\": \"Coverage_Verifier_ASCII\",\r
+
+    \                \"columnLength\": \"2\",\r
+
+    \                \"columnPaddingCharacter\": \" \",\r
+
+    \                \"paddingStyle\": \"right\",\r
+
+    \                \"performPadding\": true,\r
+
+    \                \"tokenizeNull\": false,\r
+
+    \                \"padNull\": false,\r
+
+    \                \"skipQuote\": false,\r
+
+    \                \"trimWhitespace\": false,\r
+
+    \                \"skipSingleCharTokenization\": false\r
+
+    \            },\r
+
+    \            {\r
+
+    \                \"columnPosition\": \"21\",\r
+
+    \                \"tokenGroup\": \"Coverage_Verifier_Token_Group\",\r
+
+    \                \"tokenTemplate\": \"Coverage_Verifier_ASCII\",\r
+
+    \                \"columnLength\": \"2\",\r
+
+    \                \"columnPaddingCharacter\": \" \",\r
+
+    \                \"paddingStyle\": \"right\",\r
+
+    \                \"performPadding\": true,\r
+
+    \                \"tokenizeNull\": false,\r
+
+    \                \"padNull\": false,\r
+
+    \                \"skipQuote\": false,\r
+
+    \                \"trimWhitespace\": false,\r
+
+    \                \"skipSingleCharTokenization\": false\r
+
+    \            },\r
+
+    \            {\r
+
+    \                \"columnPosition\": \"22\",\r
+
+    \                \"tokenGroup\": \"Coverage_Verifier_Token_Group\",\r
+
+    \                \"tokenTemplate\": \"Coverage_Verifier_ASCII\",\r
+
+    \                \"columnLength\": \"2\",\r
+
+    \                \"columnPaddingCharacter\": \" \",\r
+
+    \                \"paddingStyle\": \"right\",\r
+
+    \                \"performPadding\": true,\r
+
+    \                \"tokenizeNull\": false,\r
+
+    \                \"padNull\": false,\r
+
+    \                \"skipQuote\": false,\r
+
+    \                \"trimWhitespace\": false,\r
+
+    \                \"skipSingleCharTokenization\": false\r
+
+    \            }\r
+
+    \        ],\r
+
+    \        \"tokenizedDelimiter\": \"\\t\",\r
+
+    \        \"totalTokenizedColumns\": \"14\",\r
+
+    \        \"batchSize\": 0,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"disableCSV\": false,\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": false,\r
+
+    \        \"logETLStatusTracker\": false,\r
+
+    \        \"isPrefixZipFileName\": false,\r
+
+    \        \"auroraOffsetModeValue\": 0,\r
+
+    \        \"awsBatchTimeoutOverride\": 0,\r
+
+    \        \"useAcceldata\": false,\r
+
+    \        \"isEndOfPipeline\": false,\r
+
+    \        \"automateDistribution\": false,\r
+
+    \        \"deleteAfterExtract\": false\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 2000

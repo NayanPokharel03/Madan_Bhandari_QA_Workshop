@@ -1,0 +1,24 @@
+meta {
+  name: GET /stats
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/stats
+  body: none
+  auth: none
+}
+
+tests {
+  test('Status is 200', function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+  test('Exposes counts for all three stores', function () {
+    const body = res.getBody();
+    expect(body).to.be.an('array').with.lengthOf(1);
+    ['keys', 'ranges', 'matchscore'].forEach(function (store) {
+      expect(body[0]).to.have.property(store).that.is.a('number');
+    });
+  });
+}

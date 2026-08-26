@@ -1,0 +1,32 @@
+meta {
+  name: POST /matchscore mismatch -> Decision R
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/matchscore
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  [
+    { "Id": 9004, "Data1": "Diana Prince", "Data2": "Wonder Woman", "DataType": "Name" }
+  ]
+}
+
+tests {
+  test('Status is 201', function () {
+    expect(res.getStatus()).to.equal(201);
+  });
+  test('Very different values -> Decision R and Score < 85', function () {
+    const body = res.getBody();
+    expect(body[0].Decision).to.eql('R');
+    expect(body[0].Score).to.be.below(85);
+  });
+}

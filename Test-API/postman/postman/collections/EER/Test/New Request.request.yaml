@@ -1,0 +1,5 @@
+$kind: http-request
+url: https://ratingapit-internal-data-ingestion.iso.com/geteerconfig
+method: GET
+settings: {}
+order: 1000

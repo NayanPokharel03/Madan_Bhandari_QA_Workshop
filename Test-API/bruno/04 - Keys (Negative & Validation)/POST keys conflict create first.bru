@@ -1,0 +1,27 @@
+meta {
+  name: POST /keys same Id, DIFFERENT content -> 409 (create first)
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl}}/keys
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  [
+    { "Id": {{conflictId}}, "Data": "ORIGINAL VALUE", "DataType": "N" }
+  ]
+}
+
+tests {
+  test('Status is 201 on first insert', function () {
+    expect(res.getStatus()).to.equal(201);
+  });
+}

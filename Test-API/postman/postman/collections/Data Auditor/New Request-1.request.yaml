@@ -1,0 +1,19 @@
+$kind: http-request
+name: New Request
+url: https://ratingapia-internal-data-auditor.iso.com/addoperation
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"sourceId\":  \"wscjhbwcdkbhjwc\",\r
+
+    \    \"process\": \"Importer-Oracle\",\r
+
+    \    \"application\": \"Oracle-Test\",\r
+
+    \    \"transactionDescription\": \"Oracle Importer Batch for  Oracle File\"\r
+
+    }"
+settings: {}
+order: 3000

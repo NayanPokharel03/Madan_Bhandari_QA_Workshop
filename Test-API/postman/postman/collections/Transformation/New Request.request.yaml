@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://ratingapit-internal-data-ingestion.iso.com/gettransformationetlconfig?sortKey=
+method: GET
+queryParams:
+  sortKey: ""
+settings: {}
+order: 2000

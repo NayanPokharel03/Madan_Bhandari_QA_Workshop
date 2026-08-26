@@ -1,0 +1,18 @@
+$kind: http-request
+url: https://ratingapit-internal-batch-trigger.iso.com/invokelambda
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"lambdaName\": \"datahub-ingestion-importer-batch-TEST\",\r
+
+    \    \"payload\": \"{\r
+
+    \        \\\"sortKey\\\":\\\"DataHubAnalysis-Tokenization-Test\\\"\r
+
+    \    }\"\r
+
+    }"
+settings: {}
+order: 13000

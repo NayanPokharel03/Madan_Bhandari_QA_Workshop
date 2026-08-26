@@ -1,0 +1,19 @@
+meta {
+  name: BUG GET /buggy/echo -> should not leak internals
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/buggy/echo
+  body: none
+  auth: none
+}
+
+tests {
+  test('Response must not leak storage_path or debug_token', function () {
+    const body = res.getBody();
+    expect(body[0]).to.not.have.property('storage_path');
+    expect(body[0]).to.not.have.property('debug_token');
+  });
+}

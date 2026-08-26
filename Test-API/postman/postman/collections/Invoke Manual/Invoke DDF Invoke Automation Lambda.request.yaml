@@ -1,0 +1,18 @@
+$kind: http-request
+url: https://ratingapit-internal-batch-trigger.iso.com/invokelambda
+method: POST
+body:
+  type: text
+  content: "{\r
+
+    \    \"lambdaName\": \"datahub-distribution-invoke-trigger-test\",\r
+
+    \    \"payload\":\"{\r
+
+    \t\t\\\"sortKey\\\": \\\"DatahubAnalysis-Testing-V2\\\"\r
+
+    \t\t}\"\r
+
+    }"
+settings: {}
+order: 4000

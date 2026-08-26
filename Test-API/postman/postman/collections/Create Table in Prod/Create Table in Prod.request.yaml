@@ -1,0 +1,16 @@
+$kind: http-request
+url: https://ratingapi-internal-data-ingestion-use.iso.com/adddatahubtable
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"databaseName\": \"statdpp_datahub_prod\",\r
+
+    \    \"tableName\": \"tier1_statdpp_data\",\r
+
+    \    \"ddlFileLocation\": \"ddl/statdpp/tier1_statdpp_data.txt\"\r
+
+    }"
+settings: {}
+order: 1000

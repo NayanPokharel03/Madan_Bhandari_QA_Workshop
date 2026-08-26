@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://vaylic9h54.execute-api.us-east-1.amazonaws.com/UAT/membershipmanagement/Company/GetCompanyBySubscriberId?SubscriberId=Z995
+method: GET
+queryParams:
+  SubscriberId: Z995
+settings: {}
+order: 2000

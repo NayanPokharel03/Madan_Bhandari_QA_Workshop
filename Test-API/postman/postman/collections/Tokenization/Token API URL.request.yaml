@@ -1,0 +1,5 @@
+$kind: http-request
+url: https://underwritingapit-internal-tokenizationservice.iso.com/api/
+method: GET
+settings: {}
+order: 3000

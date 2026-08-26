@@ -1,0 +1,20 @@
+meta {
+  name: GET /matchscore/{id}
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/matchscore/{{matchId}}
+  body: none
+  auth: none
+}
+
+tests {
+  test('Status is 200', function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+  test('Stored record matches original', function () {
+    expect(res.getBody()[0]).to.include({ Id: Number(bru.getEnvVar('matchId')), DataType: 'Name' });
+  });
+}

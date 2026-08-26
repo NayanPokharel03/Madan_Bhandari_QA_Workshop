@@ -1,0 +1,31 @@
+meta {
+  name: POST /keys Data > 200 chars -> 422
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/keys
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  [
+    { "Id": 8004, "Data": "{{longData}}", "DataType": "N" }
+  ]
+}
+
+script:pre-request {
+  bru.setVar('longData', 'A'.repeat(201));
+}
+
+tests {
+  test('Status is 422', function () {
+    expect(res.getStatus()).to.equal(422);
+  });
+}

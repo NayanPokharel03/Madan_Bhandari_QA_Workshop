@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://ratingapistg-internal-data-ingestion-use.iso.com/getconfig?bucketname=personallines-ingestion-stg-use
+method: GET
+queryParams:
+  bucketname: personallines-ingestion-stg-use
+settings: {}
+order: 1000

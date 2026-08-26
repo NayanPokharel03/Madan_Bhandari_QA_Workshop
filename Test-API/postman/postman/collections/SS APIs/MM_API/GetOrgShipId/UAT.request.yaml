@@ -1,0 +1,5 @@
+$kind: http-request
+url: https://vaylic9h54.execute-api.us-east-1.amazonaws.com/UAT/membershipmanagement/
+method: GET
+settings: {}
+order: 2000

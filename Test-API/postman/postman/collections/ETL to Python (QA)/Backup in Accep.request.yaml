@@ -1,0 +1,998 @@
+$kind: http-request
+url: ""
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"recordType\": \"validation-config\",\r
+
+    \        \"sortKey\": \"developer-test-db\",\r
+
+    \        \"application\": \"DataHubAnalysis\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"timestamp\": \"Mon Jul 18 09:00:26 UTC 2022\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"lastRunMilliseconds\": 1658134826934,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"vaultPath\": \"database/creds/mssql-app-rw-SQLServerDatabaseExporterBatch-DIN0001P-IRTDBSQLSRV01\",\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 30,\r
+
+    \        \"sourceHost\": \"IRAALSQLSrv01.uw-veriska.local\",\r
+
+    \        \"sourcePort\": \"3341\",\r
+
+    \        \"sourceUsername\": \"v-aws-App-Role-SQLServ-mssql-app-rw-SQLServ-iCdaX2gwVyGZEmikKCLB-1657560343\",\r
+
+    \        \"sourcePassword\": \"A1a-aEvpdKM9oW6H5ATg\",\r
+
+    \        \"sourceType\": \"SQLSERVER\",\r
+
+    \        \"targetType\": \"Athena\",\r
+
+    \        \"mailRecipientMatch\": \"asmita.mallik@verisk.com\",\r
+
+    \        \"mailRecipientMismatch\": \"asmita.mallik@verisk.com\",\r
+
+    \        \"mailSubject\": \"DatahubAnalysis: DataHubAnalysis-T2-T3-Validation\",\r
+
+    \        \"sourceSql\": \"SELECT COUNT(*) FROM din0001p.dbo.User_Invite\",\r
+
+    \        \"targetSql\": \"SELECT Count(*) FROM blackknight_datahub_accp.enriched_avm_data WHERE %%partition_date%%\",\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": false,\r
+
+    \        \"logETLStatusTracker\": false\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"validation-config\",\r
+
+    \        \"sortKey\": \"MLS-SFTP-T1-Validation\",\r
+
+    \        \"application\": \"MLS\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"timestamp\": \"Mon Jul 11 13:01:14 UTC 2022\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"lastRunMilliseconds\": 1657544474011,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"sourceSchema\": \"./2_Weekly_Incremental\",\r
+
+    \        \"sourceHost\": \"sftp.mlslite.propmix.io\",\r
+
+    \        \"sourceUsername\": \"iso-live\",\r
+
+    \        \"sourcePassword\": \"9whhLQA4epe9\",\r
+
+    \        \"sourceType\": \"SFTP\",\r
+
+    \        \"targetType\": \"Athena\",\r
+
+    \        \"mailRecipientMatch\": \"kamariddin.mahmudov@verisk.com\",\r
+
+    \        \"mailRecipientMismatch\": \"kamariddin.mahmudov@verisk.com\",\r
+
+    \        \"mailSubject\": \"MultipleListingService: MLS-SFTP-T1-Validation\",\r
+
+    \        \"targetSql\": \"SELECT Count(Distinct(\\\"$path\\\")) Tier1_Count FROM mls_datahub_accp.tier1_data WHERE CONCAT(partition_year, partition_month, partition_day) = (Select MAX(CONCAT(partition_year, partition_month, partition_day)) FROM mls_datahub_accp.tier1_data)\",\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": false,\r
+
+    \        \"logETLStatusTracker\": false\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"validation-config\",\r
+
+    \        \"sortKey\": \"FA-SFTP-T1-Validation\",\r
+
+    \        \"application\": \"FA\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"timestamp\": \"Mon Jul 11 13:01:29 UTC 2022\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"lastRunMilliseconds\": 1657544489439,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"sourceSchema\": \"./Verisk\",\r
+
+    \        \"sourceHost\": \"ftp.datatree.com\",\r
+
+    \        \"sourceUsername\": \"BulkL_Verisk\",\r
+
+    \        \"sourcePassword\": \"BRE@VR1234\",\r
+
+    \        \"sourceType\": \"SFTP\",\r
+
+    \        \"targetType\": \"Athena\",\r
+
+    \        \"mailRecipientMatch\": \"kamariddin.mahmudov@verisk.com\",\r
+
+    \        \"mailRecipientMismatch\": \"kamariddin.mahmudov@verisk.com\",\r
+
+    \        \"mailSubject\": \"First American: FA-SFTP-T1-Validation\",\r
+
+    \        \"targetSql\": \"SELECT Count(Distinct(\\\"$path\\\")) Tier1_Count FROM firstamerican_datahub_accp.tier1_data WHERE CONCAT(partition_year, partition_month, partition_day) = (Select MAX(CONCAT(partition_year, partition_month, partition_day)) FROM firstamerican_datahub_accp.tier1_data)\",\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": false,\r
+
+    \        \"logETLStatusTracker\": false\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"validation-config\",\r
+
+    \        \"sortKey\": \"DataHubAnalysisSFTP-T1-T2-Validation\",\r
+
+    \        \"application\": \"DataHubAnalysis\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"timestamp\": \"Mon Jun 27 11:33:43 UTC 2022\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"vaultPath\": \"application/Importer/DatahubIngestionImporterBatch/DataHubAnalysis/Accp/importer\",\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 4,\r
+
+    \        \"sourceSchema\": \"/DataHubAnalysis/Accp\",\r
+
+    \        \"sourceHost\": \"secureftpa.iso.com\",\r
+
+    \        \"sourceType\": \"SFTP\",\r
+
+    \        \"targetType\": \"Athena\",\r
+
+    \        \"mailRecipientMatch\": \"dipika.bogati@verisk.com, asmita.mallik@verisk.com\",\r
+
+    \        \"mailRecipientMismatch\": \"dipika.bogati@verisk.com, asmita.mallik@verisk.com\",\r
+
+    \        \"mailSubject\": \"DatahubAnalysis: DataHubAnalysis-T1-T2-Validation\",\r
+
+    \        \"targetSql\": \"SELECT Count(Distinct(\\\"$path\\\")) Tier1_Count FROM mls_datahub_accp.tier1_data WHERE CONCAT(partition_year, partition_month, partition_day) = (Select MAX(CONCAT(partition_year, partition_month, partition_day)) FROM mls_datahub_accp.tier1_data)\",\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": false,\r
+
+    \        \"logETLStatusTracker\": false\r
+
+    \    },\r
+
+    \     {\r
+
+    \        \"recordType\": \"validation-config\",\r
+
+    \        \"sortKey\": \"DataHubAnalysis-Tier1-Tier2-Validation\",\r
+
+    \        \"application\": \"DataHubAnalysis\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"timestamp\": \"Mon Jun 27 11:33:43 UTC 2022\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 1000,\r
+
+    \        \"sourceType\": \"Athena\",\r
+
+    \        \"targetType\": \"Athena\",\r
+
+    \        \"mailRecipientMatch\": \"kamariddin.mahmudov@verisk.com, asmita.mallik@verisk.com, dipika.bogati@verisk.com\",\r
+
+    \        \"mailRecipientMismatch\": \"kamariddin.mahmudov@verisk.com, asmita.mallik@verisk.com, dipika.bogati@verisk.com\",\r
+
+    \        \"mailSubject\": \"DatahubAnalysis: DataHubAnalysis-T1-T2-Validation\",\r
+
+    \        \"sourceSql\": \"SELECT Count(*) FROM blackknight_datahub_accp.tier1_assessment_data WHERE CONCAT(partition_year, partition_month, partition_day) = (Select MAX(CONCAT(partition_year, partition_month, partition_day)) FROM blackknight_datahub_accp.tier1_assessment_data)\",\r
+
+    \        \"targetSql\": \"SELECT Count(*) FROM blackknight_datahub_accp.enriched_assessment_data WHERE CONCAT(partition_year, partition_month, partition_day) = (Select MAX(CONCAT(partition_year, partition_month, partition_day)) FROM blackknight_datahub_accp.enriched_assessment_data)\",\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": false,\r
+
+    \        \"logETLStatusTracker\": false\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"validation-config\",\r
+
+    \        \"sortKey\": \"DataHubAnalysis-T4-T5-Validation\",\r
+
+    \        \"application\": \"DataHubAnalysis\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"timestamp\": \"Mon Jun 27 11:33:43 UTC 2022\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"vaultPath\": \"database/creds/pgsql-app-rw-DatahubFTPImporterBatch-dataqualitytracking-clt-db-publicprotectionclassreconciliation-01\",\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 1000,\r
+
+    \        \"sourceHost\": \"clt-db-publicprotectionclassreconciliation-01.cluster-cksuqgt9ub0s.us-east-1.rds.amazonaws.com/dataqualitytracking\",\r
+
+    \        \"sourceType\": \"Athena\",\r
+
+    \        \"targetType\": \"POSTGRES\",\r
+
+    \        \"mailRecipientMatch\": \"sushan.shakya@verisk.com, asmita.mallik@verisk.com\",\r
+
+    \        \"mailRecipientMismatch\": \"sushan.shakya@verisk.com, asmita.mallik@verisk.com\",\r
+
+    \        \"mailSubject\": \"DatahubAnalysis: DataHubAnalysis-T2-T3-Validation\",\r
+
+    \        \"sourceSql\": \"SELECT Count(*) FROM blackknight_datahub_accp.enriched_avm_data WHERE CONCAT(partition_year, partition_month, partition_day) = (Select MAX(CONCAT(partition_year, partition_month, partition_day)) FROM blackknight_datahub_accp.enriched_avm_data)\",\r
+
+    \        \"targetSql\": \"SELECT COUNT(*) FROM batch.batchjobs\",\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": false,\r
+
+    \        \"logETLStatusTracker\": false\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"validation-config\",\r
+
+    \        \"sortKey\": \"DataHubAnalysis-T3-T4-Validation\",\r
+
+    \        \"application\": \"DataHubAnalysis\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"timestamp\": \"Mon Jun 27 11:33:43 UTC 2022\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"vaultPath\": \"database/creds/pgsql-app-rw-DatahubFTPImporterBatch-dataqualitytracking-clt-db-publicprotectionclassreconciliation-01\",\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 30,\r
+
+    \        \"sourceHost\": \"clt-db-publicprotectionclassreconciliation-01.cluster-cksuqgt9ub0s.us-east-1.rds.amazonaws.com/dataqualitytracking\",\r
+
+    \        \"sourceType\": \"POSTGRES\",\r
+
+    \        \"targetType\": \"Athena\",\r
+
+    \        \"mailRecipientMatch\": \"sushan.shakya@verisk.com, asmita.mallik@verisk.com\",\r
+
+    \        \"mailRecipientMismatch\": \"sushan.shakya@verisk.com, asmita.mallik@verisk.com\",\r
+
+    \        \"mailSubject\": \"DatahubAnalysis: DataHubAnalysis-T2-T3-Validation\",\r
+
+    \        \"sourceSql\": \"SELECT COUNT(*) FROM batch.batchjobs\",\r
+
+    \        \"targetSql\": \"SELECT Count(*) FROM blackknight_datahub_accp.enriched_avm_data WHERE CONCAT(partition_year, partition_month, partition_day) = (Select MAX(CONCAT(partition_year, partition_month, partition_day)) FROM blackknight_datahub_accp.enriched_avm_data)\",\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": false,\r
+
+    \        \"logETLStatusTracker\": false\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"validation-config\",\r
+
+    \        \"sortKey\": \"DataHubAnalysis-T2-T3-Validation\",\r
+
+    \        \"application\": \"DataHubAnalysis\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"timestamp\": \"Mon Jun 27 11:33:43 UTC 2022\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"vaultPath\": \"database/creds/mssql-app-rw-SQLServerDatabaseExporterBatch-DIN0001P-IRTDBSQLSRV01\",\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 30,\r
+
+    \        \"sourceHost\": \"IRT-EC2DB-SQLServer-01.uw-veriskt.local\",\r
+
+    \        \"sourcePort\": \"3341\",\r
+
+    \        \"sourceType\": \"SQLSERVER\",\r
+
+    \        \"targetType\": \"Athena\",\r
+
+    \        \"mailRecipientMatch\": \"asmita.mallik@verisk.com\",\r
+
+    \        \"mailRecipientMismatch\": \"asmita.mallik@verisk.com\",\r
+
+    \        \"mailSubject\": \"DatahubAnalysis: DataHubAnalysis-T2-T3-Validation\",\r
+
+    \        \"sourceSql\": \"SELECT COUNT(*) FROM din0001p.dbo.User_Invite\",\r
+
+    \        \"targetSql\": \"SELECT Count(*) FROM blackknight_datahub_accp.enriched_avm_data WHERE CONCAT(partition_year, partition_month, partition_day) = (Select MAX(CONCAT(partition_year, partition_month, partition_day)) FROM blackknight_datahub_accp.enriched_avm_data)\",\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": false,\r
+
+    \        \"logETLStatusTracker\": false\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"validation-config\",\r
+
+    \        \"sortKey\": \"BKFS-Assessment-T1-Validation\",\r
+
+    \        \"application\": \"BlackKnight\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"timestamp\": \"Thu Aug 06 16:56:35 UTC 2020\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"sourceHost\": \"JDEVADSQLA01.VERISKA.LOCAL\",\r
+
+    \        \"sourcePort\": \"3341\",\r
+
+    \        \"sourceUsername\": \"PIDJDEAPLUSERROA\",\r
+
+    \        \"sourcePassword\": \"Nl7trluT\",\r
+
+    \        \"sourceType\": \"SQLSERVER_JDE\",\r
+
+    \        \"targetType\": \"Athena\",\r
+
+    \        \"mailRecipientMatch\": \"kamariddin.mahmudov@verisk.com\",\r
+
+    \        \"mailRecipientMismatch\": \"kamariddin.mahmudov@verisk.com\",\r
+
+    \        \"mailSubject\": \"BlackKnight: BKFS-Assessment-T1-Validation\",\r
+
+    \        \"sourceSql\": \"SELECT COUNT(*) FROM [BKFS].[dbo].[Assessment]\",\r
+
+    \        \"targetSql\": \"SELECT Count(*) FROM blackknight_datahub_accp.tier1_assessment_data WHERE CONCAT(partition_year, partition_month, partition_day) = (Select MAX(CONCAT(partition_year, partition_month, partition_day)) From blackknight_datahub_accp.tier1_assessment_data)\",\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": false,\r
+
+    \        \"logETLStatusTracker\": false\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"validation-config\",\r
+
+    \        \"sortKey\": \"BKFS-Assessment-T1-T2-Validation\",\r
+
+    \        \"application\": \"BlackKnight\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"timestamp\": \"Thu Jul 01 18:19:19 UTC 2021\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"lastRunMilliseconds\": 1608136110000,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"sourceType\": \"Athena\",\r
+
+    \        \"targetType\": \"Athena\",\r
+
+    \        \"mailRecipientMatch\": \"#DataHub_Support@verisk.com, kamariddin.mahmudov@verisk.com\",\r
+
+    \        \"mailRecipientMismatch\": \"kamariddin.mahmudov@verisk.com\",\r
+
+    \        \"mailSubject\": \"BlackKnight: BKFS-Assessment-T1-T2-Validation\",\r
+
+    \        \"sourceSql\": \"SELECT Count(*) FROM blackknight_datahub_accp.tier1_assessment_data WHERE CONCAT(partition_year, partition_month, partition_day) = (Select MAX(CONCAT(partition_year, partition_month, partition_day)) From blackknight_datahub_accp.tier1_assessment_data)\",\r
+
+    \        \"targetSql\": \"SELECT Count(*) FROM blackknight_datahub_accp.enriched_assessment_data WHERE CONCAT(partition_year, partition_month, partition_day) = (Select MAX(CONCAT(partition_year, partition_month, partition_day)) From blackknight_datahub_accp.enriched_assessment_data)\",\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": false,\r
+
+    \        \"logETLStatusTracker\": false\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 4000

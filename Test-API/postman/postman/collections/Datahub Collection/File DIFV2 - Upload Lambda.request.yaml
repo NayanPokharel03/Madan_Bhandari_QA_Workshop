@@ -1,0 +1,94 @@
+$kind: http-request
+url: https://ratingapiuat-internal-batch-trigger.iso.com/invokelambda
+method: POST
+body:
+  type: text
+  content: "{\r
+
+    \    \"lambdaName\": \"datahub-pipeline-config-validation-uat\",\r
+
+    \    \"payload\":\"[{\r
+
+    \r
+
+    \        \\\"validationConfigType\\\": \\\"DIF\\\",\r
+
+    \r
+
+    \        \\\"bucketname\\\": \\\"commerciallines-ingestion-uat-use\\\",\r
+
+    \r
+
+    \        \\\"application\\\": \\\"DataHubAnalysis\\\",\r
+
+    \r
+
+    \        \\\"keepOriginalFile\\\": false,\r
+
+    \r
+
+    \        \\\"awsBatchJobQueue\\\": \\\"UAT-general\\\",\r
+
+    \r
+
+    \        \\\"awsBatchJobDefinition\\\": \\\"datahub-ingestion-uat\\\",\r
+
+    \r
+
+    \        \\\"awsBatchJobName\\\": \\\"DIF-DataHubAnalysis\\\",\r
+
+    \r
+
+    \        \\\"delimiter\\\": \\\"\\\\t\\\",\r
+
+    \r
+
+    \        \\\"skipHeader\\\": false,\r
+
+    \r
+
+    \        \\\"includeFileHeader\\\": false,\r
+
+    \r
+
+    \        \\\"keepPartition\\\": false,\r
+
+    \r
+
+    \        \\\"includeTimestamp\\\": true,\r
+
+    \r
+
+    \        \\\"encryptFile\\\": false,\r
+
+    \r
+
+    \        \\\"datasetRegex\\\": \\\"landing/DataHubAnalysis/DIFV2/.*.csv$\\\",\r
+
+    \r
+
+    \        \\\"skipUnzipping\\\": false,\r
+
+    \r
+
+    \        \\\"uploadFileToS3\\\": true,\r
+
+    \r
+
+    \        \\\"tempFileFolder\\\": \\\"DataHubAnalysis\\\",\r
+
+    \r
+
+    \        \\\"uploadFile\\\": \\\"DataHubAnalysis.csv\\\",\r
+
+    \r
+
+    \        \\\"uploadFolderLocation\\\": \\\"landing/DataHubAnalysis/DIFV2/\\\"\r
+
+    }\r
+
+    ]\"\r
+
+    }"
+settings: {}
+order: 22000

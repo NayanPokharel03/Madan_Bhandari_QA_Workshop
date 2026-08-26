@@ -1,0 +1,5 @@
+$kind: http-request
+url: https://ratingapia-internal-data-ingestion.iso.com/getvalidationconfig
+method: GET
+settings: {}
+order: 6000

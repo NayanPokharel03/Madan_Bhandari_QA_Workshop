@@ -1,0 +1,150 @@
+$kind: http-request
+url: ""
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \t{\r
+
+    \t\t\"recordType\": \"partition-framework-config\",\r
+
+    \t\t\"bucketname\": \"commerciallines-datahub-prod-use\",\r
+
+    \t\t\"application\": \"Flightkit\",\r
+
+    \t\t\"keepOriginalFile\": false,\r
+
+    \t\t\"timestamp\": \"Mon Aug 23 14:30:03 UTC 2021\",\r
+
+    \t\t\"datahubDatabase\": \"flightkit_datahub_prod\",\r
+
+    \t\t\"datahubTablename\": \"tier1_fks_audit_log_data\",\r
+
+    \t\t\"datasetRegex\": \"tier1/Flightkit/BBS_ODDS/fks.audit_log/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \t},\r
+
+    \t{\r
+
+    \t\t\"recordType\": \"partition-framework-config\",\r
+
+    \t\t\"bucketname\": \"commerciallines-datahub-prod-use\",\r
+
+    \t\t\"application\": \"Flightkit\",\r
+
+    \t\t\"keepOriginalFile\": false,\r
+
+    \t\t\"timestamp\": \"Mon Aug 23 14:30:03 UTC 2021\",\r
+
+    \t\t\"datahubDatabase\": \"flightkit_datahub_prod\",\r
+
+    \t\t\"datahubTablename\": \"tier1_fks_condition_data\",\r
+
+    \t\t\"datasetRegex\": \"tier1/Flightkit/BBS_ODDS/fks.condition/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \t},\r
+
+    \t{\r
+
+    \t\t\"recordType\": \"partition-framework-config\",\r
+
+    \t\t\"bucketname\": \"commerciallines-datahub-prod-use\",\r
+
+    \t\t\"application\": \"Flightkit\",\r
+
+    \t\t\"keepOriginalFile\": false,\r
+
+    \t\t\"timestamp\": \"Mon Aug 23 14:30:03 UTC 2021\",\r
+
+    \t\t\"datahubDatabase\": \"flightkit_datahub_prod\",\r
+
+    \t\t\"datahubTablename\": \"tier1_fks_construction_validation_data\",\r
+
+    \t\t\"datasetRegex\": \"tier1/Flightkit/BBS_ODDS/fks.construction_validation/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \t},\r
+
+    \t{\r
+
+    \t\t\"recordType\": \"partition-framework-config\",\r
+
+    \t\t\"bucketname\": \"commerciallines-datahub-prod-use\",\r
+
+    \t\t\"application\": \"Flightkit\",\r
+
+    \t\t\"keepOriginalFile\": false,\r
+
+    \t\t\"timestamp\": \"Mon Aug 23 14:30:03 UTC 2021\",\r
+
+    \t\t\"datahubDatabase\": \"flightkit_datahub_prod\",\r
+
+    \t\t\"datahubTablename\": \"tier1_fks_csp_code_v2_data\",\r
+
+    \t\t\"datasetRegex\": \"tier1/Flightkit/BBS_ODDS/fks.csp_code_v2/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \t},\r
+
+    \t{\r
+
+    \t\t\"recordType\": \"partition-framework-config\",\r
+
+    \t\t\"bucketname\": \"commerciallines-datahub-prod-use\",\r
+
+    \t\t\"application\": \"Flightkit\",\r
+
+    \t\t\"keepOriginalFile\": false,\r
+
+    \t\t\"timestamp\": \"Mon Aug 23 14:30:03 UTC 2021\",\r
+
+    \t\t\"datahubDatabase\": \"flightkit_datahub_prod\",\r
+
+    \t\t\"datahubTablename\": \"tier1_fks_auto_save_data_data\",\r
+
+    \t\t\"datasetRegex\": \"tier1/Flightkit/BBS_ODDS/fks.auto_save_data/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \t},\r
+
+    \t{\r
+
+    \t\t\"recordType\": \"partition-framework-config\",\r
+
+    \t\t\"bucketname\": \"commerciallines-datahub-prod-use\",\r
+
+    \t\t\"application\": \"Flightkit\",\r
+
+    \t\t\"keepOriginalFile\": false,\r
+
+    \t\t\"timestamp\": \"Mon Aug 23 14:30:03 UTC 2021\",\r
+
+    \t\t\"datahubDatabase\": \"flightkit_datahub_prod\",\r
+
+    \t\t\"datahubTablename\": \"tier1_fks_occupant_v2_data\",\r
+
+    \t\t\"datasetRegex\": \"tier1/Flightkit/BBS_ODDS/fks.occupant_v2/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \t},\r
+
+    \t{\r
+
+    \t\t\"recordType\": \"partition-framework-config\",\r
+
+    \t\t\"bucketname\": \"commerciallines-datahub-prod-use\",\r
+
+    \t\t\"application\": \"Flightkit\",\r
+
+    \t\t\"keepOriginalFile\": false,\r
+
+    \t\t\"timestamp\": \"Mon Aug 23 14:30:03 UTC 2021\",\r
+
+    \t\t\"datahubDatabase\": \"flightkit_datahub_prod\",\r
+
+    \t\t\"datahubTablename\": \"tier1_fks_secondary_occup_code_v2_data\",\r
+
+    \t\t\"datasetRegex\": \"tier1/Flightkit/BBS_ODDS/fks.secondary_occup_code_v2/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \t}\r
+
+    ]"
+settings: {}
+order: 3000

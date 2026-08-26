@@ -1,0 +1,24 @@
+meta {
+  name: POST /admin/reset (wipe all)
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/admin/reset
+  body: none
+  auth: none
+}
+
+tests {
+  test('Status is 200', function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+  test('Every store reported', function () {
+    const body = res.getBody();
+    expect(body).to.be.an('array').with.lengthOf(1);
+    ['keys', 'ranges', 'matchscore'].forEach(function (s) {
+      expect(body[0]).to.have.property(s);
+    });
+  });
+}

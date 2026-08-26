@@ -1,0 +1,93 @@
+$kind: http-request
+name: New Request
+url: https://ratingapi-internal-data-ingestion-use.iso.com/addsplitterconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"recordType\": \"splitter-config\",\r
+
+    \        \"sortKey\": \"DLEvaluation-MVR_AZ_DE-Splitter\",\r
+
+    \        \"application\": \"DLEvaluation\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"timestamp\": \"Thu May 19 17:00:14 UTC 2022\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": true,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": true,\r
+
+    \        \"splitFileSize\": \"500000\",\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": false,\r
+
+    \        \"logETLStatusTracker\": false\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 2000

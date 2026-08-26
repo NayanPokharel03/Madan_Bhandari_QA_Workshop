@@ -1,0 +1,40 @@
+$kind: http-request
+url: https://ratingapi-internal-batch-trigger-use.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"BuildFax-inspection-FileConversion-Adhoc\",\r
+
+    \    \"jobQueue\": \"PROD-Datahub-largedisk\",\r
+
+    \    \"jobDefinition\": \"datahub-file-conversion-processor-prod\",\r
+
+    \    \"timeoutOverride\": \"18000\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"INPUT_BUCKET\": \"NULL\",\r
+
+    \        \"INPUT_FILE\": \"NULL\",\r
+
+    \        \"OUTPUT_BUCKET\": \"s3://commerciallines-datastore-prod-use\",\r
+
+    \        \"OUTPUT_FILE\": \"BuildFax/inspection/load_timestamp_input/buildfax_inspection_output.csv\",\r
+
+    \        \"DELETE_INPUT_FILE\": \"false\",\r
+
+    \        \"CONVERSION_TYPE\": \"PARQUET_TO_CSV\",\r
+
+    \        \"CONVERSION_KEY\": \"BuildFax-inspection-FileConversion\",\r
+
+    \        \"START_DATE\": \"2022-01-05 00:00:00.000\",\r
+
+    \        \"END_DATE\": \"2022-01-05 00:00:00.000\"        \r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 3000

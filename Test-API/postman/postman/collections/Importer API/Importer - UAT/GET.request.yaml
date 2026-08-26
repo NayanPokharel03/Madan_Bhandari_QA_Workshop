@@ -1,0 +1,5 @@
+$kind: http-request
+url: https://ratingapiuat-internal-data-ingestion.iso.com/getsftpschedule
+method: GET
+settings: {}
+order: 1000

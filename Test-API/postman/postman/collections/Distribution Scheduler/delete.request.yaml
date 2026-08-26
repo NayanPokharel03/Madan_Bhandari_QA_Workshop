@@ -1,0 +1,8 @@
+$kind: http-request
+url: https://ratingapi-internal-data-distribution-use.iso.com/deleteconfig?partitionKey=distribution-schedule&sortKey=Equifax-Snowflake-Distribution-CreditHeader-Addresses
+method: DELETE
+queryParams:
+  partitionKey: distribution-schedule
+  sortKey: Equifax-Snowflake-Distribution-CreditHeader-Addresses
+settings: {}
+order: 5000

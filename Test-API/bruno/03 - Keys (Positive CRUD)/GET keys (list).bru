@@ -1,0 +1,23 @@
+meta {
+  name: GET /keys (list)
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/keys
+  body: none
+  auth: none
+}
+
+tests {
+  test('Status is 200', function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+  test('List contains the created Id', function () {
+    const body = res.getBody();
+    expect(body).to.be.an('array');
+    const target = Number(bru.getEnvVar('keyId'));
+    expect(body.map(function (r) { return r.Id; })).to.include(target);
+  });
+}

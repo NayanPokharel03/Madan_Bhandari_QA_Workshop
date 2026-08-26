@@ -1,0 +1,60 @@
+$kind: http-request
+url: https://ratingapia-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"db-elastic-DatahubAnalaysis-Metadata-Export-S3path-test-template\",\r
+
+    \    \"jobQueue\": \"TEST-priority\",\r
+
+    \    \"jobDefinition\": \"datahub-elasticsearch-exporter-batch-test\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        // \"SORT_KEY\": \"db-elastic-DatahubAnalaysis-Metadata-Export-test-template\",\r
+
+    \        \"SORT_KEY\": \"db-elastic-DatahubAnalaysis-Metadata-Export-S3path-test-template\",\r
+
+    \        // \"SORT_KEY\": \"db-elastic-DatahubAnalaysis-test-without-template-normal-regression-nocount-notracker\",\r
+
+    \        \"application\": \"DataHubAnalysis\",\r
+
+    \        \"strategy\": \"DB_INCREMENTAL_ELASTICSEARCH_STRATEGY\",\r
+
+    \        \"scrollTime\": \"50m\",\r
+
+    \        \"queryFilenames\": \"TransactionLogging_IndexTimestampQueryTemplate.json\",\r
+
+    \        \"templateGtEValue\": \"now-10d/d\",\r
+
+    \        \"templateLtEValue\": \"now/d\",\r
+
+    \        // \"templateDateFormat\": \"yyyy-MM-dd\",\r
+
+    \        \"templateSize\": 2000,\r
+
+    \        \"elasticTimeout\": 60,\r
+
+    \        \"elasticRetryTimeout\": 3,\r
+
+    \        \"fileChunk\": 100,\r
+
+    \        \"isRemoveNoneEntries\": false,\r
+
+    \        \"isMutateNewField\": false,\r
+
+    \        \"indexNames\": \"lendersweb_transactions\",\r
+
+    \        \"templateDateFormat\": \"strict_date_optional_time\",\r
+
+    \        \"logBatchStatusTracker\": \"true\"\r
+
+    \        // \"SECURE_API_MODE_OVERRIDE\": \"true\"\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 8000

@@ -1,0 +1,29 @@
+$kind: http-request
+name: https://ratingapit-internal-batch-trigger.iso.com/invokebatch
+url: https://ratingapit-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{ \r
+
+    \    \"jobName\": \"APLUS_PROPERTY_ANC_EXTRACT_JOB\",\r
+
+    \    \"jobQueue\": \"TEST-priority\",\r
+
+    \    \"jobDefinition\": \"pentaho-apcdpp-TESTNEW\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"kitchen_command\": \"-file=/data/public/pentaho-scripts/jobs/ANC_Extract/j_neighborhood_claim_extract.kjb -level=Basic\",\r
+
+    \        \"log_file\": \"/data/logs/APlus.Property.Claims.Batch/Test/ANC_Extract/ANC_Extract.log\",\r
+
+    \        \"JOB_STEP\": \"ANC\",\r
+
+    \        \"EXTRACT_DATE\":\"2023-07\"\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 1000

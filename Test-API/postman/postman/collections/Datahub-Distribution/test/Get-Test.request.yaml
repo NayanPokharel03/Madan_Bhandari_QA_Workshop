@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://ratingapit-internal-data-distribution.iso.com/getconfig?recordKey=distribution-config
+method: GET
+queryParams:
+  recordKey: distribution-config
+settings: {}
+order: 3000

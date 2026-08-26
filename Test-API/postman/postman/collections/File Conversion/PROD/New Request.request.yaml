@@ -1,0 +1,296 @@
+$kind: http-request
+url: https://ratingapi-internal-data-ingestion-use.iso.com/addconversionconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"recordType\": \"conversion-config\",\r
+
+    \        \"sortKey\": \"DLEvaluation-Locatesmarter-FileConversion\",\r
+
+    \        \"application\": \"DLEvaluation\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"delimiter\": \",\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": true,\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"offsetArray\": [\r
+
+    \            3,\r
+
+    \            20,\r
+
+    \            1,\r
+
+    \            8,\r
+
+    \            8,\r
+
+    \            20,\r
+
+    \            20,\r
+
+    \            30,\r
+
+    \            10,\r
+
+    \            8,\r
+
+    \            20,\r
+
+    \            20,\r
+
+    \            30,\r
+
+    \            10,\r
+
+    \            8,\r
+
+    \            20,\r
+
+    \            20,\r
+
+    \            30,\r
+
+    \            10,\r
+
+    \            8,\r
+
+    \            20,\r
+
+    \            20,\r
+
+    \            30,\r
+
+    \            10,\r
+
+    \            8,\r
+
+    \            20,\r
+
+    \            20,\r
+
+    \            30,\r
+
+    \            10,\r
+
+    \            8,\r
+
+    \            99,\r
+
+    \            30,\r
+
+    \            2,\r
+
+    \            9,\r
+
+    \            8,\r
+
+    \            99,\r
+
+    \            30,\r
+
+    \            2,\r
+
+    \            9,\r
+
+    \            8,\r
+
+    \            99,\r
+
+    \            30,\r
+
+    \            2,\r
+
+    \            9,\r
+
+    \            8,\r
+
+    \            99,\r
+
+    \            30,\r
+
+    \            2,\r
+
+    \            9,\r
+
+    \            8,\r
+
+    \            99,\r
+
+    \            30,\r
+
+    \            2,\r
+
+    \            9,\r
+
+    \            8,\r
+
+    \            9,\r
+
+    \            8,\r
+
+    \            9,\r
+
+    \            8,\r
+
+    \            9,\r
+
+    \            8,\r
+
+    \            9,\r
+
+    \            8,\r
+
+    \            9,\r
+
+    \            8,\r
+
+    \            10,\r
+
+    \            8,\r
+
+    \            10,\r
+
+    \            8,\r
+
+    \            10,\r
+
+    \            8,\r
+
+    \            10,\r
+
+    \            8,\r
+
+    \            10,\r
+
+    \            8,\r
+
+    \            8,\r
+
+    \            8,\r
+
+    \            8,\r
+
+    \            8,\r
+
+    \            8,\r
+
+    \            8,\r
+
+    \            8,\r
+
+    \            8,\r
+
+    \            8,\r
+
+    \            8,\r
+
+    \            2,\r
+
+    \            25,\r
+
+    \            8,\r
+
+    \            2,\r
+
+    \            25,\r
+
+    \            8,\r
+
+    \            2,\r
+
+    \            25,\r
+
+    \            8,\r
+
+    \            2,\r
+
+    \            25,\r
+
+    \            8,\r
+
+    \            2,\r
+
+    \            25,\r
+
+    \            8,\r
+
+    \            25\r
+
+    \        ],\r
+
+    \        \"recordLength\": 1675,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": false,\r
+
+    \        \"logETLStatusTracker\": false\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 2000

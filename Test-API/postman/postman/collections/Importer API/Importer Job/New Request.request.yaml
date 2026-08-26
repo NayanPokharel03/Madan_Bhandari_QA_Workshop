@@ -1,0 +1,14 @@
+$kind: http-request
+url: https://ratingapia-internal-batch-trigger.iso.com/invokelambda
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"lambdaName\": \"datahub-ingestion-importer-batch-ACCP\",\r
+
+    \    \"payload\":\"{\\\"sortKey\\\": \\\"db-dynamodb-uwmembershipmanagement-full-refresh\\\"}\"\r
+
+    }"
+settings: {}
+order: 1000

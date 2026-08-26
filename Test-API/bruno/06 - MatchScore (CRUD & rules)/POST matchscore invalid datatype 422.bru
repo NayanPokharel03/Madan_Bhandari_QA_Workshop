@@ -1,0 +1,27 @@
+meta {
+  name: POST /matchscore invalid DataType -> 422
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/matchscore
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  [
+    { "Id": 9010, "Data1": "A", "Data2": "B", "DataType": "N" }
+  ]
+}
+
+tests {
+  test('Status is 422', function () {
+    expect(res.getStatus()).to.equal(422);
+  });
+}

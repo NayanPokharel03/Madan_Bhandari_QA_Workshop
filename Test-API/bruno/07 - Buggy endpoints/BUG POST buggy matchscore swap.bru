@@ -1,0 +1,29 @@
+meta {
+  name: BUG POST /buggy/matchscore -> Data1/Data2 should not be swapped
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/buggy/matchscore
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  [
+    { "Id": 7001, "Data1": "ALPHA", "Data2": "BETA", "DataType": "Name" }
+  ]
+}
+
+tests {
+  test('Response Data1 must equal request Data1', function () {
+    const body = res.getBody();
+    expect(body[0].Data1).to.eql('ALPHA');
+    expect(body[0].Data2).to.eql('BETA');
+  });
+}

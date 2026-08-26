@@ -1,0 +1,26 @@
+$kind: http-request
+url: https://internal-AWSBatchTriggerAPI-Test-382189991.us-east-1.elb.amazonaws.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{  \r
+
+    \    \"jobName\": \"DataCatalog-Test\",\r
+
+    \    \"jobQueue\": \"TEST-general\",\r
+
+    \    \"jobDefinition\": \"datahub-datalake-catalog-batch-test\",\r
+
+    \    \"envOverrides\": {\r
+
+    \       \"APPLICATION\": \"DataHubAnalysis\",\r
+
+    \       \"DEBUGMODE\": \"False\"\r
+
+    \    },\r
+
+    \    \"dhApplication\": \"DataHubAnalysis\"\r
+
+    }"
+settings: {}
+order: 12000

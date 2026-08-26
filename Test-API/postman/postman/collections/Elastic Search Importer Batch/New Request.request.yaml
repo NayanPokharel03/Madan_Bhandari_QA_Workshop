@@ -1,0 +1,26 @@
+$kind: http-request
+url: https://ratingapit-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"ElasticSearchKMS\",\r
+
+    \    \"jobQueue\": \"TEST-priority\",\r
+
+    \    \"jobDefinition\": \"datahub-elasticsearch-exporter-batch-test\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"SortKey\": \"db-elastic-test-kms\",\r
+
+    \        \"log_file\": \"/Datahub.Ingestion.Importer.Batch/TEST/dbCopyAurora\",\r
+
+    \        \"strategy\": \"DB_INCREMENTAL_ELASTICSEARCH_STRATEGY\"\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 1000

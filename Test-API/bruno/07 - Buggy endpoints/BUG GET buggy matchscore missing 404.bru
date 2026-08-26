@@ -1,0 +1,17 @@
+meta {
+  name: BUG GET /buggy/matchscore/{missing} -> should be 404
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/buggy/matchscore/999999
+  body: none
+  auth: none
+}
+
+tests {
+  test('Missing Id must return 404', function () {
+    expect(res.getStatus()).to.equal(404);
+  });
+}

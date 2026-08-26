@@ -1,0 +1,6 @@
+[
+  {"Id": 501, "Data1": "Bruce Wayne",     "Data2": "Bruce Wayne",     "DataType": "Name"},
+  {"Id": 502, "Data1": "Bruce Wayne",     "Data2": "Wayne Bruce",     "DataType": "Name"},
+  {"Id": 503, "Data1": "100 Park Avenue", "Data2": "100 Park Ave",    "DataType": "A"},
+  {"Id": 504, "Data1": "Diana Prince",    "Data2": "Wonder Woman",    "DataType": "Name"}
+]

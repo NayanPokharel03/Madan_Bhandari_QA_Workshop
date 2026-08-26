@@ -1,0 +1,42 @@
+$kind: http-request
+url: https://ratingapia-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"Scrubber-Batch-Securing-TEST-False\",\r
+
+    \    \"jobQueue\": \"ACCP-priority\",\r
+
+    \    \"jobDefinition\": \"melissa-file-processor-ACCP\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"DELETE_INPUT_FILE\": \"FALSE\",\r
+
+    \        \"OUTPUT_FILE\": \"DataHubAnalysis/RegressionScripts/Scrubber/testing/SCRUBBERREGRESSION_TESTDATA_OUTPUT.txt\",\r
+
+    \        \"updateBatchTrackerApiUrl\": \"https://ratingapit-internal-data-ingestion.iso.com/updatebatchstatus\",\r
+
+    \        \"SCRUBBER_KEY\": \"Address_Scrubber_Regression-NoVault\",\r
+
+    \        \"OUTPUT_BUCKET\": \"s3://ratings-datastore-accp-use\",\r
+
+    \        \"INPUT_FILE\": \"DataHubAnalysis/RegressionScripts/Scrubber/source/SCRUBBERREGRESSION_TESTDATA_INPUT.txt\",\r
+
+    \        \"INPUT_BUCKET\": \"s3://ratings-datastore-accp-use\",\r
+
+    \        \"SECURE_API_MODE_OVERRIDE\": false,\r
+
+    \        \"logBatchStatusTracker\": true\r
+
+    \        \r
+
+    \r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 12000

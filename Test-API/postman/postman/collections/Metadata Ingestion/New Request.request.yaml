@@ -1,0 +1,11 @@
+$kind: http-request
+url: https://ratingapia-internal-data-ingestion.iso.com/getmetadataconfig?bucketname=ratings-datahub-accp-use
+method: GET
+queryParams:
+  bucketname: ratings-datahub-accp-use
+body:
+  type: text
+  content: ""
+settings: {}
+examples: ./.resources/New Request.resources/examples
+order: 3000

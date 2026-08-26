@@ -1,0 +1,21 @@
+meta {
+  name: GET /keys/{unknown} -> 404
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{baseUrl}}/keys/999999
+  body: none
+  auth: none
+}
+
+tests {
+  test('Status is 404', function () {
+    expect(res.getStatus()).to.equal(404);
+  });
+  test('Envelope carries path and status', function () {
+    const body = res.getBody();
+    expect(body).to.include({ error: true, status: 404 });
+  });
+}

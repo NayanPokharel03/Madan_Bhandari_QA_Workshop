@@ -1,0 +1,36 @@
+$kind: http-request
+url: https://ratingapit-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"db-aurora-tclsp\",\r
+
+    \    \"jobQueue\": \"TEST-general\",\r
+
+    \    \"jobDefinition\": \"datahub-postgresql-database-exporter-batch-test\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"log_file\": \"/Datahub.Ingestion.Importer.Batch/TEST/dbCopyAurora\",\r
+
+    \        \"logBatchStatusTracker\": \"false\",\r
+
+    \        \"updateBatchTrackerApiUrl\": \"https://ratingapit-internal-data-ingestion.iso.com/updatebatchstatus?recordType=batch-status\",\r
+
+    \        \"guid\": \"\",\r
+
+    \        \"SortKey\": \"db-aurora-schedule-prometrix\",\r
+
+    \        \"strategy\": \"DB_FULL_REFRESH_AURORA_PYTHON_STRATEGY\"\r
+
+    \    },\r
+
+    \    \"commandOverrides\": [],\r
+
+    \    \"dhApplication\": \"Prometrix\"\r
+
+    }"
+settings: {}
+order: 14000

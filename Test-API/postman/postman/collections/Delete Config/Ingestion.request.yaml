@@ -1,0 +1,8 @@
+$kind: http-request
+url: https://ratingapit-internal-data-ingestion.iso.com/deleteconfig?partitionKey=support-email-config&sortKey=DataQuality
+method: DELETE
+queryParams:
+  partitionKey: support-email-config
+  sortKey: DataQuality
+settings: {}
+order: 1000

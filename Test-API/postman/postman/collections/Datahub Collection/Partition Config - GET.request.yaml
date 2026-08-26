@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://ratingapi-internal-data-ingestion-usw.iso.com/getpartitionframeworkconfig?bucketname=personallines-datahub-prod-usw
+method: GET
+queryParams:
+  bucketname: personallines-datahub-prod-usw
+settings: {}
+order: 33000

@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://internal-SailPointAPI-Test-792892710.us-east-1.elb.amazonaws.com/transaction/3d3a19c1-65ad-4de4-9405-51769ef9a2b0
+method: GET
+headers:
+  x-verisk-caller-id: qatest
+settings: {}
+order: 2000

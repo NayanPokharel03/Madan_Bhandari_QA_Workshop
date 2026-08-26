@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://ratingapi-internal-data-ingestion-use.iso.com/gettokenizationconfig?sortKey=Auto-ETL-Load-Claims-Compare-Detok
+method: GET
+queryParams:
+  sortKey: Auto-ETL-Load-Claims-Compare-Detok
+settings: {}
+order: 2000

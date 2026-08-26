@@ -1,0 +1,124 @@
+$kind: http-request
+url: https://ratingapit-internal-data-ingestion.iso.com/adddpptriggerconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"recordType\": \"dpp-trigger-config\",\r
+
+    \        \"sortKey\": \"DLEvaluation-Locatesmarter-Address-FileCopy\",\r
+
+    \        \"bucketname\": \"personallines-datastore-test-use\",\r
+
+    \        \"application\": \"DLEvaluation\",\r
+
+    \        \"destinationBucket\": \"personallines-datahub-test-use\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"TEST-general\",\r
+
+    \        \"awsBatchJobDefinition\": \"copy-file-processor-TEST\",\r
+
+    \        \"awsBatchJobName\": \"DLEvaluation-Locatesmarter-Address-FileCopy\",\r
+
+    \        \"delimiter\": \",\",\r
+
+    \        \"keepPartition\": true,\r
+
+    \        \"datasetRegex\": \"DLEvaluation/tier2-copy-input/Locatesmarter_Address/.*\",\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"outputPath\": \"tier2/DLEvaluation/Locatesmarter_Address\",\r
+
+    \        \"quoteChar\": \"\\\"\",\r
+
+    \        \"logDataAuditor\": true,\r
+
+    \        \"dppProcessType\": \"FILE_COPY\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"dpp-trigger-config\",\r
+
+    \        \"sortKey\": \"DLEvaluation-Locatesmarter-Name-FileCopy\",\r
+
+    \        \"bucketname\": \"personallines-datastore-test-use\",\r
+
+    \        \"application\": \"DLEvaluation\",\r
+
+    \        \"destinationBucket\": \"personallines-datahub-test-use\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"TEST-general\",\r
+
+    \        \"awsBatchJobDefinition\": \"copy-file-processor-TEST\",\r
+
+    \        \"awsBatchJobName\": \"DLEvaluation-Locatesmarter-Name-FileCopy\",\r
+
+    \        \"delimiter\": \",\",\r
+
+    \        \"keepPartition\": true,\r
+
+    \        \"datasetRegex\": \"DLEvaluation/tier2-copy-input/Locatesmarter_Name/.*\",\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"outputPath\": \"tier2/DLEvaluation/Locatesmarter_Name\",\r
+
+    \        \"quoteChar\": \"\\\"\",\r
+
+    \        \"logDataAuditor\": true,\r
+
+    \        \"dppProcessType\": \"FILE_COPY\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"dpp-trigger-config\",\r
+
+    \        \"sortKey\": \"DLEvaluation-Locatesmarter-Master-FileCopy\",\r
+
+    \        \"bucketname\": \"personallines-datastore-test-use\",\r
+
+    \        \"application\": \"DLEvaluation\",\r
+
+    \        \"destinationBucket\": \"personallines-datahub-test-use\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"TEST-general\",\r
+
+    \        \"awsBatchJobDefinition\": \"copy-file-processor-TEST\",\r
+
+    \        \"awsBatchJobName\": \"DLEvaluation-Locatesmarter-Master-FileCopy\",\r
+
+    \        \"delimiter\": \",\",\r
+
+    \        \"keepPartition\": true,\r
+
+    \        \"datasetRegex\": \"DLEvaluation/tier2-copy-input/Locatesmarter_Master/.*\",\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"outputPath\": \"tier2/DLEvaluation/Locatesmarter_Master\",\r
+
+    \        \"quoteChar\": \"\\\"\",\r
+
+    \        \"logDataAuditor\": true,\r
+
+    \        \"dppProcessType\": \"FILE_COPY\"\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 9000

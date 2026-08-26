@@ -1,0 +1,40 @@
+$kind: http-request
+url: https://ratingapit-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"BuildFax-property-FileConversion-Adhoc-Scrubber-Change\",\r
+
+    \    \"jobQueue\": \"TEST-priority\",\r
+
+    \    \"jobDefinition\": \"datahub-file-conversion-processor-test\",\r
+
+    \    \"envOverrides\": \r
+
+    \    {\r
+
+    \        \"INPUT_BUCKET\": \"NULL\",\r
+
+    \        \"INPUT_FILE\": \"NULL\",\r
+
+    \        \"OUTPUT_BUCKET\": \"s3://commerciallines-datastore-test-use\",\r
+
+    \        \"OUTPUT_FILE\": \"BuildFax/property/load_timestamp_input/BuildFax_property_output.csv\",\r
+
+    \        \"DELETE_INPUT_FILE\": \"false\",\r
+
+    \        \"CONVERSION_TYPE\": \"PARQUET_TO_CSV\",\r
+
+    \        \"CONVERSION_KEY\": \"BuildFax-property-FileConversion\",\r
+
+    \        \"START_DATE\": \"2021-12-17 00:00:00.000\",\r
+
+    \        \"END_DATE\": \"2021-12-17 00:00:00.000\"\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 5000

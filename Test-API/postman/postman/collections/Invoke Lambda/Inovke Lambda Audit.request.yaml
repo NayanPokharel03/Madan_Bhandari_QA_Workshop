@@ -1,0 +1,12 @@
+$kind: http-request
+url: https://ratingapit-internal-batch-trigger.iso.com/invokelambda
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"lambdaName\": \"datahub-audit-test\"\r
+
+    }"
+settings: {}
+order: 6000

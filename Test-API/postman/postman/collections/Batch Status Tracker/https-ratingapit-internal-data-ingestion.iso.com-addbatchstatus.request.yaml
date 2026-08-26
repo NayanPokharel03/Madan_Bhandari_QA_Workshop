@@ -1,0 +1,33 @@
+$kind: http-request
+name: https://ratingapit-internal-data-ingestion.iso.com/addbatchstatus
+url: https://ratingapit-internal-data-ingestion.iso.com/addbatchstatus
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"recordType\": \"batch-status\",\r
+
+    \        \"sortKey\": \"\",\r
+
+    \        \"application\": \"BuildFax\",\r
+
+    \        \"timestamp\": \"Tue Dec 14 09:58:15 UTC 2021\",\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"expirationTime\": 1642067895,\r
+
+    \        \"jobStatus\": \"INIT\",\r
+
+    \        \"sendNotificationFlag\": false,\r
+
+    \        \"ignoreNotificationFlag\": false\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 1000

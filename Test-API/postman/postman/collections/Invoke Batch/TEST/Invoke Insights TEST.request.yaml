@@ -1,0 +1,34 @@
+$kind: http-request
+url: https://ratingapia-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"DataHubAnalysis-Validation-Test\",\r
+
+    \    \"jobQueue\": \"ACCP-priority\",\r
+
+    \    \"jobDefinition\": \"pentaho-vgad-validation-ACCP\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"kitchen_command\": \"-file=/data/public/pentaho-scripts/jobs/Data_Validation_Main.kjb -level=Basic -param:\",\r
+
+    \        \"log_file\": \"/data/logs/Lightspeed.blackknight.Batch/Accp/Validation-error-file.txt\",\r
+
+    \        \"generic_validation\": \"true\",\r
+
+    \        \"application\": \"DataHubAnalysis\",\r
+
+    \        \"sort_key\": \"DataHubAnalysis-T1-T2-Validation\",\r
+
+    \        \"sourceType\": \"Athena\",\r
+
+    \        \"targetType\": \"Athena\"\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 6000

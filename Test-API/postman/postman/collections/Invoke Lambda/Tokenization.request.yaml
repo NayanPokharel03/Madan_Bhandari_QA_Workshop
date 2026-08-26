@@ -1,0 +1,42 @@
+$kind: http-request
+url: https://ratingapit-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"Primary_info_Tokenization_Test\",\r
+
+    \    \"jobQueue\": \"TEST-priority\",\r
+
+    \    \"jobDefinition\": \"tokenization-file-processor-test\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"input_file\": \"dbo.clm_primary_info.2024-04-01.2024-04-01.P00113317.csv\",\r
+
+    \        \"dynamo_key\": \"APlus-Property-DE-PrmInfo\",\r
+
+    \        \"INPUT_BUCKET\": \"s3://personallines-datastore-test-use/DataHubAnalysis/tokenization\",\r
+
+    \        \"output_file\": \"clm_primary_info_tokenized_out.csv\",\r
+
+    \        \"OUTPUT_BUCKET\": \"s3://personallines-datastore-test-use/DataHubAnalysis/tokenization/output\",\r
+
+    \        \"DELETE_INPUT_FILE\": \"FALSE\",\r
+
+    \        \"BATCH_MODE\": \"Y\",\r
+
+    \        \"BATCH_SIZE\": \"27\",\r
+
+    \        \"validation_mode\": \"Y\",\r
+
+    \        \"log_mode\": \"1\",\r
+
+    \        \"read_mode\": \"Y\"\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 18000

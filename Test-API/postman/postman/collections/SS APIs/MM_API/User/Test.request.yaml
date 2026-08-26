@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://nkonm3af4f.execute-api.us-east-1.amazonaws.com/Test/membershipmanagement/User?
+method: GET
+queryParams:
+  "": null
+settings: {}
+order: 3000

@@ -1,0 +1,8 @@
+$kind: http-request
+url: https://6db1xds2jh.execute-api.us-east-1.amazonaws.com/Accep/membershipmanagement/Company/GetCompanies?OrganizationId=104152&ShippingId=104152
+method: GET
+queryParams:
+  OrganizationId: "104152"
+  ShippingId: "104152"
+settings: {}
+order: 1000

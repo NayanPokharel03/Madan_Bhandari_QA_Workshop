@@ -1,0 +1,26 @@
+$kind: http-request
+url: https://ratingapit-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"sftp-unira-ncrf-niss\",\r
+
+    \    \"jobQueue\": \"TEST-priority\",\r
+
+    \    \"jobDefinition\": \"java-datahub-ingestion-importer-TEST\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"command\": \"-DremoteFolder=TEST/IN/ -DremoteFilename=2019AQRCommDataWO12.zip -DsortKey=sftp-unira-ncrf-niss com.verisk.datahub.ingestion.importer.batch.ImporterBatchDownload\",\r
+
+    \        \"log_file\": \"/Datahub.Ingestion.Importer.Batch/TEST/dbCopyAurora\",\r
+
+    \        \"sortKey\": \"db-schedule-datahubanalysis-dataquality-aurora_extract_test-offsetmode-nospacetest\"\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 8000

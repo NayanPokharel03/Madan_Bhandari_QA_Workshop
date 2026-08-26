@@ -1,0 +1,347 @@
+$kind: http-request
+name: https://ratingapi-internal-data-ingestion-use.iso.com/adddpptriggerconfig
+url: https://ratingapi-internal-data-ingestion-use.iso.com/adddpptriggerconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"recordType\": \"dpp-trigger-config\",\r
+
+    \        \"sortKey\": \"unira-ncrf-naii-non_ttt_ppt-Timestamp-Load\",\r
+
+    \        \"bucketname\": \"ratings-datastore-prod-use\",\r
+
+    \        \"application\": \"unira\",\r
+
+    \        \"destinationBucket\": \"ratings-datastore-prod-use\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"PROD-general\",\r
+
+    \        \"awsBatchJobDefinition\": \"datahub-ingestion-tier1-load-PROD\",\r
+
+    \        \"awsBatchJobName\": \"unira-ncrf-naii-non_ttt_ppt-Timestamp-Load\",\r
+
+    \        \"delimiter\": \",\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"datasetRegex\": \"unira/ncrf/OUT/naii/non_ttt_ppt/.*\",\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"outputPath\": \"unira/ncrf/OUT/naii/datahub_timestamp/non_ttt_ppt/\",\r
+
+    \        \"dppProcessType\": \"LOAD_TIMESTAMP\",\r
+
+    \        \"kmsKeyId\": \"ff31d993-dd83-4261-865f-101e7ea2f3b5\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"dpp-trigger-config\",\r
+
+    \        \"sortKey\": \"unira-ncrf-naii-non_ttt_ppt-FileCopy\",\r
+
+    \        \"bucketname\": \"ratings-datastore-prod-use\",\r
+
+    \        \"application\": \"unira\",\r
+
+    \        \"destinationBucket\": \"ratings-datahub-prod-use\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"PROD-general\",\r
+
+    \        \"awsBatchJobDefinition\": \"copy-file-processor-PROD\",\r
+
+    \        \"awsBatchJobName\": \"unira-ncrf-naii-non_ttt_ppt-FileCopy\",\r
+
+    \        \"delimiter\": \",\",\r
+
+    \        \"keepPartition\": true,  \r
+
+    \        \"datasetRegex\": \"unira/ncrf/OUT/naii/datahub_timestamp/non_ttt_ppt/.*\",\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"compressOutputAsGzip\": true,\r
+
+    \        \"outputPath\": \"tier2/unira/ncrf/naii/non_ttt_ppt\",\r
+
+    \        \"logDataAuditor\": true,\r
+
+    \        \"dppProcessType\": \"FILE_COPY\",\r
+
+    \        \"kmsKeyId\": \"ff31d993-dd83-4261-865f-101e7ea2f3b5\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"dpp-trigger-config\",\r
+
+    \        \"sortKey\": \"unira-ncrf-naii-pci_pol-Timestamp-Load\",\r
+
+    \        \"bucketname\": \"ratings-datastore-prod-use\",\r
+
+    \        \"application\": \"unira\",\r
+
+    \        \"destinationBucket\": \"ratings-datastore-prod-use\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"PROD-general\",\r
+
+    \        \"awsBatchJobDefinition\": \"datahub-ingestion-tier1-load-PROD\",\r
+
+    \        \"awsBatchJobName\": \"unira-ncrf-naii-pci_pol-Timestamp-Load\",\r
+
+    \        \"delimiter\": \",\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"datasetRegex\": \"unira/ncrf/OUT/naii/pci_pol/.*\",\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"outputPath\": \"unira/ncrf/OUT/naii/datahub_timestamp/pci_pol/\",\r
+
+    \        \"dppProcessType\": \"LOAD_TIMESTAMP\",\r
+
+    \        \"kmsKeyId\": \"ff31d993-dd83-4261-865f-101e7ea2f3b5\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"dpp-trigger-config\",\r
+
+    \        \"sortKey\": \"unira-ncrf-naii-pci_pol-FileCopy\",\r
+
+    \        \"bucketname\": \"ratings-datastore-prod-use\",\r
+
+    \        \"application\": \"unira\",\r
+
+    \        \"destinationBucket\": \"ratings-datahub-prod-use\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"PROD-general\",\r
+
+    \        \"awsBatchJobDefinition\": \"copy-file-processor-PROD\",\r
+
+    \        \"awsBatchJobName\": \"unira-ncrf-naii-pci_pol-FileCopy\",\r
+
+    \        \"delimiter\": \",\",\r
+
+    \        \"keepPartition\": true,  \r
+
+    \        \"datasetRegex\": \"unira/ncrf/OUT/naii/datahub_timestamp/pci_pol/.*\",\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"compressOutputAsGzip\": true,\r
+
+    \        \"outputPath\": \"tier2/unira/ncrf/naii/pci_pol\",\r
+
+    \        \"logDataAuditor\": true,\r
+
+    \        \"dppProcessType\": \"FILE_COPY\",\r
+
+    \        \"kmsKeyId\": \"ff31d993-dd83-4261-865f-101e7ea2f3b5\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"dpp-trigger-config\",\r
+
+    \        \"sortKey\": \"unira-ncrf-naii-ttt_ppt-Timestamp-Load\",\r
+
+    \        \"bucketname\": \"ratings-datastore-prod-use\",\r
+
+    \        \"application\": \"unira\",\r
+
+    \        \"destinationBucket\": \"ratings-datastore-prod-use\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"PROD-general\",\r
+
+    \        \"awsBatchJobDefinition\": \"datahub-ingestion-tier1-load-PROD\",\r
+
+    \        \"awsBatchJobName\": \"unira-ncrf-naii-ttt_ppt-Timestamp-Load\",\r
+
+    \        \"delimiter\": \",\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"datasetRegex\": \"unira/ncrf/OUT/naii/ttt_ppt/.*\",\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"outputPath\": \"unira/ncrf/OUT/naii/datahub_timestamp/ttt_ppt/\",\r
+
+    \        \"dppProcessType\": \"LOAD_TIMESTAMP\",\r
+
+    \        \"kmsKeyId\": \"ff31d993-dd83-4261-865f-101e7ea2f3b5\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"dpp-trigger-config\",\r
+
+    \        \"sortKey\": \"unira-ncrf-naii-ttt_ppt-FileCopy\",\r
+
+    \        \"bucketname\": \"ratings-datastore-prod-use\",\r
+
+    \        \"application\": \"unira\",\r
+
+    \        \"destinationBucket\": \"ratings-datahub-prod-use\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"PROD-general\",\r
+
+    \        \"awsBatchJobDefinition\": \"copy-file-processor-PROD\",\r
+
+    \        \"awsBatchJobName\": \"unira-ncrf-naii-ttt_ppt-FileCopy\",\r
+
+    \        \"delimiter\": \",\",\r
+
+    \        \"keepPartition\": true,  \r
+
+    \        \"datasetRegex\": \"unira/ncrf/OUT/naii/datahub_timestamp/ttt_ppt/.*\",\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"compressOutputAsGzip\": true,\r
+
+    \        \"outputPath\": \"tier2/unira/ncrf/naii/ttt_ppt\",\r
+
+    \        \"logDataAuditor\": true,\r
+
+    \        \"dppProcessType\": \"FILE_COPY\",\r
+
+    \        \"kmsKeyId\": \"ff31d993-dd83-4261-865f-101e7ea2f3b5\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"dpp-trigger-config\",\r
+
+    \        \"sortKey\": \"unira-ncrf-niss-Timestamp-Load\",\r
+
+    \        \"bucketname\": \"ratings-datastore-prod-use\",\r
+
+    \        \"application\": \"unira\",\r
+
+    \        \"destinationBucket\": \"ratings-datastore-prod-use\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"PROD-general\",\r
+
+    \        \"awsBatchJobDefinition\": \"datahub-ingestion-tier1-load-PROD\",\r
+
+    \        \"awsBatchJobName\": \"unira-ncrf-niss-Timestamp-Load\",\r
+
+    \        \"delimiter\": \",\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"datasetRegex\": \"unira/ncrf/OUT/niss/AQR/.*\",\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"outputPath\": \"unira/ncrf/OUT/niss/datahub_timestamp/AQR/\",\r
+
+    \        \"dppProcessType\": \"LOAD_TIMESTAMP\",\r
+
+    \        \"kmsKeyId\": \"ff31d993-dd83-4261-865f-101e7ea2f3b5\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"dpp-trigger-config\",\r
+
+    \        \"sortKey\": \"unira-ncrf-niss-FileCopy\",\r
+
+    \        \"bucketname\": \"ratings-datastore-prod-use\",\r
+
+    \        \"application\": \"unira\",\r
+
+    \        \"destinationBucket\": \"ratings-datahub-prod-use\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"PROD-general\",\r
+
+    \        \"awsBatchJobDefinition\": \"copy-file-processor-PROD\",\r
+
+    \        \"awsBatchJobName\": \"unira-ncrf-niss-FileCopy\",\r
+
+    \        \"delimiter\": \",\",\r
+
+    \        \"keepPartition\": true,\r
+
+    \        \"compressOutputAsGzip\": true,  \r
+
+    \        \"datasetRegex\": \"unira/ncrf/OUT/niss/datahub_timestamp/AQR/.*\",\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"outputPath\": \"tier2/unira/ncrf/niss/AQR\",\r
+
+    \        \"logDataAuditor\": true,\r
+
+    \        \"dppProcessType\": \"FILE_COPY\",\r
+
+    \        \"kmsKeyId\": \"ff31d993-dd83-4261-865f-101e7ea2f3b5\"\r
+
+    \    }      \r
+
+    ]"
+settings: {}
+order: 2000

@@ -1,0 +1,8 @@
+$kind: http-request
+url: https://vaylic9h54.execute-api.us-east-1.amazonaws.com/UAT/membershipmanagement/Company/GetCompanies?OrganizationId=101196&ShippingId=101196
+method: GET
+queryParams:
+  OrganizationId: "101196"
+  ShippingId: "101196"
+settings: {}
+order: 2000

@@ -1,0 +1,260 @@
+$kind: http-request
+url: https://ratingapi-internal-data-distribution-use.iso.com/addconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"Equifax-Snowflake-Distribution-CreditHeader-Addresses\",\r
+
+    \        \"database\": \"dh\",\r
+
+    \        \"tableName\": \"ingestion_metadata\",\r
+
+    \        \"resultsLocation\": \"s3://personallines-distribution-prod-use/analytics/datahubautoload/snowflake/Equifax/CreditHeader/credit_header_address\",\r
+
+    \        \"timestamp\": \"Fri Oct 28 12:22:23 UTC 2022\",\r
+
+    \        \"application\": \"Equifax\",\r
+
+    \        \"requestorProduct\": \"Infutor Snowflake account\",\r
+
+    \        \"purpose\": \"The loaded data will be shared to Infutor Snowflake account\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://personallines-datahub-prod-use/tier2/Equifax/CreditHeader/address_child_data\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"65f8eb0e-9073-469c-b190-ee00ee5723fe\",\r
+
+    \        \"useAurora\": true,\r
+
+    \        \"auroraDatasetname\": \"CreditHeader.address_child_data\",\r
+
+    \        \"auroraTier\": \"tier2\",\r
+
+    \        \"singleDistributionMode\": false,\r
+
+    \        \"useAcceldata\": false,\r
+
+    \        \"isEndOfPipeline\": false\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"Equifax-Snowflake-Distribution-CreditHeader-Master\",\r
+
+    \        \"database\": \"dh\",\r
+
+    \        \"tableName\": \"ingestion_metadata\",\r
+
+    \        \"resultsLocation\": \"s3://personallines-distribution-prod-use/analytics/datahubautoload/snowflake/Equifax/CreditHeader/credit_header_master\",\r
+
+    \        \"timestamp\": \"Fri Oct 28 12:22:23 UTC 2022\",\r
+
+    \        \"application\": \"Equifax\",\r
+
+    \        \"requestorProduct\": \"Infutor Snowflake account\",\r
+
+    \        \"purpose\": \"The loaded data will be shared to Infutor Snowflake account\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://personallines-datahub-prod-use/tier2/Equifax/CreditHeader/master_data\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"65f8eb0e-9073-469c-b190-ee00ee5723fe\",\r
+
+    \        \"useAurora\": true,\r
+
+    \        \"auroraDatasetname\": \"CreditHeader.master_data\",\r
+
+    \        \"auroraTier\": \"tier2\",\r
+
+    \        \"singleDistributionMode\": false,\r
+
+    \        \"useAcceldata\": false,\r
+
+    \        \"isEndOfPipeline\": false\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"Equifax-Snowflake-Distribution-CreditHeader-Names\",\r
+
+    \        \"database\": \"dh\",\r
+
+    \        \"tableName\": \"ingestion_metadata\",\r
+
+    \        \"resultsLocation\": \"s3://personallines-distribution-prod-use/analytics/datahubautoload/snowflake/Equifax/CreditHeader/credit_header_names\",\r
+
+    \        \"timestamp\": \"Fri Oct 28 12:22:23 UTC 2022\",\r
+
+    \        \"application\": \"Equifax\",\r
+
+    \        \"requestorProduct\": \"Infutor Snowflake account\",\r
+
+    \        \"purpose\": \"The loaded data will be shared to Infutor Snowflake account\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://personallines-datahub-prod-use/tier2/Equifax/CreditHeader/names_child_data\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"65f8eb0e-9073-469c-b190-ee00ee5723fe\",\r
+
+    \        \"useAurora\": true,\r
+
+    \        \"auroraDatasetname\": \"CreditHeader.names_child_data\",\r
+
+    \        \"auroraTier\": \"tier2\",\r
+
+    \        \"singleDistributionMode\": false,\r
+
+    \        \"useAcceldata\": false,\r
+
+    \        \"isEndOfPipeline\": false\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"Equifax-Snowflake-Distribution-Email\",\r
+
+    \        \"database\": \"dh\",\r
+
+    \        \"tableName\": \"ingestion_metadata\",\r
+
+    \        \"resultsLocation\": \"s3://personallines-distribution-prod-use/analytics/datahubautoload/snowflake/Equifax/CreditHeader/email\",\r
+
+    \        \"timestamp\": \"Fri Oct 28 12:22:23 UTC 2022\",\r
+
+    \        \"application\": \"Equifax\",\r
+
+    \        \"requestorProduct\": \"Infutor Snowflake account\",\r
+
+    \        \"purpose\": \"The loaded data will be shared to Infutor Snowflake account\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://personallines-datahub-prod-use/tier2/Equifax/Email\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"65f8eb0e-9073-469c-b190-ee00ee5723fe\",\r
+
+    \        \"useAurora\": true,\r
+
+    \        \"auroraDatasetname\": \"Email\",\r
+
+    \        \"auroraTier\": \"tier2\",\r
+
+    \        \"singleDistributionMode\": false,\r
+
+    \        \"useAcceldata\": false,\r
+
+    \        \"isEndOfPipeline\": false\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"Equifax-Snowflake-Distribution-Phone\",\r
+
+    \        \"database\": \"dh\",\r
+
+    \        \"tableName\": \"ingestion_metadata\",\r
+
+    \        \"resultsLocation\": \"s3://personallines-distribution-prod-use/analytics/datahubautoload/snowflake/Equifax/CreditHeader/phone\",\r
+
+    \        \"timestamp\": \"Fri Oct 28 12:22:23 UTC 2022\",\r
+
+    \        \"application\": \"Equifax\",\r
+
+    \        \"requestorProduct\": \"Infutor Snowflake account\",\r
+
+    \        \"purpose\": \"The loaded data will be shared to Infutor Snowflake account\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://personallines-datahub-prod-use/tier2/Equifax/Phone\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"file-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"65f8eb0e-9073-469c-b190-ee00ee5723fe\",\r
+
+    \        \"useAurora\": true,\r
+
+    \        \"auroraDatasetname\": \"Phone\",\r
+
+    \        \"auroraTier\": \"tier2\",\r
+
+    \        \"singleDistributionMode\": false,\r
+
+    \        \"useAcceldata\": false,\r
+
+    \        \"isEndOfPipeline\": false\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 2000

@@ -1,0 +1,440 @@
+$kind: http-request
+url: https://ratingapi-internal-data-ingestion-use.iso.com/addtokenizationconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"recordType\": \"tokenization-config\",\r
+
+    \        \"sortKey\": \"DLEvaluation-MVR_OH-Master-Tokenization\",\r
+
+    \        \"application\": \"DLEvaluation\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"delimiter\": \"\\t\",\r
+
+    \        \"timestamp\": \"Thu May 19 17:18:51 UTC 2022\",\r
+
+    \        \"skipHeader\": true,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"quoteChar\": \"\\\"\",\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": true,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"vaultPath\": \"security/vormetric/application/DriverLicensEvaluationBatch/Prod/vtsapi\",\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"tokenizationColumns\": [\r
+
+    \            {\r
+
+    \                \"columnPosition\": \"3\",\r
+
+    \                \"tokenGroup\": \"Drivers_License_Evaluation_Token_Group\",\r
+
+    \                \"tokenTemplate\": \"Drivers_License_Evaluation_ASCII\",\r
+
+    \                \"columnLength\": \"2\",\r
+
+    \                \"columnPaddingCharacter\": \" \",\r
+
+    \                \"paddingStyle\": \"right\",\r
+
+    \                \"performPadding\": false,\r
+
+    \                \"tokenizeNull\": false,\r
+
+    \                \"padNull\": false,\r
+
+    \                \"skipQuote\": false,\r
+
+    \                \"trimWhitespace\": false,\r
+
+    \                \"skipSingleCharTokenization\": false\r
+
+    \            },\r
+
+    \            {\r
+
+    \                \"columnPosition\": \"4\",\r
+
+    \                \"tokenGroup\": \"Drivers_License_Evaluation_Token_Group\",\r
+
+    \                \"tokenTemplate\": \"Drivers_License_Evaluation_ASCII\",\r
+
+    \                \"columnLength\": \"2\",\r
+
+    \                \"columnPaddingCharacter\": \" \",\r
+
+    \                \"paddingStyle\": \"right\",\r
+
+    \                \"performPadding\": false,\r
+
+    \                \"tokenizeNull\": false,\r
+
+    \                \"padNull\": false,\r
+
+    \                \"skipQuote\": false,\r
+
+    \                \"trimWhitespace\": false,\r
+
+    \                \"skipSingleCharTokenization\": false\r
+
+    \            },\r
+
+    \            {\r
+
+    \                \"columnPosition\": \"19\",\r
+
+    \                \"tokenGroup\": \"Drivers_License_Evaluation_Token_Group\",\r
+
+    \                \"tokenTemplate\": \"Drivers_License_Evaluation_ASCII\",\r
+
+    \                \"columnLength\": \"2\",\r
+
+    \                \"columnPaddingCharacter\": \" \",\r
+
+    \                \"paddingStyle\": \"right\",\r
+
+    \                \"performPadding\": false,\r
+
+    \                \"tokenizeNull\": false,\r
+
+    \                \"padNull\": false,\r
+
+    \                \"skipQuote\": false,\r
+
+    \                \"trimWhitespace\": false,\r
+
+    \                \"skipSingleCharTokenization\": false\r
+
+    \            },\r
+
+    \            {\r
+
+    \                \"columnPosition\": \"33\",\r
+
+    \                \"tokenGroup\": \"Drivers_License_Evaluation_Token_Group\",\r
+
+    \                \"tokenTemplate\": \"Drivers_License_Evaluation_ASCII\",\r
+
+    \                \"columnLength\": \"2\",\r
+
+    \                \"columnPaddingCharacter\": \" \",\r
+
+    \                \"paddingStyle\": \"right\",\r
+
+    \                \"performPadding\": false,\r
+
+    \                \"tokenizeNull\": false,\r
+
+    \                \"padNull\": false,\r
+
+    \                \"skipQuote\": false,\r
+
+    \                \"trimWhitespace\": false,\r
+
+    \                \"skipSingleCharTokenization\": false\r
+
+    \            },\r
+
+    \            {\r
+
+    \                \"columnPosition\": \"34\",\r
+
+    \                \"tokenGroup\": \"Drivers_License_Evaluation_Token_Group\",\r
+
+    \                \"tokenTemplate\": \"Drivers_License_Evaluation_ASCII\",\r
+
+    \                \"columnLength\": \"2\",\r
+
+    \                \"columnPaddingCharacter\": \" \",\r
+
+    \                \"paddingStyle\": \"right\",\r
+
+    \                \"performPadding\": false,\r
+
+    \                \"tokenizeNull\": false,\r
+
+    \                \"padNull\": false,\r
+
+    \                \"skipQuote\": false,\r
+
+    \                \"trimWhitespace\": false,\r
+
+    \                \"skipSingleCharTokenization\": false\r
+
+    \            },\r
+
+    \            {\r
+
+    \                \"columnPosition\": \"35\",\r
+
+    \                \"tokenGroup\": \"Drivers_License_Evaluation_Token_Group\",\r
+
+    \                \"tokenTemplate\": \"Drivers_License_Evaluation_ASCII\",\r
+
+    \                \"columnLength\": \"2\",\r
+
+    \                \"columnPaddingCharacter\": \" \",\r
+
+    \                \"paddingStyle\": \"right\",\r
+
+    \                \"performPadding\": false,\r
+
+    \                \"tokenizeNull\": false,\r
+
+    \                \"padNull\": false,\r
+
+    \                \"skipQuote\": false,\r
+
+    \                \"trimWhitespace\": false,\r
+
+    \                \"skipSingleCharTokenization\": false\r
+
+    \            },\r
+
+    \            {\r
+
+    \                \"columnPosition\": \"36\",\r
+
+    \                \"tokenGroup\": \"Drivers_License_Evaluation_Token_Group\",\r
+
+    \                \"tokenTemplate\": \"Drivers_License_Evaluation_ASCII\",\r
+
+    \                \"columnLength\": \"2\",\r
+
+    \                \"columnPaddingCharacter\": \" \",\r
+
+    \                \"paddingStyle\": \"right\",\r
+
+    \                \"performPadding\": false,\r
+
+    \                \"tokenizeNull\": false,\r
+
+    \                \"padNull\": false,\r
+
+    \                \"skipQuote\": false,\r
+
+    \                \"trimWhitespace\": false,\r
+
+    \                \"skipSingleCharTokenization\": false\r
+
+    \            },\r
+
+    \            {\r
+
+    \                \"columnPosition\": \"37\",\r
+
+    \                \"tokenGroup\": \"Drivers_License_Evaluation_Token_Group\",\r
+
+    \                \"tokenTemplate\": \"Drivers_License_Evaluation_ASCII\",\r
+
+    \                \"columnLength\": \"2\",\r
+
+    \                \"columnPaddingCharacter\": \" \",\r
+
+    \                \"paddingStyle\": \"right\",\r
+
+    \                \"performPadding\": false,\r
+
+    \                \"tokenizeNull\": false,\r
+
+    \                \"padNull\": false,\r
+
+    \                \"skipQuote\": false,\r
+
+    \                \"trimWhitespace\": false,\r
+
+    \                \"skipSingleCharTokenization\": false\r
+
+    \            },\r
+
+    \            {\r
+
+    \                \"columnPosition\": \"38\",\r
+
+    \                \"tokenGroup\": \"Drivers_License_Evaluation_Token_Group\",\r
+
+    \                \"tokenTemplate\": \"Drivers_License_Evaluation_ASCII\",\r
+
+    \                \"columnLength\": \"2\",\r
+
+    \                \"columnPaddingCharacter\": \" \",\r
+
+    \                \"paddingStyle\": \"right\",\r
+
+    \                \"performPadding\": false,\r
+
+    \                \"tokenizeNull\": false,\r
+
+    \                \"padNull\": false,\r
+
+    \                \"skipQuote\": false,\r
+
+    \                \"trimWhitespace\": false,\r
+
+    \                \"skipSingleCharTokenization\": false\r
+
+    \            },\r
+
+    \            {\r
+
+    \                \"columnPosition\": \"40\",\r
+
+    \                \"tokenGroup\": \"Drivers_License_Evaluation_Token_Group\",\r
+
+    \                \"tokenTemplate\": \"Drivers_License_Evaluation_ASCII\",\r
+
+    \                \"columnLength\": \"2\",\r
+
+    \                \"columnPaddingCharacter\": \" \",\r
+
+    \                \"paddingStyle\": \"right\",\r
+
+    \                \"performPadding\": false,\r
+
+    \                \"tokenizeNull\": false,\r
+
+    \                \"padNull\": false,\r
+
+    \                \"skipQuote\": false,\r
+
+    \                \"trimWhitespace\": false,\r
+
+    \                \"skipSingleCharTokenization\": false\r
+
+    \            },\r
+
+    \            {\r
+
+    \                \"columnPosition\": \"41\",\r
+
+    \                \"tokenGroup\": \"Drivers_License_Evaluation_Token_Group\",\r
+
+    \                \"tokenTemplate\": \"Drivers_License_Evaluation_ASCII\",\r
+
+    \                \"columnLength\": \"2\",\r
+
+    \                \"columnPaddingCharacter\": \" \",\r
+
+    \                \"paddingStyle\": \"right\",\r
+
+    \                \"performPadding\": false,\r
+
+    \                \"tokenizeNull\": false,\r
+
+    \                \"padNull\": false,\r
+
+    \                \"skipQuote\": false,\r
+
+    \                \"trimWhitespace\": false,\r
+
+    \                \"skipSingleCharTokenization\": false\r
+
+    \            },\r
+
+    \            {\r
+
+    \                \"columnPosition\": \"42\",\r
+
+    \                \"tokenGroup\": \"Drivers_License_Evaluation_Token_Group\",\r
+
+    \                \"tokenTemplate\": \"Drivers_License_Evaluation_ASCII\",\r
+
+    \                \"columnLength\": \"2\",\r
+
+    \                \"columnPaddingCharacter\": \" \",\r
+
+    \                \"paddingStyle\": \"right\",\r
+
+    \                \"performPadding\": false,\r
+
+    \                \"tokenizeNull\": false,\r
+
+    \                \"padNull\": false,\r
+
+    \                \"skipQuote\": false,\r
+
+    \                \"trimWhitespace\": false,\r
+
+    \                \"skipSingleCharTokenization\": false\r
+
+    \            }\r
+
+    \        ],\r
+
+    \        \"tokenizedDelimiter\": \"\\t\",\r
+
+    \        \"totalTokenizedColumns\": \"12\",\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": true,\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": false,\r
+
+    \        \"logETLStatusTracker\": false\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 3000

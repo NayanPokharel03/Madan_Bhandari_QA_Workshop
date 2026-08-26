@@ -1,0 +1,40 @@
+$kind: http-request
+url: https://ratingapia-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"Test-Tokenization\",\r
+
+    \    \"jobQueue\": \"ACCP-priority\",\r
+
+    \    \"jobDefinition\": \"tokenization-file-processor-Accp\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"input_file\": \"third-party_C00001178.txt\",\r
+
+    \        \"dynamo_key\": \"CV-ETL-Loads-Policy-Agency-Info\",\r
+
+    \        \"output_file\": \"final_output.txt\",\r
+
+    \        \"BATCH_MODE\": \"Y\",\r
+
+    \        \"INPUT_BUCKET\": \"s3://commerciallines-datastore-accp-use/DataHubAnalysis/AplusAutoTest/test/input\",\r
+
+    \        \"OUTPUT_BUCKET\": \"s3://commerciallines-datastore-accp-use/DataHubAnalysis/AplusAutoTest/test/output\",\r
+
+    \        \"DELETE_INPUT_FILE\": \"FALSE\",\r
+
+    \        \"BATCH_SIZE\": \"20\",\r
+
+    \        \"logBatchStatusTracker\": \"false\",\r
+
+    \        \"updateBatchTrackerApiUrl\": \"https://ratingapia-internal-data-ingestion.iso.com/updatebatchstatus\"\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 4000

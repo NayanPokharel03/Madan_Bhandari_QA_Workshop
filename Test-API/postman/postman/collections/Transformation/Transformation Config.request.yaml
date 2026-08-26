@@ -1,0 +1,144 @@
+$kind: http-request
+url: https://ratingapia-internal-data-ingestion.iso.com/gettransformationetlconfig
+method: GET
+body:
+  type: json
+  content: "[    {\r
+
+    \        \"recordType\": \"transformation-config\",\r
+
+    \        \"sortKey\": \"DataHubAnalysis-DATASET-Transformation\",\r
+
+    \        \"application\": \"DataHubAnalysis\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"delimiter\": \",\",\r
+
+    \        \"timestamp\": \"Mon Feb 19 23:07:33 UTC 2024\",\r
+
+    \        \"skipHeader\": true,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"quoteChar\": \"\\\"\",\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": true,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"criticalApp\": false,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"disabled\": false,\r
+
+    \        \"bypassCreds\": false,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"awsRegion\": \"us-east-1\",\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"transformation\": [\r
+
+    \            {\r
+
+    \                \"middleColumnIndex\": 1,\r
+
+    \                \"targetColumnName\": \"middleColumnInitial\",\r
+
+    \                \"transformationType\": \"MiddleNameInitialTransformation\"\r
+
+    \            },\r
+
+    \            {\r
+
+    \                \"targetColumnName\": \"DateTransformation\",\r
+
+    \                \"sourceDateIndex\": 4,\r
+
+    \                \"targetDateFormat\": \"%Y%m%d\"\r
+
+    \            }\r
+
+    \        ],\r
+
+    \        \"batchSize\": 0,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": true,\r
+
+    \        \"disableCSV\": false,\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": true,\r
+
+    \        \"logETLStatusTracker\": false,\r
+
+    \        \"isPrefixZipFileName\": false,\r
+
+    \        \"auroraOffsetModeValue\": 0,\r
+
+    \        \"awsBatchTimeoutOverride\": 0,\r
+
+    \        \"useAcceldata\": false,\r
+
+    \        \"isEndOfPipeline\": false,\r
+
+    \        \"automateDistribution\": false,\r
+
+    \        \"deleteAfterExtract\": false,\r
+
+    \        \"ignoreFailures\": false\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 3000

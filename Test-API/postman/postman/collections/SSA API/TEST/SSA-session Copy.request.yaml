@@ -1,0 +1,6 @@
+$kind: http-request
+name: SSA/session Copy
+url: ""
+method: GET
+settings: {}
+order: 6000

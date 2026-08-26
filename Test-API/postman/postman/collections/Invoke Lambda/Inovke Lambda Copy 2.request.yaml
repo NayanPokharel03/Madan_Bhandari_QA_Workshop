@@ -1,0 +1,18 @@
+$kind: http-request
+url: https://ratingapit-internal-batch-trigger.iso.com/invokelambda
+method: POST
+body:
+  type: json
+  content: "{\r
+
+        \"lambdaName\": \"datahub-file-audit-alert-aggregator-test\",\r
+
+        \"payload\": \"{        \r
+
+            \\\"sortKey\\\": \\\"db-schedule-datahubanalysis-dataquality-aurora_extract_test-incremental\\\"    \r
+
+            }\"\r
+
+    }"
+settings: {}
+order: 3000

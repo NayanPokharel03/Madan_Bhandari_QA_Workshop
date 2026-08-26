@@ -1,0 +1,24 @@
+$kind: http-request
+url: https://ratingapit-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"Generic-Validation\",\r
+
+    \    \"jobQueue\": \"TEST-priority\",\r
+
+    \    \"jobDefinition\": \"pentaho-vgad-validation-TEST\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"generic_validation\": \"true\",\r
+
+    \        \"sort_key\": \"DataHubAnalysis-T3-T4-Validation-Demo\"\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 2000

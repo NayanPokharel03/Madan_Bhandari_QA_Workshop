@@ -1,0 +1,18 @@
+$kind: http-request
+url: https://ratingapit-internal-data-distribution.iso.com/snowflake/createtable
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \        \"dbName\": \"EFX_TEST_DB\",\r
+
+    \       \"schemaName\": \"CREDIT_HEADER\",\r
+
+    \      \"queryLocation\": \"Equifax/equifax_phones_table.txt\",\r
+
+    \       \"tableName\": \"CREDIT_HEADER_PHONES\"\r
+
+    \    }"
+settings: {}
+order: 4000

@@ -1,0 +1,22 @@
+$kind: http-request
+url: https://ratingapit-internal-encryption.iso.com/decryption
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"applicationId\":\"GenericLambda\",\r
+
+    \    \"inputBucket\": \"datahub-distribution-api-test\",\r
+
+    \    \"inputKey\": \"temp/004102d3-55c8-404a-bdac-db9a6e948752.csv.enc\",\r
+
+    \    \"outputBucket\": \"datahub-distribution-api-test\",\r
+
+    \    \"outputKey\": \"temp/004102d3-55c8-404a-bdac-db9a6e948752.csv\"\r
+
+    }"
+auth:
+  type: noauth
+settings: {}
+order: 3000

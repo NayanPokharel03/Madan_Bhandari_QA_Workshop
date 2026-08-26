@@ -1,0 +1,9 @@
+$kind: http-request
+url: https://ratingapi-internal-data-ingestion-usw.iso.com/getscrubberconfig
+method: GET
+queryParams:
+  - key: bucketname
+    value: ratings-datastore-prod-usw
+    disabled: true
+settings: {}
+order: 31000

@@ -1,0 +1,42 @@
+$kind: http-request
+url: https://ratingapit-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"DataHubAnalysis-DIFV2-Tokenization\",\r
+
+    \    \"jobQueue\": \"Prod-general\",\r
+
+    \    \"jobDefinition\": \"tokenization-file-processor-prod\",\r
+
+    \    \"timeoutOverride\": \"3600\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"input_file\": \"tokenization_test_file_pass.csv_scrubberout_ssaout\",\r
+
+    \        \"dynamo_key\": \"DataHubAnalysis-DIFV2-Tokenization\",\r
+
+    \        \"INPUT_BUCKET\": \"s3://commerciallines-datastore-prod-use/DataHubAnalysis/DIFV2/temp\",\r
+
+    \        \"output_file\": \"tokenization_accp_file_pass.csv_tokenized\",\r
+
+    \        \"OUTPUT_BUCKET\": \"s3://commerciallines-datastore-prod-use/DataHubAnalysis/DIFV2/tier2-copy-input/\",\r
+
+    \        \"DELETE_INPUT_FILE\": \"FALSE\",\r
+
+    \        \"BATCH_MODE\": \"Y\",\r
+
+    \        \"BATCH_SIZE\": \"20\",\r
+
+    \        \"logBatchStatusTracker\": true,\r
+
+    \        \"logETLStatusTracker\": true\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 8000

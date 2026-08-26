@@ -1,0 +1,8 @@
+$kind: http-request
+url: https://ratingapit-internal-data-ingestion.iso.com/getpartitionframeworkconfig?app=QPC
+method: GET
+queryParams:
+  app: QPC
+settings: {}
+examples: ./.resources/GET Config.resources/examples
+order: 1000

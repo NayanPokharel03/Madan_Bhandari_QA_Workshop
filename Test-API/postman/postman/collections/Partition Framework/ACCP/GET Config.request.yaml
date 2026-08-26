@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://ratingapia-internal-data-ingestion.iso.com/getpartitionframeworkconfig?
+method: GET
+queryParams:
+  "": null
+settings: {}
+order: 1000

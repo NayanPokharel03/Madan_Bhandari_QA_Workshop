@@ -1,0 +1,12 @@
+$kind: http-request
+url: https://ratingapia-internal-batch-trigger.iso.com/invokelambda
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"lambdaName\": \"datahub-lambda-partition-accp\"\r
+
+    }"
+settings: {}
+order: 8000

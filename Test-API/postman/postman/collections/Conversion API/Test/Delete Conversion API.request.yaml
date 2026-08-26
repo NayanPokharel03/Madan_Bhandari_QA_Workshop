@@ -1,0 +1,8 @@
+$kind: http-request
+url: https://ratingapit-internal-data-ingestion.iso.com/deleteconfig?partitionKey=conversion-config&sortKey=DLEvaluation-Locatesmarter-Conversion
+method: DELETE
+queryParams:
+  partitionKey: conversion-config
+  sortKey: DLEvaluation-Locatesmarter-Conversion
+settings: {}
+order: 3000

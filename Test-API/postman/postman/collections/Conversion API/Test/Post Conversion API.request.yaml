@@ -1,0 +1,222 @@
+$kind: http-request
+url: https://ratingapia-internal-data-ingestion.iso.com/addconversionconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"recordType\": \"conversion-config\",\r
+
+    \        \"sortKey\": \"DataHubAnalysis-Pipe-Drivers-CSV-Conversion\",\r
+
+    \        \"application\": \"DataHubAnalysis\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"delimiter\": \"|\",\r
+
+    \        \"timestamp\": \"Tue Nov 02 19:56:36 UTC 2021\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"criticalApp\": false,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"disabled\": false,\r
+
+    \        \"bypassCreds\": false,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"batchSize\": 0,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": true,\r
+
+    \        \"disableCSV\": false,\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"outputDelimiter\": \",\",\r
+
+    \        \"csvHeaders\": [\r
+
+    \            \"RecordType\",\r
+
+    \            \"TransactionCode\",\r
+
+    \            \"LastName\",\r
+
+    \            \"FirstName\",\r
+
+    \            \"MiddleName\",\r
+
+    \            \"Suffix\",\r
+
+    \            \"Street\",\r
+
+    \            \"Street2\",\r
+
+    \            \"UnitType\",\r
+
+    \            \"Unit\",\r
+
+    \            \"City\",\r
+
+    \            \"CountyCode\",\r
+
+    \            \"CountyDecode\",\r
+
+    \            \"State\",\r
+
+    \            \"ZipCode\",\r
+
+    \            \"DOB\",\r
+
+    \            \"Sex\",\r
+
+    \            \"Height\",\r
+
+    \            \"Weight\",\r
+
+    \            \"EyeColor\",\r
+
+    \            \"DLNumber\",\r
+
+    \            \"PreviousDLNumber\",\r
+
+    \            \"DLIssuedDate\",\r
+
+    \            \"DLOriginalIssuedDate\",\r
+
+    \            \"DLExpirationDate\",\r
+
+    \            \"DLStanding\",\r
+
+    \            \"CDLStanding\",\r
+
+    \            \"LicenseType\",\r
+
+    \            \"LicenseClass\",\r
+
+    \            \"Endorsements\",\r
+
+    \            \"Restrictions\",\r
+
+    \            \"FreeFormRestrictions\",\r
+
+    \            \"IsCorrectiveLenses\",\r
+
+    \            \"IsOrganDonor\",\r
+
+    \            \"MedicalCertificateStatus\",\r
+
+    \            \"MedicalSelfCertificateType\",\r
+
+    \            \"MedicalCertificatePostedDate\",\r
+
+    \            \"MedicalCertificateExpirationDate\",\r
+
+    \            \"MedicalExaminerType\",\r
+
+    \            \"MedicalExaminerName\",\r
+
+    \            \"MedicalExaminerSuffix\",\r
+
+    \            \"MedicalExaminerPhone\",\r
+
+    \            \"MedicalExaminerLicense\",\r
+
+    \            \"MedicalExaminerNation\",\r
+
+    \            \"MedicalExaminerState\",\r
+
+    \            \"MedicalRestrictions\",\r
+
+    \            \"MedicalCertificalIssuedDate\",\r
+
+    \            \"LicenseCredentialType\",\r
+
+    \            \"MiddleInitial\"\r
+
+    \        ],\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": false,\r
+
+    \        \"logETLStatusTracker\": false,\r
+
+    \        \"isPrefixZipFileName\": false,\r
+
+    \        \"auroraOffsetModeValue\": 0,\r
+
+    \        \"awsBatchTimeoutOverride\": 0,\r
+
+    \        \"useAcceldata\": false,\r
+
+    \        \"isEndOfPipeline\": false,\r
+
+    \        \"automateDistribution\": false,\r
+
+    \        \"deleteAfterExtract\": false,\r
+
+    \        \"ignoreFailures\": false\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 2000

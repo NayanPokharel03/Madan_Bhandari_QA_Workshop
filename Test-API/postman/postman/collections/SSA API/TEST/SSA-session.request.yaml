@@ -1,0 +1,6 @@
+$kind: http-request
+name: SSA/session
+url: ""
+method: GET
+settings: {}
+order: 5000

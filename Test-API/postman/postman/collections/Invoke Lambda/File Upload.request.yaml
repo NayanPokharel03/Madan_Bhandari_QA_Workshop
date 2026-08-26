@@ -1,0 +1,58 @@
+$kind: http-request
+url: https://ratingapi-internal-batch-trigger-use.iso.com/invokelambda
+method: POST
+body:
+  type: text
+  content: "{\r
+
+    \    \"lambdaName\": \"datahub-pipeline-config-validation-prod\",\r
+
+    \    \"payload\":\"[{\r
+
+    \        \\\"validationConfigType\\\": \\\"DIF\\\",\r
+
+    \        \\\"bucketname\\\": \\\"commerciallines-ingestion-prod-use\\\",\r
+
+    \        \\\"application\\\": \\\"DataHubAnalysis\\\",\r
+
+    \        \\\"keepOriginalFile\\\": false,\r
+
+    \        \\\"awsBatchJobQueue\\\": \\\"PROD-general\\\",\r
+
+    \        \\\"awsBatchJobDefinition\\\": \\\"datahub-ingestion-prod\\\",\r
+
+    \        \\\"awsBatchJobName\\\": \\\"DIF-DataHubAnalysis\\\",\r
+
+    \        \\\"delimiter\\\": \\\"\\\\t\\\",\r
+
+    \        \\\"skipHeader\\\": false,\r
+
+    \        \\\"includeFileHeader\\\": false,\r
+
+    \        \\\"keepPartition\\\": false,\r
+
+    \        \\\"includeTimestamp\\\": true,\r
+
+    \        \\\"encryptFile\\\": false,\r
+
+    \        \\\"datasetRegex\\\": \\\"landing/DataHubAnalysis/DIFV2/.*.csv$\\\",\r
+
+    \        \\\"skipUnzipping\\\": false,\r
+
+    \        \r
+
+    \        \\\"uploadFileToS3\\\": true,\r
+
+    \        \\\"tempFileFolder\\\": \\\"DataHubAnalysis\\\",\r
+
+    \        \\\"uploadFile\\\": \\\"DataHubAnalysis.csv\\\",\r
+
+    \        \\\"uploadFolderLocation\\\": \\\"landing/DataHubAnalysis/DIFV2/\\\"\r
+
+    }\r
+
+    ]\"\r
+
+    }"
+settings: {}
+order: 10000

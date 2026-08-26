@@ -1,0 +1,36 @@
+$kind: http-request
+url: https://ratingapit-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"EER-batch-test\",\r
+
+    \    \"jobQueue\": \"TEST-priority\",\r
+
+    \    \"jobDefinition\": \"datahub-entity-resolution-batch-test\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"INPUT_BUCKET\": \"commerciallines-datastore-test-use\",\r
+
+    \        \"OUTPUT_BUCKET\": \"commerciallines-datastore-test-use\",\r
+
+    \        \"INPUT_FILE\": \"DataHubAnalysis/EER_TEST/input/smalldata.csv\",\r
+
+    \        \"INPUT_FILENAME\": \"smalldata.csv\",\r
+
+    \        \"OUTPUT_FILE\": \"DataHubAnalysis/EER_TEST/output/\",\r
+
+    \        \"operation\": \"generate_param\",\r
+
+    \        \"SORT_KEY\": \"eer-config-testQA\",\r
+
+    \        \"BATCH_SIZE\": 5\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 2000

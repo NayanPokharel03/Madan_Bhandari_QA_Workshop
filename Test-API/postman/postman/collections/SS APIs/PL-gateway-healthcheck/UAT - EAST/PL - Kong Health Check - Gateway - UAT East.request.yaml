@@ -1,0 +1,8 @@
+$kind: http-request
+url: "https://personallinesapiuat-internal-use.verisk.com/gateway/testapi/v1 "
+method: GET
+headers:
+  authorization: ""
+  x-verisk-caller-id: Test
+settings: {}
+order: 2000

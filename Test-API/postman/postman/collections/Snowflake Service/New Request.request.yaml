@@ -1,0 +1,38 @@
+$kind: http-request
+url: https://ratingapit-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"snowflake-batch-test\",\r
+
+    \    \"jobQueue\": \"TEST-priority\",\r
+
+    \    \"jobDefinition\": \"datahub-snowflake-exporter-batch-test\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"INPUT_BUCKET\": \"s3://personallines-datastore-test-use\",\r
+
+    \        \"INPUT_FILE\": \"DLEvaluation/test/input/FIS_DE.txt\",\r
+
+    \        \"OUTPUT_BUCKET\": \"s3://personallines-datastore-test-use\",\r
+
+    \        \"OUTPUT_FILE\": \"DLEvaluation/test/output\",\r
+
+    \        \"DELETE_INPUT_FILE\": \"FALSE\",\r
+
+    \        \"CONVERSION_TYPE\": \"FIXED_LENGTH_TO_CSV\",\r
+
+    \        \"CONVERSION_KEY\": \"DLEvaluation-Locatesmarter-FileConversion\",\r
+
+    \        \"logBatchStatusTracker\": true,\r
+
+    \        \"updateBatchTrackerApiUrl\": \"https://ratingapit-internal-data-ingestion.iso.com/updatebatchstatus?recordType=batch-status\"\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 1000

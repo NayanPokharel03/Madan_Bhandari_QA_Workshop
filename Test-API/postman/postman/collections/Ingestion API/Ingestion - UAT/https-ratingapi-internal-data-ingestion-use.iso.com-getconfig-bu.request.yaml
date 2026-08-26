@@ -1,0 +1,8 @@
+$kind: http-request
+name: https://ratingapi-internal-data-ingestion-use.iso.com/getconfig?bucketname=smartsourcedatahub
+url: https://ratingapiuat-internal-data-ingestion.iso.com/getconfig?bucketname=ratings-ingestion-uat-use
+method: GET
+queryParams:
+  bucketname: ratings-ingestion-uat-use
+settings: {}
+order: 1000

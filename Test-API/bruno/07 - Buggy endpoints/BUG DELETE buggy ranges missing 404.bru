@@ -1,0 +1,17 @@
+meta {
+  name: BUG DELETE /buggy/ranges/{missing} -> should be 404
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{baseUrl}}/buggy/ranges/999999
+  body: none
+  auth: none
+}
+
+tests {
+  test('Deleting a non-existent Id must return 404', function () {
+    expect(res.getStatus()).to.equal(404);
+  });
+}

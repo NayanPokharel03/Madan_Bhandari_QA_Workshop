@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://ratingapit-internal-data-distribution.iso.com/getstatus?id=b1f249b1-5add-4d0d-a0fc-c1bf3cae6be5
+method: GET
+queryParams:
+  id: b1f249b1-5add-4d0d-a0fc-c1bf3cae6be5
+settings: {}
+order: 6000

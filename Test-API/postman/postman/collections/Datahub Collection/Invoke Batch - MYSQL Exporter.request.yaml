@@ -1,0 +1,26 @@
+$kind: http-request
+url: https://ratingapia-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"jobName\": \"db-mysql-exporter-full-refresh-strategy-test\",\r
+
+    \  \"jobQueue\": \"ACCP-priority\",\r
+
+    \  \"jobDefinition\": \"datahub-mysql-exporter-batch-Accp\",\r
+
+    \  \"envOverrides\": {\r
+
+    \    \"SORT_KEY\": \"db-mysql-exporter-full-refresh-strategy-test\",\r
+
+    \    \"GUID\": \"test\",\r
+
+    \    \"SECURE_API_MODE_OVERRIDE\": true\r
+
+    \  }\r
+
+    } "
+settings: {}
+order: 10000

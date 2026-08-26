@@ -1,0 +1,12 @@
+$kind: http-request
+url: https://ratingapi-internal-batch-trigger-use.iso.com/invokelambda
+method: POST
+body:
+  type: text
+  content: "{\r
+
+    \    \"lambdaName\": \"datahub-ingestion-sqs-polling-trigger-prod\"\r
+
+    }"
+settings: {}
+order: 1000

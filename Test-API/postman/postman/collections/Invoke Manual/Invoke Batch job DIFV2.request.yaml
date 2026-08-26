@@ -1,0 +1,42 @@
+$kind: http-request
+url: https://ratingapi-internal-batch-trigger-euir.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"DataHubAnalysis-DIFV2-Test\",\r
+
+    \    \"jobQueue\": \"PROD-general\",\r
+
+    \    \"jobDefinition\": \"datahub-ingestion-prod\",\r
+
+    \    \"timeoutOverride\": \"3600\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"zipFile\": \"false\",\r
+
+    \        \"gzipFile\": \"false\",\r
+
+    \        \"skipUnzipping\": \"false\",\r
+
+    \        \"INPUT_BUCKET\": \"commerciallines-ingestion-prod-euir\",\r
+
+    \        \"INPUT_FILE_PATH\": \"landing/DataHubAnalysis/DIFV2\",\r
+
+    \        \"INPUT_FILE\": \"DataHubAnalysis.csv\",\r
+
+    \        \"SOURCE_ID\": \"test_manual_euir_source_id_\",\r
+
+    \        \"Application\": \"DataHubAnalysis\",\r
+
+    \        \"logBatchStatusTracker\":\"false\",\r
+
+    \        \"updateBatchTrackerApiUrl\": \"https://ratingapi-internal-data-ingestion-euir.iso.com/updatebatchstatus\"\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 10000

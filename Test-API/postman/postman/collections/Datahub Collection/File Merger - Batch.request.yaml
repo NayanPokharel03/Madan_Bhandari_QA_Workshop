@@ -1,0 +1,46 @@
+$kind: http-request
+url: https://ratingapia-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"DataHubAnalysis-File-Merge-UAT-True\",\r
+
+    \    \"jobQueue\": \"UAT-general\",\r
+
+    \    \"jobDefinition\": \"datahub-file-merger-processor-uat\",\r
+
+    \    \"envOverrides\": {         \r
+
+    \        \"INPUT_BUCKET\": \"s3://commerciallines-datastore-uat-use\",\r
+
+    \        \"INPUT_PATH\": \"DataHubAnalysis/FileMerger/input\",\r
+
+    \        \"OUTPUT_BUCKET\": \"s3://commerciallines-datastore-uat-use\",\r
+
+    \        \"OUTPUT_FILE\": \"DataHubAnalysis/FileMerger/merged_output_true.csv\",\r
+
+    \        \"DELETE_INPUT_FILE\": \"FALSE\",\r
+
+    \        \"SKIP_HEADER\": \"false\",\r
+
+    \        \"APP_NAME\": \"DataHubAnalysis\",\r
+
+    \        \"logBatchStatusTracker\": \"true\",\r
+
+    \        \"updateBatchTrackerApiUrl\": \"https://ratingapiuat-internal-data-ingestion.iso.com/updatebatchstatus\",\r
+
+    \        \"VA_ProjectId\": \"DH-Default-Application\",\r
+
+    \        \"LOG_DATA_AUDITOR\": \"True\",\r
+
+    \        \"SECURE_API_MODE_OVERRIDE\": \"TRUE\"\r
+
+    \r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 20000

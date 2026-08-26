@@ -1,0 +1,7 @@
+[
+  {"Id": 101, "Data": "BRUCE WAYNE",     "DataType": "N"},
+  {"Id": 102, "Data": "CLARK KENT",      "DataType": "N"},
+  {"Id": 103, "Data": "DIANA PRINCE",    "DataType": "N"},
+  {"Id": 201, "Data": "42 Elm Street",   "DataType": "A"},
+  {"Id": 202, "Data": "1007 Mountain Dr","DataType": "A"}
+]

@@ -1,0 +1,6 @@
+$kind: http-request
+url: https://ratingapi-internal-data-distribution-use.iso.com/getschedulerconfig
+method: GET
+settings: {}
+examples: ./.resources/PROD.resources/examples
+order: 1000

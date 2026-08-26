@@ -1,0 +1,81 @@
+$kind: http-request
+name: TEST
+url: https://ratingapit-internal-data-distribution.iso.com/addschedulerconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-schedule\",\r
+
+    \        \"jobId\": \"Prometrix-Risks-ChangeDetection-Dist-Snowflake\",\r
+
+    \        \"timeIntervalHours\": 168,\r
+
+    \        \"distributeByState\": false,\r
+
+    \        \"batchMode\": false\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-schedule\",\r
+
+    \        \"jobId\": \"Prometrix-Occupants-ChangeDetection-Dist-Snowflake\",\r
+
+    \        \"timeIntervalHours\": 168,\r
+
+    \        \"distributeByState\": false,\r
+
+    \        \"batchMode\": false\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-schedule\",\r
+
+    \        \"jobId\": \"Prometrix-RiskAddresses-ChangeDetection-Dist-Snowflake\",\r
+
+    \        \"timeIntervalHours\": 168,\r
+
+    \        \"distributeByState\": false,\r
+
+    \        \"batchMode\": false\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-schedule\",\r
+
+    \        \"jobId\": \"Prometrix-RiskDates-ChangeDetection-Dist-Snowflake\",\r
+
+    \        \"timeIntervalHours\": 168,\r
+
+    \        \"distributeByState\": false,\r
+
+    \        \"batchMode\": false\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-schedule\",\r
+
+    \        \"jobId\": \"Prometrix-RiskCurrencyDates-ChangeDetection-Dist-Snowflake\",\r
+
+    \        \"timeIntervalHours\": 168,\r
+
+    \        \"distributeByState\": false,\r
+
+    \        \"batchMode\": false\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 3000

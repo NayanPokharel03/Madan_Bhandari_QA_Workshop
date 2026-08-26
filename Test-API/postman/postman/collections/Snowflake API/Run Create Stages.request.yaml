@@ -1,0 +1,22 @@
+$kind: http-request
+url: https://ratingapia-internal-data-distribution.iso.com/snowflake/createstage
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"dbName\": \"EFX_ACCP_DB\",\r
+
+    \    \"schemaName\": \"CREDIT_HEADER\",\r
+
+    \    \"stageName\": \"EQUIFAX_CREDITHEADER_TAB_DELIMITER_STAGE_ACCP\",\r
+
+    \    \"fileFormat\": \"DH_EQUIFAX_TAB_DELIMITER_FILE_FORMAT_ACCP\",\r
+
+    \    \"s3Url\": \"s3://personallines-distribution-accp-use/analytics/datahubautoload/snowflake/Equifax/\",\r
+
+    \    \"debugMode\": false\r
+
+    }"
+settings: {}
+order: 5000

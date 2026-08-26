@@ -1,0 +1,14 @@
+$kind: http-request
+url: localhost:8000/getsession?user_session_id=i43445-lap6PliaembhsTPk
+method: GET
+queryParams:
+  - key: user_session_id
+    value: i43445-lap6PliaembhsTPk
+  - key: session_id
+    value: i43445
+    disabled: true
+body:
+  type: json
+  content: ""
+settings: {}
+order: 5000

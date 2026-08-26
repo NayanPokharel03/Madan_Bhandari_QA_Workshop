@@ -1,0 +1,28 @@
+$kind: http-request
+url: https://ratingapi-internal-data-ingestion-use.iso.com/addmetadataconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"bucketname\": \"personallines-datahub-prod-use\",\r
+
+    \        \"application\": \"FirstAmerican\",\r
+
+    \        \"datasetName\": \"FirstAmerican\",\r
+
+    \        \"datasetRegex\": \"tier2/FirstAmerican/.*\",\r
+
+    \        \"customField\": [\r
+
+    \            \"partition_state\"\r
+
+    \        ]\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 6000

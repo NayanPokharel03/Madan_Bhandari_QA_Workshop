@@ -1,0 +1,94 @@
+$kind: http-request
+url: https://internal-ssa-api-ACCP1-22543304.us-east-1.elb.amazonaws.com/matchscore
+method: POST
+headers:
+  content-type: application/json
+  Accept: application/json
+  x-verisk-caller-id: QATEST
+body:
+  type: json
+  content: "[\r
+
+    \  {\r
+
+    \    \"Id\": 1,\r
+
+    \    \"Data\": \"BRUCE WAYNE\",\r
+
+    \    \"DataType\": \"N\"\r
+
+    \  },\r
+
+    \  {\r
+
+    \    \"Id\": 2,\r
+
+    \    \"Data\": \"WAYNE BRUCE\",\r
+
+    \    \"DataType\": \"N\"\r
+
+    \  },\r
+
+    \  {\r
+
+    \    \"Id\": 3,\r
+
+    \    \"Data\": \"BRUCE BATMAN WAYNE\",\r
+
+    \    \"DataType\": \"N\"\r
+
+    \  },\r
+
+    \  {\r
+
+    \    \"Id\": 4,\r
+
+    \    \"Data\": \"WAYNE BATMAN BRUCE\",\r
+
+    \    \"DataType\": \"N\"\r
+
+    \  },\r
+
+    \  {\r
+
+    \    \"Id\": 5,\r
+
+    \    \"Data\": \"BRUCE B WAYNE\",\r
+
+    \    \"DataType\": \"N\"\r
+
+    \  },\r
+
+    \  {\r
+
+    \    \"Id\": 6,\r
+
+    \    \"Data\": \"WAYNE B BRUCE\",\r
+
+    \    \"DataType\": \"N\"\r
+
+    \  },\r
+
+    \  {\r
+
+    \    \"Id\": 7,\r
+
+    \    \"Data\": \"545 Washington Boulevard\",\r
+
+    \    \"DataType\": \"A\"\r
+
+    \  },\r
+
+    \  {\r
+
+    \t\"Id\": 7,\r
+
+    \t\"Data\": \"545 Washington boulevard\",\r
+
+    \t\"DataType\": \"A\"\r
+
+    \  }\r
+
+    ]"
+settings: {}
+order: 3000

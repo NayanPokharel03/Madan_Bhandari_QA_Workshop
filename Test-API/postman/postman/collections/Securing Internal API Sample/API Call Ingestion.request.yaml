@@ -1,0 +1,21 @@
+$kind: http-request
+url: https://ratingapit-internal.verisk.com/underwriting/dataingestionapi/v1/api/updatebatchstatus?recordType=batch-status
+method: POST
+queryParams:
+  recordType: batch-status
+body:
+  type: json
+  content: "[\r
+
+    \    {\"sortKey\": \"3d722db8-d587-45aa-bb29-9c9cca14177d\", \"application\": \"DataHubAnalysis\", \"jobStatus\": \"FAILED\"\r
+
+    \    }\r
+
+    ]"
+auth:
+  type: bearer
+  credentials:
+    token: ""
+settings:
+  disabledSystemHeaders: []
+order: 40000

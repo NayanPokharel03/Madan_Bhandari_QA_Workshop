@@ -1,0 +1,111 @@
+$kind: http-request
+name: New Request
+url: https://visapi-internal-scrubber.test.vis-verisk.com/healthcheck
+method: GET
+scripts:
+  - type: beforeRequest
+    code: ""
+    language: text/javascript
+  - type: afterResponse
+    code: "// --- Config ---\r
+
+      const POLL_DELAY_MS = 5000;   // wait between hits (5s here — adjust as needed)\r
+
+      const MAX_ATTEMPTS  = 0;      // 0 = infinite; set e.g. 500 to cap the run\r
+
+      \r
+
+      // --- Track attempt count across iterations ---\r
+
+      let attempts = pm.collectionVariables.get(\"hc_attempts\");\r
+
+      attempts = attempts ? parseInt(attempts, 10) + 1 : 1;\r
+
+      pm.collectionVariables.set(\"hc_attempts\", attempts);\r
+
+      \r
+
+      let status = null;\r
+
+      let raw = pm.response.text();\r
+
+      \r
+
+      try {\r
+
+      \    const body = pm.response.json();\r
+
+      \    status = body.status;\r
+
+      } catch (e) {\r
+
+      \    // Non-JSON / parse failure also counts as \"not healthy\" — stop and capture\r
+
+      \    status = \"PARSE_ERROR\";\r
+
+      }\r
+
+      \r
+
+      console.log(`Attempt #${attempts} — status: ${status}`);\r
+
+      \r
+
+      if (status === \"Healthy\") {\r
+
+      \    // Still healthy: check cap, then loop back to this same request after a delay\r
+
+      \    if (MAX_ATTEMPTS > 0 && attempts >= MAX_ATTEMPTS) {\r
+
+      \        console.log(\"Reached MAX_ATTEMPTS without a status change. Stopping.\");\r
+
+      \        pm.collectionVariables.unset(\"hc_attempts\");\r
+
+      \        return; // no setNextRequest => run ends\r
+
+      \    }\r
+
+      \    setTimeout(() => {}, POLL_DELAY_MS);        // simple busy-wait pause\r
+
+      \    postman.setNextRequest(pm.info.requestName); // re-run THIS request\r
+
+      } else {\r
+
+      \    // Status changed! Capture everything and stop the run.\r
+
+      \    console.log(\"STATUS CHANGED — halting.\");\r
+
+      \    console.log(\"Final status: \" + status);\r
+
+      \    console.log(\"Full response:\\n\" + raw);\r
+
+      \r
+
+      \    // Persist the captured payload so you can inspect it after the run\r
+
+      \    pm.collectionVariables.set(\"hc_final_status\", status);\r
+
+      \    pm.collectionVariables.set(\"hc_final_response\", raw);\r
+
+      \    pm.collectionVariables.set(\"hc_final_code\", pm.response.code);\r
+
+      \    pm.collectionVariables.set(\"hc_final_time\", new Date().toISOString());\r
+
+      \r
+
+      \    pm.test(\"Status is no longer Healthy: \" + status, () => {\r
+
+      \        pm.expect(status).to.not.eql(\"Healthy\");\r
+
+      \    });\r
+
+      \r
+
+      \    pm.collectionVariables.unset(\"hc_attempts\");\r
+
+      \    // No setNextRequest here => the Collection Runner stops immediately.\r
+
+      }"
+    language: text/javascript
+settings: {}
+order: 5000

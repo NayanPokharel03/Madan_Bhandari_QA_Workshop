@@ -1,0 +1,26 @@
+meta {
+  name: GET /healthcheck
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/healthcheck
+  body: none
+  auth: none
+}
+
+tests {
+  test('Status is 200', function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+  test('Response is a JSON array with one item', function () {
+    const body = res.getBody();
+    expect(body).to.be.an('array').with.lengthOf(1);
+  });
+  test('Reports Healthy', function () {
+    const body = res.getBody();
+    expect(body[0]).to.have.property('status', 'Healthy');
+    expect(body[0]).to.have.property('message', 'Health check passed');
+  });
+}

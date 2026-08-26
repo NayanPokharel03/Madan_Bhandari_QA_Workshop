@@ -1,0 +1,25 @@
+meta {
+  name: BUG POST /buggy/keys empty -> should be 400
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/buggy/keys
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  []
+}
+
+tests {
+  test('Expected: empty array rejected with 400', function () {
+    expect(res.getStatus()).to.equal(400);
+  });
+}

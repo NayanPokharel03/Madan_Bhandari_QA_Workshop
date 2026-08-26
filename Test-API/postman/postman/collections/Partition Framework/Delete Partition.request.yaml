@@ -1,0 +1,8 @@
+$kind: http-request
+url: https://ratingapit-internal-data-ingestion.iso.com/deleteconfig?partitionKey=partition-framework-config&sortKey=beab4e46-3a90-4e61-b9ae-cd5aa6b4f8fe
+method: DELETE
+queryParams:
+  partitionKey: partition-framework-config
+  sortKey: beab4e46-3a90-4e61-b9ae-cd5aa6b4f8fe
+settings: {}
+order: 6000

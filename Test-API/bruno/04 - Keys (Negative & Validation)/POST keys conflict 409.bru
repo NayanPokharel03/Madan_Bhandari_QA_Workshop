@@ -1,0 +1,32 @@
+meta {
+  name: POST /keys same Id, DIFFERENT content -> 409 (conflict)
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{baseUrl}}/keys
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  [
+    { "Id": {{conflictId}}, "Data": "DIFFERENT VALUE", "DataType": "N" }
+  ]
+}
+
+tests {
+  test('Status is 409', function () {
+    expect(res.getStatus()).to.equal(409);
+  });
+  test('Envelope reports content conflict', function () {
+    const body = res.getBody();
+    expect(body).to.include({ error: true, status: 409 });
+    expect(body.details).to.have.property('conflicts');
+  });
+}

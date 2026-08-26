@@ -1,0 +1,584 @@
+$kind: http-request
+url: ""
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"recordType\": \"ingestion-config\",\r
+
+    \        \"bucketname\": \"commerciallines-ingestion-prod-use\",\r
+
+    \        \"application\": \"Flightkit\",\r
+
+    \        \"processId\": \"DIF-Flightkit\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"PROD-DIF\",\r
+
+    \        \"awsBatchJobDefinition\": \"datahub-ingestion-prod\",\r
+
+    \        \"awsBatchJobName\": \"DIF-Flightkit\",\r
+
+    \        \"delimiter\": \",\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": true,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"datasetRegex\": \"landing/Flightkit/BBS_ODDS/fks.audit_log/.*\",\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"archiveBucket\": \"commerciallines-ingestion-prod-use\",\r
+
+    \        \"archivePathPrefix\": \"archive/Flightkit/\",\r
+
+    \        \"tier1Bucket\": \"commerciallines-datahub-prod-use\",\r
+
+    \        \"tier1PathPrefix\": \"tier1/Flightkit/BBS_ODDS/fks.audit_log/\",\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": true,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"kmsKeyId\": \"c30c9f67-5e7b-4aa6-8310-bf0ae218bcfd\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"ingestion-config\",\r
+
+    \        \"bucketname\": \"commerciallines-ingestion-prod-use\",\r
+
+    \        \"application\": \"Flightkit\",\r
+
+    \        \"processId\": \"DIF-Flightkit\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"PROD-DIF\",\r
+
+    \        \"awsBatchJobDefinition\": \"datahub-ingestion-prod\",\r
+
+    \        \"awsBatchJobName\": \"DIF-Flightkit\",\r
+
+    \        \"delimiter\": \",\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": true,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"datasetRegex\": \"landing/Flightkit/BBS_ODDS/fks.auto_save_data/.*\",\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"archiveBucket\": \"commerciallines-ingestion-prod-use\",\r
+
+    \        \"archivePathPrefix\": \"archive/Flightkit/\",\r
+
+    \        \"tier1Bucket\": \"commerciallines-datahub-prod-use\",\r
+
+    \        \"tier1PathPrefix\": \"tier1/Flightkit/BBS_ODDS/fks.auto_save_data/\",\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": true,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"kmsKeyId\": \"c30c9f67-5e7b-4aa6-8310-bf0ae218bcfd\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"ingestion-config\",\r
+
+    \        \"bucketname\": \"commerciallines-ingestion-prod-use\",\r
+
+    \        \"application\": \"Flightkit\",\r
+
+    \        \"processId\": \"DIF-Flightkit\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"PROD-DIF\",\r
+
+    \        \"awsBatchJobDefinition\": \"datahub-ingestion-prod\",\r
+
+    \        \"awsBatchJobName\": \"DIF-Flightkit\",\r
+
+    \        \"delimiter\": \",\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": true,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"datasetRegex\": \"landing/Flightkit/BBS_ODDS/fks.condition/.*\",\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"archiveBucket\": \"commerciallines-ingestion-prod-use\",\r
+
+    \        \"archivePathPrefix\": \"archive/Flightkit/\",\r
+
+    \        \"tier1Bucket\": \"commerciallines-datahub-prod-use\",\r
+
+    \        \"tier1PathPrefix\": \"tier1/Flightkit/BBS_ODDS/fks.condition/\",\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": true,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"kmsKeyId\": \"c30c9f67-5e7b-4aa6-8310-bf0ae218bcfd\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"ingestion-config\",\r
+
+    \        \"bucketname\": \"commerciallines-ingestion-prod-use\",\r
+
+    \        \"application\": \"Flightkit\",\r
+
+    \        \"processId\": \"DIF-Flightkit\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"PROD-DIF\",\r
+
+    \        \"awsBatchJobDefinition\": \"datahub-ingestion-prod\",\r
+
+    \        \"awsBatchJobName\": \"DIF-Flightkit\",\r
+
+    \        \"delimiter\": \",\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": true,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"datasetRegex\": \"landing/Flightkit/BBS_ODDS/fks.construction_validation/.*\",\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"archiveBucket\": \"commerciallines-ingestion-prod-use\",\r
+
+    \        \"archivePathPrefix\": \"archive/Flightkit/\",\r
+
+    \        \"tier1Bucket\": \"commerciallines-datahub-prod-use\",\r
+
+    \        \"tier1PathPrefix\": \"tier1/Flightkit/BBS_ODDS/fks.construction_validation/\",\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": true,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"kmsKeyId\": \"c30c9f67-5e7b-4aa6-8310-bf0ae218bcfd\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"ingestion-config\",\r
+
+    \        \"bucketname\": \"commerciallines-ingestion-prod-use\",\r
+
+    \        \"application\": \"Flightkit\",\r
+
+    \        \"processId\": \"DIF-Flightkit\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"PROD-DIF\",\r
+
+    \        \"awsBatchJobDefinition\": \"datahub-ingestion-prod\",\r
+
+    \        \"awsBatchJobName\": \"DIF-Flightkit\",\r
+
+    \        \"delimiter\": \",\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": true,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"datasetRegex\": \"landing/Flightkit/BBS_ODDS/fks.csp_code_v2/.*\",\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"archiveBucket\": \"commerciallines-ingestion-prod-use\",\r
+
+    \        \"archivePathPrefix\": \"archive/Flightkit/\",\r
+
+    \        \"tier1Bucket\": \"commerciallines-datahub-prod-use\",\r
+
+    \        \"tier1PathPrefix\": \"tier1/Flightkit/BBS_ODDS/fks.csp_code_v2/\",\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": true,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"kmsKeyId\": \"c30c9f67-5e7b-4aa6-8310-bf0ae218bcfd\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"ingestion-config\",\r
+
+    \        \"bucketname\": \"commerciallines-ingestion-prod-use\",\r
+
+    \        \"application\": \"Flightkit\",\r
+
+    \        \"processId\": \"DIF-Flightkit\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"PROD-DIF\",\r
+
+    \        \"awsBatchJobDefinition\": \"datahub-ingestion-prod\",\r
+
+    \        \"awsBatchJobName\": \"DIF-Flightkit\",\r
+
+    \        \"delimiter\": \",\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": true,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"datasetRegex\": \"landing/Flightkit/BBS_ODDS/fks.occupant_v2/.*\",\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"archiveBucket\": \"commerciallines-ingestion-prod-use\",\r
+
+    \        \"archivePathPrefix\": \"archive/Flightkit/\",\r
+
+    \        \"tier1Bucket\": \"commerciallines-datahub-prod-use\",\r
+
+    \        \"tier1PathPrefix\": \"tier1/Flightkit/BBS_ODDS/fks.occupant_v2/\",\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": true,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"kmsKeyId\": \"c30c9f67-5e7b-4aa6-8310-bf0ae218bcfd\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"recordType\": \"ingestion-config\",\r
+
+    \        \"bucketname\": \"commerciallines-ingestion-prod-use\",\r
+
+    \        \"application\": \"Flightkit\",\r
+
+    \        \"processId\": \"DIF-Flightkit\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"PROD-DIF\",\r
+
+    \        \"awsBatchJobDefinition\": \"datahub-ingestion-prod\",\r
+
+    \        \"awsBatchJobName\": \"DIF-Flightkit\",\r
+
+    \        \"delimiter\": \",\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": true,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"datasetRegex\": \"landing/Flightkit/BBS_ODDS/fks.secondary_occup_code_v2/.*\",\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"archiveBucket\": \"commerciallines-ingestion-prod-use\",\r
+
+    \        \"archivePathPrefix\": \"archive/Flightkit/\",\r
+
+    \        \"tier1Bucket\": \"commerciallines-datahub-prod-use\",\r
+
+    \        \"tier1PathPrefix\": \"tier1/Flightkit/BBS_ODDS/fks.secondary_occup_code_v2/\",\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": true,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"kmsKeyId\": \"c30c9f67-5e7b-4aa6-8310-bf0ae218bcfd\"\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 2000

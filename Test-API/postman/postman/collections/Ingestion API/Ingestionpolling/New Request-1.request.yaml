@@ -1,0 +1,143 @@
+$kind: http-request
+name: New Request
+url: https://ratingapi-internal-data-ingestion-apsy.iso.com/updateconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"recordType\": \"ingestion-polling-config\",\r
+
+    \        \"sortKey\": \"d3a1302c-9f02-4f95-9861-fa64b7825a31\",\r
+
+    \        \"bucketname\": \"ratings-ingestion-prod-apsy\",\r
+
+    \        \"keepOriginalFile\": false,\r
+
+    \        \"awsBatchJobQueue\": \"PROD-general\",\r
+
+    \        \"awsBatchJobDefinition\": \"datahub-ingestion-prod\",\r
+
+    \        \"awsBatchJobName\": \"DIF-VRR-Ingestion-Polling\",\r
+
+    \        \"timestamp\": \"Tue Nov 07 18:23:04 UTC 2023\",\r
+
+    \        \"skipHeader\": false,\r
+
+    \        \"includeFileHeader\": false,\r
+
+    \        \"keepPartition\": false,\r
+
+    \        \"includeTimestamp\": false,\r
+
+    \        \"encryptFile\": false,\r
+
+    \        \"datasetRegex\": \"landing_polling/VRR/screenings/\",\r
+
+    \        \"skipUnzipping\": false,\r
+
+    \        \"jsonFormat\": false,\r
+
+    \        \"addDateToFilename\": false,\r
+
+    \        \"csvMode\": false,\r
+
+    \        \"skipIdCreation\": false,\r
+
+    \        \"copyFileToDatastore\": false,\r
+
+    \        \"batchMode\": false,\r
+
+    \        \"skipVirusScan\": false,\r
+
+    \        \"maxRetryAttempts\": 0,\r
+
+    \        \"criticalApp\": false,\r
+
+    \        \"lastRunMilliseconds\": 0,\r
+
+    \        \"disabled\": false,\r
+
+    \        \"generateFileId\": false,\r
+
+    \        \"awsRegion\": \"ap-southeast-2\",\r
+
+    \        \"referenceTimeMilliseconds\": 0,\r
+
+    \        \"incrementalLoad\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"multiAthenaRecords\": false,\r
+
+    \        \"batchSize\": 0,\r
+
+    \        \"inPlaceProcess\": false,\r
+
+    \        \"logDataAuditor\": false,\r
+
+    \        \"recursiveCopy\": false,\r
+
+    \        \"compressOutputAsGzip\": false,\r
+
+    \        \"customPartition\": false,\r
+
+    \        \"customPartitionIndex\": 0,\r
+
+    \        \"awsBatchEnvOverrides\": {\r
+
+    \            \"INPUT_FILE_PATH\": \"landing_polling/VRR/screenings\",\r
+
+    \            \"skipUnzipping\": \"false\",\r
+
+    \            \"max_batch_invoke_allowed\": \"5\",\r
+
+    \            \"maxFileProcessCount\": \"100\",\r
+
+    \            \"logBatchStatusTracker\": \"true\",\r
+
+    \            \"updateBatchTrackerApiUrl\": \"https://ratingapi-internal-data-ingestion-apsy.iso.com/updatebatchstatus?recordType=ingestion-polling-status\",\r
+
+    \            \"batch_status_check_interval\": \"1\",\r
+
+    \            \"INPUT_BUCKET\": \"ratings-ingestion-prod-apsy\",\r
+
+    \            \"Application\": \"VRR\"\r
+
+    \        },\r
+
+    \        \"recordLength\": 0,\r
+
+    \        \"severityCount\": 0,\r
+
+    \        \"includePagerDutySupport\": false,\r
+
+    \        \"sendToSNSTopic\": false,\r
+
+    \        \"batchRetryCount\": 0,\r
+
+    \        \"logBatchStatusTracker\": true,\r
+
+    \        \"logETLStatusTracker\": false,\r
+
+    \        \"isPrefixZipFileName\": false,\r
+
+    \        \"auroraOffsetModeValue\": 0,\r
+
+    \        \"awsBatchTimeoutOverride\": 0,\r
+
+    \        \"useAcceldata\": false,\r
+
+    \        \"isEndOfPipeline\": false,\r
+
+    \        \"automateDistribution\": false,\r
+
+    \        \"deleteAfterExtract\": false\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 2000

@@ -1,0 +1,14 @@
+$kind: http-request
+url: https://ratingapiuat-internal-batch-trigger.iso.com/invokelambda
+method: POST
+body:
+  type: text
+  content: "{\r
+
+    \    \"lambdaName\": \"datahub-distribution-filecopy-trigger-uat\"\r
+
+    \   \r
+
+    }"
+settings: {}
+order: 24000

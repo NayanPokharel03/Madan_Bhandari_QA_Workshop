@@ -1,0 +1,16 @@
+$kind: http-request
+url: https://ratingapit-internal-data-distribution.iso.com/loaddate
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobId\": \"MassPersonalAuto-Snowflake-Distribution\",\r
+
+    \    \"startDate\": \"2020-01-01 00:00:00.000\",\r
+
+    \    \"endDate\": \"2021-04-09 00:00:00.000\"\r
+
+    }"
+settings: {}
+order: 2000

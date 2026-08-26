@@ -1,0 +1,11 @@
+$kind: http-request
+url: https://ratingapit-internal-acceldata-pipeline.iso.com/getpipelineid?sourceId=demS-b1625dbb099-1-8fe-1f1ds6bf04&app=BINS
+method: GET
+queryParams:
+  sourceId: demS-b1625dbb099-1-8fe-1f1ds6bf04
+  app: BINS
+body:
+  type: json
+  content: ""
+settings: {}
+order: 1000

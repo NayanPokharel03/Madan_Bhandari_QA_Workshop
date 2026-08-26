@@ -1,0 +1,5 @@
+[
+  {"Id": 301, "Data": "BRUCE WAYNE",  "DataType": "N"},
+  {"Id": 302, "Data": "CLARK KENT",   "DataType": "N"},
+  {"Id": 401, "Data": "42 Elm Street","DataType": "A"}
+]

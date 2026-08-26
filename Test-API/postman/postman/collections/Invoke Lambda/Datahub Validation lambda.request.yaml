@@ -1,0 +1,18 @@
+$kind: http-request
+url: https://ratingapit-internal-batch-trigger.iso.com/invokelambda
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"lambdaName\": \"datahub-file-audit-alert-aggregator-test\",\r
+
+    \    \"payload\":\"{\r
+
+    \        \\\"sortKey\\\": \\\"MLS-SFTP-T1-Validation\\\" \r
+
+    \    }\"\r
+
+    }"
+settings: {}
+order: 9000

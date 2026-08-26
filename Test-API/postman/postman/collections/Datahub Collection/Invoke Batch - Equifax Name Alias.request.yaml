@@ -1,0 +1,50 @@
+$kind: http-request
+url: https://ratingapiuat-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"Equifax-Credit-Header-Name-Alias-Processor-testing-TRUE\",\r
+
+    \    \"jobQueue\": \"UAT-general\",\r
+
+    \    \"jobDefinition\": \"datahub-equifax-credit-header-name-alias-processor-uat\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"MultiProcessingMode\": \"TRUE\",\r
+
+    \        \"MultiProcessNodes\": \"4\",\r
+
+    \        \"HISTORICAL_LOAD\": \"FALSE\",\r
+
+    \        \"ForceRefreshVault\": \"FALSE\",\r
+
+    \        \"DELETE_INPUT_FILE\": \"FALSE\",\r
+
+    \        \"OUTPUT_FILE\": \"Equifax/Testing/name-alias-processor/output/\",\r
+
+    \        \"OUTPUT_BUCKET\": \"personallines-datastore-uat-use\",\r
+
+    \        \"INPUT_FILE\": \"Equifax/Testing/CreditHeader/DB-load-input/names/1445b228-fd7d-47eb-a47c-563006cafbfd_CreditHeader_20240819_001_001.csv.names_00001.csv_ssaout_tokenized\",\r
+
+    \        \"INPUT_BUCKET\": \"personallines-datastore-uat-use\",\r
+
+    \        \"input_filename\": \"1445b228-fd7d-47eb-a47c-563006cafbfd_CreditHeader_20240819_001_001.csv.names_00001.csv_ssaout_tokenized\",\r
+
+    \        \"gzipFile\": \"false\",\r
+
+    \        \"logBatchStatusTracker\": true,\r
+
+    \        \"logETLStatusTracker\": true,\r
+
+    \        \"SECURE_API_MODE_OVERRIDE\": \"true\"\r
+
+    \       \r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 15000

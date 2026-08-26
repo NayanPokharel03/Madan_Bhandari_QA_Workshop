@@ -1,0 +1,26 @@
+$kind: http-request
+url: https://ratingapia-internal-data-ingestion.iso.com/addpartitionframeworkconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"recordType\": \"partition-framework-config\",\r
+
+    \        \"bucketname\": \"ratings-datahub-accp-use\",\r
+
+    \        \"application\": \"DataHubAnalysis\",\r
+
+    \        \"datahubDatabase\": \"datahubanalysis_datahub_accp\",\r
+
+    \        \"datahubTablename\": \"tier1_datahubanalysis_mvr_data\",\r
+
+    \        \"datasetRegex\": \"tier1/DataHubAnalysis/MVR/partition_year=[0-9]{4}/partition_month=[0-9]{2}/partition_day=[0-9]{2}/.*\"\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 2000

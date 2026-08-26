@@ -1,0 +1,24 @@
+$kind: http-request
+url: https://ratingapit-internal-data-distribution.iso.com/snowflake/createpipe
+method: POST
+body:
+  type: json
+  content: " {\r
+
+    \        \"dbName\": \"EFX_TEST_DB\",\r
+
+    \        \"schemaName\": \"CREDIT_HEADER\",\r
+
+    \        \"queryLocation\": \"Equifax/Equifax_credit_header_address_pipes.txt\",\r
+
+    \        \"stageName\": \"EQUIFAX_CREDITHEADER_TAB_DELIMITER_STAGE_TEST\",\r
+
+    \        \"tableName\": \"CREDIT_HEADER_ADDRESS\",\r
+
+    \        \"snowpipeName\": \"DH_PROMETRIX_RISKS_CHANGEDETECTION_PIPES_TEST\",\r
+
+    \        \"dropQuery\": true\r
+
+    \    }"
+settings: {}
+order: 6000

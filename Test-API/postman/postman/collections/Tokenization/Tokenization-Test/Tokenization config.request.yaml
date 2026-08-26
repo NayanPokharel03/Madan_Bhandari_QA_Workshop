@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://ratingapia-internal-data-ingestion.iso.com/gettokenizationconfig?sortKey=DPH_Tokenization_168_1396
+method: GET
+queryParams:
+  sortKey: DPH_Tokenization_168_1396
+settings: {}
+order: 1000

@@ -1,0 +1,46 @@
+$kind: http-request
+url: https://ratingapi-internal-data-distribution-use.iso.com/addconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-config\",\r
+
+    \        \"jobId\": \"CourtSide-judgedatasummary-Distribution\",\r
+
+    \        \"database\": \"courtside_datahub_prod\",\r
+
+    \        \"tableName\": \"tier1_judgedatasummary_data\",\r
+
+    \        \"resultsLocation\": \"s3://ratings-distribution-prod-use/datawarehouse/CourtSide/JudgeData/JudgeDataSummary\",\r
+
+    \        \"application\": \"CourtSide\",\r
+
+    \        \"requestorProduct\": \"CourtSide\",\r
+
+    \        \"purpose\": \"To Ingest, process and distribute/publish Court cases data for CourtSide application.\",\r
+
+    \        \"requestorUserType\": \"Adhoc\",\r
+
+    \        \"sourceLocation\": \"s3://ratings-datahub-prod-use/tier1/CourtSide/JudgeData/JudgeDataSummary\",\r
+
+    \        \"executeCustomQuery\": false,\r
+
+    \        \"excludeDatahubTimestamp\": false,\r
+
+    \        \"distributionType\": \"File-level\",\r
+
+    \        \"excludeDistributionDateFolder\": false,\r
+
+    \        \"timeIntervalDays\": 0,\r
+
+    \        \"kmsKeyId\": \"f69fba97-0dd9-4853-b97d-66f0a2d98647\"\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 3000

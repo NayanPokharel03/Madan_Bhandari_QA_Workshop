@@ -1,0 +1,3 @@
+$kind: collection
+name: PL/gateway-healthcheck
+order: 1000

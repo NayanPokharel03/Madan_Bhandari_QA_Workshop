@@ -1,0 +1,18 @@
+$kind: http-request
+url: localhost:8000/getsessionid
+method: GET
+body:
+  type: json
+  content: "{\r
+
+    \    \"query\": \"Thats right?\",\r
+
+    \    // \"session_id\": \"123456\",\r
+
+    \    \"user_id\": \"i43445\",\r
+
+    \    \"user_session_id\": \"\"\r
+
+    }"
+settings: {}
+order: 1000

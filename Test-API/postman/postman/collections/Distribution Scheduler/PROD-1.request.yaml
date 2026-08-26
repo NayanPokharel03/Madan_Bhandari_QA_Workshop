@@ -1,0 +1,91 @@
+$kind: http-request
+name: PROD
+url: https://ratingapi-internal-data-distribution-use.iso.com/addschedulerconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-schedule\",\r
+
+    \        \"jobId\": \"Equifax-Snowflake-Distribution-CreditHeader-Addresses\",\r
+
+    \        \"timestamp\": \"Wed Sep 01 14:25:39 UTC 2021\",\r
+
+    \        \"timeIntervalHours\": 720,\r
+
+    \        \"distributeByState\": false,\r
+
+    \        \"batchMode\": false\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-schedule\",\r
+
+    \        \"jobId\": \"Equifax-Snowflake-Distribution-CreditHeader-Master\",\r
+
+    \        \"timestamp\": \"Wed Sep 01 14:25:39 UTC 2021\",\r
+
+    \        \"timeIntervalHours\": 720,\r
+
+    \        \"distributeByState\": false,\r
+
+    \        \"batchMode\": false\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-schedule\",\r
+
+    \        \"jobId\": \"Equifax-Snowflake-Distribution-CreditHeader-Names\",\r
+
+    \        \"timestamp\": \"Wed Sep 01 14:25:39 UTC 2021\",\r
+
+    \        \"timeIntervalHours\": 720,\r
+
+    \        \"distributeByState\": false,\r
+
+    \        \"batchMode\": false\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-schedule\",\r
+
+    \        \"jobId\": \"Equifax-Snowflake-Distribution-Email\",\r
+
+    \        \"timestamp\": \"Wed Sep 01 14:25:39 UTC 2021\",\r
+
+    \        \"timeIntervalHours\": 720,\r
+
+    \        \"distributeByState\": false,\r
+
+    \        \"batchMode\": false\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"configType\": \"distribution-schedule\",\r
+
+    \        \"jobId\": \"Equifax-Snowflake-Distribution-Phone\",\r
+
+    \        \"timestamp\": \"Wed Sep 01 14:25:39 UTC 2021\",\r
+
+    \        \"timeIntervalHours\": 720,\r
+
+    \        \"distributeByState\": false,\r
+
+    \        \"batchMode\": false\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 4000

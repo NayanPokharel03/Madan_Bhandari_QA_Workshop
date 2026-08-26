@@ -1,0 +1,13 @@
+$kind: http-request
+url: https://ratingapit-internal-data-ingestion.iso.com/deleteconfig?partitionKey=validation-config&sortKey=DatahubAnalysis-Distribution-DIFV2-Tier2-File-Level
+method: DELETE
+headers:
+  "": ""
+queryParams:
+  partitionKey: validation-config
+  sortKey: DatahubAnalysis-Distribution-DIFV2-Tier2-File-Level
+body:
+  type: json
+  content: ""
+settings: {}
+order: 4000

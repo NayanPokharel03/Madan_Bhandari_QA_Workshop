@@ -1,0 +1,40 @@
+$kind: http-request
+url: https://ratingapit-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"test-SSA\",\r
+
+    \    \"jobQueue\": \"TEST-general\",\r
+
+    \    \"jobDefinition\": \"ssa-file-processor-TEST\",\r
+
+    \    \"timeoutOverride\": \"3600\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"INPUT_FILE\": \"DataHubAnalysis/DIFV2/ssa-input/DatahubAnalysis_SSA_fail_testcase2(1)(1).csv_scrubberout\",\r
+
+    \        \"SSA_KEY\": \"DataHubAnalysis-DIFV2-SSA\",\r
+
+    \        \"INPUT_BUCKET\": \"s3://commerciallines-datastore-test-use\",\r
+
+    \        \"OUTPUT_FILE\": \"DataHubAnalysis/scrubber-input/\",\r
+
+    \        \"OUTPUT_BUCKET\": \"s3://commerciallines-datastore-test-use\",\r
+
+    \        \"DELETE_INPUT_FILE\": \"FALSE\",\r
+
+    \        \"logBatchStatusTracker\": true,\r
+
+    \        \"logETLStatusTracker\": true,\r
+
+    \        \"updateBatchTrackerApiUrl\": \"https://ratingapit-internal-data-ingestion.iso.com/updatebatchstatus?recordType=batch-status\"\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 7000

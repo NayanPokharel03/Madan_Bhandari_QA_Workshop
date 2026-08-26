@@ -1,0 +1,5 @@
+$kind: http-request
+url: https://ratingapit-internal-data-distribution.iso.com/getschedulerconfig
+method: GET
+settings: {}
+order: 2000

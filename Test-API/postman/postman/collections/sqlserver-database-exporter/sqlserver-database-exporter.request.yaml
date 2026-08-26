@@ -1,0 +1,28 @@
+$kind: http-request
+url: https://ratingapit-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"TestSQLServerExtractor\",\r
+
+    \    \"jobQueue\": \"TEST-priority\",\r
+
+    \    \"jobDefinition\": \"datahub-sqlserver-exporter-test\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"Sort_Key\": \"db-sqlserver-userids-isonet\",\r
+
+    \        \"application\": \"ISOnet\",\r
+
+    \        \"outputBucket\": \"ratings-ingestion-test-use\",\r
+
+    \        \"outputPath\": \"landing/ISOnet/\"\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 1000

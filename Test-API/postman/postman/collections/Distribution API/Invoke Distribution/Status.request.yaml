@@ -1,0 +1,11 @@
+$kind: http-request
+url: https://ratingapi-internal-data-distribution-use.iso.com/getstatus?id=0128ac3f-9e95-4b6d-adce-dc5e87f23ec4
+method: GET
+queryParams:
+  - key: ""
+    value: ""
+    disabled: true
+  - key: id
+    value: 0128ac3f-9e95-4b6d-adce-dc5e87f23ec4
+settings: {}
+order: 2000

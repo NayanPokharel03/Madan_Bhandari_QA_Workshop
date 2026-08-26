@@ -1,0 +1,8 @@
+$kind: http-request
+url: https://ratingapi-internal-data-ingestion-use.iso.com/getbatchstatus?recordType=batch-status&sortKey=e1cee03f-3ddd-4be1-b650-65b78216b98e
+method: GET
+queryParams:
+  recordType: batch-status
+  sortKey: e1cee03f-3ddd-4be1-b650-65b78216b98e
+settings: {}
+order: 18000

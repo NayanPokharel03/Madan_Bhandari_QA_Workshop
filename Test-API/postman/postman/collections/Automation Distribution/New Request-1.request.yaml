@@ -1,0 +1,29 @@
+$kind: http-request
+name: New Request
+url: https://ratingapit-internal-data-ingestion.iso.com/addautomatedistributionconfig
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"recordType\": \"automate-distribution-config\",\r
+
+    \        \"bucketname\": \"commerciallines-datahub-test-use\",\r
+
+    \        \"application\": \"Prometrix\",\r
+
+    \        \"datasetRegex\": \"tier1/Prometrix/TestSnowPipe/.*\",\r
+
+    \        \"jobID\": [\r
+
+    \            \"Prometrix-Test-SnowPipe-Distribution\"\r
+
+    \        ]\r
+
+    \    }\r
+
+    ]"
+settings: {}
+order: 2000

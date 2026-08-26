@@ -1,0 +1,34 @@
+$kind: http-request
+url: https://ratingapit-internal-batch-trigger.iso.com/invokebatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"jobName\": \"TestConversionJob\",\r
+
+    \    \"jobQueue\": \"TEST-priority\",\r
+
+    \    \"jobDefinition\": \"datahub-file-conversion-processor-test\",\r
+
+    \    \"envOverrides\": {\r
+
+    \        \"INPUT_BUCKET\": \"s3://ratings-datastore-test-use\",\r
+
+    \        \"INPUT_FILE\": \"DataHubAnalysis/Conversion/input/test_csv_conversion.csv\",\r
+
+    \        \"OUTPUT_BUCKET\": \"s3://ratings-datastore-test-use\",\r
+
+    \        \"OUTPUT_FILE\": \"DataHubAnalysis/Conversion/output/test_csv_conversion.csv\",\r
+
+    \        \"DELETE_INPUT_FILE\": \"false\",\r
+
+    \        \"CONVERSION_TYPE\": \"CSV_DELIMITER\",\r
+
+    \        \"CONVERSION_KEY\": \"DataHubAnalysis-CSV-Conversion-Test\"\r
+
+    \    }\r
+
+    }"
+settings: {}
+order: 3000

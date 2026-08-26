@@ -1,0 +1,12 @@
+$kind: http-request
+url: https://ratingapi-internal-acceldata-pipeline-use.iso.com/getspanid?pipelineId=1&service=File_Splitter&batchId=304
+method: GET
+queryParams:
+  pipelineId: "1"
+  service: File_Splitter
+  batchId: "304"
+body:
+  type: json
+  content: ""
+settings: {}
+order: 2000

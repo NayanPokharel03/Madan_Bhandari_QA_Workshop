@@ -1,0 +1,32 @@
+meta {
+  name: POST /keys invalid DataType -> 422
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/keys
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  [
+    { "Id": 8002, "Data": "X", "DataType": "Z" }
+  ]
+}
+
+tests {
+  test('Status is 422', function () {
+    expect(res.getStatus()).to.equal(422);
+  });
+  test('Envelope reports validation failure', function () {
+    const body = res.getBody();
+    expect(body).to.include({ error: true, status: 422 });
+    expect(body.details).to.be.an('array');
+  });
+}

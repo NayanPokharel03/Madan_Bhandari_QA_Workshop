@@ -1,0 +1,8 @@
+$kind: http-request
+url: https://ratingapit-internal-data-ingestion.iso.com/deleteconfig?partitionKey=dpp-trigger-config&sortKey=unira-ncrf-niss-Timestamp-Load
+method: DELETE
+queryParams:
+  partitionKey: dpp-trigger-config
+  sortKey: unira-ncrf-niss-Timestamp-Load
+settings: {}
+order: 6000

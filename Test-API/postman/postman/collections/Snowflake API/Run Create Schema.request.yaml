@@ -1,0 +1,18 @@
+$kind: http-request
+url: https://ratingapit-internal-data-distribution.iso.com/snowflake/createschema
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"dbName\":\"EFX_TEST_DB\",\r
+
+    \    \"schemaName\":\"CREDIT_HEADER\",\r
+
+    \    \"comment\":\"New Schema for EFX_TEST_DB CREDIT_HEADER\",\r
+
+    \    \"debugMode\":true\r
+
+    }\r\n"
+settings: {}
+order: 1000
